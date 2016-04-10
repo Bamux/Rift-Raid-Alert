@@ -76,7 +76,7 @@ def logfileanalysis(combatlogtext,logtext):
                         elif 'Pagura begins casting Leaping Contagion' in combatlog:      
                                 speak.Speak('spread out')
                                 
-                        elif 'begins casting Pain Bringer' in log:      
+                        elif 'begins casting Pain Bringer' in combatlog:      
                                 shell = win32com.client.Dispatch('WScript.Shell') 
                                 shell.SendKeys("{F4}", 0) 
                                 
