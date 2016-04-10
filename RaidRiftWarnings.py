@@ -9,7 +9,7 @@ import win32com.client # the Python for Windows extensions (win32com.client) sho
 
 
 # !!! use /log and /combatlog in Rift to create the logfiles each time you restart Rift!!!
-# Edit the Path to your Log.txt and CombLog.txt
+# Edit the Path to your Log.txt and CombatLog.txt
 logfile = "C:/Users/Enermax/Documents/RIFT/Log.txt"
 combatlogfile = "C:/Users/Enermax/Documents/RIFT/CombatLog.txt"
 
