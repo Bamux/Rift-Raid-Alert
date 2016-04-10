@@ -3,7 +3,9 @@ Rift Raid Warnings
 
 
 Version: 0.3
+
 Date: 2016-04-10
+
 Author: Bamux@Typhiria
 
 
