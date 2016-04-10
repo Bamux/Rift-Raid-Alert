@@ -9,7 +9,7 @@ import win32com.client # the Python for Windows extensions (win32com.client) sho
 
 
 # !!! use /log and /combatlog in Rift to create the logfiles each time you restart Rift!!!
-# Edit the Path to your Log.txt and CombatLog.txt
+# Edit the Path to your Log.txt and CombLog.txt
 logfile = "C:/Users/Enermax/Documents/RIFT/Log.txt"
 combatlogfile = "C:/Users/Enermax/Documents/RIFT/CombatLog.txt"
 
@@ -30,13 +30,11 @@ def logfileanalysis(combatlogtext,logtext):
         icesouls = 70 # Time between Ice Souls
         icesoulp3 = 47 # Time from first Curse of Five until Ice Soul
         
-        team = 0
-        global combat
+        global timerreset
         
         while True:
                 combatlog = combatlogtext.readline()
                 log = logtext.readline()
-                time.sleep(0.10) # waiting for a new line
 
         # MoM Pagura
                 
@@ -44,8 +42,8 @@ def logfileanalysis(combatlogtext,logtext):
                                 
                         if 'Pagura begins casting Curse of' in combatlog:
                                 
-                            if team == 0:  
-                                combat= 1
+                            if timerreset == True:  
+                                timerreset = False
                                 team = 2
                                 t = Thread(target=timer, args=(icesoul,))
                                 t.start()
@@ -63,7 +61,7 @@ def logfileanalysis(combatlogtext,logtext):
                                 speak.Speak('spread out')
                                 
                         elif 'Pagura begins casting Shattering Roar' in combatlog:      
-                                combat= 1
+                                timerreset = False
                                 t = Thread(target=countdown, args=(17,))
                                 t.start()                
                                 t = Thread(target=timer, args=(icesouls,))
@@ -71,8 +69,7 @@ def logfileanalysis(combatlogtext,logtext):
                                 speak.Speak('Ice Soul')
                                 
                         elif 'Raaaarrrrhhh' in log:
-                                team=0
-                                combat=0
+                                timerreset = True
                                 icesoul = icesoulp3 #Time from first Curse of Five until Ice Soul
                                 speak.Speak('Phase 2 go to left Golem')
                                 
@@ -94,18 +91,21 @@ def logfileanalysis(combatlogtext,logtext):
                         elif 'begins casting Call of the Ascended' in combatlog or 'Combat End' in combatlog:
                                 print('Combat End')
                                 speak.Speak('End')
-                                team=0
-                                combat=0
+                                #team = 0
+                                timerreset = True 
+                                
+                time.sleep(0.10) # waiting for a new line
 
 
 def timer(seconds):
         print('Start timer with ' + str(seconds) + ' seconds. ')
         for i in range(0,seconds-warningtime):
-                if (combat == 1):
+                if (timerreset == False):
                         time.sleep(1)
                 else:
                         print('Stop timer. ')
                         return
+                
         t = Thread(target=countdown, args=(warningtime,))
         t.start()         
         speak.Speak(str(warningtime) + ' seconds left')    
@@ -114,7 +114,7 @@ def timer(seconds):
 def countdown(count):
         print('Start countdown with ' + str(count) + ' seconds. ')
         for i in range(0,count):
-                if (combat == 1):
+                if (timerreset == False):
                         if count-i < 4:
                                 t = Thread(target=speak.Speak, args=(count-i,))
                                 t.start()
@@ -208,5 +208,8 @@ def logfilecheck(combatlogfile,logfile):
 print ('Make sure you use /combatlog and /log in Rift after each game restart !!!')
 speak = win32com.client.Dispatch('Sapi.SpVoice') # connect to the speech engine
 #speak.Speak('Rift raid Warnings active! Make sure you use /combatlog and /log in Rift !')
+timerreset = True
 logfilecheck(combatlogfile,logfile)
+
+
 
