@@ -2,7 +2,7 @@
 # Spoken raid warnings for the MMORPG Rift
 # Version 0.3 
 # Author: Bamux@Typhiria
-# Note: This code is based on the RiftSay Project http://www.mspeedie.com/RiftSay.html
+# Note: Rift Raid Warnings was inspired by the RiftSay Project http://www.mspeedie.com/RiftSay.html
 
 from threading import Thread
 import os, time
@@ -10,32 +10,40 @@ import string, sys, re, pythoncom
 import win32com.client # the Python for Windows extensions (win32com.client) should be installed https://sourceforge.net/projects/pywin32/files/pywin32/
 import win32pipe, win32file, win32com.shell
 
-# !!! use /log and /combatlog in Rift to create the logfiles each time you restart Rift!!!
-# Edit the Path to your Log.txt and CombatLog.txt
-logfile = "C:/Users/Enermax/Documents/RIFT/Log.txt"
-combatlogfile = "C:/Users/Enermax/Documents/RIFT/CombatLog.txt"
+
+
+###########################################################################################################################################################################################################################################
+######## YOU CAN EDIT THIS PART ! #########################################################################################################################################################################################################
+
+
+# use /log and /combatlog in Rift to create the logfiles each time you restart Rift !
+
+logfile = "C:/Users/Enermax/Documents/RIFT/Log.txt" # Edit the Path to your Log.txt
+combatlogfile = "C:/Users/Enermax/Documents/RIFT/CombatLog.txt" # Edit the Path to your CombatLog.txt
 
 warningtime = 5  # how many seconds before an event occurs a warning
 
+IGP = True # True or False if you want or dont want Raid Warnings for IGP
+IGP_Anrak = True 
+IGP_Guurloth = True
+IGP_Thalguur = True
+IGP_Uruluuk = True
+        
+MoM = True # True or False if you want or dont want raid warnings for MoM
+MoM_Pagura = True
 
        
-def logfileanalysis(combatlogtext,logtext):
+###########################################################################################################################################################################################################################################
 
-        IGP = True # True or False if you want or dont want Raid Warnings for IGP
-        IGP_Anrak = True 
-        IGP_Guurloth = True
-        IGP_Thalguur = True
-        IGP_Uruluuk = True
-        
-        MoM = True # True or False if you want or dont want raid warnings for MoM
-        MoM_Pagura = True 
-        
+
+
+def combatlogfileanalysis(combatlogtext):
+              
         icesoul = 52 # Time from first Curse of Four until Ice Soul
         icesouls = 70 # Time between Ice Souls
         icesoulp3 = 47 # Time from first Curse of Five until Ice Soul
-
-              
         global timerreset
+        text = ""
         
         while True:
                 
@@ -46,43 +54,30 @@ def logfileanalysis(combatlogtext,logtext):
                 #combatlogtext.seek(st_size)
 
                 combatlog = combatlogtext.readline()
-                log = logtext.readline()
 
                 if combatlog:
 
                 # MoM Pagura
                         
                         if MoM_Pagura == True and MoM == True:
-
-
-                                #r = re.compile('Pagura begins casting Curse of Five')
-
-                                #if r.search(combatlog):
-                                        #print ('yes')
-                                
-                                        
+                          
                                 if 'Pagura begins casting Curse of' in combatlog:
                                         
                                     if timerreset == True:  
                                         timerreset = False
                                         team = 1
                                         text = 'Team 1'
-                                        Thread(target=SayText,args=(text,)).start()
-                                        #print ("läuft")
                                         
                                     elif team == 1:
                                         team = 2
                                         text = 'Team 2'
-                                        Thread(target=SayText,args=(text,)).start()
                                         
                                     else:
                                         team = 1
                                         text = 'Team 1'
-                                        Thread(target=SayText,args=(text,)).start()
 
                                 elif 'Pagura begins casting Leaping Contagion' in combatlog:
                                         text = 'spread out'
-                                        Thread(target=SayText,args=(text,)).start()
                                         
                                 elif 'Pagura begins casting Shattering Roar' in combatlog:      
                                         timerreset = False
@@ -91,64 +86,63 @@ def logfileanalysis(combatlogtext,logtext):
                                         t = Thread(target=timer, args=(icesouls,))
                                         t.start()
                                         text = 'Ice Soul'
-                                        Thread(target=SayText,args=(text,)).start()
                                         
-                                elif 'Raaaarrrrhhh' in log:
-                                        timerreset = True
-                                        icesoul = icesoulp3 #Time from first Curse of Five until Ice Soul
-                                        text = 'Phase 2 go to left Golem'
-                                        Thread(target=SayText,args=(text,)).start()
+
                                         
                                 elif 'Pagura begins casting Leaping Contagion' in combatlog:      
                                         text = 'spread out'
-                                        Thread(target=SayText,args=(text,)).start()
                                         
                                 elif 'begins casting Pain Bringer' in combatlog:      
                                         shell = win32com.client.Dispatch('WScript.Shell') 
                                         shell.SendKeys("{F3}", 0) 
+                            
+                                elif 'Combat End' in combatlog:
+                                        print('Combat End')
+                                        timerreset = True
+
+                        if text:
+                                print (text)
+                                Thread(target=SayText,args=(text,)).start()
+                                text = ""
                                         
+                else:
+                        time.sleep(0.50) # waiting for a new line
+                                  
+
+def logfileanalysis(logtext):
+         
+        global timerreset
+        text = ""
+        
+        while True:
+                
+                log = logtext.readline()
+
+                if log:
+
+                # MoM Pagura
+                       
+                        if MoM_Pagura == True and MoM == True:
+                                
+                                if 'Raaaarrrrhhh' in log:
+                                        timerreset = True
+                                        icesoul = icesoulp3 #Time from first Curse of Five until Ice Soul
+                                        text = 'Phase 2 go to left Golem'
+
                                 elif '[Bamux]: run out' in log:
                                         cut_string = log.split('run out ')
                                         new_string = cut_string[1]
                                         cut_string = new_string.split('@')
                                         new_string = cut_string[0]
-                                        speak.Speak(new_string + ' run out')
-                                        print(new_string)
-                            
-                                elif 'Combat End' in combatlog:
-                                        print('Combat End')
-                                        timerreset = True 
-                                        
+                                        text = (new_string + ' run out')
+                                        print(new_string)                
+                        if text:
+                                print (text)
+                                Thread(target=SayText,args=(text,)).start()
+                                text = ""
                 else:
-                        time.sleep(0.10) # waiting for a new line
-
-
-def timer(seconds):
-        print('Start timer with ' + str(seconds) + ' seconds. ')
-        for i in range(0,seconds-warningtime):
-                if (timerreset == False):
-                        time.sleep(1)
-                else:
-                        print('Stop timer. ')
-                        return
-                
-        t = Thread(target=countdown, args=(warningtime,))
-        t.start()         
-        speak.Speak(str(warningtime) + ' seconds left')    
- 
-
-def countdown(count):
-        print('Start countdown with ' + str(count) + ' seconds. ')
-        for i in range(0,count):
-                #print (count-i)
-                if (timerreset == False):
-                        if count-i < 4:
-                                Thread(target=SayText,args=(count-i,)).start()
-                                #print (count-i)
-                        time.sleep(1)
-                else:
-                        print('Stop countdown. ')
-                        return        
+                        time.sleep(0.50) # waiting for a new line
+      
 
 def logfilecheck(combatlogfile,logfile):
         try:      
@@ -223,13 +217,44 @@ def logfilecheck(combatlogfile,logfile):
 
                                 combatlogtext.seek(0, 2)
                                 logtext.seek(0, 2)
-                                logfileanalysis(combatlogtext,logtext)
-                                logtext.close()
-                                combatlogtext.close()
+                                t = Thread(target=combatlogfileanalysis, args=(combatlogtext,))
+                                t.start()
+                                t = Thread(target=logfileanalysis, args=(logtext,))
+                                t.start()                                
+                                #logtext.close()
+                                #combatlogtext.close()
         else:
                 print ('!!! use /combatlog and /log in Rift !!!')
                 time.sleep(20)
                 logfilecheck(combatlogfile,logfile)
+
+
+def timer(seconds):
+        print('Start timer with ' + str(seconds) + ' seconds. ')
+        for i in range(0,seconds-warningtime):
+                if (timerreset == False):
+                        time.sleep(1)
+                else:
+                        print('Stop timer. ')
+                        return
+                
+        t = Thread(target=countdown, args=(warningtime,))
+        t.start()         
+        speak.Speak(str(warningtime) + ' seconds left')    
+ 
+
+def countdown(count):
+        print('Start countdown with ' + str(count) + ' seconds. ')
+        for i in range(0,count):
+                #print (count-i)
+                if (timerreset == False):
+                        if count-i < 4:
+                                Thread(target=SayText,args=(count-i,)).start()
+                                #print (count-i)
+                        time.sleep(1)
+                else:
+                        print('Stop countdown. ')
+                        return  
 
 
 def SayText(text):
@@ -248,9 +273,7 @@ def SayText(text):
 print ('Make sure you use /combatlog and /log in Rift after each game restart !!!')
 speak = win32com.client.Dispatch('Sapi.SpVoice')
 text = 'Rift raid Warnings active! Make sure you use /combatlog and /log in Rift !'
-Thread(target=SayText,args=(text,)).start()
+#Thread(target=SayText,args=(text,)).start()
 timerreset = True
 logfilecheck(combatlogfile,logfile)
-
-
 
