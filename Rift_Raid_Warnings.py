@@ -11,7 +11,6 @@ import win32com.client # the Python for Windows extensions (win32com.client) sho
 import win32pipe, win32file, win32com.shell
 
 
-
 ###########################################################################################################################################################################################################################################
 ######## YOU CAN EDIT THIS PART ! #########################################################################################################################################################################################################
 
@@ -31,17 +30,16 @@ IGP_Uruluuk = True
         
 MoM = True # True or False if you want or dont want raid warnings for MoM
 MoM_Pagura = True
-
+icesoul = 52 # Time from first Curse of Four until Ice Soul
+icesouls = 70 # Time between Ice Souls
+icesoulp3 = 47 # Time from first Curse of Five until Ice Soul
        
 ###########################################################################################################################################################################################################################################
 
 
-
 def combatlogfileanalysis(combatlogtext):
               
-        icesoul = 52 # Time from first Curse of Four until Ice Soul
-        icesouls = 70 # Time between Ice Souls
-        icesoulp3 = 47 # Time from first Curse of Five until Ice Soul
+
         global timerreset
         text = ""
         
@@ -86,8 +84,6 @@ def combatlogfileanalysis(combatlogtext):
                                         t = Thread(target=timer, args=(icesouls,))
                                         t.start()
                                         text = 'Ice Soul'
-                                        
-
                                         
                                 elif 'Pagura begins casting Leaping Contagion' in combatlog:      
                                         text = 'spread out'
@@ -276,4 +272,6 @@ text = 'Rift raid Warnings active! Make sure you use /combatlog and /log in Rift
 #Thread(target=SayText,args=(text,)).start()
 timerreset = True
 logfilecheck(combatlogfile,logfile)
+
+
 
