@@ -1,6 +1,6 @@
 # Rift Raid Warnings
 # Spoken raid warnings for the MMORPG Rift
-# Version 0.4 
+# Version 0.5 
 # Author: Bamux@Typhiria
 
 from threading import Thread
@@ -11,11 +11,12 @@ import win32com.client # the Python for Windows extensions (win32com.client) sho
 
 
 def combatlogfileanalysis(combatlogtext):
+ try:
         #Timer
         MOM_Pagura_Icesoul = 52 # Time from first Curse of Four until Ice Soul
         MOM_Pagura_Icesouls = 70 # Time between Ice Souls
         MOM_Pagura_Icesoul_P3 = 47 # Time from first Curse of Five until Ice Soul
-        
+
         global timerreset
         global MoM
         global IGP
@@ -150,15 +151,23 @@ def combatlogfileanalysis(combatlogtext):
                                         text = 'Fist'
                                                                              
                         if text:
-                                #print (text)
+                                print (text)
                                 Thread(target=SayText,args=(text,)).start()
                                 text = ""
                                 
                 else:
                         time.sleep(0.50) # waiting for a new line
-
-                                  
+ except:
+        print ('An error has occurred, I jump to the end of the CombatLog.txt and try it again !')
+        time.sleep(0.50)
+        logtext.seek(0, 2)
+        t = Thread(target=combatlogfileanalysis, args=(combatlogtext,))
+        t.start()
+        return
+               
+               
 def logfileanalysis(logtext):
+ try:
         global timerreset
         global MoM
         global IGP
@@ -252,7 +261,14 @@ def logfileanalysis(logtext):
                                 text = ""
                 else:
                         time.sleep(0.50) # waiting for a new line
-
+ except:
+        print ('An error has occurred, I jump to the end of the Log.txt and try it again !')
+        time.sleep(0.50)
+        logtext.seek(0, 2)
+        t = Thread(target=logfileanalysis, args=(logtext,))
+        t.start()
+        return
+        
       
 def logfilecheck(combatlogfile,logfile):
         try:      
@@ -414,9 +430,9 @@ try:
                                 if 'guurloth' in line_type:
                                         IGP_Guurloth = line_data
                                         if 't' == line_data_lower[0] or 'y' == line_data_lower[0]:
-                                                IGP_Anrak = True
+                                                IGP_Guurloth = True
                                         else: 
-                                                IGP_Anrak = False
+                                                IGP_Guurloth = False
                                         
                                 if 'thalguur' in line_type:
                                         IGP_Thalguur = line_data
