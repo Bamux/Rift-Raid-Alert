@@ -158,12 +158,9 @@ def combatlogfileanalysis(combatlogtext):
                 else:
                         time.sleep(0.50) # waiting for a new line
  except:
-        print ('An error has occurred, I jump to the end of the CombatLog.txt and try it again !')
-        time.sleep(0.50)
-        logtext.seek(0, 2)
+        print ('An error has occurred in the CombatLog.txt !')
         t = Thread(target=combatlogfileanalysis, args=(combatlogtext,))
         t.start()
-        return
                
                
 def logfileanalysis(logtext):
@@ -262,12 +259,9 @@ def logfileanalysis(logtext):
                 else:
                         time.sleep(0.50) # waiting for a new line
  except:
-        print ('An error has occurred, I jump to the end of the Log.txt and try it again !')
-        time.sleep(0.50)
-        logtext.seek(0, 2)
+        print ('An error has occurred in the Log.txt !')
         t = Thread(target=logfileanalysis, args=(logtext,))
         t.start()
-        return
         
       
 def logfilecheck(combatlogfile,logfile):
@@ -415,7 +409,14 @@ try:
                                 if 'combatfile' in line_type:
                                         combatlogfile = line_data
                                         #print (combatlogfile)
-
+                                        
+                                if 'volume' in line_type:
+                                        try:
+                                            volume = int(line_data)                                            
+                                            if volume < 0 or volume > 100:
+                                                volume = 100
+                                        except: volume = 100
+                                        
                                 if 'warningtime' in line_type:
                                         warningtime = int(line_data)
                                         #print (warningtime)
@@ -465,8 +466,9 @@ except:
         sys.exit('RiftRaidWarnings.ini not found')
 
       
-print ('Make sure you use /combatlog and /log in Rift after each game restart !!!')
+print ('Make sure you use /combatlog and /log in Rift after each game restart !')
 speak = win32com.client.Dispatch('Sapi.SpVoice')
+speak.Volume = volume
 text = 'Rift raid Warnings active! Make sure you use /combatlog and /log in Rift !'
 #Thread(target=SayText,args=(text,)).start()
 timerreset = True
@@ -474,4 +476,3 @@ IGP = True
 MoM = True
 Siri = True
 logfilecheck(combatlogfile,logfile)
-
