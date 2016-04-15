@@ -9,7 +9,6 @@ import os, time
 import string, sys, re, pythoncom
 import win32com.client # the Python for Windows extensions (win32com.client) should be installed https://sourceforge.net/projects/pywin32/files/pywin32/
 
-
 def combatlogfileanalysis(combatlogtext):
  try:
         #Timer
@@ -186,7 +185,6 @@ def logfileanalysis(logtext):
         joke += ['Do you know my favorite food? I Love Micro Chips!']
         #joke += ['']
 
-        
         while True:
                 
                 log = logtext.readline()
