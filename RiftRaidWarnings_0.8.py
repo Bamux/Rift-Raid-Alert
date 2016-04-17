@@ -400,7 +400,6 @@ try:
                         paraline = str.rstrip(para_line)
                         type_end = paraline.find('= ')+2
                         liste = [];
-                        
                         if type_end > 0 and type_end < len(paraline):
                                 line_type = str.lower(paraline[0:type_end])
                                 line_data = str.rstrip(paraline[type_end:])
