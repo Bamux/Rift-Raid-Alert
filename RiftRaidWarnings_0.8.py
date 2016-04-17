@@ -1,6 +1,6 @@
 # Rift Raid Warnings
 # Spoken raid warnings for the MMORPG Rift
-# Version 0.5 
+# Version 0.8 
 # Author: Bamux@Typhiria
 
 from threading import Thread
