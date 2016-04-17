@@ -18,9 +18,6 @@ def combatlogfileanalysis(combatlogtext):
         global specialtrigger
         text = ""
         onetimetrigger = ""
-        try:    pythoncom.CoInitializeEx(pythoncom.COINIT_MULTITHREADED)
-        except  pythoncom.com_error:
-                pass	
         while True:
                 combatlog = combatlogtext.readline()
                 if combatlog:
