@@ -200,6 +200,7 @@ def logfileanalysis(logtext):
                             try:
                                 cut_string = log.split('say ')
                                 new_string = cut_string[1]
+                                text = new_string
                             except:
                                 cut_string = log.split('sage ')
                                 new_string = cut_string[1]
