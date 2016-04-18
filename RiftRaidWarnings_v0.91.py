@@ -18,10 +18,10 @@ def default_trigger(log,triggertyp):
     global onetimetrigger
     
     for i in range(0,len(trigger)):
-        if language == trigger [i][0] or trigger [i][0]== "all" or language == "all":
-            if location == trigger [i][1] or trigger [i][1] == "all" or trigger [i][1]== "system" or location == "all":
+        if language == trigger [i][0] or trigger [i][0]== "all" or trigger [i][0]== "always" or language == "all":
+            if location == trigger [i][1] or trigger [i][1] == "all" or trigger [i][1]== "always" or location == "all":
                 if trigger [i][3] == triggertyp:
-                    if boss == trigger [i][2] or trigger [i][2]== "all" or trigger [i][2]== "system" or boss == "all":
+                    if boss == trigger [i][2] or trigger [i][2]== "all" or trigger [i][2]== "always" or boss == "all":
                         if "$player" in trigger[i][4]:
                             cut_string = trigger[i][4].split('$player')
                             left_string = cut_string[0]
@@ -55,10 +55,11 @@ def default_trigger(log,triggertyp):
                                     timerreset = True
                                     specialtrigger = 1
                                     onetimetrigger = ""
-                                language = trigger [i][0]
-                                if trigger [i][1] != "system":
+                                if trigger [i][0] != "always":    
+                                    language = trigger [i][0]
+                                if trigger [i][1] != "always":
                                     location = trigger [i][1]
-                                if trigger [i][2] != "system":
+                                if trigger [i][2] != "always":
                                     boss = trigger [i][2]   
                                 break
                         else:
@@ -75,13 +76,12 @@ def default_trigger(log,triggertyp):
                                     timerreset = True
                                     specialtrigger = 1
                                     onetimetrigger = ""
-                                language = trigger [i][0]
-                                if trigger [i][1] != "system":
+                                if trigger [i][0] != "always":    
+                                    language = trigger [i][0]
+                                if trigger [i][1] != "always":
                                     location = trigger [i][1]
-                                if trigger [i][2] != "system":
+                                if trigger [i][2] != "always":
                                     boss = trigger [i][2]
-                                #print (" Location: " + location)
-                                #print (" Boss: " + boss)
                                 break
 
 def onetime_trigger(log,triggertyp):
@@ -153,7 +153,7 @@ def special_trigger(log,triggertyp):
                             break
 
 def combatlogfileanalysis(combatlogtext):
-    #try:
+    try:
         while True:
                 combatlog = combatlogtext.readline()
                 if combatlog:
@@ -162,14 +162,14 @@ def combatlogfileanalysis(combatlogtext):
                     default_trigger (combatlog,'skill')
                 else:
                     time.sleep(0.50) # waiting for a new line
-    #except:
-        #print ('An error has occurred in the CombatLog.txt !')
-        #time.sleep(0.50)
-        #t = Thread(target=combatlogfileanalysis, args=(combatlogtext,))
-        #t.start()
+    except:
+        print ('An error has occurred in the CombatLog.txt !')
+        time.sleep(0.50)
+        t = Thread(target=combatlogfileanalysis, args=(combatlogtext,))
+        t.start()
 
 def logfileanalysis(logtext):
-    #try:
+    try:
         #Jokes for Siri
         joke = []
         joke += [''"A man goes into a library and asks for a book on suicide. The librarian says, Fuck off, you won't bring it back!"'']
@@ -211,11 +211,11 @@ def logfileanalysis(logtext):
                         text = ""
                 else:
                         time.sleep(0.50) # waiting for a new line
-    #except:
-        #print ('An error has occurred in the Log.txt !')
-        #time.sleep(0.50)
-        #t = Thread(target=logfileanalysis, args=(logtext,))
-        #t.start()
+    except:
+        print ('An error has occurred in the Log.txt !')
+        time.sleep(0.50)
+        t = Thread(target=logfileanalysis, args=(logtext,))
+        t.start()
 
 def logfilecheck(combatlogfile,logfile):
         try:
@@ -315,7 +315,6 @@ def countdown(count):
                 if (timerreset == False):
                         if count-i < 4:
                                 Thread(target=SayText,args=(count-i,)).start()
-                                #print (count-i)
                         time.sleep(1)
                 else:
                         print(' Stop countdown.')
