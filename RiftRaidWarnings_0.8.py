@@ -18,6 +18,9 @@ def combatlogfileanalysis(combatlogtext):
         global specialtrigger
         text = ""
         onetimetrigger = ""
+        try:    pythoncom.CoInitializeEx(pythoncom.COINIT_MULTITHREADED)
+        except  pythoncom.com_error:
+                pass	
         while True:
                 combatlog = combatlogtext.readline()
                 if combatlog:
@@ -75,24 +78,61 @@ def combatlogfileanalysis(combatlogtext):
                             if language == trigger [i][0] or language == "all":
                                 if location == trigger [i][1] or location == "all":
                                     if trigger [i][3] == "skill":
-                                        if boss == trigger [i][2] or boss == "all": 
-                                            if trigger[i][4] in  combatlog:
-                                                timerreset = False
-                                                Thread(target=SayText,args=(trigger[i][5],)).start()
-                                                if int(trigger[i][6]) > 0:
-                                                    t = Thread(target=timer, args=(int(trigger[i][6]),))
-                                                    t.start()
-                                                if int(trigger[i][7]) > 0:
-                                                    t = Thread(target=countdown, args=(int(trigger[i][7]),))
-                                                    t.start()
-                                                if trigger[i][8] == "1":
-                                                    timerreset = True
-                                                    specialtrigger = 1
-                                                language = trigger [i][0]
-                                                location = trigger [i][1]
-                                                boss = trigger [i][2]
-                                                break
-                        if 'Combat End' in combatlog:
+                                        if boss == trigger [i][2] or boss == "all":
+                                            if "$player" in trigger[i][4]:
+                                                cut_string = trigger[i][4].split('$player')
+                                                left_string = cut_string[0]
+                                                right_string = cut_string[1]
+                                                if len(left_string) > len(right_string):
+                                                    new_string = left_string
+                                                else:
+                                                    new_string = right_string
+                                                if new_string in  combatlog:
+                                                    if left_string:
+                                                        cut_string = combatlog.split(left_string)
+                                                        new_string = cut_string[1]
+                                                        if right_string:
+                                                            cut_string = new_string.split(right_string)
+                                                            new_string = cut_string[0]
+                                                    else:
+                                                        if right_string:
+                                                            cut_string = combatlog.split(right_string)
+                                                            new_string = cut_string[0]
+                                                    cut_string = new_string.split('@')
+                                                    new_string = cut_string[0] + " " + trigger[i][5]
+                                                    Thread(target=SayText,args=(new_string,)).start()
+                                                    timerreset = False
+                                                    if int(trigger[i][6]) > 0:
+                                                        t = Thread(target=timer, args=(int(trigger[i][6]),))
+                                                        t.start()
+                                                    if int(trigger[i][7]) > 0:
+                                                        t = Thread(target=countdown, args=(int(trigger[i][7]),))
+                                                        t.start()
+                                                    if trigger[i][8] == "1":
+                                                        timerreset = True
+                                                        specialtrigger = 1
+                                                    language = trigger [i][0]
+                                                    location = trigger [i][1]
+                                                    boss = trigger [i][2]
+                                                    break
+                                            else: 
+                                                if trigger[i][4] in  combatlog:
+                                                    timerreset = False
+                                                    Thread(target=SayText,args=(trigger[i][5],)).start()
+                                                    if int(trigger[i][6]) > 0:
+                                                        t = Thread(target=timer, args=(int(trigger[i][6]),))
+                                                        t.start()
+                                                    if int(trigger[i][7]) > 0:
+                                                        t = Thread(target=countdown, args=(int(trigger[i][7]),))
+                                                        t.start()
+                                                    if trigger[i][8] == "1":
+                                                        timerreset = True
+                                                        specialtrigger = 1
+                                                    language = trigger [i][0]
+                                                    location = trigger [i][1]
+                                                    boss = trigger [i][2]
+                                                    break
+                        if 'Combat End' in combatlog or 'begins casting Call of the Ascended.' in combatlog:
                                 print('Combat End')
                                 timerreset = True
                                 Siri = True
@@ -190,25 +230,23 @@ def logfileanalysis(logtext):
                                         if boss == trigger [i][2] or boss == "all":
                                             if "$player" in trigger[i][4]:
                                                 cut_string = trigger[i][4].split('$player')
-                                                try:
-                                                    left_string = cut_string[0]
-                                                except:
-                                                    left_string = ""
-                                                try:
-                                                    right_string = cut_string[1]
-                                                except:
-                                                    right_string = ""
+                                                left_string = cut_string[0]
+                                                right_string = cut_string[1]
                                                 if len(left_string) > len(right_string):
                                                     new_string = left_string
                                                 else:
                                                     new_string = right_string
-                                                if new_string in  log:
-                                                    if left_string != "":
+                                                if new_string in  log:                                                       
+                                                    if left_string:
                                                         cut_string = log.split(left_string)
                                                         new_string = cut_string[1]
-                                                    if right_string != "":
-                                                        cut_string = new_string.split(right_string)
-                                                        new_string = cut_string[0]
+                                                        if right_string:
+                                                            cut_string = new_string.split(right_string)
+                                                            new_string = cut_string[0]
+                                                    else:
+                                                        if right_string:
+                                                            cut_string = log.split(right_string)
+                                                            new_string = cut_string[0]
                                                     cut_string = new_string.split('@')
                                                     new_string = cut_string[0] + " " + trigger[i][5]
                                                     Thread(target=SayText,args=(new_string,)).start()
@@ -265,7 +303,6 @@ def logfileanalysis(logtext):
                                 elif 'siri' in log and 'introduce' in log or 'siri' in log and 'stell' in log:
                                         text = '''Hi, I am Siri. I support you with Raid announcements. If you don't  like my voice,  please disable me.'''
                         if text:
-                                print (text)
                                 Thread(target=SayText,args=(text,)).start()
                                 text = ""
                 else:
@@ -384,7 +421,9 @@ def SayText(text):
 	try:    pythoncom.CoInitializeEx(pythoncom.COINIT_MULTITHREADED)
 	except  pythoncom.com_error:
 		pass
+	print (text)   
 	speak.Speak(text)
+	
 
 #get parametrs from Rift_Raid_Warnings.ini	
 try:      
@@ -397,11 +436,11 @@ try:
                         paraline = str.rstrip(para_line)
                         type_end = paraline.find('= ')+2
                         liste = [];
+                        
                         if type_end > 0 and type_end < len(paraline):
                                 line_type = str.lower(paraline[0:type_end])
                                 line_data = str.rstrip(paraline[type_end:])
                                 line_data_lower = str.lower(paraline[type_end:])
-                                
                                 if 'logfile' in line_type:
                                         logfile = line_data                                        
                                 if 'combatfile' in line_type:
@@ -455,5 +494,4 @@ location = "all"
 boss = "all"
 specialtrigger = 1
 logfilecheck(combatlogfile,logfile)
-
 
