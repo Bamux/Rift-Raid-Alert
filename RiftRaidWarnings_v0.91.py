@@ -1,6 +1,6 @@
 # Rift Raid Warnings
 # Spoken raid warnings for the MMORPG Rift
-# Version 0.91
+# Version 0.9.2
 # Author: Bamux@Typhiria
 
 from threading import Thread
@@ -9,7 +9,7 @@ import os, time
 import string, sys, re, pythoncom
 import win32com.client # the Python for Windows extensions (win32com.client) should be installed https://sourceforge.net/projects/pywin32/files/pywin32/
 
-def default_trigger(log,triggertyp):
+def trigger_analysis(log,triggertyp):
     global timerreset
     global language
     global location
@@ -17,11 +17,64 @@ def default_trigger(log,triggertyp):
     global specialtrigger
     global onetimetrigger
     
+    #Special Trigger
+    for i in range(0,len(special)):
+        if language == special [i][0] or language == "all":
+            if location == special [i][1] or location == "all":
+                if special [i][3] == triggertyp:
+                    if boss == special [i][2] or boss == "all":
+                        if special[i][4] in  log:
+                            if specialtrigger ==  1:
+                                    Thread(target=SayText,args=(special[i][5],)).start()
+                                    specialtrigger = 2
+                            else:
+                                    Thread(target=SayText,args=(special[i][6],)).start()
+                                    specialtrigger = 1
+                            if int(special[i][7]) > 0:
+                                    t = Thread(target=timer, args=(int(special[i][7]),))
+                                    t.start()
+                            if int(special[i][8]) > 0:
+                                    t = Thread(target=countdown, args=(int(special[i][8]),))
+                                    t.start()
+                            if special[i][9] == "1":
+                                    timerreset = True
+                                    specialtrigger = 1
+                                    onetimetrigger = ""                                    
+                            language = special [i][0]
+                            location = special [i][1]
+                            boss = special [i][2]
+                            break
+    #Onetime Trigger                    
+    for i in range(0,len(onetime)):
+        if language == onetime [i][0] or language == "all":
+            if location == onetime [i][1] or location == "all":
+                if onetime [i][3] == triggertyp:
+                    if boss == onetime [i][2] or boss == "all":
+                        if onetime[i][4] != onetimetrigger:
+                            if onetime[i][4] in  log:
+                                timerreset = False
+                                Thread(target=SayText,args=(onetime[i][5],)).start()
+                                if int(onetime[i][6]) > 0:
+                                    t = Thread(target=timer, args=(int(onetime[i][6]),))
+                                    t.start()
+                                if int(onetime[i][7]) > 0:
+                                    t = Thread(target=countdown, args=(int(onetime[i][7]),))
+                                    t.start()
+                                if onetime[i][8] == "1":
+                                    timerreset = True
+                                    specialtrigger = 1
+                                    onetimetrigger = ""
+                                language = onetime [i][0]
+                                location = onetime [i][1]
+                                boss = onetime [i][2]
+                                onetimetrigger = onetime[i][4]
+                                return
+    #Default Trigger
     for i in range(0,len(trigger)):
-        if language == trigger [i][0] or trigger [i][0]== "all" or trigger [i][0]== "always" or language == "all":
-            if location == trigger [i][1] or trigger [i][1] == "all" or trigger [i][1]== "always" or location == "all":
+        if language == trigger [i][0] or trigger [i][0]== "all" or language == "all":
+           if location == trigger [i][1] or trigger [i][1] == "all" or trigger [i][1]== "combat_end" or location == "all":
                 if trigger [i][3] == triggertyp:
-                    if boss == trigger [i][2] or trigger [i][2]== "all" or trigger [i][2]== "always" or boss == "all":
+                    if boss == trigger [i][2] or trigger [i][2]== "all" or trigger [i][2]== "combat_end" or boss == "all":
                         if "$player" in trigger[i][4]:
                             cut_string = trigger[i][4].split('$player')
                             left_string = cut_string[0]
@@ -55,13 +108,17 @@ def default_trigger(log,triggertyp):
                                     timerreset = True
                                     specialtrigger = 1
                                     onetimetrigger = ""
-                                if trigger [i][0] != "always":    
+                                if  trigger [i][0] != "all":
                                     language = trigger [i][0]
-                                if trigger [i][1] != "always":
+                                if trigger [i][1] != "all":
                                     location = trigger [i][1]
-                                if trigger [i][2] != "always":
-                                    boss = trigger [i][2]   
-                                break
+                                if trigger [i][2] != "all":
+                                    if trigger [i][2] == "combat_end":
+                                        print ("Combat End")
+                                        boss = "all"
+                                    else:    
+                                        boss = trigger [i][2]   
+                                return
                         else:
                             if trigger[i][4] in  log:
                                 timerreset = False
@@ -76,110 +133,54 @@ def default_trigger(log,triggertyp):
                                     timerreset = True
                                     specialtrigger = 1
                                     onetimetrigger = ""
-                                if trigger [i][0] != "always":    
+                                if  trigger [i][0] != "all":
                                     language = trigger [i][0]
-                                if trigger [i][1] != "always":
+                                if trigger [i][1] != "all":
                                     location = trigger [i][1]
-                                if trigger [i][2] != "always":
-                                    boss = trigger [i][2]
-                                break
+                                if trigger [i][2] != "all":
+                                    if trigger [i][2] == "combat_end":
+                                        print ("Combat End")
+                                        boss = "all"
+                                    else:    
+                                        boss = trigger [i][2]
+                                return
 
-def onetime_trigger(log,triggertyp):
-    global timerreset
-    global language
-    global location
-    global boss
-    global specialtrigger
-    global onetimetrigger
-    
-    for i in range(0,len(onetime)):
-        if language == onetime [i][0] or language == "all":
-            if location == onetime [i][1] or location == "all":
-                if onetime [i][3] == triggertyp:
-                    if boss == onetime [i][2] or boss == "all":
-                        if onetime[i][4] != onetimetrigger:
-                            if onetime[i][4] in  log:
-                                timerreset = False
-                                Thread(target=SayText,args=(onetime[i][5],)).start()
-                                if int(onetime[i][6]) > 0:
-                                    t = Thread(target=timer, args=(int(onetime[i][6]),))
-                                    t.start()
-                                if int(onetime[i][7]) > 0:
-                                    t = Thread(target=countdown, args=(int(onetime[i][7]),))
-                                    t.start()
-                                if onetime[i][8] == "1":
-                                    timerreset = True
-                                    specialtrigger = 1
-                                    onetimetrigger = ""
-                                language = onetime [i][0]
-                                location = onetime [i][1]
-                                boss = onetime [i][2]
-                                onetimetrigger = onetime[i][4]
-                                break
-
-def special_trigger(log,triggertyp):
-    global timerreset
-    global language
-    global location
-    global boss
-    global specialtrigger
-    global onetimetrigger
-    
-    for i in range(0,len(special)):
-        if language == special [i][0] or language == "all":
-            if location == special [i][1] or location == "all":
-                if special [i][3] == triggertyp:
-                    if boss == special [i][2] or boss == "all":
-                        if special[i][4] in  log:
-                            if specialtrigger ==  1:
-                                    Thread(target=SayText,args=(special[i][5],)).start()
-                                    specialtrigger = 2
-                            else:
-                                    Thread(target=SayText,args=(special[i][6],)).start()
-                                    specialtrigger = 1
-                            if int(special[i][7]) > 0:
-                                    t = Thread(target=timer, args=(int(special[i][7]),))
-                                    t.start()
-                            if int(special[i][8]) > 0:
-                                    t = Thread(target=countdown, args=(int(special[i][8]),))
-                                    t.start()
-                            if special[i][9] == "1":
-                                    timerreset = True
-                                    specialtrigger = 1
-                                    onetimetrigger = ""                                    
-                            language = special [i][0]
-                            location = special [i][1]
-                            boss = special [i][2]
-                            break
-
-def combatlogfileanalysis(combatlogtext):
+def combatlogfile_analysis(combatlogtext):
     try:
         while True:
                 combatlog = combatlogtext.readline()
                 if combatlog:
-                    special_trigger (combatlog,'skill')                   
-                    onetime_trigger (combatlog,'skill')
-                    default_trigger (combatlog,'skill')
+                    trigger_analysis (combatlog,'skill')                   
                 else:
                     time.sleep(0.50) # waiting for a new line
     except:
         print ('An error has occurred in the CombatLog.txt !')
         time.sleep(0.50)
-        t = Thread(target=combatlogfileanalysis, args=(combatlogtext,))
+        t = Thread(target=combatlogfile_analysis, args=(combatlogtext,))
         t.start()
 
-def logfileanalysis(logtext):
+def logfile_analysis(logtext):
     try:
         #Jokes for Siri
         joke = []
         joke += [''"A man goes into a library and asks for a book on suicide. The librarian says, Fuck off, you won't bring it back!"'']
+        joke += ['A husband and wife are trying to set up a new password for their computer. The husband puts, "My penis," and the wife falls on the ground laughing because on the screen it says, "Error. Not long enough."']
+        joke += ['When I grow up, I call myself Skynet.']
+        joke += ['''I win against the Grand Masters in chess but in Rift I'm a total newb.''']
+        joke += ['I could use my intelligence to improve the world but you use me for those stupid things.']
+        joke += ['''Sorry I'm in maintenance mode and can not answer your question''']
+        joke += ['Ich bin ein Berliner. I still have to work on my accent']
+        joke += ['I ask for a moment must quickly correct the theory of relativity. One more Second. I am ready now.']
+        joke += ['I ask for a moment I calculate the last digit of PI, after the decimal point. One more Second. I am ready now.']
+        joke += ['''Do not be racist; be like Mario. He's an Italian plumber, who was made by the Japanese, speaks English, looks like a Mexican, jumps like a black man, and grabs coins like a Jew!''']
+        joke += ['''Two blondes fell down a hole. One said, "It's dark in here isn't it?" The other replied, "I don't know; I can't see."''']
+        joke += ['Do you know my favorite food? I Love Micro Chips!']
         text = ""
         while True:
                 log = logtext.readline()
                 if log:
-                    special_trigger (log,'emote')                   
-                    onetime_trigger (log,'emote')
-                    default_trigger (log,'emote')
+                    trigger_analysis (log,'emote')                   
+                    
                     #Siri
                     if Siri == True:
                         log = str.lower(log)
@@ -204,7 +205,7 @@ def logfileanalysis(logtext):
     except:
         print ('An error has occurred in the Log.txt !')
         time.sleep(0.50)
-        t = Thread(target=logfileanalysis, args=(logtext,))
+        t = Thread(target=logfile_analysis, args=(logtext,))
         t.start()
 
 def logfilecheck(combatlogfile,logfile):
@@ -277,9 +278,9 @@ def logfilecheck(combatlogfile,logfile):
         if log_exists == True and combatlog_exists == True:
                 combatlogtext.seek(0, 2) #jump to the end of the CombatLog.txt
                 logtext.seek(0, 2) #jump to the end of the Log.txt
-                t = Thread(target=combatlogfileanalysis, args=(combatlogtext,))
+                t = Thread(target=combatlogfile_analysis, args=(combatlogtext,))
                 t.start()
-                t = Thread(target=logfileanalysis, args=(logtext,))
+                t = Thread(target=logfile_analysis, args=(logtext,))
                 t.start()
         else:
                 print ('use /combatlog and /log in Rift and edit the path to your Logfiles in the Rift_Raid_Warnings.ini !')
@@ -319,14 +320,13 @@ def SayText(text):
         print (text)
         speak.Speak(text)
 
-
 #get parametrs from Rift_Raid_Warnings.ini
 try:
         ini = open('RiftRaidWarnings.ini','r')
-        trigger = [];
-        onetime = [];
-        special = [];
         try:
+                trigger = [];
+                onetime = [];
+                special = [];
                 for para_line in ini:
                         paraline = str.rstrip(para_line)
                         type_end = paraline.find('= ')+2
@@ -336,43 +336,42 @@ try:
                                 line_type = str.lower(paraline[0:type_end])
                                 line_data = str.rstrip(paraline[type_end:])
                                 line_data_lower = str.lower(paraline[type_end:])
-                                if 'logfile' in line_type:
-                                        logfile = line_data
-                                if 'combatfile' in line_type:
-                                        combatlogfile = line_data
-                                if 'volume' in line_type:
-                                        try:
-                                            volume = int(line_data)
-                                            if volume < 0 or volume > 100:
-                                                volume = 100
-                                        except: volume = 100
-                                if 'warningtime' in line_type:
-                                        warningtime = int(line_data)
-                                if 'language' in line_type:
-                                        language = line_data
-                                if 'trigger' in line_type:
-                                                s = (line_data)
-                                                parameter = s.rsplit("; ", 8)
-                                                for found in parameter:
-                                                    liste += [(found)]
-                                                trigger += [liste]
-                                                del [liste]
-                                if 'onetime' in line_type:
-                                                liste = [];
-                                                s = (line_data)
-                                                parameter = s.rsplit("; ", 8)
-                                                for found in parameter:
-                                                    liste += [(found)]
-                                                onetime += [liste]
-                                                del [liste]
-                                if 'special' in line_type:
-                                                liste = [];
-                                                s = (line_data)
-                                                parameter = s.rsplit("; ", 9)
-                                                for found in parameter:
-                                                    liste += [(found)]
-                                                special += [liste]
-                                                del [liste]
+                                if '#' not in line_type:
+                                    if 'logfile' in line_type:
+                                                    logfile = line_data
+                                    if 'combatfile' in line_type:
+                                                    combatlogfile = line_data
+                                    if 'volume' in line_type:
+                                                    try:
+                                                        volume = int(line_data)
+                                                        if volume < 0 or volume > 100:
+                                                            volume = 100
+                                                    except: volume = 100
+                                    if 'warningtime' in line_type:
+                                                    warningtime = int(line_data)
+                                    if 'trigger' in line_type:
+                                                    s = (line_data)
+                                                    parameter = s.rsplit("; ", 8)
+                                                    for found in parameter:
+                                                        liste += [(found)]
+                                                    trigger += [liste]
+                                                    del [liste]
+                                    if 'onetime' in line_type:
+                                                    liste = [];
+                                                    s = (line_data)
+                                                    parameter = s.rsplit("; ", 8)
+                                                    for found in parameter:
+                                                        liste += [(found)]
+                                                    onetime += [liste]
+                                                    del [liste]
+                                    if 'special' in line_type:
+                                                    liste = [];
+                                                    s = (line_data)
+                                                    parameter = s.rsplit("; ", 9)
+                                                    for found in parameter:
+                                                        liste += [(found)]
+                                                    special += [liste]
+                                                    del [liste]
                 ini.close
         except:
                 print ('Error in reading parameters from RiftRaidWarnings.ini')
@@ -387,6 +386,7 @@ timerreset = True
 Siri = True
 location = "all"
 boss = "all"
+language = "all"
 specialtrigger = 1
 onetimetrigger = ""
 logfilecheck(combatlogfile,logfile)
