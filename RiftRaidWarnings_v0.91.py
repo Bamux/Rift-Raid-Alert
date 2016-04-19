@@ -164,17 +164,6 @@ def logfile_analysis(logtext):
         #Jokes for Siri
         joke = []
         joke += [''"A man goes into a library and asks for a book on suicide. The librarian says, Fuck off, you won't bring it back!"'']
-        joke += ['A husband and wife are trying to set up a new password for their computer. The husband puts, "My penis," and the wife falls on the ground laughing because on the screen it says, "Error. Not long enough."']
-        joke += ['When I grow up, I call myself Skynet.']
-        joke += ['''I win against the Grand Masters in chess but in Rift I'm a total newb.''']
-        joke += ['I could use my intelligence to improve the world but you use me for those stupid things.']
-        joke += ['''Sorry I'm in maintenance mode and can not answer your question''']
-        joke += ['Ich bin ein Berliner. I still have to work on my accent']
-        joke += ['I ask for a moment must quickly correct the theory of relativity. One more Second. I am ready now.']
-        joke += ['I ask for a moment I calculate the last digit of PI, after the decimal point. One more Second. I am ready now.']
-        joke += ['''Do not be racist; be like Mario. He's an Italian plumber, who was made by the Japanese, speaks English, looks like a Mexican, jumps like a black man, and grabs coins like a Jew!''']
-        joke += ['''Two blondes fell down a hole. One said, "It's dark in here isn't it?" The other replied, "I don't know; I can't see."''']
-        joke += ['Do you know my favorite food? I Love Micro Chips!']
         text = ""
         while True:
                 log = logtext.readline()
