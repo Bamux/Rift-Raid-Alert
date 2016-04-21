@@ -154,13 +154,6 @@ def combatlogfile_analysis(combatlogtext):
                 combatlog = combatlogtext.readline()
                 if combatlog:
                     trigger_analysis (combatlog,'skill')                   
-                    
-                    if 'Crustok begins casting Pain Bringer' in combatlog:      
-                        shell = win32com.client.Dispatch('WScript.Shell') 
-                        shell.SendKeys("{F3}", 0)
-                    if 'Brachy begins casting Pain Bringer' in combatlog:      
-                        shell = win32com.client.Dispatch('WScript.Shell') 
-                        shell.SendKeys("{F4}", 0) 
                 else:
                     time.sleep(0.50) # waiting for a new line
     except:
