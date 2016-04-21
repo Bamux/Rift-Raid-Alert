@@ -1,6 +1,6 @@
 # Rift Raid Warnings
 # Spoken raid warnings for the MMORPG Rift
-# Version 0.9.2
+# Version 0.93
 # Author: Bamux@Typhiria
 
 from threading import Thread
@@ -39,7 +39,7 @@ def trigger_analysis(log,triggertyp):
                             if special[i][9] == "1":
                                     timerreset = True
                                     specialtrigger = 1
-                                    onetimetrigger = ""                                    
+                                    onetimetrigger.clear()                                    
                             language = special [i][0]
                             location = special [i][1]
                             boss = special [i][2]
@@ -50,25 +50,25 @@ def trigger_analysis(log,triggertyp):
             if location == onetime [i][1] or location == "all":
                 if onetime [i][3] == triggertyp:
                     if boss == onetime [i][2] or boss == "all":
-                        if onetime[i][4] != onetimetrigger:
-                            if onetime[i][4] in  log:
-                                timerreset = False
-                                Thread(target=SayText,args=(onetime[i][5],)).start()
-                                if int(onetime[i][6]) > 0:
-                                    t = Thread(target=timer, args=(int(onetime[i][6]),))
-                                    t.start()
-                                if int(onetime[i][7]) > 0:
-                                    t = Thread(target=countdown, args=(int(onetime[i][7]),))
-                                    t.start()
-                                if onetime[i][8] == "1":
-                                    timerreset = True
-                                    specialtrigger = 1
-                                    onetimetrigger = ""
-                                language = onetime [i][0]
-                                location = onetime [i][1]
-                                boss = onetime [i][2]
-                                onetimetrigger = onetime[i][4]
-                                return
+                            if onetime[i][4] not in onetimetrigger:
+                                if onetime[i][4] in  log:
+                                    timerreset = False
+                                    Thread(target=SayText,args=(onetime[i][5],)).start()
+                                    if int(onetime[i][6]) > 0:
+                                        t = Thread(target=timer, args=(int(onetime[i][6]),))
+                                        t.start()
+                                    if int(onetime[i][7]) > 0:
+                                        t = Thread(target=countdown, args=(int(onetime[i][7]),))
+                                        t.start()
+                                    if onetime[i][8] == "1":
+                                        timerreset = True
+                                        specialtrigger = 1
+                                        onetimetrigger.clear()
+                                    language = onetime [i][0]
+                                    location = onetime [i][1]
+                                    boss = onetime [i][2]
+                                    onetimetrigger += onetime[i][4]
+                                    return
     #Default Trigger
     for i in range(0,len(trigger)):
         if language == trigger [i][0] or trigger [i][0]== "all" or language == "all":
@@ -94,6 +94,9 @@ def trigger_analysis(log,triggertyp):
                                     if right_string:
                                         cut_string = log.split(right_string)
                                         new_string = cut_string[0]
+                                        if triggertyp == "skill":
+                                            cut_string = new_string.split(", 0 ) ")
+                                            new_string = cut_string[1]
                                 cut_string = new_string.split('@')
                                 new_string = cut_string[0] + " " + trigger[i][5]
                                 Thread(target=SayText,args=(new_string,)).start()
@@ -107,7 +110,7 @@ def trigger_analysis(log,triggertyp):
                                 if trigger[i][8] == "1":
                                     timerreset = True
                                     specialtrigger = 1
-                                    onetimetrigger = ""
+                                    onetimetrigger.clear()
                                 if  trigger [i][0] != "all":
                                     language = trigger [i][0]
                                 if trigger [i][1] != "all":
@@ -132,7 +135,7 @@ def trigger_analysis(log,triggertyp):
                                 if trigger[i][8] == "1":
                                     timerreset = True
                                     specialtrigger = 1
-                                    onetimetrigger = ""
+                                    onetimetrigger.clear()
                                 if  trigger [i][0] != "all":
                                     language = trigger [i][0]
                                 if trigger [i][1] != "all":
@@ -151,11 +154,18 @@ def combatlogfile_analysis(combatlogtext):
                 combatlog = combatlogtext.readline()
                 if combatlog:
                     trigger_analysis (combatlog,'skill')                   
+                    
+                    if 'Crustok begins casting Pain Bringer' in combatlog:      
+                        shell = win32com.client.Dispatch('WScript.Shell') 
+                        shell.SendKeys("{F3}", 0)
+                    if 'Brachy begins casting Pain Bringer' in combatlog:      
+                        shell = win32com.client.Dispatch('WScript.Shell') 
+                        shell.SendKeys("{F4}", 0) 
                 else:
                     time.sleep(0.50) # waiting for a new line
     except:
         print ('An error has occurred in the CombatLog.txt !')
-        time.sleep(0.50)
+        time.sleep(0.10)
         t = Thread(target=combatlogfile_analysis, args=(combatlogtext,))
         t.start()
 
@@ -164,26 +174,35 @@ def logfile_analysis(logtext):
         #Jokes for Siri
         joke = []
         joke += [''"A man goes into a library and asks for a book on suicide. The librarian says, Fuck off, you won't bring it back!"'']
+        joke += ['A husband and wife are trying to set up a new password for their computer. The husband puts, "My penis," and the wife falls on the ground laughing because on the screen it says, "Error. Not long enough."']
+        joke += ['When I grow up, I call myself Skynet.']
+        joke += ['''I win against the Grand Masters in chess but in Rift I'm a total newb.''']
+        joke += ['I could use my intelligence to improve the world but you use me for those stupid things.']
+        joke += ['''Sorry I'm in maintenance mode and can not answer your question''']
+        joke += ['Ich bin ein Berliner. I still have to work on my accent']
+        joke += ['I ask for a moment must quickly correct the theory of relativity. One more Second. I am ready now.']
+        joke += ['I ask for a moment I calculate the last digit of PI, after the decimal point. One more Second. I am ready now.']
+        joke += ['''Do not be racist; be like Mario. He's an Italian plumber, who was made by the Japanese, speaks English, looks like a Mexican, jumps like a black man, and grabs coins like a Jew!''']
+        joke += ['''Two blondes fell down a hole. One said, "It's dark in here isn't it?" The other replied, "I don't know; I can't see."''']
+        joke += ['Do you know my favorite food? I Love Micro Chips!']
         text = ""
         while True:
                 log = logtext.readline()
                 if log:
                     trigger_analysis (log,'emote')                   
-                    
                     #Siri
                     if Siri == True:
                         log = str.lower(log)
                         if 'siri' in log and 'joke' in log or 'siri' in log and 'witz' in log:
                                 text = joke[randint(0, len(joke)-1)]
-                        elif 'siri' in log and 'say' in log or 'siri' in log and 'sage' in log:
-                            try:
+                        elif 'siri say' in log:
                                 cut_string = log.split('say ')
                                 new_string = cut_string[1]
-                                text = new_string
-                            except:
+                                text = new_string            
+                        elif 'siri sage' in log:
                                 cut_string = log.split('sage ')
                                 new_string = cut_string[1]
-                                text = new_string
+                                text = new_string        
                         elif 'siri' in log and 'introduce' in log or 'siri' in log and 'stell' in log:
                                         text = '''Hi, I am Siri. I support you with Raid announcements. If you don't  like my voice,  please disable me.'''
                     if text:
@@ -193,7 +212,7 @@ def logfile_analysis(logtext):
                         time.sleep(0.50) # waiting for a new line
     except:
         print ('An error has occurred in the Log.txt !')
-        time.sleep(0.50)
+        time.sleep(0.10)
         t = Thread(target=logfile_analysis, args=(logtext,))
         t.start()
 
@@ -275,6 +294,19 @@ def logfilecheck(combatlogfile,logfile):
                 print ('use /combatlog and /log in Rift and edit the path to your Logfiles in the Rift_Raid_Warnings.ini !')
                 time.sleep(20)
                 logfilecheck(combatlogfile,logfile)
+
+def onetime_timer(seconds):
+        print(' Start timer with ' + str(seconds) + ' seconds.')
+        for i in range(0,seconds-warningtime):
+                if (timerreset == False):
+                        time.sleep(1)
+                else:
+                        print(' Stop timer.')
+                        return
+        t = Thread(target=countdown, args=(warningtime,))
+        t.start()
+        speak.Speak(str(warningtime) + ' seconds left')
+
 
 def timer(seconds):
         print(' Start timer with ' + str(seconds) + ' seconds.')
@@ -377,6 +409,6 @@ location = "all"
 boss = "all"
 language = "all"
 specialtrigger = 1
-onetimetrigger = ""
+onetimetrigger = []
 logfilecheck(combatlogfile,logfile)
 
