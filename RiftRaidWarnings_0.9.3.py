@@ -16,6 +16,7 @@ def trigger_analysis(log,triggertyp):
     global boss
     global specialtrigger
     global onetimetrigger
+    global siri
     
     #Special Trigger
     for i in range(0,len(special)):
@@ -24,6 +25,7 @@ def trigger_analysis(log,triggertyp):
                 if special [i][3] == triggertyp:
                     if boss == special [i][2] or boss == "all":
                         if special[i][4] in  log:
+                            siri = False
                             if specialtrigger ==  1:
                                     Thread(target=SayText,args=(special[i][5],)).start()
                                     specialtrigger = 2
@@ -38,6 +40,7 @@ def trigger_analysis(log,triggertyp):
                                     t.start()
                             if special[i][9] == "1":
                                     timerreset = True
+                                    siri = True
                                     specialtrigger = 1
                                     onetimetrigger.clear()                                    
                             language = special [i][0]
@@ -53,6 +56,7 @@ def trigger_analysis(log,triggertyp):
                             if onetime[i][4] not in onetimetrigger:
                                 if onetime[i][4] in  log:
                                     timerreset = False
+                                    siri = False
                                     Thread(target=SayText,args=(onetime[i][5],)).start()
                                     if int(onetime[i][6]) > 0:
                                         t = Thread(target=timer, args=(int(onetime[i][6]),))
@@ -62,6 +66,7 @@ def trigger_analysis(log,triggertyp):
                                         t.start()
                                     if onetime[i][8] == "1":
                                         timerreset = True
+                                        siri = True
                                         specialtrigger = 1
                                         onetimetrigger.clear()
                                     language = onetime [i][0]
@@ -98,9 +103,18 @@ def trigger_analysis(log,triggertyp):
                                             cut_string = new_string.split(", 0 ) ")
                                             new_string = cut_string[1]
                                 cut_string = new_string.split('@')
-                                new_string = cut_string[0] + " " + trigger[i][5]
-                                Thread(target=SayText,args=(new_string,)).start()
+                                text = cut_string[0]
+                                if '$' == trigger[i][5][0]:
+                                    cut_string = trigger[i][5].split('$player ')
+                                    new_string = cut_string[1]                                    
+                                    text = text + " " + new_string
+                                else:
+                                    cut_string = trigger[i][5].split(' $player')
+                                    new_string = cut_string[0]                                    
+                                    text = new_string + " " + text
+                                Thread(target=SayText,args=(text,)).start()
                                 timerreset = False
+                                siri = False
                                 if int(trigger[i][6]) > 0:
                                     t = Thread(target=timer, args=(int(trigger[i][6]),))
                                     t.start()
@@ -109,6 +123,7 @@ def trigger_analysis(log,triggertyp):
                                     t.start()
                                 if trigger[i][8] == "1":
                                     timerreset = True
+                                    siri = True
                                     specialtrigger = 1
                                     onetimetrigger.clear()
                                 if  trigger [i][0] != "all":
@@ -125,6 +140,7 @@ def trigger_analysis(log,triggertyp):
                         else:
                             if trigger[i][4] in  log:
                                 timerreset = False
+                                siri = False
                                 Thread(target=SayText,args=(trigger[i][5],)).start()
                                 if int(trigger[i][6]) > 0:
                                     t = Thread(target=timer, args=(int(trigger[i][6]),))
@@ -134,6 +150,7 @@ def trigger_analysis(log,triggertyp):
                                     t.start()
                                 if trigger[i][8] == "1":
                                     timerreset = True
+                                    siri = True
                                     specialtrigger = 1
                                     onetimetrigger.clear()
                                 if  trigger [i][0] != "all":
@@ -184,7 +201,7 @@ def logfile_analysis(logtext):
                 if log:
                     trigger_analysis (log,'emote')                   
                     #Siri
-                    if Siri == True:
+                    if siri == True:
                         log = str.lower(log)
                         if 'siri' in log and 'joke' in log or 'siri' in log and 'witz' in log:
                                 text = joke[randint(0, len(joke)-1)]
@@ -397,7 +414,7 @@ print ('Make sure you use /combatlog and /log in Rift after each game restart !'
 speak = win32com.client.Dispatch('Sapi.SpVoice')
 speak.Volume = volume
 timerreset = True
-Siri = True
+siri = True
 location = "all"
 boss = "all"
 language = "all"
