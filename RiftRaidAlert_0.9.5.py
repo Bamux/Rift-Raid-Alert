@@ -159,9 +159,7 @@ def trigger_analysis(log, triggertyp):
                             break
 
 
-# noinspection PyBroadException
 def combatlogfile_analysis(combatlogtext):
-    # noinspection PyBroadException
     try:
         while True:
             combatlog = combatlogtext.readline()
@@ -181,6 +179,18 @@ def logfile_analysis(logtext):
     try:
         # Jokes for Siri
         joke = []
+        joke += [''"A man goes into a library and asks for a book on suicide. The librarian says, Fuck off, you won't bring it back!"'']
+        joke += ['A husband and wife are trying to set up a new password for their computer. The husband puts, "My penis," and the wife falls on the ground laughing because on the screen it says, "Error. Not long enough."']
+        joke += ['When I grow up, I call myself Skynet.']
+        joke += ['''I win against the Grand Masters in chess but in Rift I'm a total newb.''']
+        joke += ['I could use my intelligence to improve the world but you use me for those stupid things.']
+        joke += ['''Sorry I'm in maintenance mode and can not answer your question''']
+        joke += ['Ich bin ein Berliner. I still have to work on my accent']
+        joke += ['I ask for a moment must quickly correct the theory of relativity. One more Second. I am ready now.']
+        joke += ['I ask for a moment I calculate the last digit of PI, after the decimal point. One more Second. I am ready now.']
+        joke += ['''Do not be racist; be like Mario. He's an Italian plumber, who was made by the Japanese, speaks English, looks like a Mexican, jumps like a black man, and grabs coins like a Jew!''']
+        joke += ['''Two blondes fell down a hole. One said, "It's dark in here isn't it?" The other replied, "I don't know; I can't see."''']
+        joke += ['Do you know my favorite food? I Love Micro Chips!']
         text = ""
         while True:
             log = logtext.readline()
@@ -215,35 +225,32 @@ def logfile_analysis(logtext):
 
 def logfilecheck():
     global combatlogfile, logfile
-    # noinspection PyBroadException
+    logtext = ""
+    combatlogtext = ""
     try:
         combatlogtext = open(combatlogfile, 'r')
         print('CombatLog.txt found')
         combatlog_exists = True
     except:
         print('Log.txt not found, checking common locations')
-        # noinspection PyBroadException
         try:
             combatlogfile = os.path.expanduser('~\Documents\RIFT\CombatLog.txt')
             combatlogtext = open(combatlogfile, 'r')
             print('CombatLog.txt found')
             combatlog_exists = True
         except:
-            # noinspection PyBroadException
             try:
                 combatlogfile = winshell.desktop() + 'RIFT Game\CombatLog.txt'
                 combatlogtext = open(combatlogfile, 'r')
                 print('CombatLog.txt found')
                 combatlog_exists = True
             except:
-                # noinspection PyBroadException
                 try:
                     combatlogfile = 'C:\Program Files (x86)\RIFT Game\CombatLog.txt'
                     combatlogtext = open(combatlogfile, 'r')
                     print('CombatLog.txt found')
                     combatlog_exists = True
                 except:
-                    # noinspection PyBroadException
                     try:
                         combatlogfile = 'C:\Programs\RIFT~1\CombatLog.txt'
                         combatlogtext = open(combatlogfile, 'r')
@@ -253,35 +260,30 @@ def logfilecheck():
                         print('Error! could not find the CombatLog File')
                         speak.Speak('CombatLog File not found!')
                         combatlog_exists = False
-    # noinspection PyBroadException
     try:
         logtext = open(logfile, 'r')
         print('Log.txt found')
         log_exists = True
     except:
         print('Log.txt not found, checking common locations')
-        # noinspection PyBroadException
         try:
             logfile = os.path.expanduser('~\Documents\RIFT\Log.txt')
             logtext = open(logfile, 'r')
             print('Log.txt found')
             log_exists = True
         except:
-            # noinspection PyBroadException
             try:
                 logfile = winshell.desktop() + 'RIFT Game\Log.txt'
                 logtext = open(logfile, 'r')
                 print('Log.txt found')
                 log_exists = True
             except:
-                # noinspection PyBroadException
                 try:
                     logfile = 'C:\Program Files (x86)\RIFT Game\Log.txt'
                     logtext = open(logfile, 'r')
                     print('Log.txt found')
                     log_exists = True
                 except:
-                    # noinspection PyBroadException
                     try:
                         logfile = 'C:\Programs\RIFT~1\Log.txt'
                         logtext = open(logfile, 'r')
@@ -292,9 +294,7 @@ def logfilecheck():
                         speak.Speak('Logfile not found!')
                         log_exists = False
     if log_exists and combatlog_exists:
-        # noinspection PyUnboundLocalVariable
         combatlogtext.seek(0, 2)  # jump to the end of the CombatLog.txt
-        # noinspection PyUnboundLocalVariable
         logtext.seek(0, 2)  # jump to the end of the Log.txt
         t = Thread(target=combatlogfile_analysis, args=(combatlogtext,))
         t.start()
@@ -334,7 +334,6 @@ def timer(seconds):
 def countdown(count):
     print('Start countdown with ' + str(count) + ' seconds.')
     for i in range(0, count):
-        # print (count-i)
         if not timerreset:
             if count - i < 4:
                 Thread(target=saytext, args=(count - i,)).start()
@@ -346,9 +345,7 @@ def countdown(count):
 
 def saytext(text):
     if text:
-        # noinspection PyBroadException
         try:
-            # noinspection PyUnresolvedReferences,PyUnresolvedReferences
             pythoncom.CoInitializeEx(pythoncom.COINIT_MULTITHREADED)
         except:
             pass
@@ -357,10 +354,9 @@ def saytext(text):
 
 
 # get parametrs from Rift_Raid_Warnings.ini
-# noinspection PyBroadException
+volume = 100
 try:
     ini = open('RiftRaidAlert.ini', 'r')
-    # noinspection PyBroadException
     try:
         trigger = []
         onetime = []
@@ -380,12 +376,8 @@ try:
                     if 'combatfile' in line_type:
                         combatlogfile = line_data
                     if 'volume' in line_type:
-                        # noinspection PyBroadException
-                        try:
-                            volume = int(line_data)
-                            if volume < 0 or volume > 100:
-                                volume = 100
-                        except:
+                        volume = int(line_data)
+                        if volume < 0 or volume > 100:
                             volume = 100
                     if 'warningtime' in line_type:
                         warningtime = int(line_data)
@@ -413,7 +405,6 @@ except:
     sys.exit('RiftRaidWarnings.ini not found')
 print('Make sure you use /combatlog and /log in Rift after each game restart !')
 speak = win32com.client.Dispatch('Sapi.SpVoice')
-# noinspection PyUnboundLocalVariable
 speak.Volume = volume
 timerreset = True
 siri = True
