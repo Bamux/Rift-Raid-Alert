@@ -9,7 +9,6 @@ import os, time
 import string, sys, re, pythoncom
 import win32com.client # the Python for Windows extensions (win32com.client) should be installed https://sourceforge.net/projects/pywin32/files/pywin32/
 
-
 def trigger_analysis(log,triggertyp):
     global timerreset
     global language
@@ -155,23 +154,35 @@ def trigger_analysis(log,triggertyp):
                             break
                         
 def combatlogfile_analysis(combatlogtext):
-    #try:
+    try:
         while True:
                 combatlog = combatlogtext.readline()
                 if combatlog:
                     trigger_analysis (combatlog,'skill')                   
                 else:
                     time.sleep(0.50) # waiting for a new line
-    #except:
-        #print ('An error has occurred in the CombatLog.txt !')
-        #time.sleep(0.10)
-        #t = Thread(target=combatlogfile_analysis, args=(combatlogtext,))
-        #t.start()
+    except:
+        print ('An error has occurred in the CombatLog.txt !')
+        time.sleep(0.10)
+        t = Thread(target=combatlogfile_analysis, args=(combatlogtext,))
+        t.start()
 
 def logfile_analysis(logtext):
     try:
         #Jokes for Siri
         joke = []
+        joke += [''"A man goes into a library and asks for a book on suicide. The librarian says, Fuck off, you won't bring it back!"'']
+        joke += ['A husband and wife are trying to set up a new password for their computer. The husband puts, "My penis," and the wife falls on the ground laughing because on the screen it says, "Error. Not long enough."']
+        joke += ['When I grow up, I call myself Skynet.']
+        joke += ['''I win against the Grand Masters in chess but in Rift I'm a total newb.''']
+        joke += ['I could use my intelligence to improve the world but you use me for those stupid things.']
+        joke += ['''Sorry I'm in maintenance mode and can not answer your question''']
+        joke += ['Ich bin ein Berliner. I still have to work on my accent']
+        joke += ['I ask for a moment must quickly correct the theory of relativity. One more Second. I am ready now.']
+        joke += ['I ask for a moment I calculate the last digit of PI, after the decimal point. One more Second. I am ready now.']
+        joke += ['''Do not be racist; be like Mario. He's an Italian plumber, who was made by the Japanese, speaks English, looks like a Mexican, jumps like a black man, and grabs coins like a Jew!''']
+        joke += ['''Two blondes fell down a hole. One said, "It's dark in here isn't it?" The other replied, "I don't know; I can't see."''']
+        joke += ['Do you know my favorite food? I Love Micro Chips!']
         text = ""
         while True:
                 log = logtext.readline()
