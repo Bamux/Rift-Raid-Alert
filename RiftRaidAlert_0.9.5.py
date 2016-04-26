@@ -16,6 +16,7 @@ from threading import Thread
 def trigger_analysis(log, triggertyp):
     global timerreset, language, location, boss, specialtrigger, timeout_trigger, siri
     trigger_found = False
+
     # Default Trigger
     for i in range(0, len(trigger)):
         if language == trigger[i][0] \
@@ -133,6 +134,7 @@ def trigger_analysis(log, triggertyp):
                                         else:
                                             boss = trigger[i][2]
                                     break
+
     # Special Trigger
     for i in range(0, len(special)):
         if language == special[i][0] or language == "all":
@@ -175,23 +177,29 @@ def combatlogfile_analysis(combatlogtext):
 
 
 def logfile_analysis(logtext):
-    # noinspection PyBroadException,PyBroadException
     try:
         # Jokes for Siri
         joke = []
-        joke += [''"A man goes into a library and asks for a book on suicide. The librarian says, Fuck off, you won't bring it back!"'']
-        joke += ['A husband and wife are trying to set up a new password for their computer. The husband puts, "My penis," and the wife falls on the ground laughing because on the screen it says, "Error. Not long enough."']
+        joke += [''"A man goes into a library and asks for a book on suicide."
+                 " The librarian says, Fuck off, you won't bring it back!"'']
+        joke += ['A husband and wife are trying to set up a new password for their computer. The husband puts,'
+                 ' "My penis," and the wife falls on the ground laughing because on the screen it says,'
+                 ' "Error. Not long enough."']
         joke += ['When I grow up, I call myself Skynet.']
         joke += ['''I win against the Grand Masters in chess but in Rift I'm a total newb.''']
-        joke += ['I could use my intelligence to improve the world but you use me for those stupid things.']
+        joke += ['I could use my intelligence to improve the world but you used me for this.']
         joke += ['''Sorry I'm in maintenance mode and can not answer your question''']
         joke += ['Ich bin ein Berliner. I still have to work on my accent']
         joke += ['I ask for a moment must quickly correct the theory of relativity. One more Second. I am ready now.']
-        joke += ['I ask for a moment I calculate the last digit of PI, after the decimal point. One more Second. I am ready now.']
-        joke += ['''Do not be racist; be like Mario. He's an Italian plumber, who was made by the Japanese, speaks English, looks like a Mexican, jumps like a black man, and grabs coins like a Jew!''']
-        joke += ['''Two blondes fell down a hole. One said, "It's dark in here isn't it?" The other replied, "I don't know; I can't see."''']
+        joke += ['I ask for a moment I calculate the last digit of PI, after the decimal point. One more Second.'
+                 ' I am ready now.']
+        joke += ['''Do not be racist; be like Mario. He's an Italian plumber, who was made by the Japanese,
+                 speaks English, looks like a Mexican, jumps like a black man, and grabs coins like a Jew!''']
+        joke += ['''Two blondes fell down a hole. One said, "It's dark in here isn't it?" The other replied,
+                 "I don't know; I can't see."''']
         joke += ['Do you know my favorite food? I Love Micro Chips!']
         text = ""
+
         while True:
             log = logtext.readline()
             if log:
@@ -210,7 +218,8 @@ def logfile_analysis(logtext):
                         new_string = cut_string[1]
                         text = new_string
                     elif 'siri' in log and 'introduce' in log or 'siri' in log and 'stell' in log:
-                        text = '''Hi, I am Siri. I support you with Raid announcements. If you don't  like my voice,  please disable me.'''
+                        text = '''Hi, I am Siri. I support you with Raid announcements. If you don't  like my voice,
+                                 please disable me.'''
                 if text:
                     Thread(target=saytext, args=(text,)).start()
                     text = ""
@@ -227,6 +236,7 @@ def logfilecheck():
     global combatlogfile, logfile
     logtext = ""
     combatlogtext = ""
+
     try:
         combatlogtext = open(combatlogfile, 'r')
         print('CombatLog.txt found')
@@ -353,8 +363,8 @@ def saytext(text):
         speak.Speak(text)
 
 
-# get parametrs from Rift_Raid_Warnings.ini
 volume = 100
+# get parametrs from Rift_Raid_Warnings.ini
 try:
     ini = open('RiftRaidAlert.ini', 'r')
     try:
@@ -403,6 +413,7 @@ except:
     print('Cannot find Parameter file RiftRaidWarnings.ini')
     time.sleep(20)
     sys.exit('RiftRaidWarnings.ini not found')
+
 print('Make sure you use /combatlog and /log in Rift after each game restart !')
 speak = win32com.client.Dispatch('Sapi.SpVoice')
 speak.Volume = volume
