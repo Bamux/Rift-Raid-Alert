@@ -167,22 +167,22 @@ def trigger_analysis(log, triggertyp):
 
 
 def combatlogfile_analysis(combatlogtext):
-    # try:
+    try:
         while True:
             combatlog = combatlogtext.readline()
             if combatlog:
                 trigger_analysis(combatlog, 'skill')
             else:
                 time.sleep(0.50)  # waiting for a new line
-    # except:
-        # print('An error has occurred in the CombatLog.txt !')
-        # time.sleep(0.10)
-        # t = Thread(target=combatlogfile_analysis, args=(combatlogtext,))
-        # t.start()
+    except:
+        print('An error has occurred in the CombatLog.txt !')
+        time.sleep(0.10)
+        t = Thread(target=combatlogfile_analysis, args=(combatlogtext,))
+        t.start()
 
 
 def logfile_analysis(logtext):
-    # try:
+    try:
         # Jokes for Siri
         joke = []
         joke += [''"A man goes into a library and asks for a book on suicide."
@@ -230,11 +230,11 @@ def logfile_analysis(logtext):
                     text = ""
             else:
                 time.sleep(0.50)  # waiting for a new line
-    # except:
-        # print('An error has occurred in the Log.txt !')
-        # time.sleep(0.10)
-        # t = Thread(target=logfile_analysis, args=(logtext,))
-        # t.start()
+    except:
+        print('An error has occurred in the Log.txt !')
+        time.sleep(0.10)
+        t = Thread(target=logfile_analysis, args=(logtext,))
+        t.start()
 
 
 def logfilecheck():
