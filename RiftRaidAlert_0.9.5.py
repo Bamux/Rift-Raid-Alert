@@ -56,8 +56,13 @@ def trigger_analysis(log, triggertyp):
                                             cut_string = log.split(right_string)
                                             new_string = cut_string[0]
                                             if triggertyp == "skill":
-                                                cut_string = new_string.split(", 0 ) ")
-                                                new_string = cut_string[1]
+                                                if ", 0 ) " in new_string:
+                                                    cut_string = new_string.split(", 0 ) ")
+                                                    new_string = cut_string[1]
+                                            else:
+                                                if ": " in new_string:
+                                                    cut_string = new_string.split(": ")
+                                                    new_string = cut_string[1]
                                     cut_string = new_string.split('@')
                                     text = cut_string[0]
                                     if len(trigger[i][5]) > 7:
@@ -146,15 +151,15 @@ def trigger_analysis(log, triggertyp):
                             if specialtrigger == 1:
                                 Thread(target=saytext, args=(special[i][5],)).start()
                                 specialtrigger = 2
-                            else:
+                            elif specialtrigger == 2:
                                 Thread(target=saytext, args=(special[i][6],)).start()
+                                specialtrigger = 3
+                            elif specialtrigger == 3:
+                                Thread(target=saytext, args=(special[i][7],)).start()
+                                specialtrigger = 4
+                            elif specialtrigger == 4:
+                                Thread(target=saytext, args=(special[i][8],)).start()
                                 specialtrigger = 1
-                            if int(special[i][7]) > 0:
-                                t = Thread(target=timer, args=(int(special[i][7]),))
-                                t.start()
-                            if int(special[i][8]) > 0:
-                                t = Thread(target=countdown, args=(int(special[i][8]),))
-                                t.start()
                             language = special[i][0]
                             location = special[i][1]
                             boss = special[i][2]
@@ -162,22 +167,22 @@ def trigger_analysis(log, triggertyp):
 
 
 def combatlogfile_analysis(combatlogtext):
-    try:
+    # try:
         while True:
             combatlog = combatlogtext.readline()
             if combatlog:
                 trigger_analysis(combatlog, 'skill')
             else:
                 time.sleep(0.50)  # waiting for a new line
-    except:
-        print('An error has occurred in the CombatLog.txt !')
-        time.sleep(0.10)
-        t = Thread(target=combatlogfile_analysis, args=(combatlogtext,))
-        t.start()
+    # except:
+        # print('An error has occurred in the CombatLog.txt !')
+        # time.sleep(0.10)
+        # t = Thread(target=combatlogfile_analysis, args=(combatlogtext,))
+        # t.start()
 
 
 def logfile_analysis(logtext):
-    try:
+    # try:
         # Jokes for Siri
         joke = []
         joke += [''"A man goes into a library and asks for a book on suicide."
@@ -225,11 +230,11 @@ def logfile_analysis(logtext):
                     text = ""
             else:
                 time.sleep(0.50)  # waiting for a new line
-    except:
-        print('An error has occurred in the Log.txt !')
-        time.sleep(0.10)
-        t = Thread(target=logfile_analysis, args=(logtext,))
-        t.start()
+    # except:
+        # print('An error has occurred in the Log.txt !')
+        # time.sleep(0.10)
+        # t = Thread(target=logfile_analysis, args=(logtext,))
+        # t.start()
 
 
 def logfilecheck():
