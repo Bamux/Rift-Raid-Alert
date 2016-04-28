@@ -17,6 +17,7 @@ def trigger_analysis(log, triggertyp):
     global timerreset, language, location, boss, specialtrigger, timeout_trigger, siri, stacks, stacks_trigger
     trigger_found = False
     stacks_found = False
+    text = ""
 
     # Default Trigger
     for i in range(0, len(trigger)):
@@ -51,19 +52,7 @@ def trigger_analysis(log, triggertyp):
                                     if ": " in log:
                                         cut_string = log.split(": ")
                                         log = cut_string[1]
-                                if int(trigger[i][9]) > 0:
-                                    for z in range(0, len(stacks_trigger)):
-                                        if log == stacks_trigger[z][0]:
-                                            stacks_found = True
-                                            if stacks_trigger[z][1] < int(trigger[i][9]):
-                                                stacks_trigger[z][1] += 1
-                                                trigger_found = True
-                                            else:
-                                                trigger_found = False
-                                    if not stacks_found:
-                                        stacks_trigger += [[log, 2]]
-                                        trigger_found = True
-                                    print(stacks_trigger)
+
                                 for z in range(0, len(timeout_trigger)):
                                     if trigger[i][4] == timeout_trigger[z]:
                                         trigger_found = True
@@ -80,52 +69,86 @@ def trigger_analysis(log, triggertyp):
                                             cut_string = log.split(right_string)
                                             new_string = cut_string[0]
                                     cut_string = new_string.split('@')
-                                    text = cut_string[0]
+                                    player = cut_string[0]
+                                    cut_string = player.split(' ')
+                                    player = cut_string[0]
                                     if len(trigger[i][5]) > 7:
                                         if '$' == trigger[i][5][0]:
                                             cut_string = trigger[i][5].split('$player ')
                                             new_string = cut_string[1]
-                                            text = text + " " + new_string
+                                            text = player + " " + new_string
                                         else:
                                             if "$player" in trigger[i][5]:
                                                 cut_string = trigger[i][5].split(' $player')
                                                 new_string = cut_string[0]
-                                                text = new_string + " " + text
+                                                text = new_string + " " + player
                                             else:
                                                 text = trigger[i][5]
-                                    Thread(target=saytext, args=(text,)).start()
-                                    timerreset = False
-                                    siri = False
-                                    if int(trigger[i][6]) > 0:
-                                        t = Thread(target=timer, args=(int(trigger[i][6]),))
-                                        t.start()
-                                    if int(trigger[i][7]) > 0:
-                                        t = Thread(target=countdown, args=(int(trigger[i][7]),))
-                                        t.start()
-                                    if int(trigger[i][8]) > 0:
-                                        t = Thread(target=timeout, args=(int(trigger[i][8]), trigger[i][4]))
-                                        t.start()
-                                        timeout_trigger += [trigger[i][4]]
-                                    if trigger[i][10] == "1":
-                                        timerreset = True
-                                        siri = True
-                                        specialtrigger = 5
-                                        timeout_trigger.clear()
-                                        stacks_trigger.clear()
-                                    if trigger[i][0] != "all":
-                                        language = trigger[i][0]
-                                    if trigger[i][1] != "all":
-                                        location = trigger[i][1]
-                                    if trigger[i][2] != "all":
-                                        if trigger[i][2] == "combat_end":
-                                            print("Combat End")
-                                            boss = "all"
-                                        elif trigger[i][2] == "combat_begin":
-                                            print("Combat Begin")
-                                            boss = "all"
+
+                                    if int(trigger[i][9]) > 0:
+                                        for z in range(0, len(stacks_trigger)):
+                                            if player == stacks_trigger[z][0]:
+                                                stacks_found = True
+                                                trigger_found = True
+                                                stacks_trigger[z][1] += 1
+                                                if stacks_trigger[z][1] >= int(trigger[i][9]):
+                                                    if len(stacks_trigger) == 1:
+                                                        trigger_found = False
+                                                    else:
+                                                        for x in range(0, len(stacks_trigger)):
+                                                            if stacks_trigger[x][1] < int(trigger[i][9]):
+                                                                trigger_found = False
+                                        if not stacks_found:
+                                            stacks_trigger += [[str(player), 1]]
+                                            trigger_found = True
+                                        print(stacks_trigger)
+
+                                    if not trigger_found:
+                                        if int(trigger[i][9]) < 0:
+                                            if len(stacks_trigger) > 1:
+                                                for z in range(0, len(stacks_trigger)):
+                                                    if z < len(stacks_trigger):
+                                                        if player in stacks_trigger[z][0]:
+                                                            del stacks_trigger[z]
+                                                if stacks_trigger[0][1] >= abs(int(trigger[i][9])):
+                                                    Thread(target=saytext, args=(trigger[i][5],)).start()
+                                            else:
+                                                stacks_trigger.clear()
                                         else:
-                                            boss = trigger[i][2]
-                                    break
+                                            Thread(target=saytext, args=(text,)).start()
+
+                                        timerreset = False
+                                        siri = False
+                                        if int(trigger[i][6]) > 0:
+                                            t = Thread(target=timer, args=(int(trigger[i][6]),))
+                                            t.start()
+                                        if int(trigger[i][7]) > 0:
+                                            t = Thread(target=countdown, args=(int(trigger[i][7]),))
+                                            t.start()
+                                        if int(trigger[i][8]) > 0:
+                                            t = Thread(target=timeout, args=(int(trigger[i][8]), trigger[i][4]))
+                                            t.start()
+                                            timeout_trigger += [trigger[i][4]]
+                                        if trigger[i][10] == "1":
+                                            timerreset = True
+                                            siri = True
+                                            specialtrigger = 5
+                                            timeout_trigger.clear()
+                                            stacks_trigger.clear()
+                                        if trigger[i][0] != "all":
+                                            language = trigger[i][0]
+                                        if trigger[i][1] != "all":
+                                            location = trigger[i][1]
+                                        if trigger[i][2] != "all":
+                                            if trigger[i][2] == "combat_end":
+                                                print("Combat End")
+                                                boss = "all"
+                                            elif trigger[i][2] == "combat_begin":
+                                                print("Combat Begin")
+                                                boss = "all"
+                                            else:
+                                                boss = trigger[i][2]
+                                        break
                         else:
                             if trigger[i][4] in log:
                                 if int(trigger[i][9]) > 0:
@@ -199,18 +222,18 @@ def trigger_analysis(log, triggertyp):
 
 
 def combatlogfile_analysis(combatlogtext):
-    # try:
+    try:
         while True:
             combatlog = combatlogtext.readline()
             if combatlog:
                 trigger_analysis(combatlog, 'skill')
             else:
                 time.sleep(0.50)  # waiting for a new line
-    # except:
-    #     print('An error has occurred in the CombatLog.txt !')
-    #     time.sleep(0.10)
-    #     t = Thread(target=combatlogfile_analysis, args=(combatlogtext,))
-    #     t.start()
+    except:
+        print('An error has occurred in the CombatLog.txt !')
+        time.sleep(0.10)
+        t = Thread(target=combatlogfile_analysis, args=(combatlogtext,))
+        t.start()
 
 
 def logfile_analysis(logtext):
