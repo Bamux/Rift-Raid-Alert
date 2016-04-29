@@ -1,6 +1,6 @@
 # Rift Raid Alert
 # Spoken raid warnings for the MMORPG Rift
-# Version 0.9.6
+# Version 0.9.7
 # Author: Bamux@Typhiria
 
 import os
