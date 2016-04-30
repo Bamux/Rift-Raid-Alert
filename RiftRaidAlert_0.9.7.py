@@ -1,6 +1,6 @@
 # Rift Raid Alert
 # Spoken raid warnings for the MMORPG Rift
-# Version 0.9.7
+# Version 0.9.6
 # Author: Bamux@Typhiria
 
 import os
@@ -17,7 +17,6 @@ def trigger_analysis(log, triggertyp):
     global timerreset, language, location, boss, specialtrigger, timeout_trigger, siri, stacks, stacks_trigger, depending
     trigger_found = False
     stacks_found = False
-    text = ""
 
     # Default Trigger
     for i in range(0, len(trigger)):
@@ -82,14 +81,14 @@ def trigger_analysis(log, triggertyp):
                                         if '$' == trigger[i][5][0]:
                                             cut_string = trigger[i][5].split('$player ')
                                             new_string = cut_string[1]
-                                            text = player + " " + new_string
+                                            new_string = player + " " + new_string
                                         else:
                                             if "$player" in trigger[i][5]:
                                                 cut_string = trigger[i][5].split(' $player')
                                                 new_string = cut_string[0]
-                                                text = new_string + " " + player
+                                                new_string = new_string + " " + player
                                             else:
-                                                text = trigger[i][5]
+                                                new_string = trigger[i][5]
 
                                     if int(trigger[i][9]) > 0:
                                         for z in range(0, len(stacks_trigger)):
@@ -121,7 +120,7 @@ def trigger_analysis(log, triggertyp):
                                             else:
                                                 stacks_trigger.clear()
                                         else:
-                                            Thread(target=saytext, args=(text,)).start()
+                                            Thread(target=saytext, args=(new_string,)).start()
 
                                         timerreset = False
                                         siri = False
