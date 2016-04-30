@@ -96,6 +96,7 @@ def trigger_analysis(log, triggertyp):
                                                 stacks_found = True
                                                 trigger_found = True
                                                 stacks_trigger[z][1] += 1
+                                                print(stacks_trigger)
                                                 if stacks_trigger[z][1] >= int(trigger[i][9]):
                                                     if len(stacks_trigger) == 1:
                                                         trigger_found = False
@@ -106,20 +107,19 @@ def trigger_analysis(log, triggertyp):
                                         if not stacks_found:
                                             stacks_trigger += [[str(player), 1]]
                                             trigger_found = True
-                                        print(stacks_trigger)
+                                            print(stacks_trigger)
 
                                     if not trigger_found:
                                         if int(trigger[i][9]) < 0:
-                                            if len(stacks_trigger) > 1:
-                                                for z in range(0, len(stacks_trigger)):
-                                                    if z < len(stacks_trigger):
-                                                        if player in stacks_trigger[z][0]:
-                                                            del stacks_trigger[z]
-                                                if stacks_trigger[0][1] >= abs(int(trigger[i][9])):
+                                            if stacks_trigger:
+                                                for z in range(0, len(stacks_trigger) - 1):
+                                                    if player in stacks_trigger[z][0]:
+                                                        del stacks_trigger[z]
+                                                        # print(stacks_trigger)
+                                                if stacks_trigger[0][1] == abs(int(trigger[i][9])):
                                                     Thread(target=saytext, args=(trigger[i][5],)).start()
-                                            else:
-                                                stacks_trigger.clear()
                                         else:
+                                            # print(stacks_trigger)
                                             Thread(target=saytext, args=(new_string,)).start()
 
                                         timerreset = False
@@ -481,6 +481,7 @@ except:
     time.sleep(20)
     sys.exit('RiftRaidWarnings.ini not found')
 
+print ("Raid Rift Alert Version 0.9.7")
 print('Make sure you use /combatlog and /log in Rift after each game restart !')
 speak = win32com.client.Dispatch('Sapi.SpVoice')
 speak.Volume = volume
