@@ -481,7 +481,7 @@ except:
     time.sleep(20)
     sys.exit('RiftRaidWarnings.ini not found')
 
-print ("Raid Rift Alert Version 0.9.7")
+print("Raid Rift Alert Version 0.9.7")
 print('Make sure you use /combatlog and /log in Rift after each game restart !')
 speak = win32com.client.Dispatch('Sapi.SpVoice')
 speak.Volume = volume
