@@ -61,5 +61,6 @@ function slashHandler(h, args)
     print ("/rra stop - Rift Raid Alert stop")
 end
 
+
 print("/rra - for a list of commands")
 Command.Event.Attach(Command.Slash.Register("rra"), slashHandler, "Command.Slash.Register")
