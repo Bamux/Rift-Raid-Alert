@@ -1,5 +1,5 @@
-﻿local function Pagura_Golems_Target_Name()
-	local Crustok = Inspect.Unit.Castbar("u2B75B2CB73ED8E64")
+local function Pagura_Golems_Target_Name()
+    local Crustok = Inspect.Unit.Castbar("u2B75B2CB73ED8E64")
     if Crustok ~= nil then
         if Crustok.abilityName == "Pain Bringer" then
             local Crustok_target = Inspect.Unit.Detail("u2B75B2CB73ED8E64.target")
@@ -8,7 +8,7 @@
             end
         end
     end
-	local Brachy = Inspect.Unit.Castbar("u50D54CD171D9D26A")
+    local Brachy = Inspect.Unit.Castbar("u50D54CD171D9D26A")
     if Brachy ~= nil then
         if Brachy.abilityName == "Pain Bringer" then
             local Brachy_target = Inspect.Unit.Detail("u50D54CD171D9D26A.target")
@@ -17,30 +17,21 @@
             end
         end
     end
-	local Bamux = Inspect.Unit.Castbar("player")
-    if Bamux ~= nil then
-        if Bamux.abilityName == "Ancient Murdantix Spawn" then
-            local Bamux_target = Inspect.Unit.Detail("player.target")
-            if Bamux_target ~= nil then
-                print ("Bamux Target = "..Bamux_target.name)
-            end
-        end
-    end
 end
 
 
 local function getAbilityName()
-	local cast = Inspect.Unit.Castbar("player.target")
+    local cast = Inspect.Unit.Castbar("player.target")
     local target = Inspect.Unit.Detail("player.target")
 	if cast ~= nil and target ~= nil then
-		print("Target = "..target.name..", ability = "..cast.abilityName)
+	    print("Target = "..target.name..", ability = "..cast.abilityName)
     end
     Pagura_Golems_Target_Name()
 end
 
 
 local function rra_start()
-        print ("Rift Raid Alert started")
+	print ("Rift Raid Alert started")
         Command.Event.Attach(Event.Unit.Castbar, getAbilityName, "AbilityName")
 end
 
