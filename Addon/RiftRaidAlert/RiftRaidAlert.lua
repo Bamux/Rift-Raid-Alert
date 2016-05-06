@@ -31,30 +31,31 @@ end
 
 
 local function rra_start()
-	print ("Rift Raid Alert started")
-        Command.Event.Attach(Event.Unit.Castbar, getAbilityName, "AbilityName")
+    print ("Rift Raid Alert started")
+    Command.Event.Attach(Event.Unit.Castbar, getAbilityName, "AbilityName")
 end
 
+
 local function rra_stop()
-        print ("Rift Raid Alert stoped")
-        Command.Event.Detach(Event.Unit.Castbar, getAbilityName, "AbilityName")
+    print ("Rift Raid Alert stoped")
+    Command.Event.Detach(Event.Unit.Castbar, getAbilityName, "AbilityName")
 end
 
 
 function slashHandler(h, args)
-	local r = {}
-	local numargs = 0
-	for token in string.gmatch(args, "[^%s]+") do
-		r[numargs] = token
-		numargs=numargs+1
-	end
+    local r = {}
+    local numargs = 0
+    for token in string.gmatch(args, "[^%s]+") do
+        r[numargs] = token
+        numargs=numargs+1
+    end
     if r[0] == "start" then
-	    rra_start()
-	    return
+        rra_start()
+        return
     end
     if r[0] == "stop" then
-	    rra_stop()
-	    return
+        rra_stop()
+        return
     end
     print ("/rra start - Rift Raid Alert start")
     print ("/rra stop - Rift Raid Alert stop")
