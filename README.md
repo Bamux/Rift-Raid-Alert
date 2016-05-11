@@ -11,4 +11,4 @@ Installation Instructions:
 5.  Start the RiftRaidALert.exe
 6.  write in game Siri introduce yourself for a sound check
 
-Under http://www.mwsreader.com/en/voices/ Under you can download other voices.
+Under http://www.mwsreader.com/en/voices/ you can download other voices.
