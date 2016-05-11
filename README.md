@@ -9,3 +9,6 @@ Installation Instructions:
 4.  Write /log in the rift chatwindow and press enter
 5.  write /rra start in the rift chatwindow and press enter
 5.  Start the RiftRaidALert.exe
+6.  write in game Siri introduce yourself for a sound check
+
+Under http://www.mwsreader.com/en/voices/ Under you can download other voices.
