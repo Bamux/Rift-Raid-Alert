@@ -7,7 +7,7 @@ Installation Instructions:
 2.  Copy the Rift-Raid-Alert-master Folder in your Rift Addon Folder
 3.  Start Rift
 4.  Write /log in the rift chatwindow and press enter
-5.  Write /rra for a list of commands
+5.  Write /rra for a list of commands (/rra start or /rra stop)
 5.  Start the RiftRaidAlert.exe
 6.  Write in game "Siri introduce yourself" for a sound check
 
