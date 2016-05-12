@@ -1,6 +1,6 @@
 # Rift Raid Alert
 # Spoken raid warnings for the MMORPG Rift
-# Version 0.9.8
+# Version 0.1.0
 # Author: Bamux@Typhiria
 
 import os
@@ -17,7 +17,6 @@ def trigger_analysis(log):
     global timerreset, language, location, boss, specialtrigger, timeout_trigger, siri, stacks, stacks_trigger, depending, counter1, counter2
     trigger_found = False
     stacks_found = False
-
 
     # Default Trigger
     for i in range(0, len(trigger)):
@@ -509,8 +508,8 @@ except:
     time.sleep(20)
     sys.exit('RiftRaidWarnings.ini not found')
 
-print("Raid Rift Alert Version 0.9.8")
-print('Make sure you use /combatlog and /log in Rift after each game restart !')
+print("Raid Rift Alert Version 0.1.0")
+print('Make sure you use /log in Rift after each game restart !')
 speak = win32com.client.Dispatch('Sapi.SpVoice')
 speak.Volume = volume
 timerreset = []
