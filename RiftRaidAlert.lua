@@ -140,4 +140,3 @@ end
 rra_bufflist = {}
 print("/rra - for a list of commands")
 Command.Event.Attach(Command.Slash.Register("rra"), slashHandler, "Command.Slash.Register")
-rra_start()
