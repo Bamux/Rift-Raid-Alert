@@ -9,7 +9,7 @@ Installation Instructions:
 4.  Write /log in the rift chatwindow and press enter
 5.  Write /rra start (use /rra stop for stoping Rift Raid Alerts) 
 5.  Start the RiftRaidAlert.exe
-6.  Write in game "Siri introduce yourself" for a sound check
+6.  Write in game "Siri introduce yourself" or "Siri tell me a joke" or "Siri say whatever you want" for a sound check
 7.  Edit the RiftRaidAlert.ini - you can edit/create triggers or change settings (Log.txt path, volume, warningtime)
 
 Under http://www.mwsreader.com/en/voices/ you can download other voices.
