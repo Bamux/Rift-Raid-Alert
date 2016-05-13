@@ -1,5 +1,5 @@
 ﻿
--- print Debuffs on all Player's (Player <-  Debuff) and Buffs on all NPC's (NPC <- Buff)
+-- print Debuffs on all Player's (Player <- Debuff) and Buffs on all NPC's (NPC <- Buff)
 local function getAddBuffName(event, unit, buffs)
     if unit then
         local details = Inspect.Unit.Detail(unit)
