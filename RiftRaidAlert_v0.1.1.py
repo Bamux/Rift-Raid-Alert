@@ -1,6 +1,6 @@
 # Rift Raid Alert
 # Spoken raid warnings for the MMORPG Rift
-# Version 0.1.0
+# Version 0.1.1
 # Author: Bamux@Typhiria
 
 import os
@@ -522,7 +522,7 @@ except:
     time.sleep(20)
     sys.exit('RiftRaidWarnings.ini not found')
 
-print("Raid Rift Alert Version 0.1.0")
+print("Raid Rift Alert Version 0.1.1")
 print('Make sure you use /log in Rift after each game restart !')
 speak = win32com.client.Dispatch('Sapi.SpVoice')
 speak.Volume = volume
