@@ -6,7 +6,7 @@ https://www.youtube.com/watch?v=dMt5PP5oC38&feature=youtu.be
 Installation Instructions:
 
 1.  Download and unzip the Rift-Raid-Alert-master.zip - https://github.com/Bamux/Rift-Raid-Alert/archive/master.zip
-2.  Copy the Rift-Raid-Alert-master Folder in your Rift Addon Folder
+2.  Copy the Rift-Raid-Alert-master folder in your Rift Addon folder
 3.  Start Rift
 4.  Write /log in the rift chatwindow and press enter
 5.  Write /rra start and press enter (use /rra stop for stoping Rift Raid Alerts)
