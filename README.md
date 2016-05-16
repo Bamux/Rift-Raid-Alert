@@ -15,3 +15,12 @@ Installation Instructions:
 7.  Edit the RiftRaidAlert.ini - you can edit/create triggers or change settings (Log.txt path, volume, warningtime)
 
 Under http://www.mwsreader.com/en/voices/ you can download other voices.
+
+How to use Raid Rift Alerts on TeamSpeak:
+
+1. INSTALL VB-CABLE Virtual Audio Device - http://vb-audio.pagesperso-orange.fr/Cable/index.htm
+2. Open the Windows Text to Speech Engine. Default folder is C:\Windows\SysWOW64\Speech\SpeechUX\sapi.cpl
+   Advanced -> choose CABLE Input (VB-Audio Virtual Cable)
+3. Open teamspeak -> Option -> Capture and Create a new Profil, coose CABLE Output (VB-Audio Virtual Cable) as your Playback Device
+4. Read how to use multiple Teamspek Clients - http://www.gameplayinside.com/optimize/multiple-teamspeak-3-clients/ 
+5. Use One Teamspek client with your default profil and the second teamspek Client with your new profil for Raid Rift Alerts
