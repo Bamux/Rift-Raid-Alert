@@ -80,19 +80,18 @@ end
 
 
 local function CombatChange()
-	if not rra_combatbegin then
-		local inspect = Inspect.Unit.Detail
-		local list = Inspect.Unit.List()
-		local format = tostring
-		local units = {}
-		for k,v in pairs(list) do
-			local detail = inspect(format(k))
-			if detail and detail.player == nil and detail.health and detail.health > detail.healthMax*0.98 then
+    if not rra_combatbegin then
+        local inspect = Inspect.Unit.Detail
+        local list = Inspect.Unit.List()
+        local format = tostring
+        for k,v in pairs(list) do
+            local detail = inspect(format(k))
+            if detail and detail.player == nil and detail.health and detail.health > detail.healthMax*0.98 then
                 print("! Combat Begin -> ".. detail.name)
-				rra_combatbegin = true
-			end
-		end
-	end
+                rra_combatbegin = true
+            end
+        end
+    end
 end
 
 
@@ -107,6 +106,7 @@ local function CombatBegin()
         rra_combatbegin = true
     end
 end
+
 
 local function CombatEnd()
     print("Combat End")
