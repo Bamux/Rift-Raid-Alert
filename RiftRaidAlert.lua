@@ -1,5 +1,5 @@
 ﻿
--- print Debuffs on all Player's (Player <- Debuff) and Buffs on all NPC's (NPC <- Buff)
+-- print Debuffs on all Player's (Player <-  NPC) and Buffs on all NPC's (NPC <- Buff)
 local function getAddBuffName(event, unit, buffs)
     if unit then
         local details = Inspect.Unit.Detail(unit)
@@ -79,20 +79,40 @@ local function getAbilityName(event, units)
 end
 
 
-local function CombatBegin()
-    local details = Inspect.Unit.Detail("player.target")
-    if details ~= nil then
-        print("Combat Begin -> " .. details.name)
-    else
-        print("Combat Begin")
-    end
+local function CombatChange()
+	if not rra_combatbegin then
+		local inspect = Inspect.Unit.Detail
+		local list = Inspect.Unit.List()
+		local format = tostring
+		local units = {}
+		for k,v in pairs(list) do
+			local detail = inspect(format(k))
+			if detail and detail.player == nil and detail.health and detail.health > detail.healthMax*0.98 then
+                print("! Combat Begin -> ".. detail.name)
+				rra_combatbegin = true
+			end
+		end
+	end
 end
 
+
+local function CombatBegin()
+    if not rra_combatbegin then
+        local details = Inspect.Unit.Detail("player.target")
+        if details ~= nil then
+            print("Combat Begin -> " .. details.name)
+        else
+            print("Combat Begin")
+        end
+        rra_combatbegin = true
+    end
+end
 
 local function CombatEnd()
     print("Combat End")
     local count = #rra_bufflist
     for i=0, count do rra_bufflist[i]=nil end
+    rra_combatbegin = false
 end
 
 
@@ -100,6 +120,7 @@ local function rra_stop()
     Command.Event.Detach(Event.Buff.Add, getAddBuffName, "buffaddevent")
     Command.Event.Detach(Event.Buff.Remove, getRemoveBuffName, "buffremoveevent")
     Command.Event.Detach(Event.Unit.Castbar, getAbilityName, "AbilityName")
+    Command.Event.Attach(Event.Unit.Detail.Combat, CombatChange, "CombatChange")
     Command.Event.Detach(Event.System.Secure.Enter, CombatBegin, "CombatBegin")
     Command.Event.Detach(Event.System.Secure.Leave, CombatEnd, "CombatEnd")
 end
@@ -110,6 +131,7 @@ local function rra_start()
     Command.Event.Attach(Event.Buff.Add, getAddBuffName, "buffaddevent")
     Command.Event.Attach(Event.Buff.Remove, getRemoveBuffName, "buffremoveevent")
     Command.Event.Attach(Event.Unit.Castbar, getAbilityName, "AbilityName")
+    Command.Event.Attach(Event.Unit.Detail.Combat, CombatChange, "CombatChange")
     Command.Event.Attach(Event.System.Secure.Enter, CombatBegin, "CombatBegin")
     Command.Event.Attach(Event.System.Secure.Leave, CombatEnd, "CombatEnd")
 end
@@ -138,5 +160,7 @@ end
 
 
 rra_bufflist = {}
+rra_combatbegin = false
 print("/rra - for a list of commands")
 Command.Event.Attach(Command.Slash.Register("rra"), slashHandler, "Command.Slash.Register")
+rra_start()
