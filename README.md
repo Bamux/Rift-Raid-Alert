@@ -16,7 +16,7 @@ Installation Instructions:
 
 Under http://www.mwsreader.com/en/voices/ you can download other voices.
 
-How to use Raid Rift Alerts on TeamSpeak:
+How to use Rift Raid Alerts on TeamSpeak:
 
 1. INSTALL VB-CABLE Virtual Audio Device - http://vb-audio.pagesperso-orange.fr/Cable/index.htm
 2. Right click on the windows speaker icon > coose Recording Devices > double clicking CABLE Output > Listen > Playback through this device: coose CABLE Input (VB-Audio Virtual Cable)
