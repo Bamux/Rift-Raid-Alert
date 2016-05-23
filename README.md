@@ -1,7 +1,7 @@
 Rift Raid Alert is a program (written in Python) which can be used to create spoken raid warnings for the MMORPG Rift.
 The current version support announcements for RoF, IGP and MoM.
 
-Video: https://youtu.be/emD0iVqpU84
+Video: https://youtu.be/jGX8BH6vb2w
 
 Installation Instructions:
 
