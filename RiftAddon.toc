@@ -6,11 +6,11 @@ Description = "/rra for a list of commands"
 
 Author = "Bamux@Typhiria"
 
-Version = "0.1"
+Version = "0.1.3"
 
 Email = "my@email"
 
-Environment = "0.9.8"
+Environment = "3.6"
 
 RunOnStartup = {
     "RiftRaidAlert.lua",

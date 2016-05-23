@@ -86,7 +86,7 @@ local function CombatChange()
         local format = tostring
         for k,v in pairs(list) do
             local detail = inspect(format(k))
-            if detail and detail.player == nil and detail.health and detail.health > detail.healthMax*0.98 then
+            if detail and detail.relation == "hostile" and detail.health and detail.health > detail.healthMax*0.98 then
                 print("! Combat Begin -> ".. detail.name)
                 rra_combatbegin = true
             end
@@ -163,4 +163,3 @@ rra_bufflist = {}
 rra_combatbegin = false
 print("/rra - for a list of commands")
 Command.Event.Attach(Command.Slash.Register("rra"), slashHandler, "Command.Slash.Register")
-rra_start()
