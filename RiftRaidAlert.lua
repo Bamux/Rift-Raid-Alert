@@ -80,30 +80,17 @@ end
 
 
 local function CombatChange()
-    if not rra_combatbegin then
+    if rra_combatbegin == "out_of_combat" then
         local inspect = Inspect.Unit.Detail
         local list = Inspect.Unit.List()
         local format = tostring
         for k,v in pairs(list) do
             local detail = inspect(format(k))
-            if detail and detail.relation == "hostile" and detail.health and detail.health > detail.healthMax*0.98 then
+            if detail and detail.relation == "hostile" and detail.health > detail.healthMax*0.98 then
                 print("! Combat Begin -> ".. detail.name)
-                rra_combatbegin = true
+                rra_combatbegin = detail.id
             end
         end
-    end
-end
-
-
-local function CombatBegin()
-    if not rra_combatbegin then
-        local details = Inspect.Unit.Detail("player.target")
-        if details ~= nil then
-            print("Combat Begin -> " .. details.name)
-        else
-            print("Combat Begin")
-        end
-        rra_combatbegin = true
     end
 end
 
@@ -112,7 +99,84 @@ local function CombatEnd()
     print("Combat End")
     local count = #rra_bufflist
     for i=0, count do rra_bufflist[i]=nil end
-    rra_combatbegin = false
+    rra_combatbegin = "out_of_combat"
+    rra_health = 100
+end
+
+
+local function CombatBegin()
+    if rra_combatbegin == "out_of_combat" then
+        local details = Inspect.Unit.Detail("player.target")
+        if details ~= nil then
+            print("Combat Begin -> " .. details.name)
+        else
+            print("Combat Begin")
+        end
+        rra_combatbegin = details.id
+    end
+end
+
+-- print the Hitpoints from the first NPC with agro
+local function CheckHP(units)
+    if rra_combatbegin ~= "out_of_combat" then
+        local detail = Inspect.Unit.Detail(rra_combatbegin)
+        if detail ~= nil then
+            local percent = (100/detail.healthMax*detail.health)
+            if percent == 100 then
+                print(detail.name .. " -> " .. "100 %")
+                rra_health = 100
+                CombatEnd()
+            elseif percent <= 90 and  percent > 80 then
+                if rra_health ~= 90 then
+                    print(detail.name .. " -> " .. "90 %")
+                    rra_health = 90
+                end
+            elseif percent <= 80 and  percent > 70 then
+                if rra_health ~= 80 then
+                    print(detail.name .. " -> " .. "80 %")
+                    rra_health = 80
+                end
+            elseif percent <= 70 and  percent > 60 then
+                if rra_health ~= 70 then
+                    print(detail.name .. " -> " .. "70 %")
+                    rra_health = 70
+                end
+            elseif percent <= 60 and  percent > 50 then
+                if rra_health ~= 60 then
+                    print(detail.name .. " -> " .. "60 %")
+                    rra_health = 60
+                end
+            elseif percent <= 50 and  percent > 40 then
+                if rra_health ~= 50 then
+                    print(detail.name .. " -> " .. "50 %")
+                    rra_health = 50
+                end
+            elseif percent <= 40 and  percent > 30 then
+                if rra_health ~= 40 then
+                    print(detail.name .. " -> " .. "40 %")
+                end
+                rra_health = 40
+            elseif percent <= 30 and  percent > 20 then
+                if rra_health ~= 30 then
+                    print(detail.name .. " -> " .. "30 %")
+                end
+                rra_health = 30
+            elseif percent <= 20 and  percent > 10 then
+                if rra_health ~= 20 then
+                    print(detail.name .. " -> " .. "20 %")
+                end
+                rra_health = 20
+            elseif percent <= 10 and  percent > 0 then
+                if rra_health ~= 10 then
+                    print(detail.name .. " -> " .. "10 %")
+                end
+                rra_health = 10
+            elseif percent == 0 then
+                print(detail.name .. " -> " .. "0 %")
+                CombatEnd()
+            end
+        end
+    end
 end
 
 
@@ -134,6 +198,7 @@ local function rra_start()
     Command.Event.Attach(Event.Unit.Detail.Combat, CombatChange, "CombatChange")
     Command.Event.Attach(Event.System.Secure.Enter, CombatBegin, "CombatBegin")
     Command.Event.Attach(Event.System.Secure.Leave, CombatEnd, "CombatEnd")
+    Command.Event.Attach(Event.Unit.Detail.Health, CheckHP, "CheckHP")
 end
 
 
@@ -158,8 +223,8 @@ local function slashHandler(h, args)
     print("/rra stop - Rift Raid Alert stop")
 end
 
-
 rra_bufflist = {}
-rra_combatbegin = false
+rra_combatbegin = "out_of_combat"
+rra_health = 100
 print("/rra - for a list of commands")
 Command.Event.Attach(Command.Slash.Register("rra"), slashHandler, "Command.Slash.Register")
