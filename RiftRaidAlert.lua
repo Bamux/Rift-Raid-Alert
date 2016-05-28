@@ -187,6 +187,7 @@ local function rra_stop()
     Command.Event.Attach(Event.Unit.Detail.Combat, CombatChange, "CombatChange")
     Command.Event.Detach(Event.System.Secure.Enter, CombatBegin, "CombatBegin")
     Command.Event.Detach(Event.System.Secure.Leave, CombatEnd, "CombatEnd")
+    Command.Event.Detach(Event.Unit.Detail.Health, CheckHP, "CheckHP")
 end
 
 
