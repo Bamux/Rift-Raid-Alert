@@ -108,11 +108,11 @@ local function CombatBegin()
     if rra_combatbegin == "out_of_combat" then
         local details = Inspect.Unit.Detail("player.target")
         if details ~= nil then
+            rra_combatbegin = details.id
             print("Combat Begin -> " .. details.name)
         else
             print("Combat Begin")
         end
-        rra_combatbegin = details.id
     end
 end
 
