@@ -4,8 +4,8 @@ The current version support announcements for RoF, IGP, MoM and CoA.
 Video: https://youtu.be/jGX8BH6vb2w
 
 ## Installation Instructions:
-###
-1.  Download and unzip the Rift-Raid-Alert-master.zip - https://github.com/Bamux/Rift-Raid-Alert/archive/master.zip
+
+### 1.  Download and unzip the Rift-Raid-Alert-master.zip - https://github.com/Bamux/Rift-Raid-Alert/archive/master.zip
 2.  Copy the Rift-Raid-Alert-master folder in your Rift Addon folder
 3.  Start Rift
 4.  use /log in the rift chatwindow
