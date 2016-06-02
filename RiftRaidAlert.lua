@@ -86,7 +86,7 @@ local function CombatChange()
         local format = tostring
         for k,v in pairs(list) do
             local detail = inspect(format(k))
-            if detail and detail.relation == "hostile" and detail.health > detail.healthMax*0.98 then
+            if detail and detail.relation == "hostile" and detail.health > 1 and detail.healthMax > 10000000 then
                 print("! Combat Begin -> ".. detail.name)
                 rra_combatbegin = detail.id
             end
@@ -100,9 +100,13 @@ local function CombatEnd()
     local count = #rra_bufflist
     for i=0, count do rra_bufflist[i]=nil end
     rra_combatbegin = "out_of_combat"
-    rra_health = 100
 end
 
+local function ReadyCheck()
+    if rra_combatbegin ~= "out_of_combat" then
+        CombatEnd()
+    end
+end
 
 local function CombatBegin()
     if rra_combatbegin == "out_of_combat" then
@@ -122,10 +126,12 @@ local function CheckHP(units)
         local detail = Inspect.Unit.Detail(rra_combatbegin)
         if detail ~= nil then
             local percent = (100/detail.healthMax*detail.health)
-            if percent == 100 then
-                print(detail.name .. " -> " .. "100 %")
-                rra_health = 100
-                CombatEnd()
+            if detail.health == detail.healthMax then
+                if rra_health ~= 100 then
+                    print(detail.name .. " -> " .. "100 %")
+                    rra_health = 100
+                    -- CombatEnd()
+                end
             elseif percent <= 90 and  percent > 80 then
                 if rra_health ~= 90 then
                     print(detail.name .. " -> " .. "90 %")
@@ -171,9 +177,11 @@ local function CheckHP(units)
                     print(detail.name .. " -> " .. "10 %")
                 end
                 rra_health = 10
-            elseif percent == 0 then
-                print(detail.name .. " -> " .. "0 %")
-                CombatEnd()
+            elseif detail.health <= 0 then
+                if rra_health ~= 0 then
+                    print(detail.name .. " -> " .. "0 %")
+                    CombatEnd()
+                end
             end
         end
     end
@@ -188,6 +196,7 @@ local function rra_stop()
     Command.Event.Detach(Event.System.Secure.Enter, CombatBegin, "CombatBegin")
     Command.Event.Detach(Event.System.Secure.Leave, CombatEnd, "CombatEnd")
     Command.Event.Detach(Event.Unit.Detail.Health, CheckHP, "CheckHP")
+    Command.Event.Detach(Event.Unit.Detail.Ready, ReadyCheck, "ReadyCheck")
 end
 
 
@@ -200,6 +209,7 @@ local function rra_start()
     Command.Event.Attach(Event.System.Secure.Enter, CombatBegin, "CombatBegin")
     Command.Event.Attach(Event.System.Secure.Leave, CombatEnd, "CombatEnd")
     Command.Event.Attach(Event.Unit.Detail.Health, CheckHP, "CheckHP")
+    Command.Event.Attach(Event.Unit.Detail.Ready, ReadyCheck, "ReadyCheck")
 end
 
 
