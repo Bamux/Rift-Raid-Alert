@@ -20,7 +20,7 @@ Under http://www.mwsreader.com/en/voices/ you can download other voices.
 ## How to use Rift Raid Alerts on TeamSpeak:
 
 1. INSTALL VB-CABLE Virtual Audio Device - http://vb-audio.pagesperso-orange.fr/Cable/index.htm
-2. Right click on the windows speaker icon > coose Recording Devices > double clicking CABLE Output > Listen > Playback through this device: coose Default Playback Device and tick the box
+2. Right click on the windows speaker icon > coose Recording Devices > double clicking CABLE Output > Listen > Playback through this device: coose Default Playback Device and checking the box
 3. Open the Windows Text to Speech Engine. Default folder is C:\Windows\SysWOW64\Speech\SpeechUX\sapi.cpl
    Advanced > choose CABLE Input (VB-Audio Virtual Cable)
 3. Open teamspeak > Option > Capture and Create a new Profil, coose CABLE Output (VB-Audio Virtual Cable) as your Recording Device
