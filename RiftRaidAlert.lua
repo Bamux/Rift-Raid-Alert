@@ -86,7 +86,7 @@ local function CombatChange()
         local format = tostring
         for k,v in pairs(list) do
             local detail = inspect(format(k))
-            if detail and detail.relation == "hostile" and detail.health > 1 and detail.healthMax > 10000000 then
+            if detail and detail.relation == "hostile" and detail.healthMax > 10000000 and detail.health > detail.healthMax*0.98 then
                 print("! Combat Begin -> ".. detail.name)
                 rra_combatbegin = detail.id
             end
@@ -104,7 +104,11 @@ end
 
 local function ReadyCheck()
     if rra_combatbegin ~= "out_of_combat" then
-        CombatEnd()
+        print("! Combat End")
+        local count = #rra_bufflist
+        for i=0, count do rra_bufflist[i]=nil end
+        rra_combatbegin = "out_of_combat"
+        rra_health = 100
     end
 end
 
@@ -177,7 +181,7 @@ local function CheckHP(units)
                     print(detail.name .. " -> " .. "10 %")
                 end
                 rra_health = 10
-            elseif detail.health <= 0 then
+            elseif detail.health <= 1 then
                 if rra_health ~= 0 then
                     print(detail.name .. " -> " .. "0 %")
                     CombatEnd()
@@ -193,7 +197,7 @@ local function rra_stop()
     Command.Event.Detach(Event.Buff.Remove, getRemoveBuffName, "buffremoveevent")
     Command.Event.Detach(Event.Unit.Castbar, getAbilityName, "AbilityName")
     Command.Event.Attach(Event.Unit.Detail.Combat, CombatChange, "CombatChange")
-    Command.Event.Detach(Event.System.Secure.Enter, CombatBegin, "CombatBegin")
+    -- Command.Event.Detach(Event.System.Secure.Enter, CombatBegin, "CombatBegin")
     Command.Event.Detach(Event.System.Secure.Leave, CombatEnd, "CombatEnd")
     Command.Event.Detach(Event.Unit.Detail.Health, CheckHP, "CheckHP")
     Command.Event.Detach(Event.Unit.Detail.Ready, ReadyCheck, "ReadyCheck")
@@ -206,7 +210,7 @@ local function rra_start()
     Command.Event.Attach(Event.Buff.Remove, getRemoveBuffName, "buffremoveevent")
     Command.Event.Attach(Event.Unit.Castbar, getAbilityName, "AbilityName")
     Command.Event.Attach(Event.Unit.Detail.Combat, CombatChange, "CombatChange")
-    Command.Event.Attach(Event.System.Secure.Enter, CombatBegin, "CombatBegin")
+    -- Command.Event.Attach(Event.System.Secure.Enter, CombatBegin, "CombatBegin")
     Command.Event.Attach(Event.System.Secure.Leave, CombatEnd, "CombatEnd")
     Command.Event.Attach(Event.Unit.Detail.Health, CheckHP, "CheckHP")
     Command.Event.Attach(Event.Unit.Detail.Ready, ReadyCheck, "ReadyCheck")
