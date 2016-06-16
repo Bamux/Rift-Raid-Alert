@@ -1,4 +1,30 @@
-﻿
+﻿local function CombatBegin()
+    if rra_combatbegin == "out_of_combat" then
+        local inspect = Inspect.Unit.Detail
+        local list = Inspect.Unit.List()
+        local format = tostring
+        for k,v in pairs(list) do
+            local detail = inspect(format(k))
+            if detail and detail.relation == "hostile" and detail.healthMax > 20000000 and detail.health > detail.healthMax*0.98 then
+                print("Combat Begin -> ".. detail.name)
+                rra_combatbegin = detail.id
+            end
+        end
+    end
+end
+
+
+local function CombatEnd()
+    if rra_combatbegin ~= "out_of_combat" then
+        print("Combat End")
+        local count = #rra_bufflist
+        for i=0, count do rra_bufflist[i]=nil end
+        rra_combatbegin = "out_of_combat"
+        rra_health = 0
+    end
+end
+
+
 -- print Debuffs on all Player's (Player <-  NPC) and Buffs on all NPC's (NPC <- Buff)
 local function getAddBuffName(event, unit, buffs)
     if unit then
@@ -65,6 +91,12 @@ local function getAbilityName(event, units)
             if value then
                 local details = Inspect.Unit.Detail(id)
                 local cast = Inspect.Unit.Castbar(id)
+                if cast.abilityNew ~= nill then
+                    if cast.abilityNew == "A24FE01816BA3C9E7" then -- Call of the Ascended (Raid rez)
+                        CombatEnd()
+                        return
+                    end
+                end
                 if details.relation == "hostile" then
                     local target = Inspect.Unit.Detail(id..".target")
                     if target ~= nil then
@@ -79,51 +111,6 @@ local function getAbilityName(event, units)
 end
 
 
-local function CombatChange()
-    if rra_combatbegin == "out_of_combat" then
-        local inspect = Inspect.Unit.Detail
-        local list = Inspect.Unit.List()
-        local format = tostring
-        for k,v in pairs(list) do
-            local detail = inspect(format(k))
-            if detail and detail.relation == "hostile" and detail.healthMax > 10000000 and detail.health > detail.healthMax*0.98 then
-                print("! Combat Begin -> ".. detail.name)
-                rra_combatbegin = detail.id
-            end
-        end
-    end
-end
-
-
-local function CombatEnd()
-    print("Combat End")
-    local count = #rra_bufflist
-    for i=0, count do rra_bufflist[i]=nil end
-    rra_combatbegin = "out_of_combat"
-end
-
-local function ReadyCheck()
-    if rra_combatbegin ~= "out_of_combat" then
-        print("! Combat End")
-        local count = #rra_bufflist
-        for i=0, count do rra_bufflist[i]=nil end
-        rra_combatbegin = "out_of_combat"
-        rra_health = 100
-    end
-end
-
-local function CombatBegin()
-    if rra_combatbegin == "out_of_combat" then
-        local details = Inspect.Unit.Detail("player.target")
-        if details ~= nil then
-            rra_combatbegin = details.id
-            print("Combat Begin -> " .. details.name)
-        else
-            print("Combat Begin")
-        end
-    end
-end
-
 -- print the Hitpoints from the first NPC with agro
 local function CheckHP(units)
     if rra_combatbegin ~= "out_of_combat" then
@@ -134,7 +121,6 @@ local function CheckHP(units)
                 if rra_health ~= 100 then
                     print(detail.name .. " -> " .. "100 %")
                     rra_health = 100
-                    -- CombatEnd()
                 end
             elseif percent <= 90 and  percent > 80 then
                 if rra_health ~= 90 then
@@ -193,27 +179,25 @@ end
 
 
 local function rra_stop()
+    Command.Event.Attach(Event.Unit.Detail.Combat, CombatBegin, "CombatBegin")
+    Command.Event.Detach(Event.Unit.Detail.Ready, CombatEnd, "CombatEnd")
     Command.Event.Detach(Event.Buff.Add, getAddBuffName, "buffaddevent")
     Command.Event.Detach(Event.Buff.Remove, getRemoveBuffName, "buffremoveevent")
     Command.Event.Detach(Event.Unit.Castbar, getAbilityName, "AbilityName")
-    Command.Event.Attach(Event.Unit.Detail.Combat, CombatChange, "CombatChange")
-    -- Command.Event.Detach(Event.System.Secure.Enter, CombatBegin, "CombatBegin")
-    Command.Event.Detach(Event.System.Secure.Leave, CombatEnd, "CombatEnd")
     Command.Event.Detach(Event.Unit.Detail.Health, CheckHP, "CheckHP")
-    Command.Event.Detach(Event.Unit.Detail.Ready, ReadyCheck, "ReadyCheck")
 end
 
 
 local function rra_start()
     rra_stop()
+    Command.Event.Attach(Event.Unit.Detail.Combat, CombatBegin, "CombatBegin")
+    Command.Event.Attach(Event.Unit.Detail.Ready, CombatEnd, "CombatEnd")
     Command.Event.Attach(Event.Buff.Add, getAddBuffName, "buffaddevent")
     Command.Event.Attach(Event.Buff.Remove, getRemoveBuffName, "buffremoveevent")
     Command.Event.Attach(Event.Unit.Castbar, getAbilityName, "AbilityName")
-    Command.Event.Attach(Event.Unit.Detail.Combat, CombatChange, "CombatChange")
-    -- Command.Event.Attach(Event.System.Secure.Enter, CombatBegin, "CombatBegin")
-    Command.Event.Attach(Event.System.Secure.Leave, CombatEnd, "CombatEnd")
+    Command.Event.Attach(Event.Unit.Detail.Combat, CombatBegin, "CombatBegin")
     Command.Event.Attach(Event.Unit.Detail.Health, CheckHP, "CheckHP")
-    Command.Event.Attach(Event.Unit.Detail.Ready, ReadyCheck, "ReadyCheck")
+    Command.Event.Attach(Event.Unit.Detail.Ready, CombatEnd, "CombatEnd")
 end
 
 
@@ -240,6 +224,6 @@ end
 
 rra_bufflist = {}
 rra_combatbegin = "out_of_combat"
-rra_health = 100
+rra_health = 0
 print("/rra - for a list of commands")
 Command.Event.Attach(Command.Slash.Register("rra"), slashHandler, "Command.Slash.Register")
