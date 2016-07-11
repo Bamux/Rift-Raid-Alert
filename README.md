@@ -4,6 +4,13 @@ The current version support announcements for RoF, IGP, MoM and CoA.
 
 Video: https://youtu.be/jGX8BH6vb2w
 
+Features:
+- encounter timers and countdowns
+- tank swap mechanic
+- tracking buffs and debuffs
+- monitors waeponstones, flasks and food
+- make your own timers, countdowns and alerts without Lua knowledge
+
 ## Installation Instructions:
 
 1.  Download and unzip the Rift-Raid-Alert-master.zip - https://github.com/Bamux/Rift-Raid-Alert/archive/master.zip
