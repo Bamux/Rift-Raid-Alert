@@ -5,6 +5,7 @@ The current version support announcements for RoF, IGP, MoM and CoA.
 Video: https://youtu.be/jGX8BH6vb2w
 
 Features:
+- search the chat messages and alert you when certain phrases/keywords appear in the chat channel
 - encounter timers and countdowns
 - tank swap mechanic
 - tracking buffs and debuffs
