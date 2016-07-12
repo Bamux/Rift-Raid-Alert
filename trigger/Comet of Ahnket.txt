@@ -1,0 +1,47 @@
+﻿[Trigger - (0)language; (1)Loacation; (2)boss; (3)emote,de-buff or ability; (4)text to search; (5)text to speech;
+(6)timer; (7)countdown; (8)timeout (the trigger will be ignored for the specified time);
+(9)number of events before the trigger fires; (10)depending on other triggers; (11)timer and countdown reset]
+
+trigger = eng; CoA; Duke Eblius; ability; Duke Eblius -> Blazing Ruin; kick; 0; 0; 0; 0; 0; 0
+trigger = eng; CoA; Duke Eblius; ability; $player <- Infernal Sunder; tank swap; 0; 0; 0; 2; 0; 0
+trigger = eng; CoA; Duke Eblius; ability; $player <- remove Infernal Sunder; tank swap!; 0; 0; 0; -2; 0; 0
+trigger = eng; CoA; Duke Eblius; ability; Duke Eblius -> Sulphurous Blight; cleanse; 0; 0; 0; 0; 0; 0
+trigger = eng; CoA; Duke Eblius; ability; Aliavax Standard Bearer -> Soul Seer; kick; 0; 0; 0; 0; 0; 0
+trigger = eng; CoA; Duke Eblius; ability; Aliavax Standard Bearer -> Blazing Implosion; spread out; 0; 0; 0; 0; 0; 0
+trigger = eng; CoA; Duke Eblius; ability; Aliavax Battle Shaman -> Triage; kick Shaman; 0; 0; 0; 0; 0; 0
+trigger = eng; CoA; Duke Eblius; buff; Duke Eblius <- Hellion's Rage; destroy a portal; 0; 0; 0; 0; 0; 0
+
+trigger = eng; CoA; Azaphrentus; ability; Dark Star -> $player; bubble on $player; 0; 0; 0; 0; 0; 0
+trigger = eng; CoA; Azaphrentus; ability; <- Burning Tears; cleanse; 0; 0; 3; 0; 0; 0
+trigger = eng; CoA; Azaphrentus; ability; Manifest Scorn -> $player; free $player; 0; 0; 0; 0; 0; 0
+trigger = eng; CoA; Azaphrentus; ability; Azaphrentus -> Rage of Azaphrentus; firewall; 0; 0; 0; 0; 0; 0
+
+trigger = eng; CoA; Fyragnos; ability; $player is about to be consumed in fire!; $player shield; 0; 0; 0; 0; 0; 0
+trigger = eng; CoA; Fyragnos; debuff; <- Flame of Despair; cleanse; 0; 0; 5; 0; 0; 0
+trigger = eng; CoA; Fyragnos; ability; Fyragnos -> Magma Burst; move; 0; 0; 0; 0; 0; 0
+trigger = eng; CoA; Fyragnos; ability; Fyragnos -> Summon Flamestrom; move; 0; 0; 0; 0; 0; 0
+#trigger = eng; CoA; Fyragnos; ability; Fyragnos -> Searing Breath; frontal cleave; 0; 0; 5; 0; 0; 0
+#trigger = eng; CoA; Fyragnos; ability; Fyragnos -> Tail Whip; back cleave; 0; 0; 5; 0; 0; 0
+#trigger = eng; CoA; Fyragnos; ability; <- Ashen Claw; cleanse; 0; 0; 0; 0; 0; 0
+
+trigger = eng; CoA; Hericius; ability; Hericius -> Caustic Spores; green; 0; 0; 0; 0; 0; 0
+trigger = eng; CoA; Hericius; ability; Hericius -> Acidic Spores; blue; 0; 0; 0; 0; 0; 0
+trigger = eng; CoA; Hericius; ability; Hericius -> Incendiary Spores; red; 0; 0; 0; 0; 0; 0
+trigger = eng; CoA; Hericius; ability; Hericius -> Chlorolance; kick; 0; 0; 0; 0; 0; 0
+trigger = eng; CoA; Hericius; ability; Hericius -> Cleansing Siphon; kick; 0; 0; 0; 0; 0; 0
+trigger = eng; CoA; Hericius; emote; Hericius calls for help; adds in; 5; 10; 0; 0; 0; 0
+trigger = eng; CoA; Hericius; ability; Hericius -> The Unseen Chism; wave in; 0; 3; 0; 0; 0; 0
+
+trigger = eng; CoA; Lord Fionn; ability; $player <- Imbalancing Blows; tank swap; 0; 0; 0; 13; 0; 0
+trigger = eng; CoA; Lord Fionn; ability; $player <- remove Imbalancing Blows; tank swap; 0; 0; 0; -13; 0; 0
+trigger = eng; CoA; Lord Fionn; ability; $player <- Marked for Death; $player run out; 0; 0; 5; 0; 0; 0
+trigger = eng; CoA; Lord Fionn; ability; Lord Fionn -> Reaper's Mark -> $player; $player can't move; 0; 0; 0; 0; 0; 0
+trigger = eng; CoA; Lord Fionn; ability; Lord Fionn -> One Thousand Thrusts; One Thousand Thrusts; 0; 0; 5; 0; 0; 0
+trigger = eng; CoA; Lord Fionn; ability; Lord Fionn -> Omniscient Flash; bullet in; 0; 4; 5; 0; 0; 0
+trigger = eng; CoA; Lord Fionn; ability; Warlord Svenbioard -> Reaper's Blade -> $player; $player step forward; 0; 0; 0; 0; 0; 0
+trigger = eng; CoA; Lord Fionn; ability; Warlord Svenbioard -> Warcry; Warcry; 0; 0; 0; 0; 0; 0
+trigger = eng; CoA; Lord Fionn; emote; Take from me my immortality! Let me sustain you with my essence; burn the witch; 0; 0; 0; 0; 0; 0
+
+
+[Special Trigger alternates between states - language; Loacation; boss; emote or ability; text to search; text to speech status 1; text to speech status 2; ... ]
+special = eng; CoA; Hericius; ability; Hericius -> Caustic Spores || Hericius -> Acidic Spores || Hericius -> Incendiary Spores; first; second; third; last

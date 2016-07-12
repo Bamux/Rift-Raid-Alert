@@ -1,0 +1,13 @@
+﻿[Trigger - (0)language; (1)Loacation; (2)boss; (3)emote,de-buff or ability; (4)text to search; (5)text to speech;
+(6)timer; (7)countdown; (8)timeout (the trigger will be ignored for the specified time);
+(9)number of events before the trigger fires; (10)depending on other triggers; (11)timer and countdown reset]
+
+
+# Weaponstone Flask and Food Check all languages:
+trigger = all; all; all; buff; Raidbuff missing -> $player; $player ; 0; 0; 0; 0; 0; 0
+trigger = all; all; all; buff; Raidbuff missing <--- Weaponstone, Flask and Food; Weaponstone, Flask and Food; 0; 0; 0; 0; 0; 0
+trigger = all; all; all; buff; Raidbuff missing <-- Weaponstone and Flask; Weaponstone and Flask; 0; 0; 0; 0; 0; 0
+trigger = all; all; all; buff; Raidbuff missing <- Weaponstone; Weaponstone; 0; 0; 0; 0; 0; 0
+trigger = all; all; all; buff; Raidbuff missing <- Flask; Flask; 0; 0; 0; 0; 0; 0
+trigger = all; all; all; buff; Raidbuff missing <- Food; Food; 0; 0; 0; 0; 0; 0
+trigger = all; all; all; buff; Raidbuff missing number <- Weaponstone, Flask or Food; players missing buffs; 0; 0; 0; 0; 0; 0

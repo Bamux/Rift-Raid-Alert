@@ -1,0 +1,14 @@
+﻿# <- Use this in front of the keywords if you do not want to look for it
+
+# keywords = keyword1 + keyword2 + keywordX; text to speech
+
+keywords = MoM + lfm; Mind of Madness looking for more
+keywords = CoA + lfm; Comet of Ahnket looking for more
+keywords = IGP + lfm; Gilded Prophecy looking for more
+keywords = HK + lfm; Hammerknell looking for more
+keywords = MS + lfm; Mount Sharax looking for more
+keywords = RoF + lfm; Rhen of Fate looking for more
+
+keywords = The Sea of Ladon + lfm; The Sea of Ladon looking for more
+keywords = The Five Kanhs + lfm; The Five Kanhs looking for more
+
