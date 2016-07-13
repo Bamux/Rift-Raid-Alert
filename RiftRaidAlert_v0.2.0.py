@@ -360,6 +360,7 @@ def logfile_analysis(logtext):
                     triggerload("keywords")
                     newtrigger = trigger
                     print(log)
+                    zone = ""
                     text = "start the search for key words"
                 elif 'rift raid alert trigger -> ' in log:
                     if combattrigger == 1:

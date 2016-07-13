@@ -338,7 +338,6 @@ local function rra_start()
     Command.Event.Attach(Event.Buff.Remove, getRemoveBuffName, "buffremoveevent")
     Command.Event.Attach(Event.Unit.Castbar, getAbilityName, "AbilityName")
     --Command.Event.Attach(Event.Unit.Detail.Zone, ChangeZone, "ChangeZone")
-    print("Rift Raid Alert started")
 end
 
 
@@ -376,6 +375,7 @@ local function slashHandler(h, args)
             print("Rift Raid Alert Trigger <- keywords off")
         end
         RiftRaidAlert_enabled = "start"
+        print("Rift Raid Alert started")
         rra_start()
         Zone()
         return
@@ -398,8 +398,8 @@ local function slashHandler(h, args)
         test()
         return
     end
-    print("/rra start - Rift Raid Alert start")
-    print("/rra stop - Rift Raid Alert stop")
+    print("/rra start - start Rift Raid Alert")
+    print("/rra stop - stop Rift Raid Alert")
     print("/rra keywords - search the chat for keywords")
 end
 
