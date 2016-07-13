@@ -21,7 +21,8 @@ Features:
 5.  Start the RiftRaidAlert.exe
 6.  use /rra start (you can use /rra stop for stoping Rift Raid Alert) or /rra keywords if you want only search for key words from the keywords.txt
 7.  Write in game "Siri introduce yourself" or "Siri tell me a joke" or "Siri say whatever you want" for a sound check
-8.  Edit the RiftRaidAlert.ini - you can edit/create triggers or change settings (Log.txt path, volume, warningtime)
+8.  Edit the RiftRaidAlert.ini - you can change settings (Log.txt path, volume, ...)
+9.  Edit the text files in the trigger folder - you can edit/create triggers
 
 Under http://www.mwsreader.com/en/voices/ you can download other voices.
 
