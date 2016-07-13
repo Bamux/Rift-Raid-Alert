@@ -2,7 +2,7 @@
 
 Name = "Rift Raid Alert"
 
-Description = "use /rra start or /rra stop or /rra keywords"
+Description = "use /rra start or /rra stop or /rra keywords or /rra check"
 
 Author = "Bamux@Typhiria"
 
