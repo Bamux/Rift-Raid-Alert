@@ -56,4 +56,4 @@ trigger = eng; MoM; Dark Genesis; ability; Dark Genesis -> The End; Game Over; 9
 
 
 [Special Trigger alternates between states - language; Loacation; boss; emote or ability; text to search; text to speech status 1; text to speech status 2; ... ]
-special = eng; MoM; Dark Genesis; ability; Dark Genesis -> Calamity + Dark Genesis -> Destruction + Dark Genesis -> Ruination + Dark Genesis -> Hope Slayer; 1; 2; 3; 4
+special = eng; MoM; Dark Genesis; ability; Dark Genesis -> Calamity || Dark Genesis -> Destruction || Dark Genesis -> Ruination || Dark Genesis -> Hope Slayer; 1; 2; 3; 4
