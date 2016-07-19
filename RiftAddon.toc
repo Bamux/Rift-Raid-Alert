@@ -6,11 +6,11 @@ Description = "use /rra start or /rra stop or /rra keywords or /rra check"
 
 Author = "Bamux@Typhiria"
 
-Version = "0.2.0"
+Version = "0.2.2"
 
 Email = "my@email"
 
-Environment = "3.6"
+Environment = "3.7"
 
 RunOnStartup = {
     "RiftRaidAlert.lua",

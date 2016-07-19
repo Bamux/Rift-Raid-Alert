@@ -7,7 +7,7 @@
 trigger = all; all; combat_end; ability; Combat End; ; 0; 0; 0; 0; 0; 1
 
 # Rift Raid Alert start/stop/keywords
-trigger = all; all; all; ability; Rift Raid Alert started; start rift raid alert; 0; 0; 0; 0; 0; 0
-trigger = all; all; all; ability; Rift Raid Alert stoped; stop rift raid alert; 0; 0; 0; 0; 0; 0
-trigger = all; all; all; ability; Rift Raid Alert trigger <- Keywords off; stop the search for key words; 0; 0; 0; 0; 0; 0
-trigger = all; all; all; ability; Rift Raid Alert trigger -> Keywords on; start the search for key words; 0; 0; 0; 0; 0; 0
+trigger = all; all; all; chat; Rift Raid Alert started; start rift raid alert; 0; 0; 0; 0; 0; 1
+trigger = all; all; all; chat; Rift Raid Alert stoped; stop rift raid alert; 0; 0; 0; 0; 0; 1
+trigger = all; all; all; chat; Rift Raid Alert Trigger <- Keywords off; stop the search for key words; 0; 0; 0; 0; 0; 1
+trigger = all; all; all; chat; Rift Raid Alert Trigger -> Keywords on; start the search for key words; 0; 0; 0; 0; 0; 1
