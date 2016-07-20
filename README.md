@@ -25,8 +25,6 @@ Features:
 8.  Edit the RiftRaidAlert.ini - you can change settings (Log.txt path, volume, ...)
 9.  Edit the text files in the trigger folder - you can edit/create triggers
 
-Under http://www.mwsreader.com/en/voices/ you can download other voices.
-
 ## Select your Voice
 I use the Microsoft Speech API (SAPI 5) . The Python program that I wrote scans the Rift Log.txt file according to predefined parameters and passes it to the SAPI 5 interface. You can use any voice that was created for the SAPI 4 or SAPI 5 interface. There are many free voices (often sound robotic) but also very natural sounding voices.
 
