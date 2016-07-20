@@ -6,7 +6,7 @@ Description = "use /rra start or /rra stop or /rra keywords or /rra check"
 
 Author = "Bamux@Typhiria"
 
-Version = "0.2.2"
+Version = "0.2.3"
 
 Email = "my@email"
 
