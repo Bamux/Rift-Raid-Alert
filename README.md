@@ -10,7 +10,7 @@ Features:
 - tank swap mechanic
 - tracking buffs and debuffs
 - monitors waeponstones, flasks and food
-- pull countdown and who pulled information (alert you if the tank has aggro or who has fail pulled)
+- pull countdown and alert you if the tank has aggro or who has fail pulled
 - make your own timers, countdowns and alerts without Lua knowledge
 
 ## Installation Instructions:
