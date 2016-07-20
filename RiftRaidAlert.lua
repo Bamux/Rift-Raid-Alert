@@ -19,6 +19,14 @@ local function CombatCheck(event, units) -- Check Combat Status (Combat Begin, C
             if detail.relation == "hostile" and detail.healthMax > 20000000 and detail.health > detail.healthMax*0.98 then
                 print("Combat Begin -> ".. detail.name)
                 rra_boss_id = detail.id
+                local player = Inspect.Unit.Detail(detail.id .. ".target")
+                if player then
+                    if player.role == "tank" then
+                        print("Tank pull -> " .. player.name)
+                    else
+                        print("Fail pull -> " .. player.name)
+                    end
+                end
                 break
             end
         end
