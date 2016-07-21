@@ -29,7 +29,7 @@ Ingame Commands:
 - /rra start - start Raid announcements for RoF, IGP, MoM and CoA
 - /rra stop - stop Rift Raid Alert
 - /rra check - checks waeponstones, flasks and food of all players in the raid
-- /rra keywords - search the chat for keywords from your Keywords.txt (in your trigger folder) As an example, you are looking for a Raid for CoA. If both words (CoA and lfm) appear in the chat channel you'll be informed. The advantage is you can running Rift in the background watch a movie, surf the web etc. while waiting that someone is looking for players.
+- /rra keywords - search the chat for keywords from your Keywords.txt (in your trigger folder). As an example, you are looking for a Raid for CoA. If both words (CoA and lfm) appear in the chat channel you'll be informed. The advantage is you can running Rift in the background watch a movie, surf the web etc. while waiting that someone is looking for players.
 
 ## Select your Voice
 Open the Windows Text to Speech Engine and select your voice. The default folder is:
