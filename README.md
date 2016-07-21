@@ -32,10 +32,14 @@ Ingame Commands:
 - /rra check - checks waeponstones, flasks and food of all players in the raid
 
 ## Select your Voice
-I use the Microsoft Speech API (SAPI 5) . The Python program that I wrote scans the Rift Log.txt file according to predefined parameters and passes it to the SAPI 5 interface. You can use any voice that was created for the SAPI 4 or SAPI 5 interface. There are many free voices (often sound robotic) but also very natural sounding voices. Under http://www.mwsreader.com/en/voices/ you can download other voices (different languages). 
-
 Open the Windows Text to Speech Engine and select your voice. The default folder is:
 - C:\Windows\SysWOW64\Speech\SpeechUX\sapi.cpl
+
+I use the Microsoft Speech API (SAPI 5) . The Python program that I wrote scans the Rift Log.txt file according to predefined parameters and passes it to the SAPI 5 interface. You can use any voice that was created for the SAPI 4 or SAPI 5 interface. There are many free voices (often sound robotic) but also very natural sounding voices. 
+
+Under http://www.mwsreader.com/en/voices/ you can download other voices (different languages). 
+
+
 
 ## How to use Rift Raid Alerts on TeamSpeak:
 
