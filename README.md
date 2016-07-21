@@ -26,10 +26,10 @@ Features:
 9.  Edit the text files in the trigger folder - you can edit/create triggers
 
 Ingame Commands:
-   /rra start - start Raid announcements for RoF, IGP, MoM and CoA
-   /rra stop - stop Rift Raid Alert
-   /rra keywords - search the chat for keywords from your Keywords.txt
-   /rra check - checks waeponstones, flasks and food of all players in the raid
+- /rra start - start Raid announcements for RoF, IGP, MoM and CoA
+- /rra stop - stop Rift Raid Alert
+- /rra keywords - search the chat for keywords from your Keywords.txt
+- /rra check - checks waeponstones, flasks and food of all players in the raid
 
 ## Select your Voice
 I use the Microsoft Speech API (SAPI 5) . The Python program that I wrote scans the Rift Log.txt file according to predefined parameters and passes it to the SAPI 5 interface. You can use any voice that was created for the SAPI 4 or SAPI 5 interface. There are many free voices (often sound robotic) but also very natural sounding voices.
