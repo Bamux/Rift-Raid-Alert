@@ -28,7 +28,7 @@ Features:
 Ingame Commands:
 - /rra start - start Raid announcements for RoF, IGP, MoM and CoA
 - /rra stop - stop Rift Raid Alert
-- /rra keywords - search the chat for keywords from your Keywords.txt
+- /rra keywords - search the chat for keywords from your Keywords.txt (in your trigger folder)
 - /rra check - checks waeponstones, flasks and food of all players in the raid
 
 ## Select your Voice
