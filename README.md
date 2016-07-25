@@ -31,7 +31,7 @@ Ingame Commands:
 - /rra check - checks waeponstones, flasks and food of all players in the raid
 - /rra keywords - search the chat for keywords from your keywords.txt (in your trigger folder). As an example, you are looking for a Raid for CoA. If both words (CoA and lfm) appear in the chat channel you'll be informed. The advantage is you can running Rift in the background watch a movie, surf the web etc. while waiting that someone is looking for players.
 
-## Select your Voice
+## Select a Voice
 Open the Windows Text to Speech Engine and select your voice. The default folder is:
 - C:\Windows\SysWOW64\Speech\SpeechUX\sapi.cpl
 
