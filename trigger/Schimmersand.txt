@@ -15,9 +15,9 @@ trigger = ger; IGP; Anrak the Foul; debuff; <- Explosivgift; cleanse; 0; 0; 0; 0
 trigger = ger; IGP; Guurloth; ability; Guurloth -> Grollende Erde; jump; 0; 0; 5; 0; 0; 0
 trigger = ger; IGP; Guurloth; ability; Guurloth -> Guurloths Ruf; add; 0; 0; 0; 0; 0; 0
 trigger = ger; IGP; Guurloth; ability; Guurloth -> Fels der Zerstörung; Tank damage in; 0; 5; 0; 0; 0; 0
-trigger = ger; IGP; Guurloth; ability; Guurloth -> Tanz mit dem Tod; dance; 0; 0; 5; 0; 0; 0
+trigger = ger; IGP; Guurloth; ability; Guurloth -> Tanz mit dem Tod; dance; 0; 0; 2; 0; 0; 0
 trigger = ger; IGP; Guurloth; ability; Guurloth -> Irdene Mühe; run Forrest run; 0; 0; 5; 0; 0; 0
-trigger = ger; IGP; Guurloth; ability; Guurloth -> Der Punkt; point; 0; 0; 5; 0; 0; 0
+trigger = ger; IGP; Guurloth; ability; Guurloth -> Der Punkt; point; 0; 0; 2; 0; 0; 0
 trigger = ger; IGP; Guurloth; ability; Guurloth -> Kugel der sengenden Macht; turn; 0; 0; 5; 0; 0; 0
 trigger = ger; IGP; Guurloth; emote; Guurloth schreit: "$player unternimmt gar nichts, oder ihr werdet alle leiden!"; $player stop; 0; 0; 0; 0; 0; 0
 
