@@ -12,11 +12,11 @@ trigger = eng; IGP; Anrak the Foul; ability; Anrak the Foul -> Vicious Tail Stri
 trigger = eng; IGP; Anrak the Foul; ability; Anrak the Foul -> Bond of the Earth; move the boss; 0; 0; 0; 0; 0; 0
 
 trigger = eng; IGP; Guurloth; ability; Guurloth -> Boulder of Destruction; Tank damage in; 0; 5; 0; 0; 0; 0
-trigger = eng; IGP; Guurloth; ability; Guurloth -> Dance with Death; dance; 0; 0; 5; 0; 0; 0
+trigger = eng; IGP; Guurloth; ability; Guurloth -> Dance with Death; dance; 0; 0; 2; 0; 0; 0
 trigger = eng; IGP; Guurloth; ability; Guurloth -> Earthen Toil; run Forrest run; 0; 0; 5; 0; 0; 0
 trigger = eng; IGP; Guurloth; ability; Guurloth -> Guurloth's Call; add; 0; 0; 0; 0; 0; 0
 trigger = eng; IGP; Guurloth; ability; Guurloth -> Rumbling Earth; jump; 0; 0; 5; 0; 0; 0
-trigger = eng; IGP; Guurloth; ability; Guurloth -> The Point; point; 0; 0; 5; 0; 0; 0
+trigger = eng; IGP; Guurloth; ability; Guurloth -> The Point; point; 0; 0; 2; 0; 0; 0
 trigger = eng; IGP; Guurloth; ability; Guurloth -> Orb of Searing Power; turn; 0; 0; 5; 0; 0; 0
 trigger = eng; IGP; Guurloth; emote; Guurloth screams, "$player will do nothing or you all suffer; $player stop; 0; 0; 0; 0; 0; 0
 
