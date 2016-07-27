@@ -7,7 +7,7 @@ trigger = eng; IGP; Anrak the Foul; ability; $player <- remove Brittle; tank swa
 trigger = eng; IGP; Anrak the Foul; ability; Anrak the Foul -> Spines of Earth; spread out; 0; 0; 5; 0; 0; 0
 trigger = eng; IGP; Anrak the Foul; ability; Anrak the Foul -> Swarm of Anrak; prepare for adds; 0; 0; 0; 0; 0; 0
 trigger = eng; IGP; Anrak the Foul; ability; Anrak the Foul -> Eye Beam -> $player; $player stand out; 0; 0; 8; 0; 0; 0
-trigger = eng; IGP; Anrak the Foul; ability; Anrak the Foul -> Vicious Tail Strike; Strike in; 0; 4; 0; 0; 0; 0
+trigger = eng; IGP; Anrak the Foul; ability; Anrak the Foul -> Vicious Tail Strike; frontal cleave in; 0; 4; 0; 0; 0; 0
 trigger = eng; IGP; Anrak the Foul; ability; Anrak the Foul -> Vicious Tail Strik; now; 4; 0; 0; 0; 0; 0
 trigger = eng; IGP; Anrak the Foul; ability; Anrak the Foul -> Bond of the Earth; move the boss; 0; 0; 0; 0; 0; 0
 

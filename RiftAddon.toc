@@ -2,11 +2,11 @@
 
 Name = "Rift Raid Alert"
 
-Description = "use /rra start or /rra stop or /rra keywords or /rra check"
+Description = "use /rra for a list of commands"
 
 Author = "Program: Bamux@Typhiria, Test: Dibl@Brutwacht"
 
-Version = "0.2.3"
+Version = "0.2.6"
 
 Email = "my@email"
 

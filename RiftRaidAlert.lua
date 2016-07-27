@@ -406,9 +406,11 @@ local function slashHandler(h, args)
         test()
         return
     end
-    print("/rra start - start Rift Raid Alert")
+    print("/rra start - start Raid announcements for RoF, IGP, MoM and CoA")
     print("/rra stop - stop Rift Raid Alert")
-    print("/rra keywords - search the chat for keywords")
+    print("/rra keywords - search the chat for keywords from your keywords.txt")
+    print("/rra check - checks waeponstones, flasks and foodof all players in the raid")
+
 end
 
 Command.Event.Attach(Event.Addon.Startup.End, start_check, "StartCheck")

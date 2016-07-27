@@ -54,6 +54,8 @@ trigger = eng; MoM; Dark Genesis; ability; Dark Genesis -> The End; 10 seconds; 
 trigger = eng; MoM; Dark Genesis; ability; Dark Genesis -> The End; 5 seconds; 92; 0; 0; 0; 0; 0
 trigger = eng; MoM; Dark Genesis; ability; Dark Genesis -> The End; Game Over; 97; 0; 0; 0; 0; 0
 
+trigger = eng; MoM; Enigma; ability; Enigma -> Emission of Turmoil; Cleanse; 0; 10; 0; 0; 0; 0
+
 
 [Special Trigger alternates between states - language; Loacation; boss; emote or ability; text to search; text to speech status 1; text to speech status 2; ... ]
 special = eng; MoM; Dark Genesis; ability; Dark Genesis -> Calamity || Dark Genesis -> Destruction || Dark Genesis -> Ruination || Dark Genesis -> Hope Slayer; 1; 2; 3; 4

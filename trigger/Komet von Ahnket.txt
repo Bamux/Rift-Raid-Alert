@@ -16,19 +16,16 @@ trigger = eng; CoA; Azaphrentus; ability; <- Burning Tears; cleanse; 0; 0; 3; 0;
 trigger = eng; CoA; Azaphrentus; ability; Manifest Scorn -> $player; free $player; 0; 0; 0; 0; 0; 0
 trigger = eng; CoA; Azaphrentus; ability; Azaphrentus -> Rage of Azaphrentus; firewall; 0; 0; 0; 0; 0; 0
 
-trigger = eng; CoA; Fyragnos; ability; $player is about to be consumed in fire!; $player shield; 0; 0; 0; 0; 0; 0
-trigger = eng; CoA; Fyragnos; debuff; <- Flame of Despair; cleanse; 0; 0; 5; 0; 0; 0
-trigger = eng; CoA; Fyragnos; ability; Fyragnos -> Magma Burst; move; 0; 0; 0; 0; 0; 0
-trigger = eng; CoA; Fyragnos; ability; Fyragnos -> Summon Flamestrom; move; 0; 0; 0; 0; 0; 0
-#trigger = eng; CoA; Fyragnos; ability; Fyragnos -> Searing Breath; frontal cleave; 0; 0; 5; 0; 0; 0
-#trigger = eng; CoA; Fyragnos; ability; Fyragnos -> Tail Whip; back cleave; 0; 0; 5; 0; 0; 0
-#trigger = eng; CoA; Fyragnos; ability; <- Ashen Claw; cleanse; 0; 0; 0; 0; 0; 0
+trigger = ger; CoA; Fyragnos; emote; $player wird jeden Augenblick von den Flammen verschlungen!; $player shield; 0; 0; 0; 0; 0; 0
+trigger = ger; CoA; Fyragnos; debuff; <- Flamme der Verzweiflung; cleanse; 0; 0; 5; 0; 0; 0
+trigger = ger; CoA; Fyragnos; ability; Fyragnos -> Magmaausbruch; move; 0; 0; 0; 0; 0; 0
+trigger = ger; CoA; Fyragnos; ability; Fyragnos -> Flammstrom; move; 0; 0; 0; 0; 0; 0
 
-trigger = eng; CoA; Hericius; ability; Hericius -> Caustic Spores; green; 0; 0; 0; 0; 0; 0
-trigger = eng; CoA; Hericius; ability; Hericius -> Acidic Spores; blue; 0; 0; 0; 0; 0; 0
-trigger = eng; CoA; Hericius; ability; Hericius -> Incendiary Spores; red; 0; 0; 0; 0; 0; 0
-trigger = eng; CoA; Hericius; ability; Hericius -> Chlorolance; kick; 0; 0; 0; 0; 0; 0
-trigger = eng; CoA; Hericius; ability; Hericius -> Cleansing Siphon; kick; 0; 0; 0; 0; 0; 0
+trigger = ger; CoA; Hericius; ability; Hericius -> Ätzende Sporen; green; 0; 0; 0; 0; 0; 0
+trigger = ger; CoA; Hericius; ability; Hericius -> Säuresporen; blue; 0; 0; 0; 0; 0; 0
+trigger = ger; CoA; Hericius; ability; Hericius -> Brandsporen; red; 0; 0; 0; 0; 0; 0
+trigger = ger; CoA; Hericius; ability; Hericius -> Chlorolanze; kick; 0; 0; 0; 0; 0; 0
+trigger = ger; CoA; Hericius; ability; Hericius -> Läuterungssiphon; kick; 0; 0; 0; 0; 0; 0
 trigger = eng; CoA; Hericius; emote; Hericius calls for help; adds in; 7; 11; 0; 0; 0; 0
 trigger = eng; CoA; Hericius; ability; Hericius -> The Unseen Chism; wave in; 0; 3; 0; 0; 0; 0
 

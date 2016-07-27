@@ -1,12 +1,12 @@
 # Rift Raid Alert
 # Spoken raid warnings for the MMORPG Rift
-# Version 0.2.5
+# Version 0.2.6
 # Author: Bamux@Typhiria
 
 import os
-import pythoncom
 import time
 import win32com.client
+import pythoncom
 from random import randint
 from threading import Thread
 
@@ -291,7 +291,7 @@ def umlaute(log):
 
 def logfile_analysis(logtext):
     try:
-        global trigger, special, language, location, boss
+        global trigger, special, language, location, boss, timerreset
         # Jokes for Siri
         joke = []
         joke += [''"A man goes into a library and asks for a book on suicide."
@@ -344,7 +344,15 @@ def logfile_analysis(logtext):
                         combat = False
                         lasttime = -1
 
-                if 'rift raid alert trigger <- keywords off' in log:
+                if 'tank pull ->' in log or 'fail pull ->' in log:
+                    i = 0
+                    while i < len(timerreset):
+                        if timerreset[i] == "siri start countdown":
+                            del timerreset[i]
+                            break
+                        i += 1
+                    print(timerreset)
+                elif 'rift raid alert trigger <- keywords off' in log:
                     zone = ""
                     print(log)
                 elif 'rift raid alert trigger -> keywords on' in log:
@@ -372,6 +380,7 @@ def logfile_analysis(logtext):
 
                 # print(trigger)
                 trigger_analysis(log)
+
                 # Siri
                 if siri:
                     if 'siri' in log and 'joke' in log or 'siri' in log and 'witz' in log:
@@ -415,26 +424,20 @@ def logfilecheck():
             log_exists = True
         except:
             try:
-                logfile = winshell.desktop() + 'RIFT Game\Log.txt'
+                logfile = 'C:\Program Files (x86)\RIFT Game\Log.txt'
                 logtext = open(logfile, 'r')
                 print('Log.txt found')
                 log_exists = True
             except:
                 try:
-                    logfile = 'C:\Program Files (x86)\RIFT Game\Log.txt'
+                    logfile = 'C:\Programs\RIFT~1\Log.txt'
                     logtext = open(logfile, 'r')
                     print('Log.txt found')
                     log_exists = True
                 except:
-                    try:
-                        logfile = 'C:\Programs\RIFT~1\Log.txt'
-                        logtext = open(logfile, 'r')
-                        print('Log.txt found')
-                        log_exists = True
-                    except:
-                        print('Error! could not find the Log File')
-                        speak.Speak('Logfile not found!')
-                        log_exists = False
+                    print('Error! could not find the Log File')
+                    speak.Speak('Logfile not found!')
+                    log_exists = False
     if log_exists:
         if playback:
             logtext.seek(0, 1)  # reading from line 1
@@ -611,7 +614,7 @@ def triggerload(file):  # get parametrs from Rift_Raid_Warnings.ini
             print('No Triggers found for ' + file)
 
 
-print("Raid Rift Alert Version 0.2.5")
+print("Rift Raid Alert Version 0.2.6")
 print('Make sure you use /log in Rift after each game restart !')
 
 combattrigger = 1
