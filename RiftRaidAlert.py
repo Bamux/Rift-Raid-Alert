@@ -5,10 +5,8 @@
 
 import os
 import pythoncom
-# import sys
 import time
 import win32com.client
-import winshell as winshell
 from random import randint
 from threading import Thread
 
