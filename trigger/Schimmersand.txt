@@ -7,7 +7,8 @@ trigger = ger; IGP; Anrak the Foul; debuff; $player <- remove Brüchig; tank swa
 trigger = ger; IGP; Anrak the Foul; ability; Anrak der Üble -> Stacheln der Erde; spread out; 0; 0; 0; 0; 0; 0
 trigger = ger; IGP; Anrak the Foul; ability; Anrak der Üble -> Schwarm von Anrak; adds; 0; 0; 0; 0; 0; 0
 trigger = ger; IGP; Anrak the Foul; ability; Anrak der Üble -> Ruf von Anrak; add; 0; 0; 0; 0; 0; 0
-trigger = ger; IGP; Anrak the Foul; ability; Anrak der Üble -> Bösartiger Schweifschlag; frontal damage; 0; 0; 0; 0; 0; 0
+trigger = ger; IGP; Anrak the Foul; ability; Anrak der Üble -> Bösartiger Schweifschlag; frontal cleave in; 0; 4; 0; 0; 0; 0
+trigger = ger; IGP; Anrak the Foul; ability; Anrak der Üble -> Bösartiger Schweifschlag; now; 4; 0; 0; 0; 0; 0
 trigger = ger; IGP; Anrak the Foul; ability; Anrak der Üble -> Augenstrahl -> $player; intercept; 0; 0; 8; 0; 0; 0
 trigger = ger; IGP; Anrak the Foul; ability; Anrak der Üble -> Bande der Erde; move the Boss; 0; 0; 0; 0; 0; 0
 trigger = ger; IGP; Anrak the Foul; debuff; <- Explosivgift; cleanse; 0; 0; 0; 0; 0; 0
@@ -21,7 +22,11 @@ trigger = ger; IGP; Guurloth; ability; Guurloth -> Der Punkt; point; 0; 0; 2; 0;
 trigger = ger; IGP; Guurloth; ability; Guurloth -> Kugel der sengenden Macht; turn; 0; 0; 5; 0; 0; 0
 trigger = ger; IGP; Guurloth; emote; Guurloth schreit: "$player unternimmt gar nichts, oder ihr werdet alle leiden!"; $player stop; 0; 0; 0; 0; 0; 0
 
+trigger = ger; IGP; Thalguur; chat; Combat Begin -> Thalguur; group damage in; 12; 17; 0; 0; 0; 1
 trigger = ger; IGP; Thalguur; emote; Thalguur fokussiert seine Energie auf $player; intercept $player; 0; 0; 0; 0; 0; 0
+trigger = ger; IGP; Thalguur; emote; Thalguur -> Kristalline Salve; heal; 0; 0; 0; 0; 0; 0
+trigger = ger; IGP; Thalguur; emote; Thalguur -> Kristalline Salve; group damage in; 30; 35; 0; 0; 0; 0
+trigger = ger; IGP; Thalguur; emote; Thalguur -> Kraft absorbieren; group damage in; 22; 27; 0; 0; 0; 1
 trigger = ger; IGP; Thalguur; ability; $player <- Fluch der Gier; $player run out; 0; 0; 8; 0; 0; 0
 
 trigger = ger; IGP; Uruluuk; ability; Uruluuk -> Herabstürzende Felsbrocken; Boulders; 0; 0; 0; 0; 0; 0

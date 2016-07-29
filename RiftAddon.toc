@@ -2,11 +2,11 @@
 
 Name = "Rift Raid Alert"
 
-Description = "use /rra for a list of commands"
+Description = "use /log in the rift chatwindow and use /rra start"
 
 Author = "Program: Bamux@Typhiria, Test: Dibl@Brutwacht"
 
-Version = "0.2.6"
+Version = "0.2.7"
 
 Email = "my@email"
 

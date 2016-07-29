@@ -12,7 +12,6 @@ trigger = eng; CoA; Duke Eblius; ability; Aliavax Battle Shaman -> Triage; kick 
 trigger = eng; CoA; Duke Eblius; buff; Duke Eblius <- Hellion's Rage; destroy a portal; 0; 0; 0; 0; 0; 0
 
 trigger = eng; CoA; Azaphrentus; ability; Dark Star -> $player; bubble on $player; 0; 0; 0; 0; 0; 0
-trigger = eng; CoA; Azaphrentus; ability; <- Burning Tears; cleanse; 0; 0; 3; 0; 0; 0
 trigger = eng; CoA; Azaphrentus; ability; Manifest Scorn -> $player; free $player; 0; 0; 0; 0; 0; 0
 trigger = eng; CoA; Azaphrentus; ability; Azaphrentus -> Rage of Azaphrentus; firewall; 0; 0; 0; 0; 0; 0
 
@@ -20,9 +19,6 @@ trigger = eng; CoA; Fyragnos; ability; $player is about to be consumed in fire!;
 trigger = eng; CoA; Fyragnos; debuff; <- Flame of Despair; cleanse; 0; 0; 5; 0; 0; 0
 trigger = eng; CoA; Fyragnos; ability; Fyragnos -> Magma Burst; move; 0; 0; 0; 0; 0; 0
 trigger = eng; CoA; Fyragnos; ability; Fyragnos -> Summon Flamestrom; move; 0; 0; 0; 0; 0; 0
-#trigger = eng; CoA; Fyragnos; ability; Fyragnos -> Searing Breath; frontal cleave; 0; 0; 5; 0; 0; 0
-#trigger = eng; CoA; Fyragnos; ability; Fyragnos -> Tail Whip; back cleave; 0; 0; 5; 0; 0; 0
-#trigger = eng; CoA; Fyragnos; ability; <- Ashen Claw; cleanse; 0; 0; 0; 0; 0; 0
 
 trigger = eng; CoA; Hericius; ability; Hericius -> Caustic Spores; green; 0; 0; 0; 0; 0; 0
 trigger = eng; CoA; Hericius; ability; Hericius -> Acidic Spores; blue; 0; 0; 0; 0; 0; 0
@@ -44,4 +40,4 @@ trigger = eng; CoA; Lord Fionn; emote; Take from me my immortality! Let me susta
 
 
 [Special Trigger alternates between states - language; Loacation; boss; emote or ability; text to search; text to speech status 1; text to speech status 2; ... ]
-special = eng; CoA; Hericius; ability; Hericius -> Caustic Spores || Hericius -> Acidic Spores || Hericius -> Incendiary Spores; first; second; third; last
+special = eng; CoA; Hericius; ability; Hericius -> Caustic Spores || Hericius -> Acidic Spores || Hericius -> Incendiary Spores; first; second; last; safespot; first; second; third; last

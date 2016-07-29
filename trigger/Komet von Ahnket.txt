@@ -2,19 +2,18 @@
 (6)timer; (7)countdown; (8)timeout (the trigger will be ignored for the specified time);
 (9)number of events before the trigger fires; (10)depending on other triggers; (11)timer and countdown reset]
 
-trigger = eng; CoA; Duke Eblius; ability; Duke Eblius -> Blazing Ruin; kick; 0; 0; 0; 0; 0; 0
-trigger = eng; CoA; Duke Eblius; ability; $player <- Infernal Sunder; tank swap; 0; 0; 0; 2; 0; 0
-trigger = eng; CoA; Duke Eblius; ability; $player <- remove Infernal Sunder; tank swap!; 0; 0; 0; -2; 0; 0
-trigger = eng; CoA; Duke Eblius; ability; Duke Eblius -> Sulphurous Blight; cleanse; 0; 0; 0; 0; 0; 0
-trigger = eng; CoA; Duke Eblius; ability; Aliavax Standard Bearer -> Soul Seer; kick; 0; 0; 0; 0; 0; 0
-trigger = eng; CoA; Duke Eblius; ability; Aliavax Standard Bearer -> Blazing Implosion; spread out; 0; 0; 0; 0; 0; 0
-trigger = eng; CoA; Duke Eblius; ability; Aliavax Battle Shaman -> Triage; kick Shaman; 0; 0; 0; 0; 0; 0
-trigger = eng; CoA; Duke Eblius; buff; Duke Eblius <- Hellion's Rage; destroy a portal; 0; 0; 0; 0; 0; 0
+trigger = ger; CoA; Herzog Eblius; ability; Herzog Eblius -> Flammender Ruin; kick; 0; 0; 0; 0; 0; 0
+trigger = ger; CoA; Herzog Eblius; ability; $player <- Infernalischer Trenner; tank swap; 0; 0; 0; 2; 0; 0
+trigger = ger; CoA; Herzog Eblius; ability; $player <- remove Infernalischer Trenner; tank swap!; 0; 0; 0; -2; 0; 0
+trigger = ger; CoA; Herzog Eblius; ability; Herzog Eblius -> Schweflige Pest; cleanse; 0; 0; 0; 0; 0; 0
+trigger = ger; CoA; Herzog Eblius; ability; Aliavax-Standartenträger -> Seelenverbrennung; kick add; 0; 0; 0; 0; 0; 0
+trigger = ger; CoA; Herzog Eblius; ability; Aliavax-Standartenträger -> Flammende Implosion; spread out; 0; 0; 0; 0; 0; 0
+trigger = ger; CoA; Herzog Eblius; ability; Aliavax-Kampfschamane -> Triage; kick Shaman; 0; 0; 0; 0; 0; 0
+trigger = ger; CoA; Herzog Eblius; buff; Herzog Eblius <- Wut des Satansbratens; destroy a portal; 0; 0; 0; 0; 0; 0
 
-trigger = eng; CoA; Azaphrentus; ability; Dark Star -> $player; bubble on $player; 0; 0; 0; 0; 0; 0
-trigger = eng; CoA; Azaphrentus; ability; <- Burning Tears; cleanse; 0; 0; 3; 0; 0; 0
-trigger = eng; CoA; Azaphrentus; ability; Manifest Scorn -> $player; free $player; 0; 0; 0; 0; 0; 0
-trigger = eng; CoA; Azaphrentus; ability; Azaphrentus -> Rage of Azaphrentus; firewall; 0; 0; 0; 0; 0; 0
+trigger = ger; CoA; Azaphrentus; ability; Dunkler Stern -> $player; bubble on $player; 0; 0; 0; 0; 0; 0
+trigger = ger; CoA; Azaphrentus; ability; Manifest Scorn -> $player; free $player; 0; 0; 0; 0; 0; 0
+trigger = ger; CoA; Azaphrentus; ability; Azaphrentus -> Wut des Azaphrentus; firewall; 0; 0; 0; 0; 0; 0
 
 trigger = ger; CoA; Fyragnos; emote; $player wird jeden Augenblick von den Flammen verschlungen!; $player shield; 0; 0; 0; 0; 0; 0
 trigger = ger; CoA; Fyragnos; debuff; <- Flamme der Verzweiflung; cleanse; 0; 0; 5; 0; 0; 0
@@ -26,19 +25,9 @@ trigger = ger; CoA; Hericius; ability; Hericius -> Säuresporen; blue; 0; 0; 0; 
 trigger = ger; CoA; Hericius; ability; Hericius -> Brandsporen; red; 0; 0; 0; 0; 0; 0
 trigger = ger; CoA; Hericius; ability; Hericius -> Chlorolanze; kick; 0; 0; 0; 0; 0; 0
 trigger = ger; CoA; Hericius; ability; Hericius -> Läuterungssiphon; kick; 0; 0; 0; 0; 0; 0
-trigger = eng; CoA; Hericius; emote; Hericius calls for help; adds in; 7; 11; 0; 0; 0; 0
-trigger = eng; CoA; Hericius; ability; Hericius -> The Unseen Chism; wave in; 0; 3; 0; 0; 0; 0
-
-trigger = eng; CoA; Lord Fionn; ability; $player <- Imbalancing Blows; tank swap; 0; 0; 0; 13; 0; 0
-trigger = eng; CoA; Lord Fionn; ability; $player <- remove Imbalancing Blows; tank swap; 0; 0; 0; -13; 0; 0
-trigger = eng; CoA; Lord Fionn; ability; $player <- Marked for Death; $player run out; 0; 0; 5; 0; 0; 0
-#trigger = eng; CoA; Lord Fionn; ability; Lord Fionn -> Reaper's Mark -> $player; $player can't move; 0; 0; 0; 0; 0; 0
-trigger = eng; CoA; Lord Fionn; ability; Lord Fionn -> One Thousand Thrusts; One Thousand Thrusts; 0; 0; 5; 0; 0; 0
-trigger = eng; CoA; Lord Fionn; ability; Lord Fionn -> Omniscient Flash; bullet in; 0; 4; 5; 0; 0; 0
-trigger = eng; CoA; Lord Fionn; ability; Warlord Svenbioard -> Reaper's Blade -> $player; $player step forward; 0; 0; 0; 0; 0; 0
-#trigger = eng; CoA; Lord Fionn; ability; Warlord Svenbioard -> Warcry; Warcry; 0; 0; 0; 0; 0; 0
-trigger = eng; CoA; Lord Fionn; emote; Take from me my immortality! Let me sustain you with my essence; Pyramide; 0; 0; 0; 0; 0; 0
+# trigger = ger; CoA; Hericius; emote; Hericius calls for help; adds in; 7; 11; 0; 0; 0; 0
+# trigger = ger; CoA; Hericius; ability; Hericius -> The Unseen Chism; wave in; 0; 3; 0; 0; 0; 0
 
 
 [Special Trigger alternates between states - language; Loacation; boss; emote or ability; text to search; text to speech status 1; text to speech status 2; ... ]
-special = eng; CoA; Hericius; ability; Hericius -> Caustic Spores || Hericius -> Acidic Spores || Hericius -> Incendiary Spores; first; second; third; last
+special = ger; CoA; Hericius; ability; Hericius -> Ätzende Sporen || Hericius -> Säuresporen || Hericius -> Brandsporen; first; second; last; safespot; first; second; third; last

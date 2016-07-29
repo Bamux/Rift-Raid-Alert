@@ -279,10 +279,12 @@ local function getAbilityName(event, units)
             if value then
                 local details = Inspect.Unit.Detail(id)
                 local cast = Inspect.Unit.Castbar(id)
-                if cast.abilityNew ~= nill then
-                    if cast.abilityNew == "A24FE01816BA3C9E7" then -- Call of the Ascended (Raid rez)
-                        CombatEnd()
-                        return
+                if cast then
+                    if cast.abilityNew then
+                        if cast.abilityNew == "A24FE01816BA3C9E7" then -- Call of the Ascended (Raid rez)
+                            CombatEnd()
+                            return
+                        end
                     end
                 end
                 if details.relation == "hostile" then

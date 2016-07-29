@@ -1,6 +1,6 @@
 # Rift Raid Alert
 # Spoken raid warnings for the MMORPG Rift
-# Version 0.2.6
+# Version 0.2.7
 # Author: Bamux@Typhiria
 
 import os
@@ -442,7 +442,10 @@ def logfilecheck():
         if playback:
             logtext.seek(0, 1)  # reading from line 1
         else:
-            logtext.seek(0, 2)  # jump to the end of the Log.txt
+            if error_analysis:
+                logtext.seek(0, 1)  # reading from line 1
+            else:
+                logtext.seek(0, 2)  # jump to the end of the Log.txt
         t = Thread(target=logfile_analysis, args=(logtext,))
         t.start()
     else:
@@ -532,7 +535,8 @@ def saytext(text):
             pass
         # text = str(text.replace("Ã¼", "ü"))
         print("Siri: " + str(text))
-        speak.Speak(text)
+        if not error_analysis:
+            speak.Speak(text)
 
 
 def triggerload(file):  # get parametrs from Rift_Raid_Warnings.ini
@@ -614,7 +618,7 @@ def triggerload(file):  # get parametrs from Rift_Raid_Warnings.ini
             print('No Triggers found for ' + file)
 
 
-print("Rift Raid Alert Version 0.2.6")
+print("Rift Raid Alert Version 0.2.7")
 print('Make sure you use /log in Rift after each game restart !')
 
 combattrigger = 1
@@ -649,4 +653,5 @@ depending = 0
 counter1 = 0
 counter2 = 0
 playback = False  # only for Playback a logfile from line 1
+error_analysis = False
 logfilecheck()
