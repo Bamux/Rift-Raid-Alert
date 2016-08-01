@@ -177,7 +177,7 @@ def trigger_analysis(log):
                                                 counter2 = 0
                                         else:
                                             print(trigger[i][3])
-                                            if trigger[i][2] == "Lord Arak":
+                                            if trigger[i][2] == "lord arak":
                                                 counter1 += 1
                                                 text_to_speech = trigger[i][5] + " " + str(counter1)
                                                 if counter1 + counter2 == 3:
