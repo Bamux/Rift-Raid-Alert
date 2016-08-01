@@ -1,6 +1,6 @@
 # Rift Raid Alert
 # Spoken raid warnings for the MMORPG Rift
-# Version 0.2.7
+# Version 0.2.8
 # Author: Bamux@Typhiria
 
 import os
@@ -618,7 +618,7 @@ def triggerload(file):  # get parametrs from Rift_Raid_Warnings.ini
             print('No Triggers found for ' + file)
 
 
-print("Rift Raid Alert Version 0.2.7")
+print("Rift Raid Alert Version 0.2.8")
 print('Make sure you use /log in Rift after each game restart !')
 
 combattrigger = 1

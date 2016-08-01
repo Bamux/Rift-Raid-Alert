@@ -37,12 +37,14 @@ end
 local function CombatDeath(event, units)
     if rra_boss_id then
         local unit_details = Inspect.Unit.Detail(units)
-        for id, detail in pairs(unit_details) do
-            if detail.id == rra_boss_id and detail.health < 1 then
-                print("Combat End -> ".. detail.name)
-                local count = #rra_bufflist
-                for i=0, count do rra_bufflist[i]=nil end
-                rra_boss_id = nil
+        if unit_details then
+            for id, detail in pairs(unit_details) do
+                if id == rra_boss_id and detail.health < 1 then
+                    print("Combat End -> ".. detail.name)
+                    local count = #rra_bufflist
+                    for i=0, count do rra_bufflist[i]=nil end
+                    rra_boss_id = nil
+                end
             end
         end
     end
@@ -53,26 +55,30 @@ end
 local function getAddBuffName(event, unit, buffs)
     if unit then
         local details = Inspect.Unit.Detail(unit)
-        for buffid, typeid in pairs(buffs) do
-            local buff = Inspect.Buff.Detail(unit, buffid)
-            local target = Inspect.Unit.Detail(buff.caster)
-            if details.player ~= nil then
-                if details.id ~= buff.caster then
-                    if target ~= nil then
-                        if target.player == nil then
-                            if buff.curse or buff.debuff or buff.disase or buff.poison then
-                                print(details.name .. " <- " ..buff.name)
-                                local bufflist = { id = buffid, name = buff.name }
-                                table.insert(rra_bufflist, bufflist)
+        if details then
+            for buffid, typeid in pairs(buffs) do
+                local buff = Inspect.Buff.Detail(unit, buffid)
+                local target = Inspect.Unit.Detail(buff.caster)
+                if buff then
+                    if details.player then
+                        if details.id ~= buff.caster then
+                            if target then
+                                if target.player == nil then
+                                    if buff.curse or buff.debuff or buff.disase or buff.poison then
+                                        print(details.name .. " <- " ..buff.name)
+                                        local bufflist = { id = buffid, name = buff.name }
+                                        table.insert(rra_bufflist, bufflist)
+                                    end
+                                end
                             end
                         end
+                    else
+                        if details.id == buff.caster and details.relation == "hostile" then
+                            print(details.name .. " <- " ..buff.name)
+                            local bufflist = { id = buffid, name = buff.name }
+                            table.insert(rra_bufflist, bufflist)
+                        end
                     end
-                end
-            else
-                if details.id == buff.caster and details.relation == "hostile" then
-                    print(details.name .. " <- " ..buff.name)
-                    local bufflist = { id = buffid, name = buff.name }
-                    table.insert(rra_bufflist, bufflist)
                 end
             end
         end
@@ -249,22 +255,24 @@ local function getRemoveBuffName(event, unit, buffs)
     if unit then
         local buff_existing = false
         local details = Inspect.Unit.Detail(unit)
-        for buffid, typeid in pairs(buffs) do
-            for key, value in pairs(rra_bufflist) do
-                if value.id == buffid then
-                    local buff_list = Inspect.Buff.List(unit)
-                    local buff_details = Inspect.Buff.Detail(unit,buff_list)
-                    if buff_list ~= nill then
-                        for k, v in pairs(buff_details) do
-                           if v.name == value.name then
-                               buff_existing = true
-                           end
+        if details then
+            for buffid, typeid in pairs(buffs) do
+                for key, value in pairs(rra_bufflist) do
+                    if value.id == buffid then
+                        local buff_list = Inspect.Buff.List(unit)
+                        local buff_details = Inspect.Buff.Detail(unit,buff_list)
+                        if buff_list then
+                            for k, v in pairs(buff_details) do
+                               if v.name == value.name then
+                                   buff_existing = true
+                               end
+                            end
                         end
+                        if buff_existing == false then
+                            print(details.name .. " <- remove " .. value.name )
+                        end
+                        table.remove(rra_bufflist, key)
                     end
-                    if buff_existing == false then
-                        print(details.name .. " <- remove " .. value.name )
-                    end
-                    table.remove(rra_bufflist, key)
                 end
             end
         end
@@ -274,25 +282,24 @@ end
 
 -- print all Abilities (with cast time) from NPC's and show their target (NPC -> Ability -> Target)
 local function getAbilityName(event, units)
-    if units then
-        for id, value in pairs(units) do
-            if value then
-                local details = Inspect.Unit.Detail(id)
-                local cast = Inspect.Unit.Castbar(id)
-                if cast then
+    local unit_details = Inspect.Unit.Detail(units)
+    if unit_details then
+        for id, detail in pairs(unit_details) do
+            local cast = Inspect.Unit.Castbar(id)
+            if cast then
+                if detail.relation == "hostile" then
+                    local player = Inspect.Unit.Detail(id..".target")
+                    if player then
+                        print (detail.name .. " -> " .. cast.abilityName.. " -> " .. player.name)
+                    else
+                        print(detail.name .. " -> " .. cast.abilityName)
+                    end
+                else
                     if cast.abilityNew then
                         if cast.abilityNew == "A24FE01816BA3C9E7" then -- Call of the Ascended (Raid rez)
                             CombatEnd()
                             return
                         end
-                    end
-                end
-                if details.relation == "hostile" then
-                    local target = Inspect.Unit.Detail(id..".target")
-                    if target ~= nil then
-                        print (details.name .. " -> " .. cast.abilityName.. " -> " .. target.name)
-                    else
-                        print(details.name .. " -> " .. cast.abilityName)
                     end
                 end
             end
@@ -306,8 +313,10 @@ local function Zone()
     if detail then
         local zone_id = detail.zone
         local zone = Inspect.Zone.Detail(zone_id)
-        if zone.name then
-            print("Rift Raid Alert Trigger -> ".. zone.name)
+        if zone then
+            if zone.name then
+                print("Rift Raid Alert Trigger -> ".. zone.name)
+            end
         end
     end
 end
@@ -316,12 +325,14 @@ end
 local function ReadyCheck(event, units)
     local unit_details = Inspect.Unit.Detail(units)
     local player = Inspect.Unit.Detail("player")
-    for id, detail in pairs(unit_details) do
-        if detail.id == player.id then
-            if detail.ready then
-                CombatEnd()
-                Zone()
-                rra_raidbuffcheck()
+    if unit_details and player then
+        for id, detail in pairs(unit_details) do
+            if detail.id == player.id then
+                if detail.ready then
+                    CombatEnd()
+                    Zone()
+                    rra_raidbuffcheck()
+                end
             end
         end
     end
