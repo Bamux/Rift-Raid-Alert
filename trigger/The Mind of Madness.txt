@@ -22,7 +22,9 @@ trigger = eng; MoM; Lord Arak; ability; Lord Arak -> Petrified; ; 0; 0; 0; 0; 1;
 trigger = eng; MoM; Lord Arak; ability; Lord Arak -> Pain; ; 0; 0; 0; 0; 2; 0
 trigger = eng; MoM; Lord Arak; ability; Lord Arak -> Weakness; ; 0; 0; 0; 0; 3; 0
 
+trigger = eng; MoM; Fauxmire; ability; Combat Begin -> Fauxmire; 5 secons left; 25; 0; 0; 0; 0; 0
 trigger = eng; MoM; Fauxmire; ability; Combat Begin -> Fauxmire; purple area; 30; 0; 0; 0; 0; 0
+trigger = eng; MoM; Fauxmire; ability; Combat Begin -> Fauxmire; 5 secons left; 55; 0; 0; 0; 0; 0
 trigger = eng; MoM; Fauxmire; ability; Combat Begin -> Fauxmire; purple area; 60; 0; 0; 0; 0; 0
 trigger = eng; MoM; Fauxmire; buff; Fauxmire -> Bright Bioluminesence; range spread out; 0; 0; 0; 0; 0; 0
 trigger = eng; MoM; Fauxmire; buff; Fauxmire -> Vibrant Bioluminesence; melee spread out; 0; 0; 0; 0; 0; 0
@@ -30,7 +32,9 @@ trigger = eng; MoM; Fauxmire; ability; Fauxmire -> Sun Beams; kick; 0; 0; 0; 0; 
 trigger = eng; MoM; Fauxmire; ability; Fauxmire -> Synapse Lance; Tank CD; 0; 0; 0; 0; 0; 0
 trigger = eng; MoM; Fauxmire; ability; Fauxmire -> Beckon the Night; Tank swap; 0; 0; 0; 0; 0; 1
 trigger = eng; MoM; Fauxmire; ability; Fauxmire -> Dawn's Return; Tank swap; 0; 0; 0; 0; 0; 0
+trigger = eng; MoM; Fauxmire; ability; Fauxmire -> Dawn's Return; 5 secons left; 25; 0; 0; 0; 0; 0
 trigger = eng; MoM; Fauxmire; ability; Fauxmire -> Dawn's Return; purple area; 30; 0; 0; 0; 0; 0
+trigger = eng; MoM; Fauxmire; ability; Fauxmire -> Dawn's Return; 5 secons left; 55; 0; 0; 0; 0; 0
 trigger = eng; MoM; Fauxmire; ability; Fauxmire -> Dawn's Return; purple area; 60; 0; 0; 0; 0; 0
 
 trigger = eng; MoM; Lady Envy; ability; Lady Envy -> Embrace of Envy; kick; 0; 0; 0; 0; 0; 0
@@ -54,7 +58,7 @@ trigger = eng; MoM; Dark Genesis; ability; Dark Genesis -> The End; 10 seconds; 
 trigger = eng; MoM; Dark Genesis; ability; Dark Genesis -> The End; 5 seconds; 92; 0; 0; 0; 0; 0
 trigger = eng; MoM; Dark Genesis; ability; Dark Genesis -> The End; Game Over; 97; 0; 0; 0; 0; 0
 
-trigger = eng; MoM; Enigma; ability; Enigma -> Emission of Turmoil; Cleanse; 0; 10; 0; 0; 0; 0
+trigger = eng; MoM; Enigma; ability; Enigma -> Emission of Turmoil; Cleanse; 0; 0; 10; 0; 0; 0
 
 
 [Special Trigger alternates between states - language; Loacation; boss; emote or ability; text to search; text to speech status 1; text to speech status 2; ... ]

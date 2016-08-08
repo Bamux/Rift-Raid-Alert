@@ -3,6 +3,10 @@
 (9)number of events before the trigger fires; (10)depending on other triggers; (11)timer and countdown reset]
 
 
+# Cooldowns
+trigger = all; all; all; buff; Rift Raid Alert -> Lavafield; Lava; 0; 0; 0; 0; 0; 0
+# trigger = all; all; all; buff; Rift Raid Alert -> Orchester; Orchester; 0; 0; 0; 0; 0; 0
+
 # Combat End all languages:
 trigger = all; all; combat_end; ability; Combat End; ; 0; 0; 0; 0; 0; 1
 

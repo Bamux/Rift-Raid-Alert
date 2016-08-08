@@ -44,18 +44,18 @@ trigger = ger; MoM; Lady Neid; ability; Lady Neid -> Verlockung ;  incoming grou
 trigger = ger; MoM; Lady Neid; emote; Meine Erinnerungen erwachen. Macht Euch auf Euer Ende gefasst; Portal Time; 0; 0; 0; 0; 0; 0
 trigger = ger; MoM; Lady Neid; ability; Lady Neid -> Singularity; kill the Guardian of Envy; 0; 0; 10; 0; 0; 0
 
-trigger = ger; MoM; Dark Genesis; debuff; Combat Begin -> Dark Genesis; split; 30; 0; 0; 0; 0; 0
-trigger = ger; MoM; Dark Genesis; debuff; Dark Genesis -> Hope Breaker; healing core; 0; 0; 0; 0; 0; 0
-trigger = ger; MoM; Dark Genesis; debuff; $player <- Pin Down; $player Pin Down; 0; 0; 5; 0; 0; 0
-trigger = ger; MoM; Dark Genesis; ability; Dark Genesis -> Purging Flames; jump in; 0; 3; 0; 0; 0; 0
-trigger = ger; MoM; Dark Genesis; ability; Dark Genesis -> The End; The End; 0; 0; 0; 0; 0; 0
-trigger = ger; MoM; Dark Genesis; ability; Dark Genesis -> The End; 20 seconds; 77; 0; 0; 0; 0; 0
-trigger = ger; MoM; Dark Genesis; ability; Dark Genesis -> The End; 10 seconds; 87; 0; 0; 0; 0; 0
-trigger = ger; MoM; Dark Genesis; ability; Dark Genesis -> The End; 5 seconds; 92; 0; 0; 0; 0; 0
-trigger = ger; MoM; Dark Genesis; ability; Dark Genesis -> The End; Game Over; 97; 0; 0; 0; 0; 0
+trigger = ger; MoM; Dunkler Ursprung; debuff; Combat Begin -> Dunkler Ursprung; split; 30; 0; 0; 0; 0; 0
+trigger = ger; MoM; Dunkler Ursprung; debuff; Dunkler Ursprung -> Hope Breaker; healing core; 0; 0; 0; 0; 0; 0
+trigger = ger; MoM; Dunkler Ursprung; debuff; $player <- Festnageln; $player Pin Down; 0; 0; 5; 0; 0; 0
+trigger = ger; MoM; Dunkler Ursprung; ability; Dunkler Ursprung -> Reinigende Flammen; jump in; 0; 3; 0; 0; 0; 0
+trigger = ger; MoM; Dunkler Ursprung; ability; Dunkler Ursprung -> Das Ende; The End; 0; 0; 0; 0; 0; 0
+trigger = ger; MoM; Dunkler Ursprung; ability; Dunkler Ursprung -> Das Ende; 20 seconds; 77; 0; 0; 0; 0; 0
+trigger = ger; MoM; Dunkler Ursprung; ability; Dunkler Ursprung -> Das Ende; 10 seconds; 87; 0; 0; 0; 0; 0
+trigger = ger; MoM; Dunkler Ursprung; ability; Dunkler Ursprung -> Das Ende; 5 seconds; 92; 0; 0; 0; 0; 0
+trigger = ger; MoM; Dunkler Ursprung; ability; Dunkler Ursprung -> Das Ende; Game Over; 97; 0; 0; 0; 0; 0
 
 trigger = ger; MoM; Enigma; ability; Enigma -> Emission of Turmoil; Cleanse; 0; 10; 0; 0; 0; 0
 
 
 [Special Trigger alternates between states - language; Loacation; boss; emote or ability; text to search; text to speech status 1; text to speech status 2; ... ]
-special = ger; MoM; Dark Genesis; ability; Dark Genesis -> Calamity || Dark Genesis -> Destruction || Dark Genesis -> Ruination || Dark Genesis -> Hope Slayer; 1; 2; 3; 4
+special = ger; MoM; Dunkler Ursprung; ability; Dunkler Ursprung -> Calamity || Dunkler Ursprung -> Destruction || Dunkler Ursprung -> Ruination || Dunkler Ursprung -> Hope Slayer; 1; 2; 3; 4

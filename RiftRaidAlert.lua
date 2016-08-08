@@ -1,5 +1,7 @@
 ﻿local rra_boss_id
 local rra_bufflist = {}
+local Lavafield = Inspect.Time.Frame()
+local Orchester = Inspect.Time.Frame()
 
 
 local function CombatEnd()
@@ -39,7 +41,7 @@ local function CombatDeath(event, units)
         local unit_details = Inspect.Unit.Detail(units)
         if unit_details then
             for id, detail in pairs(unit_details) do
-                if id == rra_boss_id and detail.health < 1 then
+                if detail.id == rra_boss_id then
                     print("Combat End -> ".. detail.name)
                     local count = #rra_bufflist
                     for i=0, count do rra_bufflist[i]=nil end
@@ -61,6 +63,17 @@ local function getAddBuffName(event, unit, buffs)
                 local target = Inspect.Unit.Detail(buff.caster)
                 if buff then
                     if details.player then
+                        if buff.type == "B14A2E6D509F79153" then -- Lavafield
+                            if (Inspect.Time.Frame() - Lavafield) > 10 then
+                                print("Rift Raid Alert -> Lavafield")
+                                Lavafield = Inspect.Time.Frame()
+                            end
+                        elseif buff.type == "BFD9F4FF8303ACEE6" or buff.type == "B39FB71DBD14135BE" then -- Orchester
+                            if (Inspect.Time.Frame() - Orchester) > 15 then
+                                print("Rift Raid Alert -> Orchester")
+                                Orchester = Inspect.Time.Frame()
+                            end
+                        end
                         if details.id ~= buff.caster then
                             if target then
                                 if target.player == nil then
@@ -240,10 +253,10 @@ local function test()
         --dump (detail)
         if detail then
             if detail.rune then
-                print(detail.name .. " = " .. detail.rune)
+                print(detail.name .. "detail.rune = " .. detail.rune .. " detail.id = " .. detail.id)
             end
             if detail.type then
-                print(detail.name .. " = " .. detail.type)
+                print(detail.name .. "detail.type = " .. detail.type .. " detail.id = " .. detail.id)
             end
         end
     end
