@@ -46,9 +46,11 @@ Under http://www.mwsreader.com/en/voices/ you can download other voices (differe
 1. INSTALL VB-CABLE Virtual Audio Device - http://vb-audio.pagesperso-orange.fr/Cable/index.htm
 2. Right click on the windows speaker icon > choose Recording Devices > double clicking CABLE Output > Listen > Playback through this device: coose Default Playback Device and checking the box
 ![Recording Devices](https://raw.githubusercontent.com/Bamux/Rift-Raid-Alert/images/Recording%20Devices.png)
+
 3. Open the Windows Text to Speech Engine. Default folder is C:\Windows\SysWOW64\Speech\SpeechUX\sapi.cpl
    Advanced > choose CABLE Input (VB-Audio Virtual Cable)
 ![Recording Devices](https://raw.githubusercontent.com/Bamux/Rift-Raid-Alert/images/Text%20to%20Speach.png)
+
 3. Open teamspeak > Option > Capture and Create a new Profil, coose CABLE Output (VB-Audio Virtual Cable) as your Recording Device
 4. Read how to use multiple Teamspek Clients - http://www.gameplayinside.com/optimize/multiple-teamspeak-3-clients/ 
 5. Use one teamspek client with your default profil and the second teamspek client with your new profil for Raid Rift Alerts
