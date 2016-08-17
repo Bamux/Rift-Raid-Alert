@@ -49,9 +49,11 @@ Under http://www.mwsreader.com/en/voices/ you can download other voices (differe
 
 3. Open the Windows Text to Speech Engine. Default folder is C:\Windows\SysWOW64\Speech\SpeechUX\sapi.cpl
    Advanced > choose CABLE Input (VB-Audio Virtual Cable)
-![Recording Devices](https://raw.githubusercontent.com/Bamux/Rift-Raid-Alert/images/Text%20to%20Speach.png)
+![Text to Speech](https://raw.githubusercontent.com/Bamux/Rift-Raid-Alert/images/Text%20to%20Speach.png) ![Text to Speech Advanced](https://raw.githubusercontent.com/Bamux/Rift-Raid-Alert/images/Text%20to%20Speech%20Advanced.png)
 
-3. Open teamspeak > Option > Capture and Create a new Profil, coose CABLE Output (VB-Audio Virtual Cable) as your Recording Device
-4. Read how to use multiple Teamspek Clients - http://www.gameplayinside.com/optimize/multiple-teamspeak-3-clients/ 
-5. Use one teamspek client with your default profil and the second teamspek client with your new profil for Raid Rift Alerts
+4. Open teamspeak > Option > Capture and Create a new Profil, coose CABLE Output (VB-Audio Virtual Cable) as your Recording Device
+![Team Speak](https://raw.githubusercontent.com/Bamux/Rift-Raid-Alert/images/Team%20Speak%20Capture.png)
+
+5. Read how to use multiple Teamspek Clients - http://www.gameplayinside.com/optimize/multiple-teamspeak-3-clients/ 
+6. Use one teamspek client with your default profil and the second teamspek client with your new profil for Raid Rift Alerts
 
