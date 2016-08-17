@@ -2,13 +2,18 @@
 (6)timer; (7)countdown; (8)timeout (the trigger will be ignored for the specified time);
 (9)number of events before the trigger fires; (10)depending on other triggers; (11)timer and countdown reset]
 
+trigger = eng; CoA; Duke Eblius; ability; Aliavax Battle Shaman -> Triage; Shaman kick; 0; 0; 0; 0; 0; 0
 trigger = eng; CoA; Duke Eblius; ability; Duke Eblius -> Blazing Ruin; kick; 0; 0; 0; 0; 0; 0
 trigger = eng; CoA; Duke Eblius; ability; $player <- Infernal Sunder; tank swap; 0; 0; 0; 2; 0; 0
 trigger = eng; CoA; Duke Eblius; ability; $player <- remove Infernal Sunder; tank swap!; 0; 0; 0; -2; 0; 0
 trigger = eng; CoA; Duke Eblius; ability; Duke Eblius -> Sulphurous Blight; cleanse; 0; 0; 0; 0; 0; 0
+trigger = eng; CoA; Duke Eblius; ability; Duke Eblius -> Chains of Woe -> $playert; free $player; 0; 0; 0; 0; 0; 0
+trigger = eng; CoA; Duke Eblius; ability; Duke Eblius -> Call to Arms; add; 0; 0; 0; 0; 0; 0
+trigger = eng; CoA; Duke Eblius; ability; Duke Eblius -> Call to Sacrifice; Phase 3; 0; 60; 0; 0; 0; 0
+trigger = eng; CoA; Duke Eblius; ability; Duke Eblius -> Call to Sacrifice; 10 seconds; 50; 0; 0; 0; 0; 0
+trigger = eng; CoA; Duke Eblius; ability; Duke Eblius -> Call to Sacrifice; 5 seconds; 55; 0; 0; 0; 0; 0
 trigger = eng; CoA; Duke Eblius; ability; Aliavax Standard Bearer -> Soul Seer; kick; 0; 0; 0; 0; 0; 0
 trigger = eng; CoA; Duke Eblius; ability; Aliavax Standard Bearer -> Blazing Implosion; spread out; 0; 0; 0; 0; 0; 0
-trigger = eng; CoA; Duke Eblius; ability; Aliavax Battle Shaman -> Triage; kick Shaman; 0; 0; 0; 0; 0; 0
 trigger = eng; CoA; Duke Eblius; buff; Duke Eblius <- Hellion's Rage; destroy a portal; 0; 0; 0; 0; 0; 0
 
 trigger = eng; CoA; Azaphrentus; ability; Dark Star -> $player; bubble on $player; 0; 0; 0; 0; 0; 0
@@ -37,6 +42,7 @@ trigger = eng; CoA; Lord Fionn; ability; Lord Fionn -> Omniscient Flash; bullet 
 trigger = eng; CoA; Lord Fionn; ability; Warlord Svenbioard -> Reaper's Blade -> $player; $player step forward; 0; 0; 0; 0; 0; 0
 #trigger = eng; CoA; Lord Fionn; ability; Warlord Svenbioard -> Warcry; Warcry; 0; 0; 0; 0; 0; 0
 trigger = eng; CoA; Lord Fionn; emote; Take from me my immortality! Let me sustain you with my essence; Pyramide; 0; 0; 0; 0; 0; 0
+trigger = eng; CoA; Lord Fionn; ability; Dread Witch Lokerinn -> Torpor of Resurgence; witch is healing; 0; 0; 0; 0; 0; 0
 
 
 [Special Trigger alternates between states - language; Loacation; boss; emote or ability; text to search; text to speech status 1; text to speech status 2; ... ]

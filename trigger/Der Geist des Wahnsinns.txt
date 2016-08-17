@@ -11,6 +11,7 @@ trigger = ger; MoM; Pagura; ability; Pagura -> Markerschütterndes Gebrüll; 5 s
 trigger = ger; MoM; Pagura; ability; Pagura -> Markerschütterndes Gebrüll; Ice Soul; 0; 17; 0; 0; 0; 0
 trigger = ger; MoM; Pagura; ability; Schmerzbringer -> $player; $player run out; 0; 0; 0; 0; 0; 0
 trigger = ger; MoM; Pagura; debuff; $player <- Okadainvergiftung; $player run out; 0; 0; 0; 0; 0; 0
+trigger = ger; MoM; Pagura; emote; Raaaarrrrhhh; Phase 2; 0; 0; 0; 0; 0; 1
 
 trigger = ger; MoM; Lord Arak; debuff; <- Finale Sedierung; cleanse; 0; 0; 0; 0; 0; 0
 trigger = ger; MoM; Lord Arak; debuff; $player <- Fragmentierung; tank swap; 0; 0; 0; 3; 0; 0
@@ -54,7 +55,18 @@ trigger = ger; MoM; Dunkler Ursprung; ability; Dunkler Ursprung -> Das Ende; 10 
 trigger = ger; MoM; Dunkler Ursprung; ability; Dunkler Ursprung -> Das Ende; 5 seconds; 92; 0; 0; 0; 0; 0
 trigger = ger; MoM; Dunkler Ursprung; ability; Dunkler Ursprung -> Das Ende; Game Over; 97; 0; 0; 0; 0; 0
 
-trigger = ger; MoM; Enigma; ability; Enigma -> Emission of Turmoil; Cleanse; 0; 10; 0; 0; 0; 0
+trigger = ger; MoM; Enigma; ability; Das Rätsel -> Brechendes Ende; kick; 0; 0; 0; 0; 0; 0
+trigger = ger; MoM; Enigma; ability; Das Rätsel -> Turbulenzstrahlung; groupdamage in; 0; 3; 5; 0; 0; 0
+trigger = ger; MoM; Enigma; ability; <- Wirren; cleanse; 0; 0; 5; 0; 0; 0
+trigger = ger; MoM; Enigma; ability; <- remove Wirren; done; 0; 0; 5; 0; 0; 0
+trigger = ger; MoM; Enigma; ability; Das Rätsel -> Überwältigende Kraft; tank damage; 0; 0; 10; 0; 0; 0
+trigger = ger; MoM; Enigma; ability; Das Rätsel -> Meteor -> $player; Meteor on $player; 0; 0; 0; 0; 0; 0
+trigger = ger; MoM; Enigma; ability; Pandämoniumhindernis -> Matrixreparatur; kick; 0; 0; 0; 0; 0; 0
+trigger = ger; MoM; Enigma; ability; Pandämoniumhindernis -> Reflexionsbarriere; kick; 0; 0; 0; 0; 0; 0
+trigger = ger; MoM; Enigma; ability; Das Rätsel -> Chaosbeschwörung; Phase Two; 0; 0; 0; 0; 0; 0
+trigger = ger; MoM; Enigma; ability; Das Rätsel -> Eilige Funken; speed increase; 0; 0; 0; 0; 0; 0
+trigger = ger; MoM; Enigma; ability; Das Rätsel -> Ruf des Chaos; Phase Three; 0; 0; 0; 0; 0; 0
+#trigger = ger; MoM; Enigma; ability; Das Rätsel -> Chaosflamme; flame; 0; 0; 0; 0; 0; 0
 
 
 [Special Trigger alternates between states - language; Loacation; boss; emote or ability; text to search; text to speech status 1; text to speech status 2; ... ]

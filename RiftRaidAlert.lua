@@ -32,6 +32,13 @@ local function CombatCheck(event, units) -- Check Combat Status (Combat Begin, C
                 break
             end
         end
+    else
+        local unit_details = Inspect.Unit.Detail(units)
+        for id, detail in pairs(unit_details) do
+            if detail.id == rra_boss_id then
+                CombatEnd()
+            end
+        end
     end
 end
 
