@@ -51,4 +51,4 @@ Under http://www.mwsreader.com/en/voices/ you can download other voices (differe
 4. Read how to use multiple Teamspek Clients - http://www.gameplayinside.com/optimize/multiple-teamspeak-3-clients/ 
 5. Use one teamspek client with your default profil and the second teamspek client with your new profil for Raid Rift Alerts
 
-![alt tag](https://raw.githubusercontent.com/Bamux/Rift-Raid-Alert/images/Recording%20Devices.png)
+![Recording Devices](https://raw.githubusercontent.com/Bamux/Rift-Raid-Alert/images/Recording%20Devices.png)
