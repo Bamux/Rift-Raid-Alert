@@ -10,7 +10,7 @@ trigger = ger; MoM; Pagura; ability; Pagura -> Überspringende Ansteckung; leap;
 trigger = ger; MoM; Pagura; ability; Pagura -> Markerschütterndes Gebrüll; 5 seconds left; 65; 70; 0; 0; 0; 0
 trigger = ger; MoM; Pagura; ability; Pagura -> Markerschütterndes Gebrüll; Ice Soul; 0; 17; 0; 0; 0; 0
 trigger = ger; MoM; Pagura; ability; Schmerzbringer -> $player; $player run out; 0; 0; 0; 0; 0; 0
-trigger = ger; MoM; Pagura; debuff; $player <- Okadainvergiftung; $player run out; 0; 0; 0; 0; 0; 0
+trigger = ger; MoM; Pagura; debuff; $player <- Okadainvergiftung; $player run out; 0; 0; 20; 0; 0; 0
 trigger = ger; MoM; Pagura; emote; Raaaarrrrhhh; Phase 2; 0; 0; 0; 0; 0; 1
 
 trigger = ger; MoM; Lord Arak; debuff; <- Finale Sedierung; cleanse; 0; 0; 0; 0; 0; 0

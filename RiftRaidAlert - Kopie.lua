@@ -1,9 +1,7 @@
-﻿local rra_boss_id = 0
+﻿local rra_boss_id
 local rra_bufflist = {}
 local Lavafield = Inspect.Time.Frame()
 local Orchester = Inspect.Time.Frame()
-local maxhitpoints = 0
-local lasthitpoints = 100
 
 
 local function CombatEnd()
@@ -11,34 +9,34 @@ local function CombatEnd()
         print("Combat End")
         local count = #rra_bufflist
         for i=0, count do rra_bufflist[i]=nil end
-        maxhitpoints = 0
-        lasthitpoints = 100
-        rra_boss_id = 0
+        rra_boss_id = nil
     end
 end
 
 
 local function CombatCheck(event, units) -- Check Combat Status (Combat Begin, Combat End)
-    if rra_boss_id == 0  then
+    if not rra_boss_id then
         local unit_details = Inspect.Unit.Detail(units)
-        if unit_details then
-            for id, detail in pairs(unit_details) do
-                --print("-> ".. detail.name)
-                --if detail.id ~= rra_boss_id then
-                    if detail.relation == "hostile" and detail.healthMax > 20000000 and detail.healthMax > maxhitpoints and detail.health > detail.healthMax*0.98 then
-                        maxhitpoints = detail.healthMax
-                        print("Combat Begin -> ".. detail.name)
-                        rra_boss_id = detail.id
-                        local player = Inspect.Unit.Detail(detail.id .. ".target")
-                        if player then
-                            if player.role == "tank" then
-                                print("Tank pull -> " .. player.name)
-                            else
-                                print("Fail pull -> " .. player.name)
-                            end
-                        end
+        for id, detail in pairs(unit_details) do
+            if detail.relation == "hostile" and detail.healthMax > 20000000 and detail.health > detail.healthMax*0.98 then
+                print("Combat Begin -> ".. detail.name)
+                rra_boss_id = detail.id
+                local player = Inspect.Unit.Detail(detail.id .. ".target")
+                if player then
+                    if player.role == "tank" then
+                        print("Tank pull -> " .. player.name)
+                    else
+                        print("Fail pull -> " .. player.name)
                     end
-                --end
+                end
+                break
+            end
+        end
+    else
+        local unit_details = Inspect.Unit.Detail(units)
+        for id, detail in pairs(unit_details) do
+            if detail.id == rra_boss_id then
+                CombatEnd()
             end
         end
     end
@@ -46,41 +44,15 @@ end
 
 
 local function CombatDeath(event, units)
-    if rra_boss_id ~= 0 then
+    if rra_boss_id then
         local unit_details = Inspect.Unit.Detail(units)
         if unit_details then
             for id, detail in pairs(unit_details) do
                 if detail.id == rra_boss_id then
-                    if detail.health < detail.healthMax*0.1 then
-                        print("Death -> ".. detail.name)
-                        CombatEnd()
-                    end
-                end
-            end
-        end
-    end
-end
-
-
-local function CheckHP(event, units)
-    local unit_details = Inspect.Unit.Detail(units)
-    local hitpoints = 100
-    if  unit_details then
-        for id, detail in pairs(unit_details) do
-            if detail.id == rra_boss_id then
-                local hitpoints_percent = detail.health*100/detail.healthMax
-                while hitpoints >= 0 do
-                    if  hitpoints_percent <= hitpoints and hitpoints_percent > hitpoints-5 then
-                        if hitpoints ~= lasthitpoints then
-                            print(detail.name .. " -> " .. hitpoints .. " %")
-                            lasthitpoints = hitpoints
-                            if hitpoints == 0 or hitpoints == 100 then
-                                CombatEnd()
-                            end
-                        end
-                        break
-                    end
-                    hitpoints = hitpoints - 5
+                    print("Combat End -> ".. detail.name)
+                    local count = #rra_bufflist
+                    for i=0, count do rra_bufflist[i]=nil end
+                    rra_boss_id = nil
                 end
             end
         end
@@ -394,7 +366,6 @@ local function rra_stop()
     Command.Event.Detach(Event.Buff.Add, getAddBuffName, "buffaddevent")
     Command.Event.Detach(Event.Buff.Remove, getRemoveBuffName, "buffremoveevent")
     Command.Event.Detach(Event.Unit.Castbar, getAbilityName, "AbilityName")
-    Command.Event.Detach(Event.Unit.Detail.Health, CheckHP, "CheckHP")
     --Command.Event.Detach(Event.Unit.Detail.Zone, ChangeZone, "ChangeZone")
 end
 
@@ -407,7 +378,6 @@ local function rra_start()
     Command.Event.Attach(Event.Buff.Add, getAddBuffName, "buffaddevent")
     Command.Event.Attach(Event.Buff.Remove, getRemoveBuffName, "buffremoveevent")
     Command.Event.Attach(Event.Unit.Castbar, getAbilityName, "AbilityName")
-    Command.Event.Attach(Event.Unit.Detail.Health, CheckHP, "CheckHP")
     --Command.Event.Attach(Event.Unit.Detail.Zone, ChangeZone, "ChangeZone")
 end
 
@@ -476,6 +446,5 @@ local function slashHandler(h, args)
 
 end
 
-print("Combat End")
 Command.Event.Attach(Event.Addon.Startup.End, start_check, "StartCheck")
 Command.Event.Attach(Command.Slash.Register("rra"), slashHandler, "Command.Slash.Register")

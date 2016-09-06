@@ -10,7 +10,7 @@ trigger = eng; MoM; Pagura; ability; Pagura -> Leaping Contagion; leap; 0; 0; 0;
 trigger = eng; MoM; Pagura; ability; Pagura -> Shattering Roar; 5 seconds left; 65; 70; 0; 0; 0; 0
 trigger = eng; MoM; Pagura; ability; Pagura -> Shattering Roa; Ice Soul; 0; 17; 0; 0; 0; 0
 trigger = eng; MoM; Pagura; ability; Pain Bringer -> $player; $player run out; 0; 0; 0; 0; 0; 0
-trigger = eng; MoM; Pagura; debuff; $player <- Okadaic Poisoning; $player run out; 0; 0; 0; 0; 0; 0
+trigger = eng; MoM; Pagura; debuff; $player <- Okadaic Poisoning; $player run out; 0; 0; 20; 0; 0; 0
 trigger = eng; MoM; Pagura; emote; Raaaarrrrhhh; Phase 2; 0; 0; 0; 0; 0; 1
 
 trigger = eng; MoM; Lord Arak; debuff; <- Terminal Sedation; cleanse; 0; 0; 0; 0; 0; 0
@@ -27,6 +27,8 @@ trigger = eng; MoM; Fauxmire; ability; Combat Begin -> Fauxmire; 5 secons left; 
 trigger = eng; MoM; Fauxmire; ability; Combat Begin -> Fauxmire; purple area; 30; 0; 0; 0; 0; 0
 trigger = eng; MoM; Fauxmire; ability; Combat Begin -> Fauxmire; 5 secons left; 55; 0; 0; 0; 0; 0
 trigger = eng; MoM; Fauxmire; ability; Combat Begin -> Fauxmire; purple area; 60; 0; 0; 0; 0; 0
+trigger = eng; MoM; Fauxmire; ability; Combat Begin -> Fauxmire; 5 secons left; 85; 0; 0; 0; 0; 0
+trigger = eng; MoM; Fauxmire; ability; Combat Begin -> Fauxmire; purple area; 90; 0; 0; 0; 0; 0
 trigger = eng; MoM; Fauxmire; buff; Fauxmire -> Bright Bioluminesence; range spread out; 0; 0; 0; 0; 0; 0
 trigger = eng; MoM; Fauxmire; buff; Fauxmire -> Vibrant Bioluminesence; melee spread out; 0; 0; 0; 0; 0; 0
 trigger = eng; MoM; Fauxmire; ability; Fauxmire -> Sun Beams; kick; 0; 0; 0; 0; 0; 0
@@ -37,6 +39,8 @@ trigger = eng; MoM; Fauxmire; ability; Fauxmire -> Dawn's Return; 5 secons left;
 trigger = eng; MoM; Fauxmire; ability; Fauxmire -> Dawn's Return; purple area; 30; 0; 0; 0; 0; 0
 trigger = eng; MoM; Fauxmire; ability; Fauxmire -> Dawn's Return; 5 secons left; 55; 0; 0; 0; 0; 0
 trigger = eng; MoM; Fauxmire; ability; Fauxmire -> Dawn's Return; purple area; 60; 0; 0; 0; 0; 0
+trigger = eng; MoM; Fauxmire; ability; Fauxmire -> Dawn's Return; 5 secons left; 85; 0; 0; 0; 0; 0
+trigger = eng; MoM; Fauxmire; ability; Fauxmire -> Dawn's Return; purple area; 90; 0; 0; 0; 0; 0
 
 trigger = eng; MoM; Lady Envy; ability; Lady Envy -> Embrace of Envy; kick; 0; 0; 0; 0; 0; 0
 trigger = eng; MoM; Lady Envy; ability; Envy's Focus -> $player; intercept $player; 0; 0; 5; 0; 0; 0
