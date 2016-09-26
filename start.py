@@ -1,6 +1,6 @@
 # Rift Raid Alert
 # Spoken raid warnings for the MMORPG Rift
-# Version 0.3.1
+# Version 0.3.2
 # Author: Bamux@Typhiria
 
 import os
@@ -111,7 +111,7 @@ def trigger_analysis(log):
                                                     if player in stacks_trigger[z][0]:
                                                         del stacks_trigger[z]
                                                         print(stacks_trigger)
-                                                        z += 1
+                                                    z += 1
                                                 if stacks_trigger:
                                                     if stacks_trigger[0][1] >= abs(int(trigger[i][9])):
                                                         if int(trigger[i][6]) == 0:
@@ -144,6 +144,9 @@ def trigger_analysis(log):
                                         if trigger[i][2] != "all":
                                             if trigger[i][2] == "combat_end":
                                                 timeout_trigger.clear()
+                                                timerreset.clear()
+                                                stacks.clear()
+                                                stacks_trigger.clear()
                                                 counter1 = 0
                                                 counter2 = 0
                                                 # print("Combat End")
@@ -229,6 +232,9 @@ def trigger_analysis(log):
                                         if trigger[i][2] != "all":
                                             if trigger[i][2] == "combat_end":
                                                 timeout_trigger.clear()
+                                                timerreset.clear()
+                                                stacks.clear()
+                                                stacks_trigger.clear()
                                                 counter1 = 0
                                                 counter2 = 0
                                                 # print("Combat End")
@@ -618,7 +624,7 @@ def triggerload(file):  # get parametrs from Rift_Raid_Warnings.ini
             print('No Triggers found for ' + file)
 
 
-print("Rift Raid Alert Version 0.3.1")
+print("Rift Raid Alert Version 0.3.2")
 print('Make sure you use /log in Rift after each game restart !')
 
 combattrigger = 1

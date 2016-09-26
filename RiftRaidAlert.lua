@@ -7,7 +7,7 @@ local lasthitpoints = 100
 
 
 local function CombatEnd()
-    if rra_boss_id then
+    if rra_boss_id ~= 0 then
         print("Combat End")
         local count = #rra_bufflist
         for i=0, count do rra_bufflist[i]=nil end
@@ -51,10 +51,12 @@ local function CombatDeath(event, units)
         if unit_details then
             for id, detail in pairs(unit_details) do
                 if detail.id == rra_boss_id then
-                    if detail.health < detail.healthMax*0.1 then
-                        print("Death -> ".. detail.name)
-                        CombatEnd()
-                    end
+                    --if detail.health < detail.healthMax*0.1 then
+                        print("Boss Death -> ".. detail.name)
+                        -- CombatEnd()
+                    --end
+                else
+                    print("Death -> ".. detail.name)
                 end
             end
         end
@@ -473,9 +475,7 @@ local function slashHandler(h, args)
     print("/rra stop - stop Rift Raid Alert")
     print("/rra keywords - search the chat for keywords from your keywords.txt")
     print("/rra check - checks waeponstones, flasks and foodof all players in the raid")
-
 end
 
-print("Combat End")
 Command.Event.Attach(Event.Addon.Startup.End, start_check, "StartCheck")
 Command.Event.Attach(Command.Slash.Register("rra"), slashHandler, "Command.Slash.Register")

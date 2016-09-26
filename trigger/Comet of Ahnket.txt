@@ -27,9 +27,9 @@ trigger = eng; CoA; Fyragnos; debuff; <- Flame of Despair; cleanse; 0; 0; 5; 0; 
 trigger = eng; CoA; Fyragnos; ability; Fyragnos -> Magma Burst; move; 0; 0; 0; 0; 0; 0
 trigger = eng; CoA; Fyragnos; ability; Fyragnos -> Summon Flamestrom; move; 0; 0; 0; 0; 0; 0
 trigger = eng; CoA; Fyragnos; ability; $player <- Shackles of Ash; $player run out; 0; 0; 10; 0; 0; 0
-
+trigger = eng; CoA; Fyragnos; ability; Fyragnos -> Inferno Blast; Group Damage; 0; 0; 5; 0; 0; 0
+trigger = eng; CoA; Fyragnos; ability; Fyragnos -> Call of the Drake; prepare for adds; 0; 0; 0; 0; 0; 0
 #trigger = eng; CoA; Fyragnos; ability; $player <- Flame Shackle; cleanse 0; 0; 0; 0; 0; 0
-
 
 trigger = eng; CoA; Hericius; ability; Hericius -> Caustic Spores; green; 0; 0; 0; 0; 0; 0
 trigger = eng; CoA; Hericius; ability; Hericius -> Acidic Spores; blue; 0; 0; 0; 0; 0; 0
