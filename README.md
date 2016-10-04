@@ -56,4 +56,4 @@ Under http://www.mwsreader.com/en/voices/ you can download other voices (differe
 
 5. Read how to use multiple Teamspek Clients - http://www.gameplayinside.com/optimize/multiple-teamspeak-3-clients/ 
 6. Use one teamspek client with your default profil and the second teamspek client with your new profil for Raid Rift Alerts
-
+7. at the moment only text to speech announcements can be output via teamspeak, choose output = tts in the RiftRaidAlert.ini
