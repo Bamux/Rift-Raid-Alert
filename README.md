@@ -1,4 +1,4 @@
-## Rift Raid Alert v0.3.2
+## Rift Raid Alert v0.3.5
 Rift Raid Alert is a program (written in Python) which can be used to create spoken raid warnings for the MMORPG Rift.
 The current version support announcements for RoF, IGP, MoM and CoA. You can use Rift Raid Alert with Team Speak so the whole Raid can benefit from.
 
@@ -19,7 +19,7 @@ Features:
 2.  Copy the Rift-Raid-Alert-master folder in your Rift Addon folder
 3.  Start Rift
 4.  use /log in the rift chatwindow
-5.  Start the RiftRaidAlert.exe
+5.  Start the start.exe
 6.  use /rra start (you can use /rra stop for stoping Rift Raid Alert) or /rra keywords if you want only search for key words from the keywords.txt
 7.  Write in game "Siri introduce yourself" or "Siri tell me a joke" or "Siri say whatever you want" for a sound check
 8.  Edit the RiftRaidAlert.ini - you can change settings (Log.txt path, volume, ...)
