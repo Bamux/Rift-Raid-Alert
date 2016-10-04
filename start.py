@@ -1,18 +1,19 @@
 # Rift Raid Alert
 # Spoken raid warnings for the MMORPG Rift
-# Version 0.3.2
+# Version 0.3.5
 # Author: Bamux@Typhiria
 
 import os
 import time
 import win32com.client
 import pythoncom
+import winsound
 from random import randint
 from threading import Thread
 
 
 def trigger_analysis(log):
-    global timerreset, language, location, boss, specialtrigger, timeout_trigger, siri, stacks, stacks_trigger, depending, counter1, counter2
+    global timerreset, language, location, boss, specialtrigger, timeout_trigger, siri, stacks, stacks_trigger, depending, counter1, counter2, output
     trigger_found = False
     stacks_found = False
     first = False
@@ -74,13 +75,34 @@ def trigger_analysis(log):
                                     player = cut_string[0]
                                     if "$player" in trigger[i][5]:
                                         if '$' == trigger[i][5][0]:
-                                            cut_string = trigger[i][5].split('$player ')
-                                            new_string = cut_string[1]
-                                            new_string = player + " " + new_string
+                                            if output == "tts":
+                                                cut_string = trigger[i][5].split('$player ')
+                                                new_string = cut_string[1]
+                                                new_string = player + " " + new_string
+                                            else:
+                                                if playername == player:
+                                                    cut_string = trigger[i][5].split('$player ')
+                                                    new_string = cut_string[1]
+                                                else:
+                                                    if output == "mix":
+                                                        cut_string = trigger[i][5].split('$player ')
+                                                        new_string = cut_string[1]
+                                                        new_string = player + " " + new_string
                                         else:
-                                            cut_string = trigger[i][5].split(' $player')
-                                            new_string = cut_string[0]
-                                            new_string = new_string + " " + player
+                                            if output == "tts":
+                                                cut_string = trigger[i][5].split(' $player')
+                                                new_string = cut_string[0]
+                                                new_string = new_string + " " + player
+                                            else:
+                                                if playername == player:
+                                                    cut_string = trigger[i][5].split(' $player')
+                                                    new_string = cut_string[0]
+                                                else:
+                                                    if output == "mix":
+                                                        cut_string = trigger[i][5].split(' $player')
+                                                        new_string = cut_string[0]
+                                                        new_string = new_string + " " + player
+
                                     else:
                                         new_string = trigger[i][5]
 
@@ -297,7 +319,7 @@ def umlaute(log):
 
 def logfile_analysis(logtext):
     try:
-        global trigger, special, language, location, boss, timerreset
+        global trigger, special, language, location, playername, boss, timerreset, output
         # Jokes for Siri
         joke = []
         joke += [''"A man goes into a library and asks for a book on suicide."
@@ -383,6 +405,13 @@ def logfile_analysis(logtext):
                             triggerload(new_string)
                             trigger += defaulttrigger + bufftrigger
                             special += defaultspecial
+                elif 'player -> ' in log:
+                    cut_string = log.split('player -> ')
+                    playername = cut_string[1]
+                    print("Player:" + playername)
+                elif output == "wav":
+                    if 'raidbuff missing -> ' + playername in log:
+                        text = "raidbuffs.wav"
 
                 # print(trigger)
                 trigger_analysis(log)
@@ -400,7 +429,11 @@ def logfile_analysis(logtext):
                         new_string = cut_string[1]
                         text = new_string
                     elif 'siri' in log and 'introduce' in log or 'siri' in log and 'stell' in log:
-                        text = '''Hi, I am Siri. I support you with Raid announcements.'''
+                        if output == "tts":
+                            text = '''Hi, I am Siri. I support you with Raid announcements.'''
+                        else:
+                            text = "siri.wav"
+
                 if text:
                     Thread(target=saytext, args=(text,)).start()
                     text = ""
@@ -519,7 +552,7 @@ def countdown(count, countdown_name):
             z += 1
         if countdown_found is True and len(timerreset) > 0:
             if count - i < 4:
-                Thread(target=saytext, args=(count - i,)).start()
+                Thread(target=saytext, args=(str(count - i),)).start()
             time.sleep(1)
         else:
             print('Stop countdown.')
@@ -534,19 +567,52 @@ def countdown(count, countdown_name):
 
 
 def saytext(text):
+    global output
     if text:
-        try:
-            pythoncom.CoInitializeEx(pythoncom.COINIT_MULTITHREADED)
-        except:
-            pass
-        # text = str(text.replace("Ã¼", "ü"))
         print("Siri: " + str(text))
+        if ".wav" in text:
+            winsound.PlaySound('siri/' + text, winsound.SND_FILENAME)
+        else:
+            if output == "tts":
+                texttospeech(text)
+            else:
+                playsoundfile(text)
+
+
+def texttospeech(text):
+    global output
+    try:
+        pythoncom.CoInitializeEx(pythoncom.COINIT_MULTITHREADED)
         if not error_analysis:
             speak.Speak(text)
+    except:
+        output = "wav"
+        playsoundfile(text)
+
+
+def playsoundfile(text):
+    global soundfiles, output
+    soundfile_found = False
+    if output == "wav":
+        if "free" in text:
+            text = "free"
+        elif "intercept" in text:
+            text = "intercept"
+    for i in range(0, len(soundfiles)):
+        if text == soundfiles[i]:
+            if text == "kick" or text == "now":
+                winsound.PlaySound('siri/' + text + ".wav", winsound.SND_NOWAIT)
+            else:
+                winsound.PlaySound('siri/' + text + ".wav", winsound.SND_FILENAME)
+            soundfile_found = True
+            break
+    if output == "mix":
+        if not soundfile_found:
+            texttospeech(text)
 
 
 def triggerload(file):  # get parametrs from Rift_Raid_Warnings.ini
-    global trigger, logfile, volume, special, keywords, buffcheck, combattrigger
+    global trigger, logfile, volume, special, keywords, buffcheck, output, combattrigger
 
     try:
         if file == "RiftRaidAlert.ini":
@@ -586,6 +652,12 @@ def triggerload(file):  # get parametrs from Rift_Raid_Warnings.ini
                                 buffcheck = int(line_data)
                                 if buffcheck < 0 or buffcheck > 1:
                                     buffcheck = 1
+                            if 'output' in line_type:
+                                output = line_data
+                                if output == "wav" or output == "tts" or output == "mix":
+                                    pass
+                                else:
+                                    output = "wav"
                         else:
                             if 'trigger' in line_type:
                                 s = line_data
@@ -624,11 +696,22 @@ def triggerload(file):  # get parametrs from Rift_Raid_Warnings.ini
             print('No Triggers found for ' + file)
 
 
-print("Rift Raid Alert Version 0.3.2")
+def soundfiles_list(folder):
+    try:
+        soundfileslist = os.listdir(folder)
+        for i in range(0, len(soundfileslist)):
+            soundfileslist[i] = soundfileslist[i].split(".")[0]
+        return soundfileslist
+    except:
+        print("Folder siri is missing")
+
+print("Rift Raid Alert Version 0.3.5")
 print('Make sure you use /log in Rift after each game restart !')
 
+soundfiles = soundfiles_list('siri')
 combattrigger = 1
 buffcheck = 1
+output = "wav"
 trigger = []
 special = []
 keywords = []
@@ -650,6 +733,7 @@ speak.Volume = volume
 timerreset = []
 siri = True
 location = "all"
+playername = "noname"
 boss = "all"
 language = "all"
 specialtrigger = 5

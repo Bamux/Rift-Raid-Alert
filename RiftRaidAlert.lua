@@ -23,9 +23,8 @@ local function CombatCheck(event, units) -- Check Combat Status (Combat Begin, C
         local unit_details = Inspect.Unit.Detail(units)
         if unit_details then
             for id, detail in pairs(unit_details) do
-                --print("-> ".. detail.name)
-                --if detail.id ~= rra_boss_id then
-                    if detail.relation == "hostile" and detail.healthMax > 20000000 and detail.healthMax > maxhitpoints and detail.health > detail.healthMax*0.98 then
+                if detail.relation == "hostile" and detail.healthMax > 20000000 and detail.healthMax > maxhitpoints and detail.health > detail.healthMax*0.98 then
+                    if detail.id ~= "u800000024E02FC39" and detail.id ~= "u800000024E02FC3D" then
                         maxhitpoints = detail.healthMax
                         print("Combat Begin -> ".. detail.name)
                         rra_boss_id = detail.id
@@ -38,7 +37,7 @@ local function CombatCheck(event, units) -- Check Combat Status (Combat Begin, C
                             end
                         end
                     end
-                --end
+                end
             end
         end
     end
@@ -381,6 +380,7 @@ local function ReadyCheck(event, units)
                 if detail.ready then
                     CombatEnd()
                     Zone()
+                    print("player -> " .. player.name)
                     rra_raidbuffcheck()
                 end
             end
@@ -391,7 +391,7 @@ end
 
 local function rra_stop()
     Command.Event.Detach(Event.Unit.Detail.Combat, CombatCheck, "CombatCheck")
-    Command.Event.Detach(Event.Combat.Death, CombatDeath, "CombatDeathCheck")
+    --Command.Event.Detach(Event.Combat.Death, CombatDeath, "CombatDeathCheck")
     Command.Event.Detach(Event.Unit.Detail.Ready, ReadyCheck, "ReadyCheck")
     Command.Event.Detach(Event.Buff.Add, getAddBuffName, "buffaddevent")
     Command.Event.Detach(Event.Buff.Remove, getRemoveBuffName, "buffremoveevent")
@@ -404,7 +404,7 @@ end
 local function rra_start()
     rra_stop()
     Command.Event.Attach(Event.Unit.Detail.Combat, CombatCheck, "CombatCheck")
-    Command.Event.Attach(Event.Combat.Death, CombatDeath, "CombatDeathCheck")
+    --Command.Event.Attach(Event.Combat.Death, CombatDeath, "CombatDeathCheck")
     Command.Event.Attach(Event.Unit.Detail.Ready, ReadyCheck, "ReadyCheck")
     Command.Event.Attach(Event.Buff.Add, getAddBuffName, "buffaddevent")
     Command.Event.Attach(Event.Buff.Remove, getRemoveBuffName, "buffremoveevent")
@@ -423,6 +423,14 @@ local function start_check(addon)
             print("Rift Raid Alert Trigger -> keywords")
         end
     end
+end
+
+
+local function id()
+    local target = Inspect.Unit.Detail("player.target")
+        if target then
+            print(target.name .. " -> UnitID: " .. target.id)
+        end
 end
 
 
@@ -469,6 +477,11 @@ local function slashHandler(h, args)
     if r[0] == "target" then
         print("Target Check")
         test()
+        return
+    end
+        if r[0] == "id" then
+        print("id")
+        id()
         return
     end
     print("/rra start - start Raid announcements for RoF, IGP, MoM and CoA")

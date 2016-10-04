@@ -1,0 +1,24 @@
+﻿[Trigger - (0)language; (1)Loacation; (2)boss; (3)emote,de-buff or ability; (4)text to search; (5)text to speech;
+(6)timer; (7)countdown; (8)timeout (the trigger will be ignored for the specified time);
+(9)number of events before the trigger fires; (10)depending on other triggers; (11)timer and countdown reset]
+
+
+# Cooldowns
+#trigger = all; all; all; buff; Rift Raid Alert -> Lavafield; Lava; 0; 0; 0; 0; 0; 0
+#trigger = all; all; all; buff; Rift Raid Alert -> Orchester; Orchester; 0; 0; 0; 0; 0; 0
+
+# Combat End all languages:
+trigger = all; all; combat_end; ability; Combat End; ; 0; 0; 0; 0; 0; 1
+
+# Who Pulled
+trigger = all; all; all; chat; Tank pull ->; go; 0; 0; 0; 0; 0; 0
+trigger = all; all; all; chat; Fail pull -> $player; $player ; 0; 0; 0; 0; 0; 0
+
+# Rift Raid Alert start/stop/keywords
+trigger = all; all; all; chat; Rift Raid Alert started; rift raid alert started; 0; 0; 0; 0; 0; 1
+trigger = all; all; all; chat; Rift Raid Alert stoped; stop rift raid alert; 0; 0; 0; 0; 0; 1
+trigger = all; all; all; chat; Rift Raid Alert Trigger <- Keywords off; stop the search for key words; 0; 0; 0; 0; 0; 1
+trigger = all; all; all; chat; Rift Raid Alert Trigger -> Keywords on; start the search for key words; 0; 0; 0; 0; 0; 1
+
+# Siri Countdown
+trigger = all; all; all; chat; Siri start Countdown; pull in; 0; 4; 0; 0; 0; 0

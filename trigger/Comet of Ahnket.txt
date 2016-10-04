@@ -2,8 +2,10 @@
 (6)timer; (7)countdown; (8)timeout (the trigger will be ignored for the specified time);
 (9)number of events before the trigger fires; (10)depending on other triggers; (11)timer and countdown reset]
 
-trigger = eng; CoA; Duke Eblius; ability; Aliavax Battle Shaman -> Triage; Shaman kick; 0; 0; 0; 0; 0; 0
+
 trigger = eng; CoA; Duke Eblius; ability; Duke Eblius -> Blazing Ruin; kick; 0; 0; 0; 0; 0; 0
+trigger = eng; CoA; Duke Eblius; ability; Aliavax Standard Bearer -> Soul Seer; kick; 0; 0; 0; 0; 0; 0
+trigger = eng; CoA; Duke Eblius; ability; Aliavax Battle Shaman -> Triage; Shaman kick 1; 0; 0; 0; 0; 0; 0
 trigger = eng; CoA; Duke Eblius; ability; $player <- Infernal Sunder; tank swap; 0; 0; 0; 2; 0; 0
 trigger = eng; CoA; Duke Eblius; ability; $player <- remove Infernal Sunder; tank swap!; 0; 0; 0; -2; 0; 0
 trigger = eng; CoA; Duke Eblius; ability; Duke Eblius -> Sulphurous Blight; cleanse; 0; 0; 0; 0; 0; 0
@@ -12,14 +14,12 @@ trigger = eng; CoA; Duke Eblius; ability; Duke Eblius -> Call to Arms; add; 0; 0
 trigger = eng; CoA; Duke Eblius; ability; Duke Eblius -> Call to Sacrifice; Phase 3; 0; 60; 0; 0; 0; 0
 trigger = eng; CoA; Duke Eblius; ability; Duke Eblius -> Call to Sacrifice; 10 seconds; 50; 0; 0; 0; 0; 0
 trigger = eng; CoA; Duke Eblius; ability; Duke Eblius -> Call to Sacrifice; 5 seconds; 55; 0; 0; 0; 0; 0
-trigger = eng; CoA; Duke Eblius; ability; Aliavax Standard Bearer -> Soul Seer; kick; 0; 0; 0; 0; 0; 0
-trigger = eng; CoA; Duke Eblius; ability; Aliavax Standard Bearer -> Blazing Implosion; spread out; 0; 0; 0; 0; 0; 0
-trigger = eng; CoA; Duke Eblius; buff; Duke Eblius <- Hellion's Rage; destroy a portal; 0; 0; 0; 0; 0; 0
+trigger = eng; CoA; Duke Eblius; ability; Alaviax Standard Bearer -> Blazing Implosion; spread out; 0; 0; 0; 0; 0; 0
+trigger = eng; CoA; Duke Eblius; buff; Duke Eblius <- Hellion's Rage; portal; 0; 0; 0; 0; 0; 0
 
-trigger = eng; CoA; Azaphrentus; ability; Dark Star -> $player; bubble on $player; 0; 0; 0; 0; 0; 0
-trigger = eng; CoA; Azaphrentus; ability; Manifest Scorn -> $player; free $player; 0; 0; 0; 0; 0; 0
+trigger = eng; CoA; Azaphrentus; ability; Dark Star -> $player;  on $player; 0; 0; 0; 0; 0; 0
+trigger = eng; CoA; Azaphrentus; ability; Manifest Scorn -> $player; add $player; 0; 0; 0; 0; 0; 0
 trigger = eng; CoA; Azaphrentus; ability; Azaphrentus -> Rage of Azaphrentus; firewall; 0; 0; 0; 0; 0; 0
-flame shakle cleanse
 
 trigger = eng; CoA; Fyragnos; ability; Bane of Fyragnos -> $player; intercept $player; 0; 0; 0; 0; 0; 0
 trigger = eng; CoA; Fyragnos; ability; $player is about to be consumed in fire!; $player shield; 0; 0; 0; 0; 0; 0
@@ -36,16 +36,17 @@ trigger = eng; CoA; Hericius; ability; Hericius -> Acidic Spores; blue; 0; 0; 0;
 trigger = eng; CoA; Hericius; ability; Hericius -> Incendiary Spores; red; 0; 0; 0; 0; 0; 0
 trigger = eng; CoA; Hericius; ability; Hericius -> Chlorolance; kick; 0; 0; 0; 0; 0; 0
 trigger = eng; CoA; Hericius; ability; Hericius -> Cleansing Siphon; kick; 0; 0; 0; 0; 0; 0
-trigger = eng; CoA; Hericius; emote; Hericius calls for help; adds in; 7; 11; 0; 0; 0; 0
-trigger = eng; CoA; Hericius; ability; Hericius -> The Unseen Schism; wave in; 0; 3; 0; 0; 0; 0
+trigger = eng; CoA; Hericius; emote; Hericius calls for help; add in; 7; 11; 0; 0; 0; 0
+trigger = eng; CoA; Hericius; ability; Hericius -> The Unseen Schism; ; 0; 3; 0; 0; 0; 0
+trigger = eng; CoA; Hericius; ability; Hericius -> The Unseen Schism; jump; 3; 0; 0; 0; 0; 0
 
 trigger = eng; CoA; Lord Fionn; ability; $player <- Imbalancing Blows; tank swap; 0; 0; 0; 13; 0; 0
 trigger = eng; CoA; Lord Fionn; ability; $player <- remove Imbalancing Blows; tank swap; 0; 0; 0; -13; 0; 0
 trigger = eng; CoA; Lord Fionn; ability; $player <- Marked for Death; $player run out; 0; 0; 5; 0; 0; 0
 #trigger = eng; CoA; Lord Fionn; ability; Lord Fionn -> Reaper's Mark -> $player; $player can't move; 0; 0; 0; 0; 0; 0
-trigger = eng; CoA; Lord Fionn; ability; Lord Fionn -> One Thousand Thrusts; One Thousand Thrusts; 0; 0; 5; 0; 0; 0
-trigger = eng; CoA; Lord Fionn; ability; Lord Fionn -> Omniscient Flash; bullet in; 0; 4; 5; 0; 0; 0
-trigger = eng; CoA; Lord Fionn; ability; Warlord Svenbioard -> Reaper's Blade -> $player; $player step forward; 0; 0; 0; 0; 0; 0
+#trigger = eng; CoA; Lord Fionn; ability; Lord Fionn -> One Thousand Thrusts; One Thousand Thrusts; 0; 0; 5; 0; 0; 0
+#trigger = eng; CoA; Lord Fionn; ability; Lord Fionn -> Omniscient Flash; bullet in; 0; 4; 5; 0; 0; 0
+trigger = eng; CoA; Lord Fionn; ability; Warlord Svenbioard -> Reaper's Blade -> $player; Blade on $player; 0; 0; 0; 0; 0; 0
 #trigger = eng; CoA; Lord Fionn; ability; Warlord Svenbioard -> Warcry; Warcry; 0; 0; 0; 0; 0; 0
 trigger = eng; CoA; Lord Fionn; emote; Take from me my immortality! Let me sustain you with my essence; Pyramide; 0; 0; 0; 0; 0; 0
 trigger = eng; CoA; Lord Fionn; ability; Dread Witch Lokerinn -> Torpor of Resurgence; witch is healing; 0; 0; 0; 0; 0; 0

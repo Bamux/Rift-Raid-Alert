@@ -3,13 +3,13 @@
 (9)number of events before the trigger fires; (10)depending on other triggers; (11)timer and countdown reset]
 
 trigger = ger; CoA; Herzog Eblius; ability; Herzog Eblius -> Flammender Ruin; kick; 0; 0; 0; 0; 0; 0
+trigger = ger; CoA; Herzog Eblius; ability; Aliavax-Standartenträger -> Seelenverbrennung; kick; 0; 0; 0; 0; 0; 0
+trigger = ger; CoA; Herzog Eblius; ability; Aliavax-Kampfschamane -> Triage; kick 1; 0; 0; 0; 0; 0; 0
 trigger = ger; CoA; Herzog Eblius; ability; $player <- Infernalischer Trenner; tank swap; 0; 0; 0; 2; 0; 0
 trigger = ger; CoA; Herzog Eblius; ability; $player <- remove Infernalischer Trenner; tank swap!; 0; 0; 0; -2; 0; 0
 trigger = ger; CoA; Herzog Eblius; ability; Herzog Eblius -> Schweflige Pest; cleanse; 0; 0; 0; 0; 0; 0
-trigger = ger; CoA; Herzog Eblius; ability; Aliavax-Standartenträger -> Seelenverbrennung; kick add; 0; 0; 0; 0; 0; 0
 trigger = ger; CoA; Herzog Eblius; ability; Aliavax-Standartenträger -> Flammende Implosion; spread out; 0; 0; 0; 0; 0; 0
-trigger = ger; CoA; Herzog Eblius; ability; Aliavax-Kampfschamane -> Triage; kick Shaman; 0; 0; 0; 0; 0; 0
-trigger = ger; CoA; Herzog Eblius; buff; Herzog Eblius <- Wut des Satansbratens; destroy a portal; 0; 0; 0; 0; 0; 0
+trigger = ger; CoA; Herzog Eblius; buff; Herzog Eblius <- Wut des Satansbratens; portal; 0; 0; 0; 0; 0; 0
 
 trigger = ger; CoA; Azaphrentus; ability; Dunkler Stern -> $player; bubble on $player; 0; 0; 0; 0; 0; 0
 trigger = ger; CoA; Azaphrentus; ability; Manifest Scorn -> $player; free $player; 0; 0; 0; 0; 0; 0

@@ -6,4 +6,4 @@ trigger = eng; HK; Murdantix; ability; Murdantix -> Soul Trauma; kick; 0; 0; 0; 
 
 trigger = eng; HK; Mollinar; ability; Prince Dollin -> Terminate Life; reflect; 0; 0; 0; 0; 0; 0
 trigger = eng; HK; Mollinar; ability; Prince Dollin -> Consuming Essence; kick Dollin; 0; 0; 0; 0; 0; 0
-trigger = eng; HK; Mollinar; ability; Prince Dollin -> Runic Feedback; Stop Damage; 0; 0; 5; 0; 0; 0
+trigger = eng; HK; Mollinar; ability; Prince Dollin -> Runic Feedback; Stop Damage; 0; 0; 0; 0; 0; 0
