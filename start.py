@@ -1,6 +1,6 @@
 # Rift Raid Alert
 # Spoken raid warnings for the MMORPG Rift
-# Version 0.3.5
+# Version 0.3.9
 # Author: Bamux@Typhiria
 
 import os
@@ -10,6 +10,7 @@ import pythoncom
 import winsound
 from random import randint
 from threading import Thread
+from tkinter import *
 
 
 def trigger_analysis(log):
@@ -39,7 +40,7 @@ def trigger_analysis(log):
                             if new_string in log:
                                 if not first:
                                     first = True
-                                    print(log)
+                                    # guioutput(log) 123
                                 if int(trigger[i][10]) != 0:
                                     if int(trigger[i][10]) > 0:
                                         depending = int(trigger[i][10])
@@ -52,13 +53,9 @@ def trigger_analysis(log):
                                             trigger_found = True
                                             break
                                 if not trigger_found:
-                                    if "[rift raid alert] " in log:
-                                        cut_string = log.split("[rift raid alert] ")
+                                    if ":" in log[0:5]:
+                                        cut_string = log.split(": ", 1)
                                         log = cut_string[1]
-                                    else:
-                                        if ":" in log[0:5]:
-                                            cut_string = log.split(": ", 1)
-                                            log = cut_string[1]
                                     if left_string:
                                         cut_string = log.split(left_string)
                                         new_string = cut_string[1]
@@ -112,7 +109,7 @@ def trigger_analysis(log):
                                                 stacks_found = True
                                                 trigger_found = True
                                                 stacks_trigger[z][1] += 1
-                                                print(stacks_trigger)
+                                                guioutput(str(stacks_trigger))
                                                 if stacks_trigger[z][1] == int(trigger[i][9]):
                                                     if len(stacks_trigger) == 1:
                                                         trigger_found = False
@@ -123,7 +120,7 @@ def trigger_analysis(log):
                                         if not stacks_found:
                                             stacks_trigger += [[str(player), 1]]
                                             trigger_found = True
-                                            print(stacks_trigger)
+                                            guioutput(str(stacks_trigger))
 
                                     if not trigger_found:
                                         if int(trigger[i][9]) < 0:
@@ -132,14 +129,13 @@ def trigger_analysis(log):
                                                 while z < len(stacks_trigger):
                                                     if player in stacks_trigger[z][0]:
                                                         del stacks_trigger[z]
-                                                        print(stacks_trigger)
+                                                        guioutput(str(stacks_trigger))
                                                     z += 1
                                                 if stacks_trigger:
                                                     if stacks_trigger[0][1] >= abs(int(trigger[i][9])):
                                                         if int(trigger[i][6]) == 0:
                                                             Thread(target=saytext, args=(trigger[i][5],)).start()
                                         else:
-                                            # print(stacks_trigger)
                                             if int(trigger[i][6]) == 0:
                                                 Thread(target=saytext, args=(new_string,)).start()
 
@@ -171,13 +167,13 @@ def trigger_analysis(log):
                                                 stacks_trigger.clear()
                                                 counter1 = 0
                                                 counter2 = 0
-                                                # print("Combat End")
+                                                # guioutput("Combat End")
                                                 boss = "all"
                                             elif trigger[i][2] == "combat_begin":
                                                 timeout_trigger.clear()
                                                 counter1 = 0
                                                 counter2 = 0
-                                                # print("Combat Begin")
+                                                # guioutput("Combat Begin")
                                                 boss = "all"
                                             else:
                                                 boss = trigger[i][2]
@@ -186,12 +182,12 @@ def trigger_analysis(log):
                             if trigger[i][4] in log:
                                 if not first:
                                     first = True
-                                    print(log)
+                                    # guioutput(log) 123
                                 text_to_speech = trigger[i][5]
                                 if int(trigger[i][10]) != 0:
                                     if int(trigger[i][10]) > 0:
                                         depending = int(trigger[i][10])
-                                        # print(trigger[i][4])
+                                        # guioutput(trigger[i][4])
                                     if int(trigger[i][10]) < 0:
                                         if int(trigger[i][10]) + depending == 0:
                                             trigger_found = True
@@ -201,7 +197,7 @@ def trigger_analysis(log):
                                                 counter1 = 0
                                                 counter2 = 0
                                         else:
-                                            print(trigger[i][3])
+                                            guioutput(trigger[i][3])
                                             if trigger[i][2] == "lord arak":
                                                 counter1 += 1
                                                 text_to_speech = trigger[i][5] + " " + str(counter1)
@@ -222,7 +218,7 @@ def trigger_analysis(log):
                                         if not stacks_found:
                                             stacks_trigger += [[trigger[i][4], 2]]
                                             trigger_found = True
-                                        print(stacks_trigger)
+                                        guioutput(str(stacks_trigger))
                                     for z in range(0, len(timeout_trigger)):
                                         if trigger[i][4] == timeout_trigger[z]:
                                             trigger_found = True
@@ -230,7 +226,7 @@ def trigger_analysis(log):
                                     if not trigger_found:
                                         # timerreset = False
                                         siri = False
-                                        # print(log)
+                                        # guioutput(log)
                                         if int(trigger[i][6]) == 0:
                                             Thread(target=saytext, args=(text_to_speech,)).start()
                                         if trigger[i][11] == "1":
@@ -259,13 +255,13 @@ def trigger_analysis(log):
                                                 stacks_trigger.clear()
                                                 counter1 = 0
                                                 counter2 = 0
-                                                # print("Combat End")
+                                                # guioutput("Combat End")
                                                 boss = "all"
                                             elif trigger[i][2] == "combat_begin":
                                                 timeout_trigger.clear()
                                                 counter1 = 0
                                                 counter2 = 0
-                                                # print("Combat Begin")
+                                                # guioutput("Combat Begin")
                                                 boss = "all"
                                             else:
                                                 boss = trigger[i][2]
@@ -293,7 +289,7 @@ def trigger_analysis(log):
                                 secialtrigger_found = False
                                 break
                     if secialtrigger_found:
-                        print(log)
+                        # guioutput(log) 123
                         siri = False
                         Thread(target=saytext, args=(special[i][specialtrigger],)).start()
                         specialtrigger += 1
@@ -318,8 +314,8 @@ def umlaute(log):
 
 
 def logfile_analysis(logtext):
-    try:
-        global trigger, special, language, location, playername, boss, timerreset, output
+    # try:
+        global trigger, special, language, location, playername, boss, timerreset, output, zone
         # Jokes for Siri
         joke = []
         joke += [''"A man goes into a library and asks for a book on suicide."
@@ -348,13 +344,17 @@ def logfile_analysis(logtext):
         while True:
             log = logtext.readline()
             log = log.rstrip()
+            if "[Rift Raid Alert] " in log:
+                cut_string = log.split("[Rift Raid Alert] ")
+                log = cut_string[0] + cut_string[1]
+                guioutput(log)
             log = umlaute(log)
             log = str.lower(log)
             if log:
                 if playback:
                     if "combat begin" in log:
                         combat = True
-                        # print("Combat Begin")
+                        # guioutput("Combat Begin")
                     if combat:
                         cut_string = log.split(":")
                         logtime = int(cut_string[2])
@@ -365,7 +365,7 @@ def logfile_analysis(logtext):
                         else:
                             wait = logtime + 60 - lasttime
                         if wait > 0:
-                            # print(str(logtime) + ", " + str(lasttime) + ", " + str(wait))
+                            # guioutput(str(logtime) + ", " + str(lasttime) + ", " + str(wait))
                             time.sleep(wait)
                         lasttime = logtime
                     if "combat end" in log:
@@ -379,17 +379,17 @@ def logfile_analysis(logtext):
                             del timerreset[i]
                             break
                         i += 1
-                    print(timerreset)
+                    guioutput(str(timerreset))
                 elif 'rift raid alert trigger <- keywords off' in log:
                     zone = ""
-                    print(log)
+                    # guioutput(log) 123
                 elif 'rift raid alert trigger -> keywords on' in log:
                     trigger.clear()
                     special.clear()
                     triggerload("keywords")
                     trigger += defaulttrigger + bufftrigger
                     special += defaultspecial
-                    print(log)
+                    # guioutput(log) 123
                     zone = ""
                 elif 'rift raid alert trigger -> ' in log:
                     if combattrigger == 1:
@@ -408,12 +408,12 @@ def logfile_analysis(logtext):
                 elif 'player -> ' in log:
                     cut_string = log.split('player -> ')
                     playername = cut_string[1]
-                    print("Player:" + playername)
+                    guioutput("Player:" + playername)
                 elif output == "wav":
                     if 'raidbuff missing -> ' + playername in log:
                         text = "raidbuffs.wav"
 
-                # print(trigger)
+                # guioutput(trigger)
                 trigger_analysis(log)
 
                 # Siri
@@ -439,11 +439,11 @@ def logfile_analysis(logtext):
                     text = ""
             else:
                 time.sleep(0.50)  # waiting for a new line
-    except:
-        print('An error has occurred in the Log.txt !')
-        time.sleep(0.10)
-        t = Thread(target=logfile_analysis, args=(logtext,))
-        t.start()
+    # except:
+    #     guioutput('An error has occurred in the Log.txt !')
+    #     time.sleep(0.10)
+    #     t = Thread(target=logfile_analysis, args=(logtext,))
+    #     t.start()
 
 
 def logfilecheck():
@@ -452,29 +452,29 @@ def logfilecheck():
 
     try:
         logtext = open(logfile, 'r')
-        print('Log.txt found')
+        guioutput('Log.txt found')
         log_exists = True
     except:
-        print('Log.txt not found, checking common locations')
+        guioutput('Log.txt not found, checking common locations')
         try:
             logfile = os.path.expanduser('~\Documents\RIFT\Log.txt')
             logtext = open(logfile, 'r')
-            print('Log.txt found')
+            guioutput('Log.txt found')
             log_exists = True
         except:
             try:
                 logfile = 'C:\Program Files (x86)\RIFT Game\Log.txt'
                 logtext = open(logfile, 'r')
-                print('Log.txt found')
+                guioutput('Log.txt found')
                 log_exists = True
             except:
                 try:
                     logfile = 'C:\Programs\RIFT~1\Log.txt'
                     logtext = open(logfile, 'r')
-                    print('Log.txt found')
+                    guioutput('Log.txt found')
                     log_exists = True
                 except:
-                    print('Error! could not find the Log File')
+                    guioutput('Error! could not find the Log File')
                     speak.Speak('Logfile not found!')
                     log_exists = False
     if log_exists:
@@ -488,7 +488,7 @@ def logfilecheck():
         t = Thread(target=logfile_analysis, args=(logtext,))
         t.start()
     else:
-        print('use /log in Rift and edit the path to your Logfile in the RiftRaidAlert.ini !')
+        guioutput('use /log in Rift and edit the path to your Logfile in the RiftRaidAlert.ini !')
         time.sleep(20)
         logfilecheck()
 
@@ -507,12 +507,12 @@ def timeout(timeout_time, trigger_content):
             del timeout_trigger[z]
             break
         z += 1
-    # print(timeout_trigger)
+    # guioutput(timeout_trigger)
 
 
 def timer(seconds, timer_name, text):
     global timerreset
-    print('Start timer with ' + str(seconds) + ' seconds.')
+    guioutput('Start timer with ' + str(seconds) + ' seconds.')
     timerreset += [timer_name]
     for i in range(0, seconds):
         z = 0
@@ -525,7 +525,7 @@ def timer(seconds, timer_name, text):
         if timer_found is True and len(timerreset) > 0:
             time.sleep(1)
         else:
-            print('Stop timer.')
+            guioutput('Stop timer.')
             return
     Thread(target=saytext, args=(text,)).start()
     i = 0
@@ -534,14 +534,14 @@ def timer(seconds, timer_name, text):
             del timerreset[i]
             break
         i += 1
-    print(timerreset)
+    guioutput(str(timerreset))
 
 
 def countdown(count, countdown_name):
     global timerreset
-    print('Start countdown with ' + str(count) + ' seconds.')
+    guioutput('Start countdown with ' + str(count) + ' seconds.')
     timerreset += [countdown_name]
-    print(timerreset)
+    guioutput(str(timerreset))
     for i in range(0, count):
         z = 0
         countdown_found = False
@@ -555,7 +555,7 @@ def countdown(count, countdown_name):
                 Thread(target=saytext, args=(str(count - i),)).start()
             time.sleep(1)
         else:
-            print('Stop countdown.')
+            guioutput('Stop countdown.')
             return
     i = 0
     while i < len(timerreset):
@@ -563,13 +563,13 @@ def countdown(count, countdown_name):
             del timerreset[i]
             break
         i += 1
-    print(timerreset)
+    guioutput(str(timerreset))
 
 
 def saytext(text):
     global output
     if text:
-        print("Siri: " + str(text))
+        guioutput("Siri: " + str(text))
         if ".wav" in text:
             winsound.PlaySound('siri/' + text, winsound.SND_FILENAME)
         else:
@@ -593,34 +593,34 @@ def texttospeech(text):
 def playsoundfile(text):
     global soundfiles, output
     soundfile_found = False
-    if output == "wav":
+    if output == "wav" or output == "mix":
         if "free" in text:
             text = "free"
         elif "intercept" in text:
             text = "intercept"
-    for i in range(0, len(soundfiles)):
-        if text == soundfiles[i]:
-            if text == "kick" or text == "now":
-                winsound.PlaySound('siri/' + text + ".wav", winsound.SND_NOWAIT)
-            else:
-                winsound.PlaySound('siri/' + text + ".wav", winsound.SND_FILENAME)
-            soundfile_found = True
-            break
+        for i in range(0, len(soundfiles)):
+            if text == soundfiles[i]:
+                if text == "kick" or text == "now":
+                    winsound.PlaySound('siri/' + text + ".wav", winsound.SND_NOWAIT)
+                else:
+                    winsound.PlaySound('siri/' + text + ".wav", winsound.SND_FILENAME)
+                soundfile_found = True
+                break
     if output == "mix":
         if not soundfile_found:
             texttospeech(text)
 
 
 def triggerload(file):  # get parametrs from Rift_Raid_Warnings.ini
-    global trigger, logfile, volume, special, keywords, buffcheck, output, combattrigger
+    global trigger, logfile, volume, special, keywords, buffcheck, output
 
     try:
         if file == "RiftRaidAlert.ini":
             ini = open(file, 'r')
-            print(file + ' found')
+            guioutput(file + ' found')
         else:
             ini = open("trigger/" + file + ".txt", 'r')
-            print(file + ' trigger loaded')
+            guioutput(file + ' trigger loaded')
         try:
             trigger = []
             special = []
@@ -644,10 +644,6 @@ def triggerload(file):  # get parametrs from Rift_Raid_Warnings.ini
                                 volume = int(line_data)
                                 if volume < 0 or volume > 100:
                                     volume = 100
-                            if 'combattrigger' in line_type:
-                                combattrigger = int(line_data)
-                                if combattrigger < 0 or combattrigger > 1:
-                                    buffcheck = 1
                             if 'buffcheck' in line_type:
                                 buffcheck = int(line_data)
                                 if buffcheck < 0 or buffcheck > 1:
@@ -672,7 +668,7 @@ def triggerload(file):  # get parametrs from Rift_Raid_Warnings.ini
                                     trigger += [liste]
                                     del [liste]
                                 else:
-                                    print("Incorrect syntax: " + s)
+                                    guioutput("Incorrect syntax: " + s)
                             if 'special' in line_type:
                                 liste = []
                                 s = line_data
@@ -691,9 +687,9 @@ def triggerload(file):  # get parametrs from Rift_Raid_Warnings.ini
                                 del [liste]
             ini.close()
         except:
-            print('Error in reading parameters from ' + file)
+            guioutput('Error in reading parameters from ' + file)
     except:
-            print('No Triggers found for ' + file)
+            guioutput('No Triggers found for ' + file)
 
 
 def soundfiles_list(folder):
@@ -703,10 +699,86 @@ def soundfiles_list(folder):
             soundfileslist[i] = soundfileslist[i].split(".")[0]
         return soundfileslist
     except:
-        print("Folder siri is missing")
+        guioutput("Folder siri is missing")
 
-print("Rift Raid Alert Version 0.3.5")
-print('Make sure you use /log in Rift after each game restart !')
+
+def guioutput(text):
+    T.insert(END, "\n" + text)
+    T.yview(END)
+
+
+def ask_quit():
+    root.destroy()
+    os._exit(1)
+
+
+def wav():
+    global output
+    if var_wav.get() == 1:
+        if output == "tts":
+            output = "mix"
+        elif output == "off":
+            output = "wav"
+        guioutput("Sound: " + output)
+    elif var_wav.get() == 0:
+        if output == "mix":
+            output = "tts"
+        elif output == "wav":
+            output = "off"
+        guioutput("Sound: " + output)
+
+
+def tts():
+    global output
+    if var_tts.get() == 1:
+        if output == "wav":
+            output = "mix"
+        elif output == "off":
+            output = "tts"
+        guioutput("Sound: " + output)
+    elif var_tts.get() == 0:
+        if output == "mix":
+            output = "wav"
+        elif output == "tts":
+            output = "off"
+        guioutput("Sound: " + output)
+
+
+def buff_check():
+    global buffcheck, trigger, bufftrigger, special
+    if var_buffcheck.get() == 1:
+        guioutput("Buffcheck: on" )
+        if buffcheck == 0:
+            buffcheck = 1
+            trigger.clear()
+            special.clear()
+            if zone:
+                triggerload(zone)
+            trigger += defaulttrigger + bufftrigger
+            special += defaultspecial
+    elif var_buffcheck.get() == 0:
+        guioutput("Buffcheck: off")
+        if buffcheck == 1:
+            buffcheck = 0
+            trigger.clear()
+            special.clear()
+            if zone:
+                triggerload(zone)
+            trigger += defaulttrigger
+            special += defaultspecial
+
+
+root = Tk()
+root.geometry("840x500")
+root.title("Rift Raid Alert")
+
+S = Scrollbar(root)
+T = Text(root, height=20, width=70)
+S.pack(side=RIGHT, fill=Y)
+T.pack(side=RIGHT, fill=Y)
+S.config(command=T.yview)
+T.config(yscrollcommand=S.set)
+T.insert(END, "Rift Raid Alert Version 0.3.9\nMake sure you use /log in Rift after each game restart !")
 
 soundfiles = soundfiles_list('siri')
 combattrigger = 1
@@ -718,6 +790,7 @@ keywords = []
 stacks = []
 bufftrigger = []
 # defaulttrigger = []
+zone = ""
 logfile = ""
 volume = 100
 triggerload("RiftRaidAlert.ini")
@@ -745,3 +818,25 @@ counter2 = 0
 playback = False  # only for Playback a logfile from line 1
 error_analysis = False
 logfilecheck()
+
+var_wav = IntVar()
+var_tts = IntVar()
+var_buffcheck = IntVar()
+Label(root, text="Activate the Logfile with /log in Rift !").pack(anchor='w', padx=10, pady=10)
+c = Checkbutton(root, text="Soundfiles (*.wav)", variable=var_wav, command=wav)
+if output == "mix" or output == "wav":
+    c.select()
+c.pack(anchor='w', padx=10)
+c = Checkbutton(root, text="Text to Speech", variable=var_tts, command=tts)
+if output == "mix" or output == "tts":
+    c.select()
+c.pack(anchor='w', padx=10)
+c = Checkbutton(root, text="Weaponstone Flask and Food Check", variable=var_buffcheck, command=buff_check)
+if buffcheck == 1:
+    c.select()
+c.pack(anchor='w', padx=10)
+
+Button(root, text="EXIT", width=20, command=ask_quit).pack(side=BOTTOM, pady=20)
+
+root.protocol("WM_DELETE_WINDOW", ask_quit)
+root.mainloop()
