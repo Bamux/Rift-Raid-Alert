@@ -846,7 +846,7 @@ def save_newtrigger(value):
         newtrigger = "special = all; " + e0.get() + "; " + e1.get() + "; ability; " + special_keywords + special_tts
     else:
         if e0.get() and e1.get() and len(e2.get()) >= 5 and e4.get().isdigit() and e5.get().isdigit() \
-                and e6.get().isdigit() and e7.get().isdigit() and e8.get().isdigit():
+                and e6.get().isdigit() and e8.get().isdigit():
             found = True
             newtrigger = "trigger = all; " + e0.get() + "; " + e1.get() + "; ability; " + e2.get() + "; " + e3.get() + "; " \
                          + e4.get() + "; " + e5.get() + "; " + e6.get() + "; " + e7.get() + "; " + e8.get() + "; " \
@@ -929,7 +929,7 @@ def edit_trigger(value):
                       + final_trigger[10] + "; " + final_trigger[11]
         if value == "edit":
             if e0.get() and e1.get() and len(e2.get()) >= 5 and e4.get().isdigit() and e5.get().isdigit() and e6.get().isdigit()\
-                    and e7.get().isdigit() and e8.get().isdigit():
+                    and e8.get().isdigit():
                 found = True
                 newtrigger = "trigger = all; " + "all; " + e1.get() + "; ability; " + e2.get() + "; " + e3.get() + "; " \
                              + e4.get() + "; " + e5.get() + "; " + e6.get() + "; " + e7.get() + "; " + e8.get() + "; " + var_reset.get()
