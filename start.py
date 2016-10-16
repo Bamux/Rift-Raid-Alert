@@ -1,34 +1,38 @@
+# -*- coding: utf-8 -*-
+
 # Rift Raid Alert
 # Spoken raid warnings for the MMORPG Rift
-# Version 0.3.9
+# Version 0.4.8
 # Author: Bamux@Typhiria
 
 import os
+# import sys
 import time
 import win32com.client
 import pythoncom
 import winsound
+import codecs
 from random import randint
 from threading import Thread
 from tkinter import *
 
 
 def trigger_analysis(log):
-    global timerreset, language, location, boss, specialtrigger, timeout_trigger, siri, stacks, stacks_trigger, depending, counter1, counter2, output
+    global timerreset, language, location, boss, specialtrigger, timeout_trigger, siri, stacks, stacks_trigger,\
+        depending, counter1, counter2, output
     trigger_found = False
     stacks_found = False
     first = False
-
     # Default Trigger
     for i in range(0, len(trigger)):
-        if language == trigger[i][0] \
-                or trigger[i][0] == "all" \
-                or language == "all":
-            if location == trigger[i][1] \
-                    or trigger[i][1] == "all" \
-                    or trigger[i][1] == "combat_end" \
-                    or trigger[i][1] == "combat_begin" \
-                    or location == "all":
+        # if language == trigger[i][0] \
+        #         or trigger[i][0] == "all" \
+        #         or language == "all":
+        #     if location == trigger[i][1] \
+        #             or trigger[i][1] == "all" \
+        #             or trigger[i][1] == "combat_end" \
+        #             or trigger[i][1] == "combat_begin" \
+        #             or location == "all":
                         if "$player" in trigger[i][4]:
                             cut_string = trigger[i][4].split('$player')
                             left_string = cut_string[0]
@@ -269,9 +273,9 @@ def trigger_analysis(log):
     # Special Trigger
 
     for i in range(0, len(special)):
-        if language == special[i][0] or language == "all":
-            if location == special[i][1] or location == "all":
-                if boss == special[i][2] or boss == "all":
+        # if language == special[i][0] or language == "all":
+        #     if location == special[i][1] or special[i][1] == "all" or location == "all":
+        #         if boss == special[i][2] or special[i][2] == "all" or boss == "all":
                     strigger = special[i][4]
                     secialtrigger_found = ""
                     if " || " in strigger:
@@ -292,6 +296,7 @@ def trigger_analysis(log):
                         # guioutput(log) 123
                         siri = False
                         Thread(target=saytext, args=(special[i][specialtrigger],)).start()
+                        # Thread(target=saytext, args=(text,)).start()
                         specialtrigger += 1
                         if specialtrigger == len(special[i]):
                             specialtrigger = 5
@@ -306,7 +311,6 @@ def umlaute(log):
     log = log.replace('Ã–', 'Oe')
     log = log.replace('Ãœ', 'Ue')
     log = log.replace('Ã¤', 'ae')
-    log = log.replace('Ã¤', 'ae')
     log = log.replace('Ã¶', 'oe')
     log = log.replace('Ã¼', 'ue')
     log = log.replace('ÃŸ', 'ss')
@@ -314,7 +318,7 @@ def umlaute(log):
 
 
 def logfile_analysis(logtext):
-    # try:
+    try:
         global trigger, special, language, location, playername, boss, timerreset, output, zone
         # Jokes for Siri
         joke = []
@@ -348,7 +352,7 @@ def logfile_analysis(logtext):
                 cut_string = log.split("[Rift Raid Alert] ")
                 log = cut_string[0] + cut_string[1]
                 guioutput(log)
-            log = umlaute(log)
+            # log = umlaute(log)
             log = str.lower(log)
             if log:
                 if playback:
@@ -439,11 +443,11 @@ def logfile_analysis(logtext):
                     text = ""
             else:
                 time.sleep(0.50)  # waiting for a new line
-    # except:
-    #     guioutput('An error has occurred in the Log.txt !')
-    #     time.sleep(0.10)
-    #     t = Thread(target=logfile_analysis, args=(logtext,))
-    #     t.start()
+    except:
+        guioutput('An error has occurred in the Log.txt !')
+        time.sleep(0.10)
+        t = Thread(target=logfile_analysis, args=(logtext,))
+        t.start()
 
 
 def logfilecheck():
@@ -451,26 +455,26 @@ def logfilecheck():
     logtext = ""
 
     try:
-        logtext = open(logfile, 'r')
+        logtext = codecs.open(logfile, 'r', "utf-8")
         guioutput('Log.txt found')
         log_exists = True
     except:
         guioutput('Log.txt not found, checking common locations')
         try:
             logfile = os.path.expanduser('~\Documents\RIFT\Log.txt')
-            logtext = open(logfile, 'r')
+            logtext = codecs.open(logfile, 'r', "utf-8")
             guioutput('Log.txt found')
             log_exists = True
         except:
             try:
                 logfile = 'C:\Program Files (x86)\RIFT Game\Log.txt'
-                logtext = open(logfile, 'r')
+                logtext = codecs.open(logfile, 'r', "utf-8")
                 guioutput('Log.txt found')
                 log_exists = True
             except:
                 try:
                     logfile = 'C:\Programs\RIFT~1\Log.txt'
-                    logtext = open(logfile, 'r')
+                    logtext = codecs.open(logfile, 'r', "utf-8")
                     guioutput('Log.txt found')
                     log_exists = True
                 except:
@@ -534,14 +538,14 @@ def timer(seconds, timer_name, text):
             del timerreset[i]
             break
         i += 1
-    guioutput(str(timerreset))
+    # guioutput(str(timerreset))
 
 
 def countdown(count, countdown_name):
     global timerreset
     guioutput('Start countdown with ' + str(count) + ' seconds.')
     timerreset += [countdown_name]
-    guioutput(str(timerreset))
+    # guioutput(str(timerreset))
     for i in range(0, count):
         z = 0
         countdown_found = False
@@ -563,7 +567,7 @@ def countdown(count, countdown_name):
             del timerreset[i]
             break
         i += 1
-    guioutput(str(timerreset))
+    # guioutput(str(timerreset))
 
 
 def saytext(text):
@@ -580,8 +584,11 @@ def saytext(text):
 
 
 def texttospeech(text):
-    global output
+    global output, volume
     try:
+        if volume != volume_bar.get():
+            volume = volume_bar.get()
+            speak.Volume = volume
         pythoncom.CoInitializeEx(pythoncom.COINIT_MULTITHREADED)
         if not error_analysis:
             speak.Speak(text)
@@ -616,10 +623,10 @@ def triggerload(file):  # get parametrs from Rift_Raid_Warnings.ini
 
     try:
         if file == "RiftRaidAlert.ini":
-            ini = open(file, 'r')
+            ini = codecs.open(file, 'r', "utf-8")
             guioutput(file + ' found')
         else:
-            ini = open("trigger/" + file + ".txt", 'r')
+            ini = codecs.open("trigger/" + file + ".txt", 'r', "utf-8")
             guioutput(file + ' trigger loaded')
         try:
             trigger = []
@@ -633,7 +640,7 @@ def triggerload(file):  # get parametrs from Rift_Raid_Warnings.ini
                 if 0 < type_end < len(paraline):
                     line_type = str.lower(paraline[0:type_end])
                     line_data = str.rstrip(paraline[type_end:])
-                    line_data = umlaute(line_data)
+                    # line_data = umlaute(line_data)
                     line_data = str.lower(line_data)
                     # line_data_lower = str.lower(paraline[type_end:])
                     if '#' not in line_type:
@@ -650,7 +657,7 @@ def triggerload(file):  # get parametrs from Rift_Raid_Warnings.ini
                                     buffcheck = 1
                             if 'output' in line_type:
                                 output = line_data
-                                if output == "wav" or output == "tts" or output == "mix":
+                                if output == "wav" or output == "tts" or output == "mix" or output == "off":
                                     pass
                                 else:
                                     output = "wav"
@@ -708,6 +715,12 @@ def guioutput(text):
 
 
 def ask_quit():
+    file_out = codecs.open("RiftRaidAlert.ini", "w", 'utf-8')
+    file_out.write("logfile = " + logfile + '\r\n')
+    file_out.write("volume = " + str(volume_bar.get()) + '\r\n')
+    file_out.write("buffcheck = " + str(buffcheck) + '\r\n')
+    file_out.write("output = " + output + '\r\n')
+    file_out.close()
     root.destroy()
     os._exit(1)
 
@@ -747,7 +760,7 @@ def tts():
 def buff_check():
     global buffcheck, trigger, bufftrigger, special
     if var_buffcheck.get() == 1:
-        guioutput("Buffcheck: on" )
+        guioutput("Buffcheck: on")
         if buffcheck == 0:
             buffcheck = 1
             trigger.clear()
@@ -768,22 +781,653 @@ def buff_check():
             special += defaultspecial
 
 
+def trigger_select(evt):
+    try:
+        value = str((trigger_listbox.get(trigger_listbox.curselection())))
+        trigger_choice(value)
+    except:
+        pass
+
+
+def boss_select(evt):
+    try:
+        b3.grid_forget()
+        b4.grid_forget()
+        value = str((boss_listbox.get(boss_listbox.curselection())))
+        e1.delete(0, END)
+        e1.insert(0, value)
+        trigger_ui(value)
+    except:
+        pass
+
+
+def zone_select(evt):
+    e1.delete(0, END)
+    e1.insert(0, "")
+    b3.grid_forget()
+    b4.grid_forget()
+    value = str((zone_listbox.get(zone_listbox.curselection())))
+    e0.delete(0, END)
+    e0.insert(0, value)
+    zone_listbox_value = value
+    boss_ui(value)
+
+
+def save_newtrigger(value):
+    global trigger, special
+    found = False
+    newtrigger = ""
+    if value == "special_new" and e0.get() and e1.get() and len(e_special1.get()) > 4 and e_special6.get():
+        found = True
+        special_keywords = e_special1.get()
+        if e_special2.get():
+            special_keywords += " || " + e_special2.get()
+        if e_special3.get():
+            special_keywords += " || " + e_special3.get()
+        if e_special4.get():
+            special_keywords += " || " + e_special4.get()
+        if e_special5.get():
+            special_keywords += " || " + e_special5.get()
+        special_tts = "; " + e_special6.get()
+        if e_special7.get():
+            special_tts += "; " + e_special7.get()
+        if e_special8.get():
+            special_tts += "; " + e_special8.get()
+        if e_special9.get():
+            special_tts += "; " + e_special9.get()
+        if e_special10.get():
+            special_tts += "; " + e_special10.get()
+        if e_special11.get():
+            special_tts += "; " + e_special11.get()
+        if e_special12.get():
+            special_tts += "; " + e_special12.get()
+        if e_special13.get():
+            special_tts += "; " + e_special13.get()
+        newtrigger = "special = all; " + e0.get() + "; " + e1.get() + "; ability; " + special_keywords + special_tts
+    else:
+        if e0.get() and e1.get() and len(e2.get()) >= 5 and e4.get().isdigit() and e5.get().isdigit() \
+                and e6.get().isdigit() and e7.get().isdigit() and e8.get().isdigit():
+            found = True
+            newtrigger = "trigger = all; " + e0.get() + "; " + e1.get() + "; ability; " + e2.get() + "; " + e3.get() + "; " \
+                         + e4.get() + "; " + e5.get() + "; " + e6.get() + "; " + e7.get() + "; " + e8.get() + "; " \
+                         + var_reset.get()
+
+    if found:
+        f = codecs.open("trigger/" + e0.get() + ".txt", "a", "utf-8")
+        f.write(newtrigger + '\r\n')
+        f.close()
+        b3.grid_forget()
+        b4.grid_forget()
+        boss_ui(e0.get())
+        trigger_ui(e1.get())
+        zone_list()
+        if zone == str.lower(e0.get()):
+            trigger.clear()
+            special.clear()
+            triggerload(zone)
+            trigger += defaulttrigger + bufftrigger
+            special += defaultspecial
+    else:
+        if value == "special_new":
+            l18.grid(row=18, column=1, padx=190, sticky=W)
+        else:
+            l18.grid(row=11, column=1, padx=190, sticky=W)
+
+
+def edit_trigger(value):
+    global trigger, special
+    final_trigger_tts = ""
+    old_trigger = ""
+    newtrigger = ""
+    found = False
+    liste = []
+    if value == "delete":
+        found = True
+        if ' || ' in final_trigger[4]:
+            value = "special_delete"
+    if value == "special_edit" or value == "special_delete":
+        i = 0
+        for item in final_trigger:
+            if i > 4:
+                final_trigger_tts += "; " + item
+            i += 1
+        old_trigger = "special = " + final_trigger[0] + "; " + final_trigger[1] + "; " + final_trigger[2] + "; " \
+                      + final_trigger[3] + "; " + final_trigger[4] + final_trigger_tts
+        if value == "special_edit":
+            if e0.get() and e1.get() and len(e_special1.get()) > 4:
+                found = True
+                special_keywords = e_special1.get()
+                if e_special2.get():
+                    special_keywords += " || " + e_special2.get()
+                if e_special3.get():
+                    special_keywords += " || " + e_special3.get()
+                if e_special4.get():
+                    special_keywords += " || " + e_special4.get()
+                if e_special5.get():
+                    special_keywords += " || " + e_special5.get()
+                special_tts = "; " + e_special6.get()
+                if e_special7.get():
+                    special_tts += "; " + e_special7.get()
+                if e_special8.get():
+                    special_tts += "; " + e_special8.get()
+                if e_special9.get():
+                    special_tts += "; " + e_special9.get()
+                if e_special10.get():
+                    special_tts += "; " + e_special10.get()
+                if e_special11.get():
+                    special_tts += "; " + e_special11.get()
+                if e_special12.get():
+                    special_tts += "; " + e_special12.get()
+                if e_special13.get():
+                    special_tts += "; " + e_special13.get()
+                newtrigger = "special = all; " + "all; " + e1.get() + "; ability; " + special_keywords + special_tts
+
+    if value == "edit" or value == "delete":
+        old_trigger = "trigger = " + final_trigger[0] + "; " + final_trigger[1] + "; " + final_trigger[2] + "; " \
+                      + final_trigger[3] + "; " + final_trigger[4] + "; " + final_trigger[5] + "; " + final_trigger[6] \
+                      + "; " + final_trigger[7] + "; " + final_trigger[8] + "; " + final_trigger[9] + "; " \
+                      + final_trigger[10] + "; " + final_trigger[11]
+        if value == "edit":
+            if e0.get() and e1.get() and len(e2.get()) >= 5 and e4.get().isdigit() and e5.get().isdigit() and e6.get().isdigit()\
+                    and e7.get().isdigit() and e8.get().isdigit():
+                found = True
+                newtrigger = "trigger = all; " + "all; " + e1.get() + "; ability; " + e2.get() + "; " + e3.get() + "; " \
+                             + e4.get() + "; " + e5.get() + "; " + e6.get() + "; " + e7.get() + "; " + e8.get() + "; " + var_reset.get()
+
+    if found or value == "delete" or value == "special_delete":
+        file = codecs.open("trigger/" + e0.get() + ".txt", "r", 'utf-8')
+        for item in file:
+            if old_trigger in item:
+                if value == "edit" or value == "special_edit":
+                    item = newtrigger + '\r\n'
+                    liste += [item]
+            else:
+                liste += [item]
+        file.close()
+        file_out = codecs.open("trigger/" + e0.get() + ".txt", "w", 'utf-8')
+        for item in liste:
+            file_out.write(item)
+        file_out.close()
+        boss_ui(e0.get())
+        trigger_ui(e1.get())
+        zone_list()
+        if zone == str.lower(e0.get()):
+            trigger.clear()
+            special.clear()
+            triggerload(zone)
+            trigger += defaulttrigger + bufftrigger
+            special += defaultspecial
+    else:
+        if value == "special_edit":
+            l18.grid(row=18, column=1, padx=190, sticky=W)
+        else:
+            l18.grid(row=11, column=1, padx=190, sticky=W)
+
+
+def sound_file_select(evt):
+    value = str((sound_listbox.get(sound_listbox.curselection())))
+    if value != ".. exit":
+        e3.delete(0, END)
+        e3.insert(0, value)
+        Thread(target=saytext, args=(value + ".wav",)).start()
+    sound_listbox.grid_forget()
+    scrollbar.grid_forget()
+    b7.grid(row=4, column=1, padx=330, sticky=W)
+
+
+def sound_file():
+    b7.grid_forget()
+    liste = soundfiles_list('siri')
+    sound_listbox.delete(0, END)
+    sound_listbox.insert(END, ".. exit")
+    for item in liste:
+        sound_listbox.insert(END, item)
+    sound_listbox.grid(row=0, column=1, pady=10, padx=330, rowspan=5, sticky=W+N+S)
+    scrollbar.grid(row=0, column=1, pady=10, padx=574, rowspan=5, sticky=W+N+S)
+    sound_listbox.config(yscrollcommand=scrollbar.set)
+    scrollbar.config(command=sound_listbox.yview)
+
+
+def special_trigger(value):
+    b2.grid_forget()
+    b8.grid_forget()
+    b_special_trigger.grid_forget()
+    zone_listbox.grid_forget()
+    boss_listbox.grid_forget()
+    trigger_listbox.grid_forget()
+    b3.grid_forget()
+    b4.grid_forget()
+    root.rowconfigure(0, weight=0)
+    root.columnconfigure(0, weight=0)
+    root.rowconfigure(1, weight=0)
+    root.columnconfigure(1, weight=0)
+    l_special0.grid(row=0, column=0, padx=30, sticky=W)
+    l_special1.grid(row=0, column=1, sticky=W)
+    l2.grid(row=1, padx=30, sticky=W)
+    l3.grid(row=2, padx=30, sticky=W)
+    e0.grid(row=1, column=1, sticky=W)
+    e1.grid(row=2, column=1, sticky=W)
+    l_special2.grid(row=3, column=0, padx=30, sticky=W)
+    e_special1.grid(row=4, column=1, sticky=W)
+    e_special2.grid(row=5, column=1, sticky=W)
+    e_special3.grid(row=6, column=1, sticky=W)
+    e_special4.grid(row=7, column=1, sticky=W)
+    e_special5.grid(row=8, column=1, sticky=W)
+    l5.grid(row=9, column=0, padx=30, sticky=W)
+    e_special6.grid(row=10, column=1, sticky=W)
+    e_special7.grid(row=11, column=1, sticky=W)
+    e_special8.grid(row=12, column=1, sticky=W)
+    e_special9.grid(row=13, column=1, sticky=W)
+    e_special10.grid(row=14, column=1, sticky=W)
+    e_special11.grid(row=15, column=1, sticky=W)
+    e_special12.grid(row=16, column=1, sticky=W)
+    e_special13.grid(row=17, column=1, sticky=W)
+    if value == "new":
+        b_special_trigger1.grid(row=18, column=1, pady=10, sticky=W)
+    else:
+        b_special_trigger2.grid(row=18, column=1, pady=10, sticky=W)
+        split = final_trigger[4].split("||")
+        i = 1
+        for item in split:
+            item = item.lstrip()
+            item = item.rstrip()
+            if i == 1:
+                e_special1.delete(0, END)
+                e_special1.insert(0, item)
+            elif i == 2:
+                e_special2.delete(0, END)
+                e_special2.insert(0, item)
+            elif i == 3:
+                e_special3.delete(0, END)
+                e_special3.insert(0, item)
+            elif i == 4:
+                e_special4.delete(0, END)
+                e_special4.insert(0, item)
+            elif i == 5:
+                e_special5.delete(0, END)
+                e_special5.insert(0, item)
+            i += 1
+        try:
+            e_special6.delete(0, END)
+            e_special6.insert(0, final_trigger[5])
+            e_special7.delete(0, END)
+            e_special7.insert(0, final_trigger[6])
+            e_special8.delete(0, END)
+            e_special8.insert(0, final_trigger[7])
+            e_special9.delete(0, END)
+            e_special9.insert(0, final_trigger[8])
+            e_special10.delete(0, END)
+            e_special10.insert(0, final_trigger[9])
+            e_special11.delete(0, END)
+            e_special11.insert(0, final_trigger[10])
+            e_special12.delete(0, END)
+            e_special12.insert(0, final_trigger[11])
+            e_special13.delete(0, END)
+            e_special13.insert(0, final_trigger[12])
+        except:
+            pass
+
+
+def test_trigger():
+    global trigger, special, zone, language, location, boss
+    if zone != e0.get():
+        trigger_analysis("combat end")
+    zone = e0.get()
+    boss = e1.get()
+    trigger.clear()
+    special.clear()
+    language = "all"
+    location = "all"
+    boss = "all"
+    triggerload(e0.get())
+    trigger += defaulttrigger + bufftrigger
+    special += defaultspecial
+    if len(final_trigger) > 3 and " || " in final_trigger[4]:
+        split = final_trigger[4].split(" || ")[0]
+        trigger_analysis(str.lower(split))
+    else:
+        trigger_analysis(str.lower(final_trigger[4]))
+
+
+def new_trigger(value):
+    if len(final_trigger) > 3 and " || " in final_trigger[4]:
+        if value == "new":
+            special_trigger("new")
+        else:
+            special_trigger("edit")
+    else:
+        forget()
+        root.rowconfigure(0, weight=0)
+        root.columnconfigure(0, weight=0)
+        root.rowconfigure(1, weight=0)
+        root.columnconfigure(1, weight=0)
+        if value == "new":
+            l1.grid(row=0, column=1, pady=10, sticky=W)
+        else:
+            l19.grid(row=0, column=1, pady=10, sticky=W)
+        l2.grid(row=1, padx=30, sticky=W)
+        l3.grid(row=2, padx=30, sticky=W)
+        l4.grid(row=3, padx=30, sticky=W)
+        l5.grid(row=4, padx=30, sticky=W)
+        l6.grid(row=5, padx=30, sticky=W)
+        l7.grid(row=6, padx=30, sticky=W)
+        l8.grid(row=7, padx=30, sticky=W)
+        l9.grid(row=8, padx=30, sticky=W)
+        l10.grid(row=9, padx=30, sticky=W)
+        l11.grid(row=10, padx=30, sticky=W)
+        l12.grid(row=3, column=1, padx=330, sticky=W)
+        l13.grid(row=5, column=1, padx=90, sticky=W)
+        l14.grid(row=6, column=1, padx=90, sticky=W)
+        l15.grid(row=7, column=1, padx=90, sticky=W)
+        l16.grid(row=8, column=1, padx=90, sticky=W)
+        l17.grid(row=9, column=1, padx=90, sticky=W)
+        e0.grid(row=1, column=1, columnspan=2, sticky=W)
+        e1.grid(row=2, column=1, pady=10, columnspan=2, sticky=W)
+        e2.grid(row=3, column=1, columnspan=2, sticky=W)
+        e3.grid(row=4, column=1, columnspan=2,  pady=10, sticky=W)
+        e4.grid(row=5, column=1, columnspan=2, sticky=W)
+        e5.grid(row=6, column=1, pady=10, sticky=W)
+        e6.grid(row=7, column=1, sticky=W)
+        e7.grid(row=8, column=1, pady=10, sticky=W)
+        e8.grid(row=9, column=1, sticky=W)
+        c4.grid(row=10, column=1, pady=10, sticky=W)
+        if value == "new":
+            b5.grid(row=11, column=1, pady=5, sticky=W)
+        else:
+            b6.grid(row=11, column=1, pady=5, sticky=W)
+        b7.grid(row=4, column=1, padx=330, sticky=W)
+
+
+def trigger_choice(value):
+    global final_trigger
+    b_special_trigger.grid_forget()
+    b2.grid_forget()
+    b8.grid(row=1, column=1, pady=20)
+    b3.grid(row=2, column=1, pady=20)
+    b4.grid(row=3, column=1, pady=20)
+    trigger_details = value.split(" | ")
+    rownumber = trigger_listbox.curselection()[0]
+    final_trigger = trigger_details_list[rownumber]
+    e2.delete(0, END)
+    e2.insert(0, final_trigger[4])
+    e3.delete(0, END)
+    e3.insert(0, final_trigger[5])
+    e4.delete(0, END)
+    e4.insert(0, final_trigger[6])
+    e5.delete(0, END)
+    e5.insert(0, final_trigger[7])
+    e6.delete(0, END)
+    e6.insert(0, final_trigger[8])
+    e7.delete(0, END)
+    e7.insert(0, final_trigger[9])
+    e8.delete(0, END)
+    e8.insert(0, final_trigger[10])
+    if final_trigger[11] == "1":
+        c4.select()
+
+
+def trigger_ui(value):
+    global trigger_details_list
+    try:
+        reset()
+        tupel = ()
+        trigger_details_list.clear()
+        b8.grid_forget()
+        b2.grid(row=1, column=1)
+        b_special_trigger.grid(row=2, pady=30, column=1)
+        # trigger_listbox.grid(row=1, column=0, padx=10, pady=10, rowspan=3, sticky=N+S+E+W)
+        trigger_listbox.delete(0, END)
+        zone_txt = codecs.open("trigger/" + e0.get() + ".txt", 'r', "utf-8")
+        for para_line in zone_txt:
+            paraline = str.rstrip(para_line)
+            type_end = paraline.find('= ') + 2
+            if 0 < type_end < len(paraline):
+                line_type = str.lower(paraline[0:type_end])
+                line_data = str.rstrip(paraline[type_end:])
+                # line_data = umlaute2(line_data)
+                if '#' not in line_type:
+                    if 'trigger' in line_type or 'special' in line_type:
+                        trigger_details = line_data.split("; ")
+                        if value == trigger_details[2]:
+                            trigger_details_list += [trigger_details]
+                            trigger_listbox.insert(END, trigger_details[4] + " | " + trigger_details[5])
+        zone_txt.close()
+    except:
+        guioutput("Folder trigger is missing")
+
+
+def boss_ui(value):
+    try:
+        reset()
+        tupel = ()
+        # boss_listbox.grid(row=0, column=1, padx=10, pady=10, sticky=N+S+E+W)
+        b8.grid_forget()
+        b2.grid(row=1, column=1)
+        b_special_trigger.grid(row=2, pady=30, column=1)
+        boss_listbox.delete(0, END)
+        trigger_listbox.delete(0, END)
+        zone_txt = codecs.open("trigger/" + value + ".txt", 'r', "utf-8")
+        for para_line in zone_txt:
+            paraline = str.rstrip(para_line)
+            type_end = paraline.find('= ') + 2
+            if 0 < type_end < len(paraline):
+                line_type = str.lower(paraline[0:type_end])
+                line_data = str.rstrip(paraline[type_end:])
+                # line_data = umlaute2(line_data)
+                if 'trigger' in line_type or 'special' in line_type:
+                    line_data = line_data.split("; ")
+                    if line_data[2] not in tupel:
+                        tupel += (line_data[2],)
+                        boss_listbox.insert(END, line_data[2])
+        zone_txt.close()
+    except:
+        guioutput("Trigger is missing")
+
+
+def zone_list():
+    forget()
+    reset()
+    root.rowconfigure(0, weight=1)
+    root.columnconfigure(0, weight=1)
+    root.rowconfigure(1, weight=1)
+    root.columnconfigure(1, weight=1)
+    zone_listbox.grid(row=0, column=0, padx=10, pady=10, sticky=N+S+E+W)
+    boss_listbox.grid(row=0, column=1, padx=10, pady=10, sticky=N + S + E + W)
+    trigger_listbox.grid(row=1, column=0, padx=10, pady=10, rowspan=3, sticky=N + S + E + W)
+    b8.grid_forget()
+    b2.grid(row=1, column=1)
+    b_special_trigger.grid(row=2, pady=30, column=1)
+    try:
+        zonelist = os.listdir("trigger")
+        zone_listbox.delete(0, END)
+        for items in zonelist:
+            items = items.split(".txt")[0]
+            zone_listbox.insert(END, items)
+    except:
+        guioutput("Folder trigger is missing")
+
+
+def mainmenue():
+    forget()
+    reset()
+    b2.grid_forget()
+    x = 20
+    y = 80
+    l0.grid(row=0, column=0, padx=x, pady=20, sticky=NW)
+    c1.grid(row=0, column=0, padx=x, pady=y, sticky=NW)
+    c2.grid(row=0, column=0, padx=x, pady=y+40, sticky=NW)
+    c3.grid(row=0, column=0, padx=x, pady=y+80, sticky=NW)
+    l20.grid(row=0, column=0, padx=x, pady=80, sticky=S)
+    volume_bar.grid(row=0, column=0, padx=x, pady=30, sticky=S)
+    if buffcheck == 1:
+        c3.select()
+    b1.grid(row=1, column=0, pady=20)
+    T.grid(row=0, column=1, rowspan=2, sticky=N+S+E+W)
+    sb.grid(row=0, column=2, rowspan=2, sticky=N+S+E+W)
+    root.rowconfigure(0, weight=1)
+    root.columnconfigure(0, weight=0)
+    root.rowconfigure(1, weight=0)
+    root.columnconfigure(1, weight=1)
+    zone_listbox.grid_forget()
+    boss_listbox.grid_forget()
+    trigger_listbox.grid_forget()
+
+
+def forget():
+    b1.grid_forget()
+    b2.grid_forget()
+    b3.grid_forget()
+    b4.grid_forget()
+    b5.grid_forget()
+    b6.grid_forget()
+    b7.grid_forget()
+    b8.grid_forget()
+    b_special_trigger.grid_forget()
+    b_special_trigger1.grid_forget()
+    b_special_trigger2.grid_forget()
+
+    volume_bar.grid_forget()
+
+    c1.grid_forget()
+    c2.grid_forget()
+    c3.grid_forget()
+    c4.grid_forget()
+
+    e0.grid_forget()
+    e1.grid_forget()
+    e2.grid_forget()
+    e3.grid_forget()
+    e4.grid_forget()
+    e5.grid_forget()
+    e6.grid_forget()
+    e7.grid_forget()
+    e8.grid_forget()
+    e9.grid_forget()
+    e_special1.grid_forget()
+    e_special2.grid_forget()
+    e_special3.grid_forget()
+    e_special4.grid_forget()
+    e_special5.grid_forget()
+    e_special6.grid_forget()
+    e_special7.grid_forget()
+    e_special8.grid_forget()
+    e_special9.grid_forget()
+    e_special10.grid_forget()
+    e_special11.grid_forget()
+    e_special11.grid_forget()
+    e_special12.grid_forget()
+    e_special13.grid_forget()
+
+    l0.grid_forget()
+    l1.grid_forget()
+    l2.grid_forget()
+    l3.grid_forget()
+    l4.grid_forget()
+    l5.grid_forget()
+    l6.grid_forget()
+    l7.grid_forget()
+    l8.grid_forget()
+    l9.grid_forget()
+    l10.grid_forget()
+    l11.grid_forget()
+    l12.grid_forget()
+    l13.grid_forget()
+    l14.grid_forget()
+    l15.grid_forget()
+    l16.grid_forget()
+    l17.grid_forget()
+    l18.grid_forget()
+    l19.grid_forget()
+    l20.grid_forget()
+
+    l_special0.grid_forget()
+    l_special1.grid_forget()
+    l_special2.grid_forget()
+
+    sound_listbox.grid_forget()
+    scrollbar.grid_forget()
+    sb.grid_forget()
+
+    zone_listbox.grid_forget()
+    boss_listbox.grid_forget()
+    trigger_listbox.grid_forget()
+
+    T.grid_forget()
+
+
+def reset():
+    global final_trigger
+    # e1.delete(0, END)
+    # e1.insert(0, "")
+    final_trigger.clear()
+    e2.delete(0, END)
+    e2.insert(0, "")
+    e3.delete(0, END)
+    e3.insert(0, "")
+    e4.delete(0, END)
+    e4.insert(0, "0")
+    e5.delete(0, END)
+    e5.insert(0, "0")
+    e6.delete(0, END)
+    e6.insert(0, "0")
+    e7.delete(0, END)
+    e7.insert(0, "0")
+    e8.delete(0, END)
+    e8.insert(0, "0")
+    e9.delete(0, END)
+    e9.insert(0, "0")
+    c4.deselect()
+
+    e_special1.delete(0, END)
+    e_special2.delete(0, END)
+    e_special3.delete(0, END)
+    e_special4.delete(0, END)
+    e_special5.delete(0, END)
+    e_special6.delete(0, END)
+    e_special7.delete(0, END)
+    e_special8.delete(0, END)
+    e_special9.delete(0, END)
+    e_special10.delete(0, END)
+    e_special11.delete(0, END)
+    e_special12.delete(0, END)
+    e_special13.delete(0, END)
+    e_special1.insert(0, "")
+    e_special2.insert(0, "")
+    e_special3.insert(0, "")
+    e_special4.insert(0, "")
+    e_special5.insert(0, "")
+    e_special6.insert(0, "")
+    e_special7.insert(0, "")
+    e_special8.insert(0, "")
+    e_special9.insert(0, "")
+    e_special10.insert(0, "")
+    e_special11.insert(0, "")
+    e_special12.insert(0, "")
+    e_special13.insert(0, "")
+
+    # trigger_listbox.delete(0, END)
+
+
 root = Tk()
-root.geometry("840x500")
+root.geometry("800x400")
 root.title("Rift Raid Alert")
 
-S = Scrollbar(root)
-T = Text(root, height=20, width=70)
-S.pack(side=RIGHT, fill=Y)
-T.pack(side=RIGHT, fill=Y)
-S.config(command=T.yview)
-T.config(yscrollcommand=S.set)
-T.insert(END, "Rift Raid Alert Version 0.3.9\nMake sure you use /log in Rift after each game restart !")
+menubar = Menu(root)
+menubar.add_command(label="Main", command=mainmenue)
+menubar.add_command(label="Trigger", command=zone_list)
+root.config(menu=menubar)
+
+sb = Scrollbar(root)
+scrollbar = Scrollbar(root)
+T = Text(root, height=20, width=50)
+sb.config(command=T.yview)
+T.config(yscrollcommand=sb.set)
+T.insert(END, "Rift Raid Alert Version 0.4.8\nMake sure you use /log in Rift after each game restart !")
 
 soundfiles = soundfiles_list('siri')
 combattrigger = 1
 buffcheck = 1
-output = "wav"
+output = "mix"
 trigger = []
 special = []
 keywords = []
@@ -819,24 +1463,98 @@ playback = False  # only for Playback a logfile from line 1
 error_analysis = False
 logfilecheck()
 
+trigger_details_list = []
 var_wav = IntVar()
 var_tts = IntVar()
 var_buffcheck = IntVar()
-Label(root, text="Activate the Logfile with /log in Rift !").pack(anchor='w', padx=10, pady=10)
-c = Checkbutton(root, text="Soundfiles (*.wav)", variable=var_wav, command=wav)
+var_zone = StringVar()
+var_reset = StringVar()
+var_save = StringVar()
+final_trigger = []
+# zone_listbox_value = ""
+
+l0 = Label(root, text="Activate the Logfile with /log in Rift !")
+l1 = Label(root, text="New Trigger:")
+l2 = Label(root, text="Zone:")
+l3 = Label(root, text="Boss:")
+l4 = Label(root, text="Text to Search:")
+l5 = Label(root, text="Text to Speech:")
+l6 = Label(root, text="Timer:")
+l7 = Label(root, text="Countdown")
+l8 = Label(root, text="Timeout:")
+l9 = Label(root, text="Number of Events:")
+l10 = Label(root, text="Dependent:")
+l11 = Label(root, text="Reset:")
+l12 = Label(root, text="At least 5 letters")
+l13 = Label(root, text="The trigger is only executed after the specified time has elapsed.")
+l14 = Label(root, text="Before the end of the time a countdown is announced (3..2..1).")
+l15 = Label(root, text="After triggering, the trigger will be ignored for the specified time.")
+l16 = Label(root, text="Number of events before the trigger fires e.g. stacks until tank swap.")
+l17 = Label(root, text="Is currently not used (only for Lord Arak) but for the future.")
+l18 = Label(root, text="Check your entries!", fg="red", font='bold')
+l19 = Label(root, text="Edit Trigger:")
+l20 = Label(root, text="Text to Speech Volume:")
+c1 = Checkbutton(root, text="Soundfiles (*.wav)", variable=var_wav, command=wav)
 if output == "mix" or output == "wav":
-    c.select()
-c.pack(anchor='w', padx=10)
-c = Checkbutton(root, text="Text to Speech", variable=var_tts, command=tts)
+    c1.select()
+c2 = Checkbutton(root, text="Text to Speech", variable=var_tts, command=tts)
 if output == "mix" or output == "tts":
-    c.select()
-c.pack(anchor='w', padx=10)
-c = Checkbutton(root, text="Weaponstone Flask and Food Check", variable=var_buffcheck, command=buff_check)
-if buffcheck == 1:
-    c.select()
-c.pack(anchor='w', padx=10)
+    c2.select()
+c3 = Checkbutton(root, text="Weaponstone Flask and Food Check", variable=var_buffcheck, command=buff_check)
+c4 = Checkbutton(root, text="Stop all running Timer and Countdowns", variable=var_reset)
 
-Button(root, text="EXIT", width=20, command=ask_quit).pack(side=BOTTOM, pady=20)
+b1 = Button(root, text="EXIT", width=20, command=ask_quit)
+b2 = Button(root, text="New Trigger", width=20, command=lambda: new_trigger("new"))
+b3 = Button(root, text="Edit Trigger", width=20, command=lambda: new_trigger("edit"))
+b4 = Button(root, text="Delete Trigger", width=20, command=lambda: edit_trigger("delete"))
+b5 = Button(root, text="Save", width=20, command=lambda: save_newtrigger("new"))
+b6 = Button(root, text="Save", width=20, command=lambda: edit_trigger("edit"))
+b7 = Button(root, text="Sound File", width=10, command=sound_file)
+b8 = Button(root, text="Test Trigger", width=20, command=test_trigger)
+b_special_trigger = Button(root, text="Special Trigger", width=20, command=lambda: special_trigger("new"))
+b_special_trigger1 = Button(root, text="Save", width=20, command=lambda: save_newtrigger("special_new"))
+b_special_trigger2 = Button(root, text="Save", width=20, command=lambda: edit_trigger("special_edit"))
 
+volume_bar = Scale(root, from_=0, to=100, orient=HORIZONTAL)
+volume_bar.set(volume)
+
+e0 = Entry(root, width=50)
+e1 = Entry(root, width=50)
+e2 = Entry(root, width=50)
+e3 = Entry(root, width=50)
+e4 = Entry(root, width=10)
+e5 = Entry(root, width=10)
+e6 = Entry(root, width=10)
+e7 = Entry(root, width=10)
+e8 = Entry(root, width=10)
+e9 = Entry(root, width=10)
+
+l_special0 = Label(root, text="Special Trigger")
+l_special1 = Label(root, text="Keywords occurs: output = text to speech 1, Next keyword occurs: output = text to speech 2 ...")
+l_special2 = Label(root, text="Keywords:")
+e_special1 = Entry(root, width=50)
+e_special2 = Entry(root, width=50)
+e_special3 = Entry(root, width=50)
+e_special4 = Entry(root, width=50)
+e_special5 = Entry(root, width=50)
+e_special6 = Entry(root, width=50)
+e_special7 = Entry(root, width=50)
+e_special8 = Entry(root, width=50)
+e_special9 = Entry(root, width=50)
+e_special10 = Entry(root, width=50)
+e_special11 = Entry(root, width=50)
+e_special12 = Entry(root, width=50)
+e_special13 = Entry(root, width=50)
+
+zone_listbox = Listbox(root, width=60, height=10)
+zone_listbox.bind('<<ListboxSelect>>', zone_select)
+boss_listbox = Listbox(root, width=60, height=10)
+boss_listbox.bind('<<ListboxSelect>>', boss_select)
+trigger_listbox = Listbox(root, width=60, height=10)
+trigger_listbox.bind('<<ListboxSelect>>', trigger_select)
+sound_listbox = Listbox(root, width=40, height=5)
+sound_listbox.bind('<<ListboxSelect>>', sound_file_select)
+
+mainmenue()
 root.protocol("WM_DELETE_WINDOW", ask_quit)
 root.mainloop()

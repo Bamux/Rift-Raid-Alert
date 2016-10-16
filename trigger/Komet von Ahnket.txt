@@ -30,4 +30,4 @@ trigger = ger; CoA; Hericius; ability; Hericius -> Läuterungssiphon; kick; 0; 0
 
 
 [Special Trigger alternates between states - language; Loacation; boss; emote or ability; text to search; text to speech status 1; text to speech status 2; ... ]
-special = ger; CoA; Hericius; ability; Hericius -> Ätzende Sporen || Hericius -> Säuresporen || Hericius -> Brandsporen; first; second; last; safespot; first; second; third; last
+special = ger; CoA; Hericius; ability; Hericius -> Ätzende Sporen || Hericius -> Säuresporen || Hericius -> Brandsporen; ; ; last; safespot; ; ; ; last

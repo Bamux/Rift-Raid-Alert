@@ -24,7 +24,7 @@ trigger = ger; IGP; Guurloth; emote; Guurloth schreit: "$player unternimmt gar n
 
 trigger = ger; IGP; Thalguur; chat; Combat Begin -> Thalguur; group damage in; 12; 17; 0; 0; 0; 1
 trigger = ger; IGP; Thalguur; emote; Thalguur fokussiert seine Energie auf $player; intercept $player; 0; 0; 0; 0; 0; 0
-trigger = ger; IGP; Thalguur; emote; Thalguur -> Kristalline Salve; heal; 0; 0; 0; 0; 0; 0
+trigger = all; Schimmersand; Thalguur; ability; Thalguur -> Kristalline Salve; now; 0; 0; 0; 0; 0; 0
 trigger = ger; IGP; Thalguur; emote; Thalguur -> Kristalline Salve; group damage in; 30; 35; 0; 0; 0; 0
 trigger = ger; IGP; Thalguur; emote; Thalguur -> Kraft absorbieren; group damage in; 22; 27; 0; 0; 0; 1
 trigger = ger; IGP; Thalguur; ability; $player <- Fluch der Gier; $player run out; 0; 0; 8; 0; 0; 0
