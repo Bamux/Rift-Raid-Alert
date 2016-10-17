@@ -1090,6 +1090,7 @@ def test_trigger():
 
 
 def new_trigger(value):
+    print(final_trigger)
     if len(final_trigger) > 3 and " || " in final_trigger[4]:
         if value == "new":
             special_trigger("new")
@@ -1359,7 +1360,7 @@ def reset():
     global final_trigger
     # e1.delete(0, END)
     # e1.insert(0, "")
-    final_trigger.clear()
+    # final_trigger.clear()
     e2.delete(0, END)
     e2.insert(0, "")
     e3.delete(0, END)
