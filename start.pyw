@@ -2,7 +2,7 @@
 
 # Rift Raid Alert
 # Spoken raid warnings for the MMORPG Rift
-# Version 0.4.9
+# Version 0.5.2
 # Author: Bamux@Typhiria
 
 import os
@@ -33,8 +33,8 @@ def trigger_analysis(log):
         #             or trigger[i][1] == "combat_end" \
         #             or trigger[i][1] == "combat_begin" \
         #             or location == "all":
-                        if "$player" in trigger[i][4]:
-                            cut_string = trigger[i][4].split('$player')
+                        if "player" in trigger[i][4]:
+                            cut_string = trigger[i][4].split('player')
                             left_string = cut_string[0]
                             right_string = cut_string[1]
                             if len(left_string) > len(right_string):
@@ -74,33 +74,33 @@ def trigger_analysis(log):
                                     player = cut_string[0]
                                     cut_string = player.split(' ')
                                     player = cut_string[0]
-                                    if "$player" in trigger[i][5]:
-                                        if '$' == trigger[i][5][0]:
+                                    if "player" in trigger[i][5]:
+                                        if 'p' == trigger[i][5][0]:
                                             if output == "tts":
-                                                cut_string = trigger[i][5].split('$player ')
+                                                cut_string = trigger[i][5].split('player ')
                                                 new_string = cut_string[1]
                                                 new_string = player + " " + new_string
                                             else:
                                                 if playername == player:
-                                                    cut_string = trigger[i][5].split('$player ')
+                                                    cut_string = trigger[i][5].split('player ')
                                                     new_string = cut_string[1]
                                                 else:
                                                     if output == "mix":
-                                                        cut_string = trigger[i][5].split('$player ')
+                                                        cut_string = trigger[i][5].split('player ')
                                                         new_string = cut_string[1]
                                                         new_string = player + " " + new_string
                                         else:
                                             if output == "tts":
-                                                cut_string = trigger[i][5].split(' $player')
+                                                cut_string = trigger[i][5].split(' player')
                                                 new_string = cut_string[0]
                                                 new_string = new_string + " " + player
                                             else:
                                                 if playername == player:
-                                                    cut_string = trigger[i][5].split(' $player')
+                                                    cut_string = trigger[i][5].split(' player')
                                                     new_string = cut_string[0]
                                                 else:
                                                     if output == "mix":
-                                                        cut_string = trigger[i][5].split(' $player')
+                                                        cut_string = trigger[i][5].split(' player')
                                                         new_string = cut_string[0]
                                                         new_string = new_string + " " + player
 
@@ -342,23 +342,56 @@ def logfile_analysis(logtext):
         joke += ['Do you know my favorite food? I Love Micro Chips!']
         zone = ""
         text = ""
+        bossname = ""
         lasttime = -1
         combat = False
+        zone_in_zonelist = False
 
         while True:
+            line = ""
             log = logtext.readline()
             log = log.rstrip()
             if "[Rift Raid Alert] " in log:
                 cut_string = log.split("[Rift Raid Alert] ")
                 log = cut_string[0] + cut_string[1]
+                line = cut_string[1]
                 guioutput(log)
             # log = umlaute(log)
             log = str.lower(log)
+
+            if 'Rift Raid Alert Trigger >' in line:
+                if combattrigger == 1:
+                    cut_string = line.split('Rift Raid Alert Trigger > ')
+                    new_string = cut_string[1]
+                    if zone != new_string:
+                        trigger.clear()
+                        special.clear()
+                        language = "all"
+                        location = "all"
+                        boss = "all"
+                        zone = new_string
+                        triggerload(new_string)
+                        trigger += defaulttrigger + bufftrigger
+                        special += defaultspecial
+            elif "Combat Begin > " in line:
+                combat = True
+                bossname = line.split(" > ")
+                bossname = bossname[1]
+                for item in zonelist:
+                    if item == zone:
+                        zone_in_zonelist = True
+                        break
+                if zone_in_zonelist:
+                    Thread(target=load_abilies, args=(bossname,)).start()
+            elif "Combat End" in line:
+                lasttime = -1
+                combat = False
+                if zone_in_zonelist:
+                    save_abilities(bossname)
+                zone_in_zonelist = False
+
             if log:
                 if playback:
-                    if "combat begin" in log:
-                        combat = True
-                        # guioutput("Combat Begin")
                     if combat:
                         cut_string = log.split(":")
                         logtime = int(cut_string[2])
@@ -372,11 +405,8 @@ def logfile_analysis(logtext):
                             # guioutput(str(logtime) + ", " + str(lasttime) + ", " + str(wait))
                             time.sleep(wait)
                         lasttime = logtime
-                    if "combat end" in log:
-                        combat = False
-                        lasttime = -1
 
-                if 'tank pull ->' in log or 'fail pull ->' in log:
+                if 'tank pull >' in log or 'fail pull >' in log:
                     i = 0
                     while i < len(timerreset):
                         if timerreset[i] == "siri start countdown":
@@ -384,10 +414,10 @@ def logfile_analysis(logtext):
                             break
                         i += 1
                     guioutput(str(timerreset))
-                elif 'rift raid alert trigger <- keywords off' in log:
+                elif 'rift raid alert trigger < keywords off' in log:
                     zone = ""
                     # guioutput(log) 123
-                elif 'rift raid alert trigger -> keywords on' in log:
+                elif 'rift raid alert trigger > keywords on' in log:
                     trigger.clear()
                     special.clear()
                     triggerload("keywords")
@@ -395,30 +425,18 @@ def logfile_analysis(logtext):
                     special += defaultspecial
                     # guioutput(log) 123
                     zone = ""
-                elif 'rift raid alert trigger -> ' in log:
-                    if combattrigger == 1:
-                        cut_string = log.split('rift raid alert trigger -> ')
-                        new_string = cut_string[1]
-                        if zone != new_string:
-                            trigger.clear()
-                            special.clear()
-                            language = "all"
-                            location = "all"
-                            boss = "all"
-                            zone = new_string
-                            triggerload(new_string)
-                            trigger += defaulttrigger + bufftrigger
-                            special += defaultspecial
-                elif 'player -> ' in log:
-                    cut_string = log.split('player -> ')
+                elif 'player >> ' in log:
+                    cut_string = log.split('player >> ')
                     playername = cut_string[1]
                     guioutput("Player:" + playername)
                 elif output == "wav":
-                    if 'raidbuff missing -> ' + playername in log:
+                    if 'raidbuff missing > ' + playername in log:
                         text = "raidbuffs.wav"
 
-                # guioutput(trigger)
                 trigger_analysis(log)
+
+                if combat and line and zone_in_zonelist:
+                    Thread(target=abilitycheck, args=(line, bossname)).start()
 
                 # Siri
                 if siri:
@@ -448,6 +466,55 @@ def logfile_analysis(logtext):
         time.sleep(0.10)
         t = Thread(target=logfile_analysis, args=(logtext,))
         t.start()
+
+
+def save_abilities(bossname):
+    if len(abilities_new) != len(abilities_old):
+        mypath = "trigger/abilities/" + zone
+        if not os.path.isdir(mypath):
+            os.makedirs(mypath)
+        f = codecs.open(mypath + "/" + bossname + ".txt", "w", "utf-8")
+        for item in abilities_new:
+            f.write(str(item) + '\r\n')
+        f.close()
+        abilities_old.clear()
+        abilities_new.clear()
+
+
+def load_abilies(bossname):
+    global abilities_old, abilities_new
+    if zone:
+        try:
+            abilities_old.clear()
+            abilities_new.clear()
+            mypath = "trigger/abilities/" + zone + "/" + bossname + ".txt"
+            abilities_txt = codecs.open(mypath, 'r', "utf-8")
+            for item in abilities_txt:
+                item = item.rstrip()
+                abilities_old += [item]
+                abilities_new += [item]
+            abilities_txt.close()
+        except:
+            pass
+
+
+def abilitycheck(line, bossname):
+    global abilities_new
+    # print(abilities_new)
+    ability_existing = False
+    if "pull >> " not in line and "Combat Begin" not in line and "Rift Raid Alert" not in line and "%" not in line \
+            and "remove" not in line:
+        if " >> " in line:
+            line = line.split(" >> ")
+            line = line[0]  # + " >> player"
+        elif " << " in line:
+            line = line.split(" << ")
+            line = "player << " + line[1]
+        for item in abilities_new:
+            if line == item:
+                ability_existing = True
+        if not ability_existing:
+            abilities_new += [line]
 
 
 def logfilecheck():
@@ -693,6 +760,7 @@ def triggerload(file):  # get parametrs from Rift_Raid_Warnings.ini
                                 special += [liste]
                                 del [liste]
             ini.close()
+
         except:
             guioutput('Error in reading parameters from ' + file)
     except:
@@ -975,19 +1043,71 @@ def sound_file_select(evt):
     sound_listbox.grid_forget()
     scrollbar.grid_forget()
     b7.grid(row=4, column=1, padx=330, sticky=W)
+    b9.grid(row=3, column=1, padx=330, sticky=W)
+    l13.grid(row=5, column=1, padx=90, sticky=W)
+    l14.grid(row=6, column=1, padx=90, sticky=W)
+    l15.grid(row=7, column=1, padx=90, sticky=W)
+    l16.grid(row=8, column=1, padx=90, sticky=W)
+    l17.grid(row=9, column=1, padx=90, sticky=W)
 
 
 def sound_file():
     b7.grid_forget()
+    b9.grid_forget()
+    l13.grid_forget()
+    l14.grid_forget()
+    l15.grid_forget()
+    l16.grid_forget()
+    l17.grid_forget()
     liste = soundfiles_list('siri')
     sound_listbox.delete(0, END)
     sound_listbox.insert(END, ".. exit")
     for item in liste:
         sound_listbox.insert(END, item)
-    sound_listbox.grid(row=0, column=1, pady=10, padx=330, rowspan=5, sticky=W+N+S)
-    scrollbar.grid(row=0, column=1, pady=10, padx=574, rowspan=5, sticky=W+N+S)
+    sound_listbox.grid(row=0, column=2, pady=10, rowspan=12, sticky=N+S+E+W)
+    scrollbar.grid(row=0, column=3, pady=10, rowspan=12, sticky=N+S+E+W)
     sound_listbox.config(yscrollcommand=scrollbar.set)
     scrollbar.config(command=sound_listbox.yview)
+
+
+def ability_select(evt):
+    value = str((abilities_listbox.get(abilities_listbox.curselection())))
+    if value != ".. exit":
+        e2.delete(0, END)
+        e2.insert(0, value)
+    abilities_listbox.grid_forget()
+    scrollbar.grid_forget()
+    b7.grid(row=4, column=1, padx=330, sticky=W)
+    b9.grid(row=3, column=1, padx=330, sticky=W)
+    l13.grid(row=5, column=1, padx=90, sticky=W)
+    l14.grid(row=6, column=1, padx=90, sticky=W)
+    l15.grid(row=7, column=1, padx=90, sticky=W)
+    l16.grid(row=8, column=1, padx=90, sticky=W)
+    l17.grid(row=9, column=1, padx=90, sticky=W)
+
+
+def abilities():
+    b7.grid_forget()
+    b9.grid_forget()
+    l13.grid_forget()
+    l14.grid_forget()
+    l15.grid_forget()
+    l16.grid_forget()
+    l17.grid_forget()
+    abilities_listbox.delete(0, END)
+    abilities_listbox.insert(END, ".. exit")
+    abilities_listbox.grid(row=0, column=2, pady=10, rowspan=12, sticky=N + S + E + W)
+    scrollbar.grid(row=0, column=3, pady=10, rowspan=12, sticky=N + S + E + W)
+    abilities_listbox.config(yscrollcommand=scrollbar.set)
+    scrollbar.config(command=abilities_listbox.yview)
+    try:
+        file = codecs.open("trigger/abilities/" + e0.get() + "/" + e1.get() + ".txt", "r", 'utf-8')
+        for item in file:
+            item = item.rstrip()
+            abilities_listbox.insert(END, item)
+
+    except:
+        pass
 
 
 def special_trigger(value):
@@ -1092,7 +1212,7 @@ def test_trigger():
 
 
 def new_trigger(value):
-    print(final_trigger)
+    # print(final_trigger)
     if len(final_trigger) > 3 and " || " in final_trigger[4]:
         if value == "new":
             special_trigger("new")
@@ -1105,9 +1225,9 @@ def new_trigger(value):
         root.rowconfigure(1, weight=0)
         root.columnconfigure(1, weight=0)
         if value == "new":
-            l1.grid(row=0, column=1, pady=10, sticky=W)
+            l1.grid(row=0, column=1, padx=10, pady=10, sticky=W)
         else:
-            l19.grid(row=0, column=1, pady=10, sticky=W)
+            l19.grid(row=0, column=1, padx=10, pady=10, sticky=W)
         l2.grid(row=1, padx=30, sticky=W)
         l3.grid(row=2, padx=30, sticky=W)
         l4.grid(row=3, padx=30, sticky=W)
@@ -1118,21 +1238,21 @@ def new_trigger(value):
         l9.grid(row=8, padx=30, sticky=W)
         l10.grid(row=9, padx=30, sticky=W)
         l11.grid(row=10, padx=30, sticky=W)
-        l12.grid(row=3, column=1, padx=330, sticky=W)
+        b9.grid(row=3, column=1, padx=330, sticky=W)
         l13.grid(row=5, column=1, padx=90, sticky=W)
         l14.grid(row=6, column=1, padx=90, sticky=W)
         l15.grid(row=7, column=1, padx=90, sticky=W)
         l16.grid(row=8, column=1, padx=90, sticky=W)
         l17.grid(row=9, column=1, padx=90, sticky=W)
-        e0.grid(row=1, column=1, columnspan=2, sticky=W)
-        e1.grid(row=2, column=1, pady=10, columnspan=2, sticky=W)
-        e2.grid(row=3, column=1, columnspan=2, sticky=W)
-        e3.grid(row=4, column=1, columnspan=2,  pady=10, sticky=W)
-        e4.grid(row=5, column=1, columnspan=2, sticky=W)
-        e5.grid(row=6, column=1, pady=10, sticky=W)
-        e6.grid(row=7, column=1, sticky=W)
-        e7.grid(row=8, column=1, pady=10, sticky=W)
-        e8.grid(row=9, column=1, sticky=W)
+        e0.grid(row=1, column=1, padx=10, sticky=W)
+        e1.grid(row=2, column=1, padx=10, pady=10, sticky=W)
+        e2.grid(row=3, column=1, padx=10, sticky=W)
+        e3.grid(row=4, column=1, padx=10,  pady=10, sticky=W)
+        e4.grid(row=5, column=1, padx=10, sticky=W)
+        e5.grid(row=6, column=1, padx=10, pady=10, sticky=W)
+        e6.grid(row=7, column=1, padx=10, sticky=W)
+        e7.grid(row=8, column=1, padx=10, pady=10, sticky=W)
+        e8.grid(row=9, column=1, padx=10, sticky=W)
         c4.grid(row=10, column=1, pady=10, sticky=W)
         if value == "new":
             b5.grid(row=11, column=1, pady=5, sticky=W)
@@ -1227,7 +1347,17 @@ def boss_ui(value):
         guioutput("Trigger is missing")
 
 
+def trigger_dir(folder):
+    zonen = []
+    triggerdir = os.listdir(folder)
+    for item in triggerdir:
+        if item != "abilities" and item != "keywords.txt" and item != "default.txt" and item != "Weaponstone Flask and Food.txt":
+            zonen += [item.split(".txt")[0]]
+    return zonen
+
+
 def zone_list():
+    global zonelist
     forget()
     root.rowconfigure(0, weight=1)
     root.columnconfigure(0, weight=1)
@@ -1238,7 +1368,7 @@ def zone_list():
     trigger_listbox.grid(row=1, column=0, padx=10, pady=10, rowspan=3, sticky=N + S + E + W)
     b8.grid_forget()
     if not final_trigger:
-        print(final_trigger)
+        # print(final_trigger)
         b2.grid(row=1, column=1)
         b_special_trigger.grid(row=2, pady=30, column=1)
     else:
@@ -1246,10 +1376,10 @@ def zone_list():
         b3.grid(row=2, column=1, pady=20)
         b4.grid(row=3, column=1, pady=20)
     try:
-        zonelist = os.listdir("trigger")
+        zonelist = trigger_dir("trigger")
+        # print(zonelist)
         zone_listbox.delete(0, END)
         for items in zonelist:
-            items = items.split(".txt")[0]
             zone_listbox.insert(END, items)
     except:
         guioutput("Folder trigger is missing")
@@ -1290,6 +1420,7 @@ def forget():
     b6.grid_forget()
     b7.grid_forget()
     b8.grid_forget()
+    b9.grid_forget()
     b_special_trigger.grid_forget()
     b_special_trigger1.grid_forget()
     b_special_trigger2.grid_forget()
@@ -1353,6 +1484,7 @@ def forget():
     l_special2.grid_forget()
 
     sound_listbox.grid_forget()
+    abilities_listbox.grid_forget()
     scrollbar.grid_forget()
     sb.grid_forget()
 
@@ -1430,7 +1562,7 @@ scrollbar = Scrollbar(root)
 T = Text(root, height=20, width=50)
 sb.config(command=T.yview)
 T.config(yscrollcommand=sb.set)
-T.insert(END, "Rift Raid Alert Version 0.4.9\nMake sure you use /log in Rift after each game restart !")
+T.insert(END, "Rift Raid Alert Version 0.5.2\nMake sure you use /log in Rift after each game restart !")
 
 soundfiles = soundfiles_list('siri')
 combattrigger = 1
@@ -1441,8 +1573,11 @@ special = []
 keywords = []
 stacks = []
 bufftrigger = []
+abilities_old = []
+abilities_new = []
 # defaulttrigger = []
 zone = ""
+zonelist = trigger_dir("trigger")
 logfile = ""
 volume = 100
 triggerload("RiftRaidAlert.ini")
@@ -1519,6 +1654,7 @@ b5 = Button(root, text="Save", width=20, command=lambda: save_newtrigger("new"))
 b6 = Button(root, text="Save", width=20, command=lambda: edit_trigger("edit"))
 b7 = Button(root, text="Sound File", width=10, command=sound_file)
 b8 = Button(root, text="Test Trigger", width=20, command=test_trigger)
+b9 = Button(root, text="Abilities", width=10, command=abilities)
 b_special_trigger = Button(root, text="Special Trigger", width=20, command=lambda: special_trigger("new"))
 b_special_trigger1 = Button(root, text="Save", width=20, command=lambda: save_newtrigger("special_new"))
 b_special_trigger2 = Button(root, text="Save", width=20, command=lambda: edit_trigger("special_edit"))
@@ -1560,8 +1696,10 @@ boss_listbox = Listbox(root, width=60, height=10)
 boss_listbox.bind('<<ListboxSelect>>', boss_select)
 trigger_listbox = Listbox(root, width=60, height=10)
 trigger_listbox.bind('<<ListboxSelect>>', trigger_select)
-sound_listbox = Listbox(root, width=40, height=5)
+sound_listbox = Listbox(root, width=47, height=5)
 sound_listbox.bind('<<ListboxSelect>>', sound_file_select)
+abilities_listbox = Listbox(root, width=47, height=5)
+abilities_listbox.bind('<<ListboxSelect>>', ability_select)
 
 mainmenue()
 root.protocol("WM_DELETE_WINDOW", ask_quit)

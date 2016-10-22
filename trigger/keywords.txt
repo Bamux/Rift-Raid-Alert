@@ -1,4 +1,4 @@
-﻿# <- Use this in front of the keywords if you do not want to look for it
+﻿# < Use this in front of the keywords if you do not want to look for it
 
 # keywords = keyword1 + keyword2 + keywordX; text to speech or soundfile.wav
 

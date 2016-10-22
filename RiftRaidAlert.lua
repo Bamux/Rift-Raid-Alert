@@ -31,9 +31,9 @@ local function CombatCheck(event, units) -- Check Combat Status (Combat Begin, C
                         local player = Inspect.Unit.Detail(detail.id .. ".target")
                         if player then
                             if player.role == "tank" then
-                                print("Tank pull -> " .. player.name)
+                                print("Tank pull >> " .. player.name)
                             else
-                                print("Fail pull -> " .. player.name)
+                                print("Fail pull >> " .. player.name)
                             end
                         end
                     end
@@ -73,7 +73,7 @@ local function CheckHP(event, units)
                 while hitpoints >= 0 do
                     if  hitpoints_percent <= hitpoints and hitpoints_percent > hitpoints-5 then
                         if hitpoints ~= lasthitpoints then
-                            print(detail.name .. " -> " .. hitpoints .. " %")
+                            print(detail.name .. " = " .. hitpoints .. " %")
                             lasthitpoints = hitpoints
                             if hitpoints == 0 or hitpoints == 100 then
                                 CombatEnd()
@@ -89,7 +89,7 @@ local function CheckHP(event, units)
 end
 
 
--- print Debuffs on all Player's (Player <-  NPC) and Buffs on all NPC's (NPC <- Buff)
+-- print Debuffs on all Player's (Player <  NPC) and Buffs on all NPC's (NPC < Buff)
 local function getAddBuffName(event, unit, buffs)
     if unit then
         local details = Inspect.Unit.Detail(unit)
@@ -101,12 +101,12 @@ local function getAddBuffName(event, unit, buffs)
                     if details.player then
                         if buff.type == "B14A2E6D509F79153" then -- Lavafield
                             if (Inspect.Time.Frame() - Lavafield) > 10 then
-                                print("Rift Raid Alert -> Lavafield")
+                                print("Rift Raid Alert > Lavafield")
                                 Lavafield = Inspect.Time.Frame()
                             end
                         elseif buff.type == "BFD9F4FF8303ACEE6" or buff.type == "B39FB71DBD14135BE" then -- Orchester
                             if (Inspect.Time.Frame() - Orchester) > 15 then
-                                print("Rift Raid Alert -> Orchester")
+                                print("Rift Raid Alert > Orchester")
                                 Orchester = Inspect.Time.Frame()
                             end
                         end
@@ -114,7 +114,7 @@ local function getAddBuffName(event, unit, buffs)
                             if target then
                                 if target.player == nil then
                                     if buff.curse or buff.debuff or buff.disase or buff.poison then
-                                        print(details.name .. " <- " ..buff.name)
+                                        print(details.name .. " << " ..buff.name)
                                         local bufflist = { id = buffid, name = buff.name }
                                         table.insert(rra_bufflist, bufflist)
                                     end
@@ -123,7 +123,7 @@ local function getAddBuffName(event, unit, buffs)
                         end
                     else
                         if details.id == buff.caster and details.relation == "hostile" then
-                            print(details.name .. " <- " ..buff.name)
+                            print(details.name .. " < " ..buff.name)
                             local bufflist = { id = buffid, name = buff.name }
                             table.insert(rra_bufflist, bufflist)
                         end
@@ -231,28 +231,28 @@ local function rra_raidbuffcheck()
             for i=1, buff_count do
                 print("Raidbuff missing -> " .. weaponstones_flasks_food[i])
             end
-            print("Raidbuff missing <--- Weaponstone, Flask and Food")
+            print("Raidbuff missing <-- Weaponstone, Flask and Food")
         end
         buff_count = #weaponstones_flasks
         if buff_count > 0 then
             for i=1, buff_count do
                 print("Raidbuff missing -> " .. weaponstones_flasks[i])
             end
-            print("Raidbuff missing <-- Weaponstone and Flask")
+            print("Raidbuff missing <- Weaponstone and Flask")
         end
         buff_count = #weaponstones_food
         if buff_count > 0 then
             for i=1, buff_count do
                 print("Raidbuff missing -> " .. weaponstones_food[i])
             end
-            print("Raidbuff missing <-- Weaponstone and Food")
+            print("Raidbuff missing <- Weaponstone and Food")
         end
         buff_count = #flasks_food
         if buff_count > 0 then
             for i=1, buff_count do
                 print("Raidbuff missing -> " .. flasks_food[i])
             end
-            print("Raidbuff missing <-- Flask and Food")
+            print("Raidbuff missing <- Flask and Food")
         end
         buff_count = #weaponstones
         if buff_count > 0 then
@@ -299,7 +299,7 @@ local function test()
 end
 
 
--- print all removed Debuffs (Player <-  remove Debuff)  and Buffs (NPC <- remove Buff)
+-- print all removed Debuffs (Player <  remove Debuff)  and Buffs (NPC < remove Buff)
 local function getRemoveBuffName(event, unit, buffs)
     if unit then
         local buff_existing = false
@@ -318,7 +318,11 @@ local function getRemoveBuffName(event, unit, buffs)
                             end
                         end
                         if buff_existing == false then
-                            print(details.name .. " <- remove " .. value.name )
+                            if details.player then
+                                print(details.name .. " << remove " .. value.name)
+                            else
+                                print(details.name .. " < remove " .. value.name)
+                            end
                         end
                         table.remove(rra_bufflist, key)
                     end
@@ -329,7 +333,7 @@ local function getRemoveBuffName(event, unit, buffs)
 end
 
 
--- print all Abilities (with cast time) from NPC's and show their target (NPC -> Ability -> Target)
+-- print all Abilities (with cast time) from NPC's and show their target (NPC > Ability > Target)
 local function getAbilityName(event, units)
     local unit_details = Inspect.Unit.Detail(units)
     if unit_details then
@@ -339,9 +343,9 @@ local function getAbilityName(event, units)
                 if detail.relation == "hostile" then
                     local player = Inspect.Unit.Detail(id..".target")
                     if player then
-                        print (detail.name .. " -> " .. cast.abilityName.. " -> " .. player.name)
+                        print (detail.name .. " > " .. cast.abilityName.. " >> " .. player.name)
                     else
-                        print(detail.name .. " -> " .. cast.abilityName)
+                        print(detail.name .. " > " .. cast.abilityName)
                     end
                 else
                     if cast.abilityNew then
@@ -364,7 +368,7 @@ local function Zone()
         local zone = Inspect.Zone.Detail(zone_id)
         if zone then
             if zone.name then
-                print("Rift Raid Alert Trigger -> ".. zone.name)
+                print("Rift Raid Alert Trigger > ".. zone.name)
             end
         end
     end
@@ -380,7 +384,7 @@ local function ReadyCheck(event, units)
                 if detail.ready then
                     CombatEnd()
                     Zone()
-                    print("player -> " .. player.name)
+                    print("player >> " .. player.name)
                     rra_raidbuffcheck()
                 end
             end
@@ -420,7 +424,7 @@ local function start_check(addon)
         if RiftRaidAlert_enabled == "start" then
             rra_start()
         elseif RiftRaidAlert_enabled == "keywords" then
-            print("Rift Raid Alert Trigger -> keywords")
+            print("Rift Raid Alert Trigger > keywords")
         end
     end
 end
@@ -429,7 +433,7 @@ end
 local function id()
     local target = Inspect.Unit.Detail("player.target")
         if target then
-            print(target.name .. " -> UnitID: " .. target.id)
+            print(target.name .. " > UnitID: " .. target.id)
         end
 end
 
@@ -443,7 +447,7 @@ local function slashHandler(h, args)
     end
     if r[0] == "stop" then
         if RiftRaidAlert_enabled == "keywords" then
-            print("Rift Raid Alert Trigger <- keywords off")
+            print("Rift Raid Alert Trigger < keywords off")
         else
            print("Rift Raid Alert stoped")
         end
@@ -453,7 +457,7 @@ local function slashHandler(h, args)
     end
     if r[0] == "start" then
         if RiftRaidAlert_enabled == "keywords" then
-            print("Rift Raid Alert Trigger <- keywords off")
+            print("Rift Raid Alert Trigger < keywords off")
         end
         RiftRaidAlert_enabled = "start"
         print("Rift Raid Alert started")
@@ -466,7 +470,7 @@ local function slashHandler(h, args)
             print("Rift Raid Alert stoped")
         end
         RiftRaidAlert_enabled = "keywords"
-        print("Rift Raid Alert Trigger -> Keywords on")
+        print("Rift Raid Alert Trigger > Keywords on")
         rra_stop()
         return
     end

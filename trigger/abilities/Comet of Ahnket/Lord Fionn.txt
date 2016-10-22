@@ -1,0 +1,44 @@
+Warlord Svenbioard < Warlord's Fervor
+player << Imbalancing Blows
+Warlord Svenbioard > Warcry
+Lord Fionn > Godly Incandescence
+player << Warcry
+Lord Fionn > Blade Storm
+player << Severe Bleeding
+Huntsmen of the Mire > Power Shot
+Dread Witch Lokerinn > Ulsima Hex
+Lord Fionn > One Thousand Thrusts
+player << Power Shot
+Huntsmen of the Mire > Energy Well
+Huntsmen of the Mire > Volley
+Lord Fionn > Omniscient Flash
+Lord Fionn > Marked for Death
+player << Marked for Death
+Lord Fionn > The Main Thrust
+Dread Witch Lokerinn > Untouchable
+Dread Witch Lokerinn > Living Resonance
+Dread Witch Lokerinn > Torpor of Resurgence
+player << Omniblast
+player << Ulsima Hex
+player << Surging Energy
+Lord Fionn < Empowered by Ahnket
+player << Dread Lance
+Lord Fionn < Spirit of Sibuna
+Lord Fionn > Reaper's Condemnation
+player << Reaper's Condemnation
+player << No Escape
+Warlord Svenbioard > Reaper's Blade
+player << Reaper's Blade
+Wellspring of Draconic Essence < Living Resonance
+player << Godly Incandescence
+Lord Fionn < Spirit of Abiak
+Warlord Svenbioard < Spirit of Abiak
+player << All-In
+Lord Fionn < Empowered by Ahnkat
+Lord Fionn < Fury of Abukom
+Dread Witch Lokerinn < Fury of Abukom
+Dread Witch Lokerinn > Extreme Perseverance
+Dread Witch Lokerinn < Extreme Perseverance
+player << Cataclysm
+Warlord Svenbioard > Cataclysm
+Dread Witch Lokerinn > Blessing of Immortality

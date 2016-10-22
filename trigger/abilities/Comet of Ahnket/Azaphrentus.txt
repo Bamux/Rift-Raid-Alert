@@ -1,0 +1,7 @@
+Azaphrentus > Dark Star
+Azaphrentus > Rage of Azaphrentus
+Azaphrentus < Rage of Azaphrentus
+Azaphrentus > Manifest Scorn
+player << Manifest Scorn
+player << Cinder Cloud
+player << Flame Shackle

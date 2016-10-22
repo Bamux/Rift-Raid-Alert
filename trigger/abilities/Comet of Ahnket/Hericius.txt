@@ -1,0 +1,25 @@
+Hericius < Attack
+Hericius > Caustic Spores
+Hericius < Caustic Spores
+Hericius > Chlorolance
+Hericius > Cleansing Siphon
+Hericius > Incendiary Spores
+Hericius < Incendiary Spores
+Hericius > Acidic Spores
+Hericius < Acidic Spores
+Hericius > The Unseen Schism
+Sentinel < Hardmode
+Sentinel < Smoldering Spores
+Soothseer < Hardmode
+Soothseer < Soothing Spores
+Soothseer < The Cause.
+Frenetic Mushroom < Frenetic Spores
+Hericius < Hardmode
+player << Caustic Spores
+Soothing Mushroom < Soothing Spores
+Smoldering Mushroom < Smoldering Spores
+player << Acidic Spores
+Frenetic Mushroom > Shroomageddon
+Frenetic Mushroom < Shroomageddon
+Frenetic Mushroom < Deep Roots
+Hericius < Rooted

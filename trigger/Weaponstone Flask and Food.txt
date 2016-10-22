@@ -4,10 +4,10 @@
 
 
 # Weaponstone Flask and Food Check all languages:
-trigger = all; all; all; buff; Raidbuff missing -> $player; $player ; 0; 0; 0; 0; 0; 1
+trigger = all; all; all; ability; Raidbuff missing -> player; player ; 0; 0; 0; 0; 0; 1
 trigger = all; all; all; buff; Raidbuff missing <--- Weaponstone, Flask and Food; Weaponstone, Flask and Food; 0; 0; 0; 0; 0; 1
 trigger = all; all; all; buff; Raidbuff missing <-- Weaponstone and Flask; Weaponstone and Flask; 0; 0; 0; 0; 0; 1
 trigger = all; all; all; buff; Raidbuff missing <- Weaponstone; Weaponstone; 0; 0; 0; 0; 0; 1
 trigger = all; all; all; buff; Raidbuff missing <- Flask; Flask; 0; 0; 0; 0; 0; 1
 trigger = all; all; all; buff; Raidbuff missing <- Food; Food; 0; 0; 0; 0; 0; 1
-trigger = all; all; all; buff; Raidbuff missing number <- Weaponstone, Flask or Food; players missing buffs; 0; 0; 0; 0; 0; 1
+trigger = all; all; all; ability; Raidbuff missing number <- Weaponstone, Flask or Food; raidmembers missing buffs; 0; 0; 0; 0; 0; 1

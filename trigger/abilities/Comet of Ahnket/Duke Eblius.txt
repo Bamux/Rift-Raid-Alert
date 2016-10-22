@@ -1,0 +1,18 @@
+Duke Eblius > Infernal Sunder
+player << Infernal Sunder
+Duke Eblius > Blazing Ruin
+Duke Eblius > Call to Arms
+Alaviax Standard Bearer > Soul Sear
+Alaviax Standard Bearer > Blazing Implosion
+player << Blazing Implosion
+Duke Eblius > Sulphurous Blight
+player << Sulphurous Blight
+Duke Eblius > Chains of Woe
+player << Chains of Woe
+Duke Eblius > Call to Sacrifice
+Frenzied Skirmisher > Infernal Instability
+Frenzied Skirmisher < Infernal Instability
+Frenzied Skirmisher < Hardmode
+Duke Eblius < Hellion's Rage
+Duke Eblius > Fiery Remission
+Duke Eblius < Thwarted Might
