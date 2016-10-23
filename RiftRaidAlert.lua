@@ -26,7 +26,7 @@ local function CombatCheck(event, units) -- Check Combat Status (Combat Begin, C
                 if detail.relation == "hostile" and detail.healthMax > 20000000 and detail.healthMax > maxhitpoints and detail.health > detail.healthMax*0.98 then
                     if detail.id ~= "u800000024E02FC39" and detail.id ~= "u800000024E02FC3D" then
                         maxhitpoints = detail.healthMax
-                        print("Combat Begin -> ".. detail.name)
+                        print("Combat Begin > ".. detail.name)
                         rra_boss_id = detail.id
                         local player = Inspect.Unit.Detail(detail.id .. ".target")
                         if player then
@@ -51,11 +51,11 @@ local function CombatDeath(event, units)
             for id, detail in pairs(unit_details) do
                 if detail.id == rra_boss_id then
                     --if detail.health < detail.healthMax*0.1 then
-                        print("Boss Death -> ".. detail.name)
+                        print("Boss Death > ".. detail.name)
                         -- CombatEnd()
                     --end
                 else
-                    print("Death -> ".. detail.name)
+                    print("Death > ".. detail.name)
                 end
             end
         end

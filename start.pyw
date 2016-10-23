@@ -2,7 +2,7 @@
 
 # Rift Raid Alert
 # Spoken raid warnings for the MMORPG Rift
-# Version 0.5.2
+# Version 0.5.3
 # Author: Bamux@Typhiria
 
 import os
@@ -1562,7 +1562,7 @@ scrollbar = Scrollbar(root)
 T = Text(root, height=20, width=50)
 sb.config(command=T.yview)
 T.config(yscrollcommand=sb.set)
-T.insert(END, "Rift Raid Alert Version 0.5.2\nMake sure you use /log in Rift after each game restart !")
+T.insert(END, "Rift Raid Alert Version 0.5.3\nMake sure you use /log in Rift after each game restart !")
 
 soundfiles = soundfiles_list('siri')
 combattrigger = 1
