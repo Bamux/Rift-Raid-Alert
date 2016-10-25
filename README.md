@@ -19,7 +19,7 @@ Features:
 2.  Copy the Rift-Raid-Alert-master folder in your Rift Addon folder
 3.  Start Rift
 4.  use /log in the rift chatwindow
-5.  Start the start.exe
+5.  Start the start.exe (a window should open that show all loaded triggers and files, if not you have probably installed the wrong Python for Windows Extensions)
 ![Rift Raid Alert](https://raw.githubusercontent.com/Bamux/Rift-Raid-Alert/images/RiftRaidAlert01.png)
 6.  use /rra start (you can use /rra stop for stoping Rift Raid Alert) or /rra keywords if you want only search for key words from the keywords.txt
 7.  Write in game "Siri introduce yourself" or "Siri tell me a joke" or "Siri say whatever you want" for a sound check
