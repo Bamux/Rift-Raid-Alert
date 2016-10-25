@@ -1,0 +1,24 @@
+Justitia > Rechtschaffene Klinge
+player << Rechtschaffene Klinge
+Justitia > Tyrannis Veritatis
+player << Tyrannis Veritatis
+Justitia > Schnellverfahren
+player << Last der Schuld
+player << Schnellverfahren
+Betrachter des Urteils < Gerichtliche Vorladung
+Justitia > Barmherzige Gerechtigkeit
+player << Gnadenlose Gerechtigkeit
+Justitia > Urteil
+player << Schmerz des Urteils
+Justitia < Irreguläres Verfahren
+Justitia < Justitia-Schwierigkeitsgrad entfernen
+Justitia < Das Schwert der Gerechtigkeit
+Justitia > Ermessen der Schuld
+player << Ermessen der Schuld
+player << Waage
+Justitia > Ruhe im Gericht!
+Vigilie der Gerechtigkeit < Sphäre der Entrüstung
+Vigilie der Gerechtigkeit < Ewige Wachsamkeit
+Justitia > Tugend der Wut
+Justitia < Tugend der Wut
+player << Erdrückende Schuld

@@ -17,7 +17,7 @@ trigger = eng; CoA; Duke Eblius; ability; Duke Eblius > Call to Sacrifice; 5 sec
 trigger = eng; CoA; Duke Eblius; ability; Alaviax Standard Bearer > Blazing Implosion; spread out; 0; 0; 0; 0; 0; 0
 trigger = eng; CoA; Duke Eblius; buff; Duke Eblius < Hellion's Rage; portal; 0; 0; 0; 0; 0; 0
 
-trigger = eng; CoA; Azaphrentus; ability; Dark Star >> player;  on player; 0; 0; 0; 0; 0; 0
+trigger = all; all; Azaphrentus; ability; Dark Star >> player; star on player; 0; 0; 0; 0; 0; 0
 trigger = eng; CoA; Azaphrentus; ability; Manifest Scorn >> player; add player; 0; 0; 0; 0; 0; 0
 trigger = eng; CoA; Azaphrentus; ability; Azaphrentus > Rage of Azaphrentus; firewall; 0; 0; 0; 0; 0; 0
 

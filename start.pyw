@@ -2,7 +2,7 @@
 
 # Rift Raid Alert
 # Spoken raid warnings for the MMORPG Rift
-# Version 0.5.3
+# Version 0.5.4
 # Author: Bamux@Typhiria
 
 import os
@@ -345,7 +345,6 @@ def logfile_analysis(logtext):
         bossname = ""
         lasttime = -1
         combat = False
-        zone_in_zonelist = False
 
         while True:
             line = ""
@@ -377,18 +376,11 @@ def logfile_analysis(logtext):
                 combat = True
                 bossname = line.split(" > ")
                 bossname = bossname[1]
-                for item in zonelist:
-                    if item == zone:
-                        zone_in_zonelist = True
-                        break
-                if zone_in_zonelist:
-                    Thread(target=load_abilies, args=(bossname,)).start()
+                Thread(target=load_abilies, args=(bossname,)).start()
             elif "Combat End" in line:
                 lasttime = -1
                 combat = False
-                if zone_in_zonelist:
-                    save_abilities(bossname)
-                zone_in_zonelist = False
+                save_abilities(bossname)
 
             if log:
                 if playback:
@@ -435,7 +427,7 @@ def logfile_analysis(logtext):
 
                 trigger_analysis(log)
 
-                if combat and line and zone_in_zonelist:
+                if combat and line:
                     Thread(target=abilitycheck, args=(line, bossname)).start()
 
                 # Siri
@@ -862,6 +854,9 @@ def boss_select(evt):
         final_trigger.clear()
         b3.grid_forget()
         b4.grid_forget()
+        b2.grid(row=1, column=1, pady=20)
+        b_special_trigger.grid(row=2, column=1, pady=20)
+        b12.grid(row=3, column=1, pady=20)
         value = str((boss_listbox.get(boss_listbox.curselection())))
         e1.delete(0, END)
         e1.insert(0, value)
@@ -876,11 +871,24 @@ def zone_select(evt):
     e1.insert(0, "")
     b3.grid_forget()
     b4.grid_forget()
+    b2.grid(row=1, column=1, pady=20)
+    b_special_trigger.grid(row=2, column=1, pady=20)
+    b12.grid(row=3, column=1, pady=20)
     value = str((zone_listbox.get(zone_listbox.curselection())))
     e0.delete(0, END)
     e0.insert(0, value)
     zone_listbox_value = value
     boss_ui(value)
+
+
+def delete_zone():
+    if e0.get():
+        os.remove("trigger/" + e0.get() + ".txt")
+        e0.delete(0, END)
+        trigger_listbox.delete(0, END)
+        boss_listbox.delete(0, END)
+        final_trigger.clear()
+        zone_list()
 
 
 def save_newtrigger(value):
@@ -1044,6 +1052,9 @@ def sound_file_select(evt):
     scrollbar.grid_forget()
     b7.grid(row=4, column=1, padx=330, sticky=W)
     b9.grid(row=3, column=1, padx=330, sticky=W)
+    if edit_new == "new":
+        b10.grid(row=2, column=1, padx=330, sticky=W)
+        b11.grid(row=1, column=1, padx=330, sticky=W)
     l13.grid(row=5, column=1, padx=90, sticky=W)
     l14.grid(row=6, column=1, padx=90, sticky=W)
     l15.grid(row=7, column=1, padx=90, sticky=W)
@@ -1054,6 +1065,8 @@ def sound_file_select(evt):
 def sound_file():
     b7.grid_forget()
     b9.grid_forget()
+    b10.grid_forget()
+    b11.grid_forget()
     l13.grid_forget()
     l14.grid_forget()
     l15.grid_forget()
@@ -1079,6 +1092,9 @@ def ability_select(evt):
     scrollbar.grid_forget()
     b7.grid(row=4, column=1, padx=330, sticky=W)
     b9.grid(row=3, column=1, padx=330, sticky=W)
+    if edit_new == "new":
+        b10.grid(row=2, column=1, padx=330, sticky=W)
+        b11.grid(row=1, column=1, padx=330, sticky=W)
     l13.grid(row=5, column=1, padx=90, sticky=W)
     l14.grid(row=6, column=1, padx=90, sticky=W)
     l15.grid(row=7, column=1, padx=90, sticky=W)
@@ -1089,6 +1105,8 @@ def ability_select(evt):
 def abilities():
     b7.grid_forget()
     b9.grid_forget()
+    b10.grid_forget()
+    b11.grid_forget()
     l13.grid_forget()
     l14.grid_forget()
     l15.grid_forget()
@@ -1110,9 +1128,96 @@ def abilities():
         pass
 
 
+def boss_ability_select(evt):
+    value = str((boss_abilities_listbox.get(boss_abilities_listbox.curselection())))
+    if value != ".. exit":
+        e1.delete(0, END)
+        e1.insert(0, value)
+    boss_abilities_listbox.grid_forget()
+    scrollbar.grid_forget()
+    b7.grid(row=4, column=1, padx=330, sticky=W)
+    b9.grid(row=3, column=1, padx=330, sticky=W)
+    if edit_new == "new":
+        b10.grid(row=2, column=1, padx=330, sticky=W)
+        b11.grid(row=1, column=1, padx=330, sticky=W)
+    l13.grid(row=5, column=1, padx=90, sticky=W)
+    l14.grid(row=6, column=1, padx=90, sticky=W)
+    l15.grid(row=7, column=1, padx=90, sticky=W)
+    l16.grid(row=8, column=1, padx=90, sticky=W)
+    l17.grid(row=9, column=1, padx=90, sticky=W)
+
+
+def boss_abilities():
+    b7.grid_forget()
+    b9.grid_forget()
+    b10.grid_forget()
+    b11.grid_forget()
+    l13.grid_forget()
+    l14.grid_forget()
+    l15.grid_forget()
+    l16.grid_forget()
+    l17.grid_forget()
+    boss_abilities_listbox.delete(0, END)
+    boss_abilities_listbox.insert(END, ".. exit")
+    boss_abilities_listbox.grid(row=0, column=2, pady=10, rowspan=12, sticky=N + S + E + W)
+    scrollbar.grid(row=0, column=3, pady=10, rowspan=12, sticky=N + S + E + W)
+    boss_abilities_listbox.config(yscrollcommand=scrollbar.set)
+    scrollbar.config(command=boss_abilities_listbox.yview)
+    try:
+        if e0.get():
+            boss_list = trigger_dir("trigger/abilities/" + e0.get())
+            for item in boss_list:
+                boss_abilities_listbox.insert(END, item)
+    except:
+        pass
+
+
+def zone_ability_select(evt):
+    value = str((zone_abilities_listbox.get(zone_abilities_listbox.curselection())))
+    if value != ".. exit":
+        e0.delete(0, END)
+        e0.insert(0, value)
+    zone_abilities_listbox.grid_forget()
+    scrollbar.grid_forget()
+    b7.grid(row=4, column=1, padx=330, sticky=W)
+    b9.grid(row=3, column=1, padx=330, sticky=W)
+    b10.grid(row=2, column=1, padx=330, sticky=W)
+    b11.grid(row=1, column=1, padx=330, sticky=W)
+    l13.grid(row=5, column=1, padx=90, sticky=W)
+    l14.grid(row=6, column=1, padx=90, sticky=W)
+    l15.grid(row=7, column=1, padx=90, sticky=W)
+    l16.grid(row=8, column=1, padx=90, sticky=W)
+    l17.grid(row=9, column=1, padx=90, sticky=W)
+
+
+def zone_abilities():
+    b7.grid_forget()
+    b9.grid_forget()
+    b10.grid_forget()
+    b11.grid_forget()
+    l13.grid_forget()
+    l14.grid_forget()
+    l15.grid_forget()
+    l16.grid_forget()
+    l17.grid_forget()
+    zone_abilities_listbox.delete(0, END)
+    zone_abilities_listbox.insert(END, ".. exit")
+    zone_abilities_listbox.grid(row=0, column=2, pady=10, rowspan=12, sticky=N + S + E + W)
+    scrollbar.grid(row=0, column=3, pady=10, rowspan=12, sticky=N + S + E + W)
+    zone_abilities_listbox.config(yscrollcommand=scrollbar.set)
+    scrollbar.config(command=zone_abilities_listbox.yview)
+    try:
+        boss_list = trigger_dir("trigger/abilities/")
+        for item in boss_list:
+            zone_abilities_listbox.insert(END, item)
+    except:
+        pass
+
+
 def special_trigger(value):
     b2.grid_forget()
     b8.grid_forget()
+    b12.grid_forget()
     b_special_trigger.grid_forget()
     zone_listbox.grid_forget()
     boss_listbox.grid_forget()
@@ -1212,6 +1317,7 @@ def test_trigger():
 
 
 def new_trigger(value):
+    global edit_new
     # print(final_trigger)
     if len(final_trigger) > 3 and " || " in final_trigger[4]:
         if value == "new":
@@ -1255,8 +1361,12 @@ def new_trigger(value):
         e8.grid(row=9, column=1, padx=10, sticky=W)
         c4.grid(row=10, column=1, pady=10, sticky=W)
         if value == "new":
+            edit_new = "new"
             b5.grid(row=11, column=1, pady=5, sticky=W)
+            b10.grid(row=2, column=1, padx=330, sticky=W)
+            b11.grid(row=1, column=1, padx=330, sticky=W)
         else:
+            edit_new = "edit"
             b6.grid(row=11, column=1, pady=5, sticky=W)
         b7.grid(row=4, column=1, padx=330, sticky=W)
 
@@ -1265,6 +1375,7 @@ def trigger_choice(value):
     global final_trigger
     b_special_trigger.grid_forget()
     b2.grid_forget()
+    b12.grid_forget()
     b8.grid(row=1, column=1, pady=20)
     b3.grid(row=2, column=1, pady=20)
     b4.grid(row=3, column=1, pady=20)
@@ -1296,8 +1407,8 @@ def trigger_ui(value):
         tupel = ()
         trigger_details_list.clear()
         b8.grid_forget()
-        b2.grid(row=1, column=1)
-        b_special_trigger.grid(row=2, pady=30, column=1)
+        # b2.grid(row=1, column=1)
+        # b_special_trigger.grid(row=2, pady=30, column=1)
         # trigger_listbox.grid(row=1, column=0, padx=10, pady=10, rowspan=3, sticky=N+S+E+W)
         trigger_listbox.delete(0, END)
         zone_txt = codecs.open("trigger/" + e0.get() + ".txt", 'r', "utf-8")
@@ -1325,8 +1436,8 @@ def boss_ui(value):
         tupel = ()
         # boss_listbox.grid(row=0, column=1, padx=10, pady=10, sticky=N+S+E+W)
         b8.grid_forget()
-        b2.grid(row=1, column=1)
-        b_special_trigger.grid(row=2, pady=30, column=1)
+        # b2.grid(row=1, column=1)
+        # b_special_trigger.grid(row=2, pady=30, column=1)
         boss_listbox.delete(0, END)
         trigger_listbox.delete(0, END)
         zone_txt = codecs.open("trigger/" + value + ".txt", 'r', "utf-8")
@@ -1368,9 +1479,12 @@ def zone_list():
     trigger_listbox.grid(row=1, column=0, padx=10, pady=10, rowspan=3, sticky=N + S + E + W)
     b8.grid_forget()
     if not final_trigger:
-        # print(final_trigger)
-        b2.grid(row=1, column=1)
-        b_special_trigger.grid(row=2, pady=30, column=1)
+        # b2.grid(row=1, column=1)
+        # b_special_trigger.grid(row=2, pady=30, column=1)
+        b2.grid(row=1, column=1, pady=20)
+        b_special_trigger.grid(row=2, column=1, pady=20)
+        b12.grid(row=3, column=1, pady=20)
+
     else:
         b8.grid(row=1, column=1, pady=20)
         b3.grid(row=2, column=1, pady=20)
@@ -1421,6 +1535,9 @@ def forget():
     b7.grid_forget()
     b8.grid_forget()
     b9.grid_forget()
+    b10.grid_forget()
+    b11.grid_forget()
+    b12.grid_forget()
     b_special_trigger.grid_forget()
     b_special_trigger1.grid_forget()
     b_special_trigger2.grid_forget()
@@ -1485,6 +1602,8 @@ def forget():
 
     sound_listbox.grid_forget()
     abilities_listbox.grid_forget()
+    boss_abilities_listbox.grid_forget()
+    zone_abilities_listbox.grid_forget()
     scrollbar.grid_forget()
     sb.grid_forget()
 
@@ -1562,7 +1681,7 @@ scrollbar = Scrollbar(root)
 T = Text(root, height=20, width=50)
 sb.config(command=T.yview)
 T.config(yscrollcommand=sb.set)
-T.insert(END, "Rift Raid Alert Version 0.5.3\nMake sure you use /log in Rift after each game restart !")
+T.insert(END, "Rift Raid Alert Version 0.5.4\nMake sure you use /log in Rift after each game restart !")
 
 soundfiles = soundfiles_list('siri')
 combattrigger = 1
@@ -1592,8 +1711,9 @@ speak = win32com.client.Dispatch('Sapi.SpVoice')
 speak.Volume = volume
 timerreset = []
 siri = True
+edit_new = "new"
 location = "all"
-playername = "noname"
+playername = "player"
 boss = "all"
 language = "all"
 specialtrigger = 5
@@ -1655,6 +1775,9 @@ b6 = Button(root, text="Save", width=20, command=lambda: edit_trigger("edit"))
 b7 = Button(root, text="Sound File", width=10, command=sound_file)
 b8 = Button(root, text="Test Trigger", width=20, command=test_trigger)
 b9 = Button(root, text="Abilities", width=10, command=abilities)
+b10 = Button(root, text="Boss", width=10, command=boss_abilities)
+b11 = Button(root, text="Zone", width=10, command=zone_abilities)
+b12 = Button(root, text="Delete Zone", width=20, command=delete_zone)
 b_special_trigger = Button(root, text="Special Trigger", width=20, command=lambda: special_trigger("new"))
 b_special_trigger1 = Button(root, text="Save", width=20, command=lambda: save_newtrigger("special_new"))
 b_special_trigger2 = Button(root, text="Save", width=20, command=lambda: edit_trigger("special_edit"))
@@ -1700,6 +1823,10 @@ sound_listbox = Listbox(root, width=47, height=5)
 sound_listbox.bind('<<ListboxSelect>>', sound_file_select)
 abilities_listbox = Listbox(root, width=47, height=5)
 abilities_listbox.bind('<<ListboxSelect>>', ability_select)
+boss_abilities_listbox = Listbox(root, width=47, height=5)
+boss_abilities_listbox.bind('<<ListboxSelect>>', boss_ability_select)
+zone_abilities_listbox = Listbox(root, width=47, height=5)
+zone_abilities_listbox.bind('<<ListboxSelect>>', zone_ability_select)
 
 mainmenue()
 root.protocol("WM_DELETE_WINDOW", ask_quit)

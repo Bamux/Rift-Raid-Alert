@@ -1,0 +1,21 @@
+Pagura < Meeresgischt
+Pagura > Fluch der Vier
+player << Verflucht
+Pagura > Überspringende Ansteckung
+Pagura > Nervenzwicken
+player << Nervenzwicken
+player << Zerfetztes Fleisch
+Crustok < Bewehrter Panzer
+Crustok > Verteidigungsexplosion
+player << Fluch von Brachy
+player << Fluch von Crustok
+Crustok > Schmerzbringer
+Pagura > Markerschütterndes Gebrüll
+Brachy < Bewehrter Panzer
+Brachy > Verteidigungsexplosion
+player << Schmerzbringer
+Brachy < Bewehrter Körper
+Brachy > Schmerzbringer
+player << Okadainvergiftung
+Pagura > Fluch der Fünf
+Pagura < Vereitelte Wut

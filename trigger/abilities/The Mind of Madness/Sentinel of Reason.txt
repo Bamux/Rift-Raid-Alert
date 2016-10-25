@@ -1,0 +1,5 @@
+Sentinel of Reason > Incarcerating Blast
+Sentinel of Reason > Retribution
+Sentinel of Reason < Righteous Fury
+Sentinel of Reason < Retribution
+player << attack

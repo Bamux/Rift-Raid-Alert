@@ -1,0 +1,21 @@
+Pagura < Sea Spray
+Pagura > Curse of Four
+player << Cursed
+Pagura > Leaping Contagion
+Pagura > Nerve Pinch
+player << Nerve Pinch
+player << Torn Flesh
+Crustok < Fortified Shell
+Crustok > Defensive Blast
+player << Curse of Brachy
+player << Curse of Crustok
+Crustok > Pain Bringer
+Pagura > Shattering Roar
+Brachy < Fortified Shell
+Brachy > Defensive Blast
+player << Pain Bringer
+Brachy < Fortified Body
+Brachy > Pain Bringer
+player << Okadaic Poisoning
+Pagura > Curse of Five
+Pagura < Thwarted Rage

@@ -1,0 +1,29 @@
+Vis > Snap Judgment
+Vis > Excessive Force
+Vis < Excessive Force
+Misericordia > Light of Truth
+Misericordia > Lachrymose
+player << Light of Truth
+player << Lachrymose
+Misericordia > Light of Innocence
+Vis > Trial of Brutality
+Vis < Trial of Brutality
+Misericordia > Libra
+Misericordia < Injustice
+Misericordia > Merciful Judge
+Misericordia < Merciful Judge
+Vis < Snap Judgment
+Vis > Cull the Weak
+Vis > Assesment of Guilt
+Vis > Declaration of Guilt
+player << Declaration of Guilt
+Vis < Injustice
+Vis > Vengeful Flames
+Misericordia > Righteous Flames
+Misericordia < Righteous Flames
+player << Attrition
+Misericordia > Writ of Accusations
+Misericordia > Stay of Execution
+Vis > Death Sentence
+player << Death Sentence
+Vis > Order of Execution
