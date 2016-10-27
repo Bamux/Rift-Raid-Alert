@@ -5,3 +5,5 @@ Azaphrentus > Manifest Scorn
 player << Manifest Scorn
 player << Cinder Cloud
 player << Flame Shackle
+player << Burning Tears
+player << Dark Star

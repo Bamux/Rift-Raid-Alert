@@ -6,7 +6,7 @@ Description = "use /log in the rift chatwindow and use /rra start"
 
 Author = "Program: Bamux@Typhiria, Test: Dibl@Brutwacht"
 
-Version = "0.5.4"
+Version = "1.0"
 
 Email = "my@email"
 

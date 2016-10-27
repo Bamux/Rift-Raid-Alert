@@ -1,0 +1,20 @@
+player << Molten Time
+Brother Brawl > Duo Diligence
+Brother Brawl > Closure
+Dark Genesis > Hope Breaker
+Dark Genesis < Ghost Walk
+player << Soul Burn
+player << Juxtaposition
+Dark Genesis > Fury
+Dark Genesis > Calamity
+Dark Genesis > Hope Slayer
+Dark Genesis > Ruination
+Dark Genesis > Destruction
+player << Ruination
+Dark Genesis > Purging Flames
+player << Unholy Touch
+Dark Genesis < Fractured
+player << Destruction
+player << Pin Down
+Corrupted Core > Corrupted Core
+player << Calamity

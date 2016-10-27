@@ -2,7 +2,7 @@
 
 # Rift Raid Alert
 # Spoken raid warnings for the MMORPG Rift
-# Version 0.5.4
+# Version 1.0
 # Author: Bamux@Typhiria
 
 import os
@@ -77,18 +77,27 @@ def trigger_analysis(log):
                                     if "player" in trigger[i][5]:
                                         if 'p' == trigger[i][5][0]:
                                             if output == "tts":
-                                                cut_string = trigger[i][5].split('player ')
-                                                new_string = cut_string[1]
-                                                new_string = player + " " + new_string
-                                            else:
-                                                if playername == player:
+                                                try:
                                                     cut_string = trigger[i][5].split('player ')
                                                     new_string = cut_string[1]
-                                                else:
-                                                    if output == "mix":
+                                                    new_string = player + " " + new_string
+                                                except:
+                                                    new_string = player
+                                            else:
+                                                if playername == player:
+                                                    try:
                                                         cut_string = trigger[i][5].split('player ')
                                                         new_string = cut_string[1]
-                                                        new_string = player + " " + new_string
+                                                    except:
+                                                        new_string = player
+                                                else:
+                                                    if output == "mix":
+                                                        try:
+                                                            cut_string = trigger[i][5].split('player ')
+                                                            new_string = cut_string[1]
+                                                            new_string = player + " " + new_string
+                                                        except:
+                                                            new_string = player
                                         else:
                                             if output == "tts":
                                                 cut_string = trigger[i][5].split(' player')
@@ -926,7 +935,7 @@ def save_newtrigger(value):
         if e0.get() and e1.get() and len(e2.get()) >= 5 and e4.get().isdigit() and e5.get().isdigit() \
                 and e6.get().isdigit() and e8.get().isdigit():
             found = True
-            newtrigger = "trigger = all; " + e0.get() + "; " + e1.get() + "; ability; " + e2.get() + "; " + e3.get() + "; " \
+            newtrigger = "trigger = all; " + "all; " + e1.get() + "; ability; " + e2.get() + "; " + e3.get() + "; " \
                          + e4.get() + "; " + e5.get() + "; " + e6.get() + "; " + e7.get() + "; " + e8.get() + "; " \
                          + var_reset.get()
 
@@ -1681,7 +1690,7 @@ scrollbar = Scrollbar(root)
 T = Text(root, height=20, width=50)
 sb.config(command=T.yview)
 T.config(yscrollcommand=sb.set)
-T.insert(END, "Rift Raid Alert Version 0.5.4\nMake sure you use /log in Rift after each game restart !")
+T.insert(END, "Rift Raid Alert Version 1.0\nMake sure you use /log in Rift after each game restart !")
 
 soundfiles = soundfiles_list('siri')
 combattrigger = 1

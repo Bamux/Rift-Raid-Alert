@@ -1,0 +1,18 @@
+Fyragnos > Schweifpeitsche
+Fyragnos > Sengender Atem
+Fyragnos > Vernichtende Flamme
+player << Vernichtende Flamme
+Fyragnos > Flammstrom beschwören
+Fyragnos > Höllenschlag
+Fyragnos > Ruf des Draken
+player << Aschgraue Klaue
+Lavadrache > Magmaexplosion
+player << Magmaexplosion
+Fyragnos > Fesseln der Asche
+player << Fesseln der Asche
+player << Ascheleuchtfeuer
+Fyragnos > Flamme der Verzweiflung
+Fyragnos > Magmaausbruch
+player << Flamme der Verzweiflung
+Fyragnos > Fluch des Fyragnos
+player << Fluch des Fyragnos

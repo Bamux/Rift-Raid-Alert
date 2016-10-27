@@ -16,3 +16,5 @@ Frenzied Skirmisher < Hardmode
 Duke Eblius < Hellion's Rage
 Duke Eblius > Fiery Remission
 Duke Eblius < Thwarted Might
+Alaviax Battle Shaman > Triage
+Duke Eblius < Enraged!

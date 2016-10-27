@@ -33,3 +33,4 @@ trigger = ger; IGP; Uruluuk; ability; Uruluuk > Herabstürzende Felsbrocken; Bou
 trigger = ger; IGP; Uruluuk; ability; Uruluuk > Faust von Laethys; Fist; 0; 0; 0; 0; 0; 0
 trigger = ger; IGP; Uruluuk; emote; Uruluuk zeigt auf player!; player run out; 0; 0; 0; 0; 0; 0
 trigger = ger; IGP; Uruluuk; emote; Uruluuk erzeugt eine wachsende Kraftblase!; run to the boss; 0; 0; 0; 0; 0; 0
+

@@ -1,0 +1,13 @@
+Fauxmire < Sonnenvernarbung
+player << Sonnenpest
+Fauxmire < Narbenwuchs
+Fauxmire > Sonnenstrahlen
+Fauxmire > Helle Biolumineszenz
+Fauxmire < Helle Biolumineszenz
+Fauxmire > Synapsenfackel
+Fauxmire > Folgt der Nacht
+player << Erwachter Schatten
+Fauxmire > Synapsenlanze
+player << Synapsenlanze
+player << Synapsenregen
+Fauxmire > Rückkehr der Dämmerung

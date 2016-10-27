@@ -23,3 +23,12 @@ Frenetic Mushroom > Shroomageddon
 Frenetic Mushroom < Shroomageddon
 Frenetic Mushroom < Deep Roots
 Hericius < Rooted
+player << Chlorolance
+Hericius < Cleansing Siphon
+player << Cleansing Siphon
+Lifewrought < Frenetic Spores
+Hericius < Chlorolance
+Soothing Mushroom > Shroomageddon
+Soothing Mushroom < Shroomageddon
+Soothing Mushroom < Deep Roots
+player << Incendiary Spores

@@ -42,12 +42,13 @@ trigger = all; all; Fürst Fionn; ability; player << Kein Entkommen; player can'
 trigger = all; all; Fürst Fionn; ability; Fürst Fionn > Eintausend Stöße; 1000; 0; 0; 5; 0; 0; 0
 trigger = all; all; Fürst Fionn; ability; Fürst Fionn > Allwissender Blitz; bullets; 3; 0; 5; 0; 0; 0
 trigger = all; all; Fürst Fionn; ability; Kriegsherren-Svenbioard > Klinge des Schnitters >> player; Blade on player; 0; 0; 0; 0; 0; 0
-trigger = all; all; Fürst Fionn; ability; Fürst Fionn = 75; phase change; 0; 0; 0; 0; 0; 0
-trigger = all; all; Fürst Fionn; ability; Fürst Fionn = 50; phase change; 0; 0; 0; 0; 0; 0
-trigger = all; all; Fürst Fionn; ability; Fürst Fionn = 25; phase change; 0; 0; 0; 0; 0; 0
-trigger = all; all; Fürst Fionn; ability; Fürst Fionn = 20; go; 0; 0; 0; 0; 0; 0
-trigger = all; all; Fürst Fionn; ability; Schreckenshexe Lokerinn ist im Begriff Fürst Fionnim Torpor der Wiedergeburt zu platzieren; burn him down; 0; 0; 0; 0; 0; 0
+trigger = all; all; Fürst Fionn; ability; Fürst Fionn = 75; phase change; 0; 0; 60; 0; 0; 0
+trigger = all; all; Fürst Fionn; ability; Fürst Fionn = 50; phase change; 0; 0; 60; 0; 0; 0
+trigger = all; all; Fürst Fionn; ability; Fürst Fionn = 25; phase change; 0; 0; 60; 0; 0; 0
+trigger = all; all; Fürst Fionn; ability; Fürst Fionn = 20; go; 0; 0; 60; 0; 0; 0
+trigger = all; all; Fürst Fionn; ability; Schreckenshexe Lokerinn ist im Begriff Fürst Fionnim Torpor der Wiedergeburt zu platzieren; burn him down; 0; 0; 20; 0; 0; 0
 
 
 [Special Trigger alternates between states - language; Loacation; boss; emote or ability; text to search; text to speech status 1; text to speech status 2; ... ]
 special = ger; CoA; Hericius; ability; Hericius > Ätzende Sporen || Hericius > Säuresporen || Hericius > Brandsporen; ; ; last; safespot; ; ; ; last
+

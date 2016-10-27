@@ -31,3 +31,4 @@ trigger = eng; IGP; Uruluuk; ability; Uruluuk > Crashing Boulders; Boulders; 0; 
 trigger = eng; IGP; Uruluuk; ability; Uruluuk > Fist of Laethys; Fist; 0; 0; 0; 0; 0; 0
 trigger = eng; IGP; Uruluuk; emote; Uruluuk points at player!; player run out; 0; 0; 0; 0; 0; 0
 trigger = eng; IGP; Uruluuk; emote; Uruluuk forms an expanding bubble of force!; run to the boss; 0; 0; 0; 0; 0; 0
+

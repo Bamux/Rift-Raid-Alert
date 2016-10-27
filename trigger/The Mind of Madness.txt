@@ -1,8 +1,4 @@
-﻿[Trigger - (0)language; (1)Loacation; (2)boss; (3)emote,de-buff or ability; (4)text to search; (5)text to speech;
-(6)timer; (7)countdown; (8)timeout (the trigger will be ignored for the specified time);
-(9)number of events before the trigger fires; (10)depending on other triggers; (11)timer and countdown reset]
-
-trigger = eng; MoM; Pagura; ability; Pagura > Curse; curse; 0; 0; 5; 0; 0; 0
+﻿trigger = eng; MoM; Pagura; ability; Pagura > Curse; curse; 0; 0; 5; 0; 0; 0
 trigger = eng; MoM; Pagura; ability; Pagura > Curse of Four; 5 seconds left; 46; 51; 240; 0; 0; 0
 trigger = eng; MoM; Pagura; ability; Pagura > Curse of Five; 5 seconds left; 42; 47; 240; 0; 0; 0
 trigger = eng; MoM; Pagura; ability; Pagura > Nerve Pinch; tank swap; 0; 0; 0; 0; 0; 0
@@ -63,8 +59,9 @@ trigger = eng; MoM; Dark Genesis; ability; Dark Genesis > The End; 20 seconds; 7
 trigger = eng; MoM; Dark Genesis; ability; Dark Genesis > The End; 10 seconds; 87; 0; 0; 0; 0; 0
 trigger = eng; MoM; Dark Genesis; ability; Dark Genesis > The End; 5 seconds; 92; 0; 0; 0; 0; 0
 trigger = eng; MoM; Dark Genesis; ability; Dark Genesis > The End; Game Over; 97; 0; 0; 0; 0; 0
+special = eng; MoM; Dark Genesis; ability; Dark Genesis > Calamity || Dark Genesis > Destruction || Dark Genesis > Ruination || Dark Genesis > Hope Slayer; 1; 2; 3; 4
 
-trigger = eng; MoM; The Enigma; ability; The Enigma > Breaking End; kick; 0; 0; 0; 0; 0; 0
+trigger = all; all; The Enigma; ability; The Enigma > Breaking End; kick; 0; 0; 0; 0; 0; 0
 trigger = eng; MoM; The Enigma; ability; The Enigma > Emission of Turmoil; groupdamage in; 0; 3; 5; 0; 0; 0
 trigger = eng; MoM; The Enigma; ability; < Turmoil; cleanse; 0; 0; 5; 0; 0; 0
 trigger = eng; MoM; The Enigma; ability; < remove Turmoil; done; 0; 0; 5; 0; 0; 0
@@ -76,7 +73,12 @@ trigger = eng; MoM; The Enigma; ability; The Enigma > Summon Chaos; Phase 2; 0; 
 trigger = eng; MoM; The Enigma; ability; The Enigma > Hasten Sparks; speed increase; 0; 0; 0; 0; 0; 0
 trigger = eng; MoM; The Enigma; ability; The Enigma > Call to Chaos; Phase 3; 0; 0; 0; 0; 0; 0
 #trigger = eng; MoM; The Enigma; ability; The Enigma > Chaos Flame; flame; 0; 0; 0; 0; 0; 0
+trigger = all; all; The Enigma; ability; The Enigma > Pandemonium; add; 0; 0; 0; 0; 0; 0
 
-
-[Special Trigger alternates between states - language; Loacation; boss; emote or ability; text to search; text to speech status 1; text to speech status 2; ... ]
-special = eng; MoM; Dark Genesis; ability; Dark Genesis > Calamity || Dark Genesis > Destruction || Dark Genesis > Ruination || Dark Genesis > Hope Slayer; 1; 2; 3; 4
+trigger = all; all; Lady Justice; ability; player << Hasty Prosecution; player; 0; 0; 0; 0; 0; 0
+trigger = all; all; Lady Justice; ability; Lady Justice > Hasty Prosecution; reactive; 1; 0; 0; 0; 0; 0
+trigger = all; all; Lady Justice; ability; Beholder of Judgment < Summons of Prosecution; add; 0; 0; 20; 0; 0; 0
+trigger = all; all; Nexus Ravager; ability; Nexus Crawler > Purge Anomaly >> player ; player; 0; 0; 5; 0; 0; 0
+trigger = all; all; Formless Chaos; ability; Formless Chaos > Cloak of Chaos; stop; 4; 0; 0; 0; 0; 0
+trigger = all; all; Formless Chaos; ability; Formless Chaos > Vision of the Unknown; go; 0; 0; 10; 0; 0; 0
+trigger = all; all; Sentinel of Reason; ability; Sentinel of Reason > Incarcerating Blast; reflect; 0; 0; 0; 0; 0; 0
