@@ -23,8 +23,7 @@ Features:
 ![Rift Raid Alert](https://raw.githubusercontent.com/Bamux/Rift-Raid-Alert/images/RiftRaidAlert01.png)
 6.  use /rra start (you can use /rra stop for stoping Rift Raid Alert) or /rra keywords if you want only search for key words from the keywords.txt
 7.  Write in game "Siri introduce yourself" or "Siri tell me a joke" or "Siri say whatever you want" for a sound check
-8.  Edit the RiftRaidAlert.ini - you can change settings (Log.txt path, volume, ...)
-9.  Edit the text files in the trigger folder - you can edit/create triggers
+8.  Rift Raid Alert generates a large volume of text during a fight, that always goes to the general chat window. Fast scrolling text causes FPS problems in Rift, so it is recommended creating a new tab and let only show the channels you need. In this way, you will not be spammed by the addon !
 
 Ingame Commands:
 - /rra start - start Raid announcements for RoF, IGP, MoM and CoA
