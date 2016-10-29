@@ -1,4 +1,4 @@
-[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=LZMSDFLJAVHQ6)
+<p align="center">[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=LZMSDFLJAVHQ6)</p>
 
 ## Rift Raid Alert v1.0
 Rift Raid Alert is a program (written in Python) which can be used to create spoken raid warnings for the MMORPG Rift.
