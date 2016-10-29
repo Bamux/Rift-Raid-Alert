@@ -13,8 +13,6 @@ Features:
 - pull countdown and alert you if the tank has aggro or who has fail pulled
 - make your own timers, countdowns and alerts without Lua knowledge
 
-                           [![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=LZMSDFLJAVHQ6)
-
 ## Installation Instructions:
 
 1.  Download and unzip the Rift-Raid-Alert-master.zip - https://github.com/Bamux/Rift-Raid-Alert/archive/master.zip
