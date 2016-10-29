@@ -13,6 +13,8 @@ Features:
 - pull countdown and alert you if the tank has aggro or who has fail pulled
 - make your own timers, countdowns and alerts without Lua knowledge
 
+[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=LZMSDFLJAVHQ6)
+
 ## Installation Instructions:
 
 1.  Download and unzip the Rift-Raid-Alert-master.zip - https://github.com/Bamux/Rift-Raid-Alert/archive/master.zip
@@ -38,8 +40,6 @@ Open the Windows Text to Speech Engine and select your voice. The default folder
 I use the Microsoft Speech API (SAPI 5) . The Python program that I wrote scans the Rift Log.txt file according to predefined parameters and passes it to the SAPI 5 interface. You can use any voice that was created for the SAPI 4 or SAPI 5 interface. There are many free voices (often sound robotic) but also very natural sounding voices. 
 
 Under http://www.mwsreader.com/en/voices/ you can download other voices (different languages). 
-
-[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=LZMSDFLJAVHQ6)
 
 ## How to use Rift Raid Alerts on TeamSpeak:
 
