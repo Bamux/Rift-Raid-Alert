@@ -1,8 +1,0 @@
-Alaviax Ashbinder > Fireball
-player << Fist of Flame
-Alaviax Ashbinder > Cauterize
-Alaviax Vanguard > Uproot
-Alaviax Vanguard > Overpower
-player << Fiery Prison
-player << Uproot
-player << Overpower
