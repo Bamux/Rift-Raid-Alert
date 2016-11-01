@@ -1,4 +1,0 @@
-player << attack
-Formless Chaos > Vision of the Unknown
-Formless Chaos > Cloak of Chaos
-Formless Chaos < Cloak of Chaos
