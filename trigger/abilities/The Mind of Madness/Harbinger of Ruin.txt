@@ -1,5 +1,0 @@
-player << Echo of Destruction
-player << attack
-Harbinger of Ruin > Scream of Despair
-player << Aura of Ruin
-Harbinger of Ruin < Aura of Ruin
