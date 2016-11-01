@@ -1,6 +1,0 @@
-Der Auferstandene Arak > Tyrannengenese
-player << Vertiefende Schatten
-Der Auferstandene Arak > Schattenfackel
-Der Auferstandene Arak > Titanischer Schwinger
-Schrecken des Arak < Ätherische Verbindung
-Der Auferstandene Arak > Licht des Untergangs
