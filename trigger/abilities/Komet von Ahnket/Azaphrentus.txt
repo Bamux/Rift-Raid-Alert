@@ -1,9 +1,0 @@
-player << Brennende Tränen
-Azaphrentus > Dunkler Stern
-Azaphrentus > Wut des Azaphrentus
-Azaphrentus < Wut des Azaphrentus
-Azaphrentus > Manifestierte Verachtung
-player << Manifestierte Verachtung
-player << Aschewolke
-player << Flammenfessel
-player << Dunkler Stern
