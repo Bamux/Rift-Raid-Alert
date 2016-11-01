@@ -856,7 +856,7 @@ def tts():
 
 def buff_check():
     global buffcheck, trigger, bufftrigger, special
-    if var_buffcheck.get() == 1 and var_only_me == 0:
+    if var_buffcheck.get() == 1 and var_only_me.get() == "0":
         guioutput("Raid Buffcheck: on")
         if buffcheck == 0:
             buffcheck = 1
