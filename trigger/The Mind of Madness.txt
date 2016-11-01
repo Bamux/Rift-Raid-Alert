@@ -19,6 +19,10 @@ trigger = eng; MoM; Lord Arak; ability; Lord Arak > Petrified; ; 0; 0; 0; 0; 1; 
 trigger = eng; MoM; Lord Arak; ability; Lord Arak > Pain; ; 0; 0; 0; 0; 2; 0
 trigger = eng; MoM; Lord Arak; ability; Lord Arak > Weakness; ; 0; 0; 0; 0; 3; 0
 
+trigger = all; all; Formless Chaos; ability; Formless Chaos > Cloak of Chaos; stop; 4; 0; 0; 0; 0; 0
+trigger = all; all; Formless Chaos; ability; Formless Chaos > Vision of the Unknown; go; 0; 0; 10; 0; 0; 0
+trigger = all; all; Sentinel of Reason; ability; Sentinel of Reason > Incarcerating Blast; reflect; 0; 0; 0; 0; 0; 0
+
 trigger = eng; MoM; Fauxmire; ability; Combat Begin > Fauxmire; 5 secons left; 25; 0; 0; 0; 0; 0
 trigger = eng; MoM; Fauxmire; ability; Combat Begin > Fauxmire; step into the circle; 30; 0; 0; 0; 0; 0
 trigger = eng; MoM; Fauxmire; ability; Combat Begin > Fauxmire; 5 secons left; 55; 0; 0; 0; 0; 0
@@ -78,7 +82,5 @@ trigger = all; all; The Enigma; ability; The Enigma > Pandemonium; add; 0; 0; 0;
 trigger = all; all; Lady Justice; ability; player << Hasty Prosecution; player; 0; 0; 0; 0; 0; 0
 trigger = all; all; Lady Justice; ability; Lady Justice > Hasty Prosecution; reactive; 1; 0; 0; 0; 0; 0
 trigger = all; all; Lady Justice; ability; Beholder of Judgment < Summons of Prosecution; add; 0; 0; 20; 0; 0; 0
-trigger = all; all; Nexus Ravager; ability; Nexus Crawler > Purge Anomaly >> player ; player; 0; 0; 5; 0; 0; 0
-trigger = all; all; Formless Chaos; ability; Formless Chaos > Cloak of Chaos; stop; 4; 0; 0; 0; 0; 0
-trigger = all; all; Formless Chaos; ability; Formless Chaos > Vision of the Unknown; go; 0; 0; 10; 0; 0; 0
-trigger = all; all; Sentinel of Reason; ability; Sentinel of Reason > Incarcerating Blast; reflect; 0; 0; 0; 0; 0; 0
+trigger = all; all; Lady Justice; ability; Lady Justice > Order in the Court!; left; 0; 0; 0; 0; 0; 0
+trigger = all; all; Lady Justice; ability; Lady Justice > Virtue of Wrath; add; 0; 0; 0; 0; 0; 0

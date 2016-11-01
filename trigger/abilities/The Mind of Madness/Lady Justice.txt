@@ -1,0 +1,18 @@
+Lady Justice > Righteous Blade
+Lady Justice > Tyrannis Veritatis
+player << Tyrannis Veritatis (Inflicts severe damage every 2 seconds.)
+Lady Justice > Hasty Prosecution
+player << Weight of Guilt (The weight of guilt builds with every strike from Lady Justice. If this effect reaches 10 stacks you will become immune to healing and resurrection effects for 30 seconds.)
+player << Hasty Prosecution (Lady Justice has marked you for a hasty prosecution! You must object or you will be executed with this effect expires. Each objection raised applies a stack of Contempt.)
+Lady Justice > Merciful Justice
+Beholder of Judgment < Summons of Prosecution (Summoned to testify against you upon the Scales of Reason by Lady Justice. Immune to damage and crowd controlling effects. Adds an Accusation of Guilt to the balance of the Scales of Reason upon arrival.)
+Lady Justice > Judgment
+Lady Justice < Irregular Proceedings (Lady Just is infuriated by your attempt to lure her from the Circle of Judgment and will afflict Contempt upon the entire raid every 15 seconds until she returns to the center of the chamber.)
+Lady Justice > Charge of Contempt
+Lady Justice < The Scales of Justice (The evidence against you is neither overwhelming or absolute. You are awarded a fair trial.)
+player << Damning Guilt (You have been found beyond redemption and can no longer receive healing from allies!)
+Lady Justice > Order in the Court!
+Vigil of Justice < Eternal Vigilance (The Vigils of Justice are eternal and cannot be killed.)
+Vigil of Justice < Sphere of Anger (Radiating extreme damage to all within 3 meters every 0.25 seconds. Each person hit will trigger a Sphere of Incarceration to spawn. Guard effectiveness against this ability is increased by a factor of 9.)
+Lady Justice > Virtue of Wrath
+Lady Justice < Enraged! (Increased outgoing damage.)

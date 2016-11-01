@@ -1,0 +1,21 @@
+Vis > Snap Judgment
+Misericordia > Light of Truth
+Vis > Excessive Force
+Misericordia > Lachrymose
+player << Light of Truth (The Light of Truth will be created at your location and erupt dealing severe damage after 3 seconds.)
+player << Lachrymose (You have become Lachrimosa, embodiment of suffering. Dealing damage now causes you to take damage.)
+Misericordia > Light of Innocence
+Vis > Trial of Brutality
+Vis < Trial of Brutality (The first Trial of Brutality. Requires 10,000,000 damage to complete. This damage is shared with Misericordia.)
+Vis < Trial of Brutality (The second Trial of Brutality. Requires 15,000,000 damage to complete.  This damage is shared with Misericordia.)
+Vis < Trial of Brutality (The third Trial of Brutality. Requires 20,000,000 damage to complete.  This damage is shared with Misericordia.)
+Misericordia > Merciful Judge
+Vis > Assesment of Guilt
+Vis > Declaration of Guilt
+Misericordia > Righteous Flames
+Vis > Vengeful Flames
+Misericordia > Libra
+Misericordia > Writ of Accusations
+Vis > Death Sentence
+player << Death Sentence (Vis has sentenced you to death! You will be executed in..)
+Misericordia > Stay of Execution

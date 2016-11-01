@@ -23,6 +23,7 @@ local function CombatCheck(event, units) -- Check Combat Status (Combat Begin, C
         local unit_details = Inspect.Unit.Detail(units)
         if unit_details then
             for id, detail in pairs(unit_details) do
+                -- if detail.relation == "hostile" then
                 if detail.relation == "hostile" and detail.healthMax > 20000000 and detail.healthMax > maxhitpoints and detail.health > detail.healthMax*0.98 then
                     if detail.id ~= "u800000024E02FC39" and detail.id ~= "u800000024E02FC3D" then
                         maxhitpoints = detail.healthMax
@@ -114,7 +115,11 @@ local function getAddBuffName(event, unit, buffs)
                             if target then
                                 if target.player == nil then
                                     if buff.curse or buff.debuff or buff.disase or buff.poison then
-                                        print(details.name .. " << " ..buff.name)
+                                        if buff.description then
+                                            print(details.name .. " << " ..buff.name .. " (" .. buff.description .. ")")
+                                        else
+                                            print(details.name .. " << " ..buff.name)
+                                        end
                                         local bufflist = { id = buffid, name = buff.name }
                                         table.insert(rra_bufflist, bufflist)
                                     end
@@ -123,7 +128,11 @@ local function getAddBuffName(event, unit, buffs)
                         end
                     else
                         if details.id == buff.caster and details.relation == "hostile" then
-                            print(details.name .. " < " ..buff.name)
+                            if buff.description then
+                                print(details.name .. " < " .. buff.name .. " (" .. buff.description .. ")")
+                            else
+                                print(details.name .. " < " .. buff.name)
+                            end
                             local bufflist = { id = buffid, name = buff.name }
                             table.insert(rra_bufflist, bufflist)
                         end
@@ -146,6 +155,7 @@ local function rra_raidbuffcheck()
     local foods = {}
     local count = 0
     local groupmember = ""
+    local player_detail = Inspect.Unit.Detail("player")
 
     for i=1, 20 do
         local flask = false
@@ -201,26 +211,54 @@ local function rra_raidbuffcheck()
                 end
             end
             if weaponstone == false and flask == false  and food == false then
-                table.insert(weaponstones_flasks_food, player.name)
-                count = count + 1
+                if player_detail.name == player.name then
+                    print("Buffcheck: Check your Waeponstone, Flask and Food")
+                else
+                    table.insert(weaponstones_flasks_food, player.name)
+                    count = count + 1
+                end
             elseif weaponstone == false and flask == false then
-                table.insert(weaponstones_flasks, player.name)
-                count = count + 1
+                if player_detail.name == player.name then
+                    print("Buffcheck: Check your Waeponstone and Flask")
+                else
+                    table.insert(weaponstones_flasks, player.name)
+                    count = count + 1
+                end
             elseif weaponstone == false and food == false then
-                table.insert(weaponstones_food, player.name)
-                count = count + 1
+                if player_detail.name == player.name then
+                    print("Buffcheck: Check your Waeponstone and Food")
+                else
+                    table.insert(weaponstones_food, player.name)
+                    count = count + 1
+                end
             elseif flask == false and food == false then
-                table.insert(flasks_food, player.name)
-                count = count + 1
+                if player_detail.name == player.name then
+                    print("Buffcheck: Check your Flask and Food")
+                else
+                    table.insert(flasks_food, player.name)
+                    count = count + 1
+                end
             elseif weaponstone == false then
-                table.insert(weaponstones, player.name)
-                count = count + 1
+                if player_detail.name == player.name then
+                    print("Buffcheck: Check your Waeponstone")
+                else
+                    table.insert(weaponstones, player.name)
+                    count = count + 1
+                end
             elseif flask == false then
-                table.insert(flasks, player.name)
-                count = count + 1
+                if player_detail.name == player.name then
+                    print("Buffcheck: Check your Flask")
+                else
+                    table.insert(flasks, player.name)
+                    count = count + 1
+                end
             elseif food == false then
-                table.insert(foods, player.name)
-                count = count + 1
+                if player_detail.name == player.name then
+                    print("Buffcheck: Check your Food")
+                else
+                    table.insert(foods, player.name)
+                    count = count + 1
+                end
             end
         end
     end
@@ -289,10 +327,10 @@ local function test()
         --dump (detail)
         if detail then
             if detail.rune then
-                print(detail.name .. " detail.rune = " .. detail.rune .. " detail.id = " .. detail.id)
+                print(detail.name .. " detail.rune = " .. detail.rune .. " detail.id = " .. detail.id .. " detail.description = " .. detail.description)
             end
             if detail.type then
-                print(detail.name .. " detail.type = " .. detail.type .. " detail.id = " .. detail.id)
+                print(detail.name .. " detail.type = " .. detail.type .. " detail.id = " .. detail.id .. " detail.description = " .. detail.description)
             end
         end
     end
@@ -343,9 +381,19 @@ local function getAbilityName(event, units)
                 if detail.relation == "hostile" then
                     local player = Inspect.Unit.Detail(id..".target")
                     if player then
-                        print (detail.name .. " > " .. cast.abilityName.. " >> " .. player.name)
+                        if cast.abilityNew then
+                            local ability_detail = Inspect.Ability.New.Detail(cast.abilityNew)
+                            print (detail.name .. " > " .. cast.abilityName.. " >> " .. player.name  .. " (" .. ability_detail.description .. ")")
+                        else
+                            print (detail.name .. " > " .. cast.abilityName.. " >> " .. player.name)
+                        end
                     else
-                        print(detail.name .. " > " .. cast.abilityName)
+                        if cast.abilityNew then
+                            local ability_detail = Inspect.Ability.New.Detail(cast.abilityNew)
+                            print(detail.name .. " > " .. cast.abilityName  .. " (" .. ability_detail.description .. ")")
+                        else
+                            print(detail.name .. " > " .. cast.abilityName)
+                        end
                     end
                 else
                     if cast.abilityNew then

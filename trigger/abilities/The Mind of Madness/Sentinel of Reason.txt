@@ -1,0 +1,3 @@
+Sentinel of Reason > Incarcerating Blast
+Sentinel of Reason > Retribution
+Sentinel of Reason < Retribution (Whenever damage is taken, damage is dealt)
