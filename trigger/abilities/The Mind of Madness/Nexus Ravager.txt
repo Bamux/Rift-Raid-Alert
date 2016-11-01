@@ -1,3 +1,0 @@
-player << Shred Armor
-Nexus Crawler > Purge Anomaly
-Nexus Ravager > Destroy Anomaly
