@@ -1,5 +1,0 @@
-Schildwache der Vernunft > Fesselnde Druckwelle
-Schildwache der Vernunft > Vergeltung
-Schildwache der Vernunft < Rechtschaffene Raserei
-Schildwache der Vernunft < Vergeltung
-player << Angriff
