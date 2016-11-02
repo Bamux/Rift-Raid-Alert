@@ -101,13 +101,13 @@ def trigger_analysis(log, log_big):
                                                         except:
                                                             say_text = player
                                         else:
-                                            if output == "tts":
+                                            if playername == player or output == "wav" or var_only_me.get() == "1":
+                                                cut_string = trigger[i][5].split(' player')
+                                                say_text = cut_string[0]
+                                            else:
                                                 cut_string = trigger[i][5].split(' player')
                                                 new_string = cut_string[0]
                                                 say_text = new_string + " " + player
-                                            else:
-                                                cut_string = trigger[i][5].split(' player')
-                                                say_text = cut_string[0]
 
                                     else:
                                         say_text = trigger[i][5]
@@ -671,10 +671,6 @@ def playsoundfile(text):
     global soundfiles, output
     soundfile_found = False
     if output == "wav" or output == "mix":
-        if "free" in text:
-            text = "free"
-        elif "intercept" in text:
-            text = "intercept"
         for i in range(0, len(soundfiles)):
             if text == soundfiles[i]:
                 if text == "kick" or text == "now":
