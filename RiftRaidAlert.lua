@@ -383,14 +383,22 @@ local function getAbilityName(event, units)
                     if player then
                         if cast.abilityNew then
                             local ability_detail = Inspect.Ability.New.Detail(cast.abilityNew)
-                            print (detail.name .. " > " .. cast.abilityName.. " >> " .. player.name  .. " (" .. ability_detail.description .. ")")
+                            if ability_detail.description ~= nil then
+                                print (detail.name .. " > " .. cast.abilityName.. " >> " .. player.name  .. " (" .. ability_detail.description .. ")")
+                            else
+                                print (detail.name .. " > " .. cast.abilityName.. " >> " .. player.name)
+                            end
                         else
                             print (detail.name .. " > " .. cast.abilityName.. " >> " .. player.name)
                         end
                     else
                         if cast.abilityNew then
                             local ability_detail = Inspect.Ability.New.Detail(cast.abilityNew)
-                            print(detail.name .. " > " .. cast.abilityName  .. " (" .. ability_detail.description .. ")")
+                            if ability_detail.description ~= nil then
+                                print(detail.name .. " > " .. cast.abilityName  .. " (" .. ability_detail.description .. ")")
+                            else
+                                print(detail.name .. " > " .. cast.abilityName)
+                            end
                         else
                             print(detail.name .. " > " .. cast.abilityName)
                         end
