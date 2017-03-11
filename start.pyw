@@ -2,8 +2,8 @@
 
 # Rift Raid Alert
 # Spoken raid warnings for the MMORPG Rift
-# Version 1.1
-# Author: Bamux@Typhiria
+# Version 1.3
+# Author: Bamu@Brutwacht
 
 import os
 # import sys
@@ -1118,7 +1118,8 @@ def sound_file():
 
 def ability_select(evt):
     value = str((abilities_listbox.get(abilities_listbox.curselection())))
-    if value != ".. exit":
+    if value != "  .. exit":
+        value = value.lstrip()
         if " (" in value:
             value = value.split(" (")[0]
         e2.delete(0, END)
@@ -1129,8 +1130,8 @@ def ability_select(evt):
 def abilities():
     forget()
     abilities_listbox.delete(0, END)
-    abilities_listbox.insert(END, ".. exit")
-    abilities_listbox.grid(row=0, column=0, sticky=N + S + E + W)
+    abilities_listbox.insert(END, "  .. exit")
+    abilities_listbox.grid(row=0, column=0, ipadx=10, sticky=N + S + E + W)
     scrollbar.grid(row=0, column=1, sticky=N + S + E + W)
     abilities_listbox.config(yscrollcommand=scrollbar.set)
     scrollbar.config(command=abilities_listbox.yview)
@@ -1140,7 +1141,7 @@ def abilities():
         file = codecs.open("trigger/abilities/" + e0.get() + "/" + e1.get() + ".txt", "r", 'utf-8')
         for item in file:
             item = item.rstrip()
-            abilities_listbox.insert(END, item)
+            abilities_listbox.insert(END, "  " + item)
 
     except:
         pass
@@ -1757,7 +1758,7 @@ scrollbar = Scrollbar(root)
 T = Text(root, height=20, width=50, padx=10, pady=10)
 sb.config(command=T.yview)
 T.config(yscrollcommand=sb.set)
-T.insert(END, "Rift Raid Alert Version 1.1\nMake sure you use /log in Rift after each game restart !")
+T.insert(END, "Rift Raid Alert Version 1.3 - Author: Bamu@Brutwacht\nMake sure you use /log in Rift after each game restart !")
 
 soundfiles = soundfiles_list('siri')
 combattrigger = 1

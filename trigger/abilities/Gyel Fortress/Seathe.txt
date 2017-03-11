@@ -1,0 +1,5 @@
+Seathe > Fervor of the Branded
+Seathe > Triferno
+Seathe > Soul Seizure
+Seathe < Burning Fanaticism (Damage increases as Seathe's religious fervor grows.)
+Seathe < Fervor of the Branded (Attack speed increased.)

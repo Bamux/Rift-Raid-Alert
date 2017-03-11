@@ -1,0 +1,6 @@
+Hexathel > Silken Friends
+Hexathel < Silken Friends (Damage done to target is reflected to the caster.)
+Hexathel > Webtoss
+player << Webtoss
+Hexalotls > Transformative Venom
+player << Transformative Venom (Transformed into a harmless squirrel)
