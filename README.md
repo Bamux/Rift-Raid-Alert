@@ -1,4 +1,4 @@
-## Rift Raid Alert v1.4
+## Rift Raid Alert v1.4.1
 Rift Raid Alert is a program (written in Python) which can be used to create spoken raid warnings for the MMORPG Rift.
 The current version support announcements for RoF, IGP, MoM, CoA, Hexathel(Queen Foci) and the new LFR Tartaric Depths. You can use Rift Raid Alert with Team Speak so the whole Raid can benefit from.
 
