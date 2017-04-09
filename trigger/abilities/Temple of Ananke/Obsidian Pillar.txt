@@ -1,0 +1,3 @@
+Bombardier Goblin > Barrel Bomb
+player << Bloody Rend (Bleeds -11 health over 15s.)
+Crazed Imp < Blood Rage (Crazed Imp is in a blood rage and deals more damage.)

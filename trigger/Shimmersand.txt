@@ -3,7 +3,7 @@
 (9)number of events before the trigger fires; (10)depending on other triggers; (11)timer and countdown reset]
 
 trigger = eng; IGP; Anrak the Foul; ability; player << Brittle; tank swap; 0; 0; 0; 3; 0; 0
-trigger = eng; IGP; Anrak the Foul; ability; player << remove Brittle; tank swap!; 0; 0; 0; -3; 0; 0
+trigger = all; all; Anrak the Foul; ability; player << remove Brittle; tank swap; 0; 0; 0; -3; 0; 0
 trigger = eng; IGP; Anrak the Foul; ability; Anrak the Foul > Spines of Earth; spread out; 0; 0; 5; 0; 0; 0
 trigger = eng; IGP; Anrak the Foul; ability; Anrak the Foul > Swarm of Anrak; prepare for adds; 0; 0; 0; 0; 0; 0
 trigger = eng; IGP; Anrak the Foul; ability; Anrak the Foul > Eye Beam >> player; player stand out; 0; 0; 8; 0; 0; 0

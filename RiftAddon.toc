@@ -6,11 +6,11 @@ Description = "use /log in the rift chatwindow and use /rra start"
 
 Author = "Program: Bamu@Brutwacht, Test: Dibl@Brutwacht"
 
-Version = "1.3"
+Version = "1.4"
 
 Email = "my@email"
 
-Environment = "4.0"
+Environment = "4.1"
 
 RunOnStartup = {
     "RiftRaidAlert.lua",

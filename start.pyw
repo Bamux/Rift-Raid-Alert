@@ -2,7 +2,7 @@
 
 # Rift Raid Alert
 # Spoken raid warnings for the MMORPG Rift
-# Version 1.3
+# Version 1.4
 # Author: Bamu@Brutwacht
 
 import os
@@ -521,7 +521,7 @@ def abilitycheck(line, bossname):
 
 
 def logfilecheck():
-    global logfile
+    global logfile, log_exists
     logtext = ""
 
     try:
@@ -549,7 +549,7 @@ def logfilecheck():
                     log_exists = True
                 except:
                     guioutput('Error! could not find the Log File')
-                    speak.Speak('Logfile not found!')
+                    # Thread(target=saytext, args=('Logfile not found!',)).start()
                     log_exists = False
     if log_exists:
         if playback:
@@ -562,9 +562,9 @@ def logfilecheck():
         t = Thread(target=logfile_analysis, args=(logtext,))
         t.start()
     else:
-        guioutput('use /log in Rift and edit the path to your Logfile in the RiftRaidAlert.ini !')
-        time.sleep(20)
-        logfilecheck()
+        guioutput('use /log in Rift and edit the path to your Logfile (Settings).\nRestart the Rift Raid Alert after your edit the path to your Log.txt!')
+        # time.sleep(20)
+        # logfilecheck()
 
 
 def timeout(timeout_time, trigger_content):
@@ -1758,7 +1758,7 @@ scrollbar = Scrollbar(root)
 T = Text(root, height=20, width=50, padx=10, pady=10)
 sb.config(command=T.yview)
 T.config(yscrollcommand=sb.set)
-T.insert(END, "Rift Raid Alert Version 1.3 - Author: Bamu@Brutwacht\nMake sure you use /log in Rift after each game restart !")
+T.insert(END, "Rift Raid Alert Version 1.4 - Author: Bamu@Brutwacht\nMake sure you use /log in Rift after each game restart !")
 
 soundfiles = soundfiles_list('siri')
 combattrigger = 1
@@ -1830,6 +1830,7 @@ counter1 = 0
 counter2 = 0
 playback = False  # only for Playback a logfile from line 1
 error_analysis = False
+log_exists = False
 logfilecheck()
 
 trigger_details_list = []

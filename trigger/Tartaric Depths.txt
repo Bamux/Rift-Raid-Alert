@@ -1,0 +1,10 @@
+trigger = all; all; Beligosh; ability; An Alavaxian Golem has appeared; add; 0; 0; 0; 0; 0; 0
+trigger = all; all; Beligosh; ability; Feel the wrath of Beligosh!; run out; 0; 0; 0; 0; 0; 0
+trigger = all; all; TarJulia; ability; Tarjulia targets player; player run out; 0; 0; 0; 0; 0; 0
+trigger = all; all; TarJulia; ability; player << Hot Hands; player stop; 0; 0; 0; 20; 0; 0
+trigger = all; all; TarJulia; ability; player << remove Hot Hands; ; 0; 0; 0; -20; 0; 0
+trigger = all; all; Malannon; ability; player is targeted for Burning Ruin; player run out; 0; 0; 10; 0; 0; 0
+trigger = all; all; Malannon; ability; player stand alone and die in flames; player; 0; 0; 0; 0; 0; 0
+trigger = all; all; Malannon; ability; stand alone and die in flames; step into the circle; 1; 0; 0; 0; 0; 0
+trigger = all; all; Council; ability; VOID < Void; void; 0; 0; 10; 0; 0; 0
+trigger = all; all; Council; ability; The Flamescape begins; step into the circle; 0; 0; 0; 0; 0; 0

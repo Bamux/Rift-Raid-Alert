@@ -20,25 +20,30 @@ end
 
 local function CombatCheck(event, units) -- Check Combat Status (Combat Begin, Combat End)
     if rra_boss_id == 0  then
+        local hitpoints = 20000000
         local unit_details = Inspect.Unit.Detail(units)
         if unit_details then
             for id, detail in pairs(unit_details) do
-                -- if detail.relation == "hostile" then
-                if detail.relation == "hostile" and detail.healthMax > 20000000 and detail.healthMax > maxhitpoints and detail.health > detail.healthMax*0.98 then
-                    if detail.id ~= "u800000024E02FC39" and detail.id ~= "u800000024E02FC3D" then
-                        maxhitpoints = detail.healthMax
-                        print("Combat Begin > ".. detail.name)
-                        rra_boss_id = detail.id
-                        local player = Inspect.Unit.Detail(detail.id .. ".target")
-                        if player then
-                            if player.role == "tank" then
-                                print("Tank pull >> " .. player.name)
-                            else
-                                print("Fail pull >> " .. player.name)
-                            end
-                        end
-                    end
-                end
+                if detail.relation == "hostile" then
+					if detail.level > 68 then
+						local hitpoints = 100000000
+					end
+					if detail.healthMax > hitpoints and detail.healthMax > maxhitpoints and detail.health > detail.healthMax*0.98 then
+						if detail.id ~= "u800000024E02FC39" and detail.id ~= "u800000024E02FC3D" then
+							maxhitpoints = detail.healthMax
+							print("Combat Begin > ".. detail.name)
+							rra_boss_id = detail.id
+							local player = Inspect.Unit.Detail(detail.id .. ".target")
+							if player then
+								if player.role == "tank" then
+									print("Tank pull >> " .. player.name)
+								else
+									print("Fail pull >> " .. player.name)
+								end
+							end
+						end
+					end
+				end
             end
         end
     end
@@ -76,7 +81,7 @@ local function CheckHP(event, units)
                         if hitpoints ~= lasthitpoints then
                             print(detail.name .. " = " .. hitpoints .. " %")
                             lasthitpoints = hitpoints
-                            if hitpoints == 0 or hitpoints == 100 then
+                            if hitpoints == 0 then -- or hitpoints == 100 
                                 CombatEnd()
                             end
                         end
@@ -100,7 +105,7 @@ local function getAddBuffName(event, unit, buffs)
                 local target = Inspect.Unit.Detail(buff.caster)
                 if buff then
                     if details.player then
-                        if buff.type == "B14A2E6D509F79153" then -- Lavafield
+                        if buff.type == "B6C56FAC0083954DC" then -- Lavafield
                             if (Inspect.Time.Frame() - Lavafield) > 10 then
                                 print("Rift Raid Alert > Lavafield")
                                 Lavafield = Inspect.Time.Frame()
@@ -170,7 +175,7 @@ local function rra_raidbuffcheck()
                 if detail and player then
                     if detail.rune then
                         if player.calling == "mage" or player.calling == "cleric" then
-                            if detail.rune == "r54A72A7D7486A939" then -- Pelagic Powerstone = r54A72A7D7486A939
+                            if detail.rune == "r143A1D7A79A201D6" then -- Faetouched Powerstone = r143A1D7A79A201D6
                                 if detail.duration > 300 then
                                     weaponstone = true
                                 end
@@ -185,7 +190,7 @@ local function rra_raidbuffcheck()
                     end
                     if detail.type then
                         if player.calling == "mage" or player.calling == "cleric" then
-                            if detail.type == "B5FB47C7B1CE019F8" or detail.type == "B2A1357781A34EE07" then --  Illustrious Brightsurge Vial = B5FB47C7B1CE019F8, Phenomenal Brightsurge Vial = B2A1357781A34EE07
+                            if detail.type == "B76F46FAB030D4A53" or detail.type == "B2A1357781A34EE07" then --  Visionary Brightsurge Vial = B76F46FAB030D4A53, Phenomenal Brightsurge Vial = B2A1357781A34EE07
                                 if detail.duration > 300 then
                                     flask = true
                                 end
@@ -327,10 +332,18 @@ local function test()
         --dump (detail)
         if detail then
             if detail.rune then
-                print(detail.name .. " detail.rune = " .. detail.rune .. " detail.id = " .. detail.id .. " detail.description = " .. detail.description)
+				if detail.description then
+					print(detail.name .. " detail.rune = " .. detail.rune .. " detail.id = " .. detail.id .. " detail.description = " .. detail.description)
+				else
+					print(detail.name .. " detail.rune = " .. detail.rune .. " detail.id = " .. detail.id)
+				end
             end
             if detail.type then
-                print(detail.name .. " detail.type = " .. detail.type .. " detail.id = " .. detail.id .. " detail.description = " .. detail.description)
+				if detail.description then
+					print(detail.name .. " detail.type = " .. detail.type .. " detail.id = " .. detail.id .. " detail.description = " .. detail.description)
+				else
+					print(detail.name .. " detail.rune = " .. detail.rune .. " detail.id = " .. detail.id)
+				end
             end
         end
     end

@@ -43,7 +43,7 @@ trigger = eng; CoA; Lord Fionn; ability; player << Marked for Death; player run 
 trigger = all; all; Lord Fionn; ability; player << No Escape; player can't move; 0; 0; 0; 0; 0; 0
 trigger = all; all; Lord Fionn; ability; Lord Fionn > One Thousand Thrusts; 1000; 0; 0; 5; 0; 0; 0
 trigger = eng; CoA; Lord Fionn; ability; Lord Fionn > Omniscient Flash; bullets; 3; 0; 5; 0; 0; 0
-trigger = eng; CoA; Lord Fionn; ability; Warlord Svenbioard > Reaper's Blade >> player; Blade on player; 0; 0; 0; 0; 0; 0
+trigger = all; all; Lord Fionn; ability; Warlord Svenbioard > Reaper's Blade >> player; player Blade; 0; 0; 0; 0; 0; 0
 trigger = all; all; Lord Fionn; ability; Lord Fionn = 75; phase change; 0; 0; 60; 0; 0; 0
 trigger = all; all; Lord Fionn; ability; Lord Fionn = 50; phase change; 0; 0; 60; 0; 0; 0
 trigger = all; all; Lord Fionn; ability; Lord Fionn = 25; phase change; 0; 0; 60; 0; 0; 0

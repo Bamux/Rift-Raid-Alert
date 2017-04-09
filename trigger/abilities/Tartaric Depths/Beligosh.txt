@@ -1,0 +1,9 @@
+player << Seed of Immolation (Ionized and attracting electricity. Will discharge a bolt when time is up.)
+player << Unstable Construct
+Binding Elemental < Dancing Flames (The elemental is putting out intense heat, dealing damage to all near it. )
+Beligosh > Magma Breath
+player << Released Power (Upon death this creature will explode, knocking back those near it and leaving the targets burning.)
+player << Magma Breath (Hurls a ball of flaming energy at the enemy, causing 0 to 1 Fire damage.)
+player << Flame Burst
+player << Released Power (Dealing Fire damage over 10s.)
+player << Backdraft (Beligosh is causing a vacuum to pull everything closer to the point of impact.)
