@@ -25,7 +25,7 @@ local function CombatCheck(event, units) -- Check Combat Status (Combat Begin, C
         if unit_details then
             for id, detail in pairs(unit_details) do
                 if detail.relation == "hostile" then
-					if detail.level > 68 then
+					if tonumber(detail.level) > 68 then
 						local hitpoints = 100000000
 					end
 					if detail.healthMax > hitpoints and detail.healthMax > maxhitpoints and detail.health > detail.healthMax*0.98 then
