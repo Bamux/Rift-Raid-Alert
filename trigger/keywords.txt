@@ -2,14 +2,16 @@
 
 # keywords = keyword1 + keyword2 + keywordX; text to speech or soundfile.wav
 
-keywords = MoM + lfm; Mind of Madness looking for more
-keywords = CoA + lfm; Comet of Ahnket looking for more
-keywords = IGP + lfm; Gilded Prophecy looking for more
-keywords = HK + lfm; Hammerknell looking for more
-keywords = MS + lfm; Mount Sharax looking for more
-keywords = RoF + lfm; Rhen of Fate looking for more
-keywords = QF + lfm; Queen Foci looking for more
-keywords = TD +lfm; Tartaric Depths looking for more
+#keywords = MoM + lfm; Mind of Madness looking for more
+#keywords = CoA + lfm; Comet of Ahnket looking for more
+#keywords = IGP + lfm; Gilded Prophecy looking for more
+#keywords = HK + lfm; Hammerknell looking for more
+#keywords = MS + lfm; Mount Sharax looking for more
+#keywords = RoF + lfm; Rhen of Fate looking for more
+#keywords = QF + lfm; Queen Foci looking for more
+#keywords = TD + lfm; Tartaric Depths looking for more
+keywords = IRotP + lf; Rise of the Phoenix looking for more
+keywords = golem + lf; golem looking for more
 
 keywords = The Sea of Ladon + lfm; The Sea of Ladon looking for more
 keywords = The Five Kanhs + lfm; The Five Kanhs looking for more

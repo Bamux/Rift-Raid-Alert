@@ -1,7 +1,7 @@
 trigger = all; all; Ereandorn; ability; Ereandorn says, "player, how does it feel to burn?; player stop; 0; 0; 0; 0; 0; 0
 trigger = all; all; Ereandorn; ability; The corpse of player will fuel our conquest; free player; 0; 0; 0; 0; 0; 0
-trigger = all; all; Ereandorn; ability; I will rebuild this world in flames; idol; 0; 0; 0; 0; 0; 0
-trigger = all; all; Ereandorn; ability; Ereandorn > Fury of Maelforge; A.O.E; 0; 0; 0; 0; 0; 0
+trigger = all; all; Ereandorn; ability; I will rebuild this world in flames; phase change; 0; 0; 0; 0; 0; 0
+trigger = all; all; Ereandorn; ability; Ereandorn > Fury of Maelforge; aoe; 0; 0; 0; 0; 0; 0
 trigger = all; all; Beruhast; ability; A pet from Maelforge should keep you; add; 0; 0; 0; 0; 0; 0
 trigger = all; all; Beruhast; ability; Beruhast > Inferno Lash; kick; 0; 0; 3; 0; 0; 0
 trigger = all; all; Beruhast; ability; Beruhast prepares to unleash a leaping flame; spread out; 0; 0; 0; 0; 0; 0

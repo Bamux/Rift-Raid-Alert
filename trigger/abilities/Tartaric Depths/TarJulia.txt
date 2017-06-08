@@ -1,6 +1,9 @@
 TarJulia < Smolder (Tarjulia radiates heat. This damage is increased by hot hands.)
+TarJulia < Smolder (Tarjulia radiates heat. This damage is increased by hot hands.)
 player << Hot Hands (Increases the damage of smolder)
 TarJulia > Spider's Weave
 TarJulia > Molten Blast
 TarJulia > Rage
 TarJulia > Call for Help
+player << Spider's Weave (Stunned.)
+TarJulia < Fully Spun (Tarjulia has received overhealing and is releasing her true power.)

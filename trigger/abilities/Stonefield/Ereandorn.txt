@@ -1,0 +1,15 @@
+Ereandorn > Fury of Maelforge
+player << Blood Fire (A magical blaze infects the blood.)
+player << Flaming Hoof
+player << Flaming Hoof (Burning for 10 seconds.)
+player << Excitable Combustion (Fire damage every 2 seconds for 6 seconds. Using an ability will cause flames to leap out, damaging anyone in melee range and infecting them with the same curse.)
+player << Molten Growth (Trapped by the molten growth! If not destroyed soon it may explode!)
+Ereandorn > Molten Growth
+player << Molten Growth
+Molten Eruption < Molten Growth
+Molten Eruption < Planar Instability (Damaging this unstable eruption may cause it to release Fire energy in the form of Molten Flares.)
+Molten Eruption < Molten Growth (This growth is still forming! When it's finished it will kill the host that it's attached to.)
+Ereandorn > Volcanic Eruption
+Volcanic Eruption < Volcanic Eruption
+Volcanic Eruption < Volcanic Eruption (The volcano's power builds! When finished, the explosion will kill anyone within its blast radius!)
+player << Volcanic Eruption
