@@ -13,3 +13,4 @@ Ereandorn > Volcanic Eruption
 Volcanic Eruption < Volcanic Eruption
 Volcanic Eruption < Volcanic Eruption (The volcano's power builds! When finished, the explosion will kill anyone within its blast radius!)
 player << Volcanic Eruption
+Flaming Trickster > Smoulder

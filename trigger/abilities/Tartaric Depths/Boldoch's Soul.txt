@@ -5,3 +5,6 @@ Danazhal's Soul < Flame Prep (Flame Prep)
 Danazhal's Soul > Flamescape
 Marchioness Boldoch < Protected Fate (Grants immunity to interrupt. Absorbs 4575000 damage before breaking.)
 VOID < Void (Area of effect Damage.)
+Countessa Danazhal < Flame Prep (Flame Prep)
+Countessa Danazhal > Flamescape
+Count Pleuzhal > Chain Lightning
