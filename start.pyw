@@ -2,7 +2,7 @@
 
 # Rift Raid Alert
 # Spoken raid warnings for the MMORPG Rift
-# Version 1.6
+# Version 1.4
 # Author: Bamu@Brutwacht
 
 import os
@@ -503,6 +503,7 @@ def load_abilies(bossname):
 
 def abilitycheck(line, bossname):
     global abilities_new
+    # print(abilities_new)
     ability_existing = False
     if "pull >> " not in line and "Combat Begin" not in line and "Rift Raid Alert" not in line and "%" not in line \
             and "remove" not in line:
@@ -887,8 +888,6 @@ def boss_select(evt):
         b3.grid_forget()
         b4.grid_forget()
         b2.grid(row=1, column=1, pady=20)
-        b13.grid_forget()
-        b14.grid_forget()
         b_special_trigger.grid(row=2, column=1, pady=20)
         b12.grid(row=3, column=1, pady=20)
         value = str((boss_listbox.get(boss_listbox.curselection())))
@@ -905,8 +904,6 @@ def zone_select(evt):
     e1.insert(0, "")
     b3.grid_forget()
     b4.grid_forget()
-    b13.grid_forget()
-    b14.grid_forget()
     b2.grid(row=1, column=1, pady=20)
     b_special_trigger.grid(row=2, column=1, pady=20)
     b12.grid(row=3, column=1, pady=20)
@@ -995,17 +992,11 @@ def edit_trigger(value):
     newtrigger = ""
     found = False
     liste = []
-    if value == "delete" or value == "disable" or value == "enable":
+    if value == "delete":
         found = True
         if ' || ' in final_trigger[4]:
-            if value == "delete":
-                value = "special_delete"
-            elif value == "disable":
-                value = "special_disable"
-            elif value == "enable":
-                value = "special_enable"
-
-    if value == "special_edit" or value == "special_delete" or value == "special_disable" or value == "special_enable":
+            value = "special_delete"
+    if value == "special_edit" or value == "special_delete":
         i = 0
         for item in final_trigger:
             if i > 4:
@@ -1041,14 +1032,8 @@ def edit_trigger(value):
                 if e_special13.get():
                     special_tts += "; " + e_special13.get()
                 newtrigger = "special = all; " + "all; " + e1.get() + "; ability; " + special_keywords + special_tts
-        if value == "special_disable":
-                newtrigger = "#" + old_trigger
-                value = "special_edit"
-        if value == "special_enable":
-                newtrigger = old_trigger
-                value = "special_edit"
 
-    if value == "edit" or value == "delete" or value == "disable" or value == "enable":
+    if value == "edit" or value == "delete":
         old_trigger = "trigger = " + final_trigger[0] + "; " + final_trigger[1] + "; " + final_trigger[2] + "; " \
                       + final_trigger[3] + "; " + final_trigger[4] + "; " + final_trigger[5] + "; " + final_trigger[6] \
                       + "; " + final_trigger[7] + "; " + final_trigger[8] + "; " + final_trigger[9] + "; " \
@@ -1059,12 +1044,6 @@ def edit_trigger(value):
                 found = True
                 newtrigger = "trigger = all; " + "all; " + e1.get() + "; ability; " + e2.get() + "; " + e3.get() + "; " \
                              + e4.get() + "; " + e5.get() + "; " + e6.get() + "; " + e7.get() + "; " + e8.get() + "; " + var_reset.get()
-        if value == "disable":
-                newtrigger = "#" + old_trigger
-                value = "edit"
-        if value == "enable":
-                newtrigger = old_trigger
-                value = "edit"
 
     if found or value == "delete" or value == "special_delete":
         file = codecs.open("trigger/" + e0.get() + ".txt", "r", 'utf-8')
@@ -1335,7 +1314,7 @@ def special_trigger(value):
             pass
 
 
-def check_trigger():
+def test_trigger():
     global trigger, special, zone, language, location, boss
     if zone != e0.get():
         trigger_analysis("combat end", "Combat End")
@@ -1359,13 +1338,14 @@ def check_trigger():
 
 def new_trigger(value):
     global edit_new
-    forget()
+    # print(final_trigger)
     if len(final_trigger) > 3 and " || " in final_trigger[4]:
         if value == "new":
             special_trigger("new")
         else:
             special_trigger("edit")
     else:
+        forget()
         root.rowconfigure(0, weight=0)
         root.columnconfigure(0, weight=0)
         root.rowconfigure(1, weight=0)
@@ -1416,15 +1396,9 @@ def trigger_choice(value):
     b_special_trigger.grid_forget()
     b2.grid_forget()
     b12.grid_forget()
-    b13.grid_forget()
-    b14.grid_forget()
-    b8.grid(row=1, column=1, pady=3)
-    b3.grid(row=2, column=1, pady=14)
-    if "[disabled]" in value:
-        b14.grid(row=3, column=1, pady=13)
-    else:
-        b13.grid(row=3, column=1, pady=13)
-    b4.grid(row=4, column=1, pady=13)
+    b8.grid(row=1, column=1, pady=20)
+    b3.grid(row=2, column=1, pady=20)
+    b4.grid(row=3, column=1, pady=20)
     trigger_details = value.split(" | ")
     rownumber = trigger_listbox.curselection()[0]
     final_trigger = trigger_details_list[rownumber]
@@ -1465,13 +1439,11 @@ def trigger_ui(value):
                 line_type = str.lower(paraline[0:type_end])
                 line_data = str.rstrip(paraline[type_end:])
                 # line_data = umlaute2(line_data)
-                if 'trigger' in line_type or 'special' in line_type:
-                    trigger_details = line_data.split("; ")
-                    if value == trigger_details[2]:
-                        trigger_details_list += [trigger_details]
-                        if '#' in line_type:
-                            trigger_listbox.insert(END, "[disabled] " + trigger_details[4] + " | " + trigger_details[5])
-                        else:
+                if '#' not in line_type:
+                    if 'trigger' in line_type or 'special' in line_type:
+                        trigger_details = line_data.split("; ")
+                        if value == trigger_details[2]:
+                            trigger_details_list += [trigger_details]
                             trigger_listbox.insert(END, trigger_details[4] + " | " + trigger_details[5])
         zone_txt.close()
     except:
@@ -1524,9 +1496,11 @@ def zone_list():
     root.columnconfigure(1, weight=1)
     zone_listbox.grid(row=0, column=0, padx=10, pady=10, sticky=N+S+E+W)
     boss_listbox.grid(row=0, column=1, padx=10, pady=10, sticky=N + S + E + W)
-    trigger_listbox.grid(row=1, column=0, padx=10, pady=10, rowspan=4, sticky=N + S + E + W)
+    trigger_listbox.grid(row=1, column=0, padx=10, pady=10, rowspan=3, sticky=N + S + E + W)
     b8.grid_forget()
     if not final_trigger:
+        # b2.grid(row=1, column=1)
+        # b_special_trigger.grid(row=2, pady=30, column=1)
         b2.grid(row=1, column=1, pady=20)
         b_special_trigger.grid(row=2, column=1, pady=20)
         b12.grid(row=3, column=1, pady=20)
@@ -1537,6 +1511,7 @@ def zone_list():
         b4.grid(row=3, column=1, pady=20)
     try:
         zonelist = trigger_dir("trigger")
+        # print(zonelist)
         zone_listbox.delete(0, END)
         for items in zonelist:
             zone_listbox.insert(END, items)
@@ -1632,8 +1607,6 @@ def forget():
     b10.grid_forget()
     b11.grid_forget()
     b12.grid_forget()
-    b13.grid_forget()
-    b14.grid_forget()
     b_special_trigger.grid_forget()
     b_special_trigger1.grid_forget()
     b_special_trigger2.grid_forget()
@@ -1785,7 +1758,7 @@ scrollbar = Scrollbar(root)
 T = Text(root, height=20, width=50, padx=10, pady=10)
 sb.config(command=T.yview)
 T.config(yscrollcommand=sb.set)
-T.insert(END, "Rift Raid Alert Version 1.6 - Author: Bamu@Brutwacht\nMake sure you use /log in Rift after each game restart !")
+T.insert(END, "Rift Raid Alert Version 1.4 - Author: Bamu@Brutwacht\nMake sure you use /log in Rift after each game restart !")
 
 soundfiles = soundfiles_list('siri')
 combattrigger = 1
@@ -1918,13 +1891,11 @@ b4 = Button(root, text="Delete Trigger", width=20, command=lambda: edit_trigger(
 b5 = Button(root, text="Save", width=20, command=lambda: save_newtrigger("new"))
 b6 = Button(root, text="Save", width=20, command=lambda: edit_trigger("edit"))
 b7 = Button(root, text="Sound File", width=10, command=sound_file)
-b8 = Button(root, text="Test Trigger", width=20, command=check_trigger)
+b8 = Button(root, text="Test Trigger", width=20, command=test_trigger)
 b9 = Button(root, text="Abilities", width=10, command=abilities)
 b10 = Button(root, text="Boss", width=10, command=boss_abilities)
 b11 = Button(root, text="Zone", width=10, command=zone_abilities)
 b12 = Button(root, text="Delete Zone", width=20, command=delete_zone)
-b13 = Button(root, text="Disable Trigger", width=20, command=lambda: edit_trigger("disable"))
-b14 = Button(root, text="Enable Trigger", width=20, command=lambda: edit_trigger("enable"))
 b_special_trigger = Button(root, text="Special Trigger", width=20, command=lambda: special_trigger("new"))
 b_special_trigger1 = Button(root, text="Save", width=20, command=lambda: save_newtrigger("special_new"))
 b_special_trigger2 = Button(root, text="Save", width=20, command=lambda: edit_trigger("special_edit"))
