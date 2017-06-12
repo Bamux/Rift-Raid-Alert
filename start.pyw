@@ -2,7 +2,7 @@
 
 # Rift Raid Alert
 # Spoken raid warnings for the MMORPG Rift
-# Version 1.4
+# Version 1.7
 # Author: Bamu@Brutwacht
 
 import os
@@ -324,7 +324,7 @@ def umlaute(log):
 
 def logfile_analysis(logtext):
     try:
-        global trigger, special, language, location, playername, boss, timerreset, output, zone
+        global trigger, special, language, location, playername, boss, timerreset, output, zone, keywords_on_off
         # Jokes for Siri
         joke = []
         joke += [''"A man goes into a library and asks for a book on suicide."
@@ -366,6 +366,7 @@ def logfile_analysis(logtext):
             log = str.lower(log)
 
             if 'Rift Raid Alert Trigger >' in line:
+                keywords_on_off = 0
                 if combattrigger == 1:
                     cut_string = line.split('Rift Raid Alert Trigger > ')
                     new_string = cut_string[1]
@@ -419,14 +420,13 @@ def logfile_analysis(logtext):
                     guioutput(str(timerreset))
                 elif 'rift raid alert trigger < keywords off' in log:
                     zone = ""
-                    # guioutput(log) 123
                 elif 'rift raid alert trigger > keywords on' in log:
+                    keywords_on_off = 1
                     trigger.clear()
                     special.clear()
                     triggerload("keywords")
                     trigger += defaulttrigger + bufftrigger
                     special += defaultspecial
-                    # guioutput(log) 123
                     zone = ""
                 elif 'player >> ' in log:
                     cut_string = log.split('player >> ')
@@ -503,7 +503,6 @@ def load_abilies(bossname):
 
 def abilitycheck(line, bossname):
     global abilities_new
-    # print(abilities_new)
     ability_existing = False
     if "pull >> " not in line and "Combat Begin" not in line and "Rift Raid Alert" not in line and "%" not in line \
             and "remove" not in line:
@@ -888,6 +887,8 @@ def boss_select(evt):
         b3.grid_forget()
         b4.grid_forget()
         b2.grid(row=1, column=1, pady=20)
+        b13.grid_forget()
+        b14.grid_forget()
         b_special_trigger.grid(row=2, column=1, pady=20)
         b12.grid(row=3, column=1, pady=20)
         value = str((boss_listbox.get(boss_listbox.curselection())))
@@ -904,6 +905,8 @@ def zone_select(evt):
     e1.insert(0, "")
     b3.grid_forget()
     b4.grid_forget()
+    b13.grid_forget()
+    b14.grid_forget()
     b2.grid(row=1, column=1, pady=20)
     b_special_trigger.grid(row=2, column=1, pady=20)
     b12.grid(row=3, column=1, pady=20)
@@ -925,9 +928,19 @@ def delete_zone():
 
 
 def save_newtrigger(value):
-    global trigger, special
+    global trigger, special, edit_new
     found = False
     newtrigger = ""
+
+    if edit_new == "new_keywords":
+        edit_new = ""
+        value = "new_keywords"
+        e0.delete(0, END)
+        e0.insert(0, "keywords")
+        edit_new = ""
+        newtrigger = "keywords = " + e2.get() + "; " + e3.get()
+        found = True
+
     if value == "special_new" and e0.get() and e1.get() and len(e_special1.get()) > 4 and e_special6.get():
         found = True
         special_keywords = e_special1.get()
@@ -955,7 +968,7 @@ def save_newtrigger(value):
         if e_special13.get():
             special_tts += "; " + e_special13.get()
         newtrigger = "special = all; " + e0.get() + "; " + e1.get() + "; ability; " + special_keywords + special_tts
-    else:
+    if value == "new":
         if e0.get() and e1.get() and len(e2.get()) >= 5 and e4.get().isdigit() and e5.get().isdigit() \
                 and e6.get().isdigit() and e8.get().isdigit():
             found = True
@@ -967,17 +980,20 @@ def save_newtrigger(value):
         f = codecs.open("trigger/" + e0.get() + ".txt", "a", "utf-8")
         f.write(newtrigger + '\r\n')
         f.close()
-        b3.grid_forget()
-        b4.grid_forget()
-        boss_ui(e0.get())
-        trigger_ui(e1.get())
-        zone_list()
-        if zone == str.lower(e0.get()):
-            trigger.clear()
-            special.clear()
-            triggerload(zone)
-            trigger += defaulttrigger + bufftrigger
-            special += defaultspecial
+        if value == "new_keywords":
+            lfm()
+        else:
+            b3.grid_forget()
+            b4.grid_forget()
+            boss_ui(e0.get())
+            trigger_ui(e1.get())
+            zone_list()
+            if zone == str.lower(e0.get()):
+                trigger.clear()
+                special.clear()
+                triggerload(zone)
+                trigger += defaulttrigger + bufftrigger
+                special += defaultspecial
     else:
         if value == "special_new":
             l18.grid(row=18, column=1, padx=190, sticky=W)
@@ -986,17 +1002,38 @@ def save_newtrigger(value):
 
 
 def edit_trigger(value):
-    global trigger, special
+    global trigger, special, edit_new, final_trigger, keywords_on_off
     final_trigger_tts = ""
     old_trigger = ""
     newtrigger = ""
     found = False
     liste = []
-    if value == "delete":
+    if edit_new == "edit_keywords" or "keywords" in value:
+        e0.delete(0, END)
+        e0.insert(0, "keywords")
+        old_trigger = "keywords = " + final_trigger[0] + "; " + final_trigger[1]
+        if value == "disable_keywords":
+            newtrigger = "#" + old_trigger
+        elif value == "enable_keywords":
+            old_trigger = old_trigger.split("[disabled] ")[1]
+            newtrigger = "keywords = " + old_trigger
+        else:
+            newtrigger = "keywords = " + e2.get() + "; " + e3.get()
+        if value != "delete_keywords":
+            value = "keywords"
+        edit_new = ""
+
+    if value == "delete" or value == "disable" or value == "enable":
         found = True
         if ' || ' in final_trigger[4]:
-            value = "special_delete"
-    if value == "special_edit" or value == "special_delete":
+            if value == "delete":
+                value = "special_delete"
+            elif value == "disable":
+                value = "special_disable"
+            elif value == "enable":
+                value = "special_enable"
+
+    if value == "special_edit" or value == "special_delete" or value == "special_disable" or value == "special_enable":
         i = 0
         for item in final_trigger:
             if i > 4:
@@ -1032,8 +1069,14 @@ def edit_trigger(value):
                 if e_special13.get():
                     special_tts += "; " + e_special13.get()
                 newtrigger = "special = all; " + "all; " + e1.get() + "; ability; " + special_keywords + special_tts
+        if value == "special_disable":
+                newtrigger = "#" + old_trigger
+                value = "special_edit"
+        if value == "special_enable":
+                newtrigger = old_trigger
+                value = "special_edit"
 
-    if value == "edit" or value == "delete":
+    if value == "edit" or value == "delete" or value == "disable" or value == "enable":
         old_trigger = "trigger = " + final_trigger[0] + "; " + final_trigger[1] + "; " + final_trigger[2] + "; " \
                       + final_trigger[3] + "; " + final_trigger[4] + "; " + final_trigger[5] + "; " + final_trigger[6] \
                       + "; " + final_trigger[7] + "; " + final_trigger[8] + "; " + final_trigger[9] + "; " \
@@ -1044,12 +1087,18 @@ def edit_trigger(value):
                 found = True
                 newtrigger = "trigger = all; " + "all; " + e1.get() + "; ability; " + e2.get() + "; " + e3.get() + "; " \
                              + e4.get() + "; " + e5.get() + "; " + e6.get() + "; " + e7.get() + "; " + e8.get() + "; " + var_reset.get()
+        if value == "disable":
+                newtrigger = "#" + old_trigger
+                value = "edit"
+        if value == "enable":
+                newtrigger = old_trigger
+                value = "edit"
 
-    if found or value == "delete" or value == "special_delete":
+    if found or value == "delete" or value == "special_delete" or value == "keywords" or value == "delete_keywords":
         file = codecs.open("trigger/" + e0.get() + ".txt", "r", 'utf-8')
         for item in file:
             if old_trigger in item:
-                if value == "edit" or value == "special_edit":
+                if value == "edit" or value == "special_edit" or value == "keywords":
                     item = newtrigger + '\r\n'
                     liste += [item]
             else:
@@ -1059,15 +1108,22 @@ def edit_trigger(value):
         for item in liste:
             file_out.write(item)
         file_out.close()
-        boss_ui(e0.get())
-        trigger_ui(e1.get())
-        zone_list()
-        if zone == str.lower(e0.get()):
-            trigger.clear()
-            special.clear()
-            triggerload(zone)
-            trigger += defaulttrigger + bufftrigger
-            special += defaultspecial
+        if value == "keywords" or value == "delete_keywords":
+            if keywords_on_off == 1:
+                special.clear()
+                triggerload("keywords")
+                special += special
+            lfm()
+        else:
+            boss_ui(e0.get())
+            trigger_ui(e1.get())
+            zone_list()
+            if zone == str.lower(e0.get()):
+                trigger.clear()
+                special.clear()
+                triggerload(zone)
+                trigger += defaulttrigger + bufftrigger
+                special += defaultspecial
     else:
         if value == "special_edit":
             l18.grid(row=18, column=1, padx=190, sticky=W)
@@ -1083,16 +1139,19 @@ def sound_file_select(evt):
         Thread(target=saytext, args=(value + ".wav",)).start()
     sound_listbox.grid_forget()
     scrollbar.grid_forget()
-    b7.grid(row=4, column=1, padx=330, sticky=W)
-    b9.grid(row=3, column=1, padx=330, sticky=W)
     if edit_new == "new":
         b10.grid(row=2, column=1, padx=330, sticky=W)
         b11.grid(row=1, column=1, padx=330, sticky=W)
-    l13.grid(row=5, column=1, padx=90, sticky=W)
-    l14.grid(row=6, column=1, padx=90, sticky=W)
-    l15.grid(row=7, column=1, padx=90, sticky=W)
-    l16.grid(row=8, column=1, padx=90, sticky=W)
-    l17.grid(row=9, column=1, padx=90, sticky=W)
+    if edit_new == "new_keywords" or edit_new == "edit_keywords":
+        b7.grid(row=2, column=1, padx=330, sticky=W)
+    else:
+        b7.grid(row=4, column=1, padx=330, sticky=W)
+        b9.grid(row=3, column=1, padx=330, sticky=W)
+        l13.grid(row=5, column=1, padx=90, sticky=W)
+        l14.grid(row=6, column=1, padx=90, sticky=W)
+        l15.grid(row=7, column=1, padx=90, sticky=W)
+        l16.grid(row=8, column=1, padx=90, sticky=W)
+        l17.grid(row=9, column=1, padx=90, sticky=W)
 
 
 def sound_file():
@@ -1131,8 +1190,8 @@ def abilities():
     forget()
     abilities_listbox.delete(0, END)
     abilities_listbox.insert(END, "  .. exit")
-    abilities_listbox.grid(row=0, column=0, ipadx=10, sticky=N + S + E + W)
-    scrollbar.grid(row=0, column=1, sticky=N + S + E + W)
+    abilities_listbox.grid(row=0, column=0, rowspan=12, ipadx=10, sticky=N + S + E + W)
+    scrollbar.grid(row=0, column=1, rowspan=12, sticky=N + S + E + W)
     abilities_listbox.config(yscrollcommand=scrollbar.set)
     scrollbar.config(command=abilities_listbox.yview)
     root.rowconfigure(0, weight=1)
@@ -1314,7 +1373,7 @@ def special_trigger(value):
             pass
 
 
-def test_trigger():
+def check_trigger():
     global trigger, special, zone, language, location, boss
     if zone != e0.get():
         trigger_analysis("combat end", "Combat End")
@@ -1338,14 +1397,13 @@ def test_trigger():
 
 def new_trigger(value):
     global edit_new
-    # print(final_trigger)
+    forget()
     if len(final_trigger) > 3 and " || " in final_trigger[4]:
         if value == "new":
             special_trigger("new")
         else:
             special_trigger("edit")
     else:
-        forget()
         root.rowconfigure(0, weight=0)
         root.columnconfigure(0, weight=0)
         root.rowconfigure(1, weight=0)
@@ -1391,14 +1449,94 @@ def new_trigger(value):
         b7.grid(row=4, column=1, padx=330, sticky=W)
 
 
+def keywords_choice(value):
+    global final_trigger
+    forget()
+    keywords_listbox.grid(row=0, column=0, rowspan=5, padx=10, pady=10, sticky=N + S + W + E)
+    if keywords_on_off == 0:
+        b15.grid(row=0, column=1)
+    else:
+        b21.grid(row=0, column=1)
+    b16.grid(row=1, column=1)
+    b17.grid(row=2, column=1)
+    if "[disabled]" in value:
+        b20.grid(row=3, column=1)
+    else:
+        b19.grid(row=3, column=1)
+    b18.grid(row=4, column=1)
+    trigger_details = value.split(" | ")
+    final_trigger = [trigger_details[0]] + [trigger_details[1].rstrip()]
+
+
+def keywords_select(evt):
+    try:
+        value = str((keywords_listbox.get(keywords_listbox.curselection())))
+        keywords_choice(value)
+
+    except:
+        pass
+
+
+def new_keywords(value):
+    global edit_new, final_trigger
+    forget()
+    root.rowconfigure(0, weight=0)
+    root.columnconfigure(0, weight=0)
+    root.rowconfigure(1, weight=0)
+    root.columnconfigure(1, weight=0)
+    l4.grid(row=1, padx=30, pady=50, sticky=W)
+    l5.grid(row=2, padx=30, sticky=W)
+    e2.grid(row=1, column=1, padx=10, sticky=W)
+    e3.grid(row=2, column=1, padx=10,  pady=10, sticky=W)
+    if value == "new_keywords":
+        e2.delete(0, END)
+        e3.delete(0, END)
+        l21.grid(row=0, column=1, padx=10, pady=10, sticky=W)
+        b5.grid(row=3, column=1, pady=5, sticky=W)
+        edit_new = "new_keywords"
+    elif value == "edit_keywords":
+        l19.grid(row=0, column=1, padx=10, pady=20, sticky=W)
+        e2.delete(0, END)
+        e3.delete(0, END)
+        e2.insert(0, final_trigger[0])
+        e3.insert(0, final_trigger[1])
+        b6.grid(row=3, column=1, pady=5, sticky=W)
+        edit_new = "edit_keywords"
+    b7.grid(row=2, column=1, padx=330, sticky=W)
+
+
+def keyword_search_start():
+    global special, keywords_on_off
+    special.clear()
+    triggerload("keywords")
+    special += special
+    keywords_on_off = 1
+    b15.grid_forget()
+    b21.grid(row=0, column=1)
+
+
+def keyword_search_stop():
+    global special, keywords_on_off
+    special.clear()
+    keywords_on_off = 0
+    b21.grid_forget()
+    b15.grid(row=0, column=1)
+
+
 def trigger_choice(value):
     global final_trigger
     b_special_trigger.grid_forget()
     b2.grid_forget()
     b12.grid_forget()
-    b8.grid(row=1, column=1, pady=20)
-    b3.grid(row=2, column=1, pady=20)
-    b4.grid(row=3, column=1, pady=20)
+    b13.grid_forget()
+    b14.grid_forget()
+    b8.grid(row=1, column=1, pady=3)
+    b3.grid(row=2, column=1, pady=14)
+    if "[disabled]" in value:
+        b14.grid(row=3, column=1, pady=13)
+    else:
+        b13.grid(row=3, column=1, pady=13)
+    b4.grid(row=4, column=1, pady=13)
     trigger_details = value.split(" | ")
     rownumber = trigger_listbox.curselection()[0]
     final_trigger = trigger_details_list[rownumber]
@@ -1419,7 +1557,6 @@ def trigger_choice(value):
     if final_trigger[11] == "1":
         c4.select()
 
-
 def trigger_ui(value):
     global trigger_details_list
     try:
@@ -1439,11 +1576,13 @@ def trigger_ui(value):
                 line_type = str.lower(paraline[0:type_end])
                 line_data = str.rstrip(paraline[type_end:])
                 # line_data = umlaute2(line_data)
-                if '#' not in line_type:
-                    if 'trigger' in line_type or 'special' in line_type:
-                        trigger_details = line_data.split("; ")
-                        if value == trigger_details[2]:
-                            trigger_details_list += [trigger_details]
+                if 'trigger' in line_type or 'special' in line_type:
+                    trigger_details = line_data.split("; ")
+                    if value == trigger_details[2]:
+                        trigger_details_list += [trigger_details]
+                        if '#' in line_type:
+                            trigger_listbox.insert(END, "[disabled] " + trigger_details[4] + " | " + trigger_details[5])
+                        else:
                             trigger_listbox.insert(END, trigger_details[4] + " | " + trigger_details[5])
         zone_txt.close()
     except:
@@ -1496,11 +1635,9 @@ def zone_list():
     root.columnconfigure(1, weight=1)
     zone_listbox.grid(row=0, column=0, padx=10, pady=10, sticky=N+S+E+W)
     boss_listbox.grid(row=0, column=1, padx=10, pady=10, sticky=N + S + E + W)
-    trigger_listbox.grid(row=1, column=0, padx=10, pady=10, rowspan=3, sticky=N + S + E + W)
+    trigger_listbox.grid(row=1, column=0, padx=10, pady=10, rowspan=4, sticky=N + S + E + W)
     b8.grid_forget()
     if not final_trigger:
-        # b2.grid(row=1, column=1)
-        # b_special_trigger.grid(row=2, pady=30, column=1)
         b2.grid(row=1, column=1, pady=20)
         b_special_trigger.grid(row=2, column=1, pady=20)
         b12.grid(row=3, column=1, pady=20)
@@ -1511,7 +1648,6 @@ def zone_list():
         b4.grid(row=3, column=1, pady=20)
     try:
         zonelist = trigger_dir("trigger")
-        # print(zonelist)
         zone_listbox.delete(0, END)
         for items in zonelist:
             zone_listbox.insert(END, items)
@@ -1519,11 +1655,40 @@ def zone_list():
         guioutput("Folder trigger is missing")
 
 
+def lfm():
+    global keywords_on_off
+    forget()
+    root.rowconfigure(0, weight=1)
+    root.rowconfigure(1, weight=1)
+    root.rowconfigure(2, weight=1)
+    root.rowconfigure(3, weight=1)
+    root.rowconfigure(4, weight=1)
+    root.columnconfigure(0, weight=1)
+    root.columnconfigure(1, weight=4)
+    keywords_listbox.delete(0, END)
+    keywords_listbox.grid(row=0, column=0, rowspan=5, padx=10, pady=10, sticky=N + S + W + E)
+    if keywords_on_off == 0:
+        b15.grid(row=0, column=1)
+    else:
+        b21.grid(row=0, column=1)
+    b16.grid(row=1, column=1)
+    keywordstxt = codecs.open("trigger/keywords.txt", 'r', "utf-8")
+    for item in keywordstxt:
+        if "keywords =" in item:
+            keywordstrigger = item.split("keywords = ")[1]
+            if "#" in item:
+                keywordstrigger = "[disabled] " + keywordstrigger.split("; ")[0] + " | " + keywordstrigger.split("; ")[1]
+            else:
+                keywordstrigger = keywordstrigger.split("; ")[0] + " | " + keywordstrigger.split("; ")[1]
+            keywords_listbox.insert(END, keywordstrigger)
+    keywordstxt.close()
+
+
 def mainmenue():
     forget()
     b2.grid_forget()
-    T.grid(row=0, column=0, sticky=N+S+E+W)
-    sb.grid(row=0, column=1, sticky=N+S+E+W)
+    T.grid(row=0, column=0, rowspan=5, sticky=N+S+E+W)
+    sb.grid(row=0, column=1, rowspan=5, sticky=N+S+E+W)
     root.rowconfigure(0, weight=1)
     root.columnconfigure(0, weight=1)
     root.rowconfigure(1, weight=0)
@@ -1566,6 +1731,13 @@ def browse_logfile():
 def settings():
     forget()
     b2.grid_forget()
+    root.rowconfigure(0, weight=0)
+    root.rowconfigure(1, weight=0)
+    root.rowconfigure(2, weight=0)
+    root.rowconfigure(3, weight=0)
+    root.rowconfigure(4, weight=0)
+    root.columnconfigure(0, weight=0)
+    root.columnconfigure(1, weight=0)
     x = 110
     l0.grid(row=0, column=0, padx=x, pady=20, sticky=NW)
     c5.grid(row=1, column=0, padx=x, sticky=NW)
@@ -1607,6 +1779,15 @@ def forget():
     b10.grid_forget()
     b11.grid_forget()
     b12.grid_forget()
+    b13.grid_forget()
+    b14.grid_forget()
+    b15.grid_forget()
+    b16.grid_forget()
+    b17.grid_forget()
+    b18.grid_forget()
+    b19.grid_forget()
+    b20.grid_forget()
+    b21.grid_forget()
     b_special_trigger.grid_forget()
     b_special_trigger1.grid_forget()
     b_special_trigger2.grid_forget()
@@ -1671,6 +1852,7 @@ def forget():
     l18.grid_forget()
     l19.grid_forget()
     l20.grid_forget()
+    l21.grid_forget()
     l_logpath.grid_forget()
 
     l_special0.grid_forget()
@@ -1687,6 +1869,7 @@ def forget():
     zone_listbox.grid_forget()
     boss_listbox.grid_forget()
     trigger_listbox.grid_forget()
+    keywords_listbox.grid_forget()
 
     T.grid_forget()
 
@@ -1749,7 +1932,8 @@ root.title("Rift Raid Alert")
 
 menubar = Menu(root)
 menubar.add_command(label="Log", command=mainmenue)
-menubar.add_command(label="Trigger", command=zone_list)
+menubar.add_command(label="Alerts/Triggers", command=zone_list)
+menubar.add_command(label="LFM/Keywords", command=lfm)
 menubar.add_command(label="Settings", command=settings)
 root.config(menu=menubar)
 
@@ -1758,7 +1942,7 @@ scrollbar = Scrollbar(root)
 T = Text(root, height=20, width=50, padx=10, pady=10)
 sb.config(command=T.yview)
 T.config(yscrollcommand=sb.set)
-T.insert(END, "Rift Raid Alert Version 1.4 - Author: Bamu@Brutwacht\nMake sure you use /log in Rift after each game restart !")
+T.insert(END, "Rift Raid Alert Version 1.7 - Author: Bamu@Brutwacht\nMake sure you use /log in Rift after each game restart !")
 
 soundfiles = soundfiles_list('siri')
 combattrigger = 1
@@ -1831,6 +2015,7 @@ counter2 = 0
 playback = False  # only for Playback a logfile from line 1
 error_analysis = False
 log_exists = False
+keywords_on_off = 0
 logfilecheck()
 
 trigger_details_list = []
@@ -1864,6 +2049,7 @@ l17 = Label(root, text="Is currently not used (only for Lord Arak) but for the f
 l18 = Label(root, text="Check your entries!", fg="red", font='bold')
 l19 = Label(root, text="Edit Trigger:")
 l20 = Label(root, text="Text to Speech Volume:")
+l21 = Label(root, text="Use + to separate the keywords:   keyword1 + keyword2 + keywordx")
 l_logpath = Label(root, text="Path to your Log.txt:")
 c1 = Checkbutton(root, text="Soundfiles (*.wav)", variable=var_wav, command=wav)
 c1.deselect()
@@ -1891,11 +2077,20 @@ b4 = Button(root, text="Delete Trigger", width=20, command=lambda: edit_trigger(
 b5 = Button(root, text="Save", width=20, command=lambda: save_newtrigger("new"))
 b6 = Button(root, text="Save", width=20, command=lambda: edit_trigger("edit"))
 b7 = Button(root, text="Sound File", width=10, command=sound_file)
-b8 = Button(root, text="Test Trigger", width=20, command=test_trigger)
+b8 = Button(root, text="Test Trigger", width=20, command=check_trigger)
 b9 = Button(root, text="Abilities", width=10, command=abilities)
 b10 = Button(root, text="Boss", width=10, command=boss_abilities)
 b11 = Button(root, text="Zone", width=10, command=zone_abilities)
 b12 = Button(root, text="Delete Zone", width=20, command=delete_zone)
+b13 = Button(root, text="Disable Trigger", width=20, command=lambda: edit_trigger("disable"))
+b14 = Button(root, text="Enable Trigger", width=20, command=lambda: edit_trigger("enable"))
+b15 = Button(root, text="Start Search", width=20, command=keyword_search_start)
+b16 = Button(root, text="New Keywords", width=20, command=lambda: new_keywords("new_keywords"))
+b17 = Button(root, text="Edit Keywords", width=20, command=lambda: new_keywords("edit_keywords"))
+b18 = Button(root, text="Delete Keywords", width=20, command=lambda: edit_trigger("delete_keywords"))
+b19 = Button(root, text="Disable Keywords", width=20, command=lambda: edit_trigger("disable_keywords"))
+b20 = Button(root, text="Enable Keywords", width=20, command=lambda: edit_trigger("enable_keywords"))
+b21 = Button(root, text="Stop Search", width=20, command=keyword_search_stop)
 b_special_trigger = Button(root, text="Special Trigger", width=20, command=lambda: special_trigger("new"))
 b_special_trigger1 = Button(root, text="Save", width=20, command=lambda: save_newtrigger("special_new"))
 b_special_trigger2 = Button(root, text="Save", width=20, command=lambda: edit_trigger("special_edit"))
@@ -1949,6 +2144,8 @@ boss_abilities_listbox = Listbox(root, width=47, height=5)
 boss_abilities_listbox.bind('<<ListboxSelect>>', boss_ability_select)
 zone_abilities_listbox = Listbox(root, width=47, height=5)
 zone_abilities_listbox.bind('<<ListboxSelect>>', zone_ability_select)
+keywords_listbox = Listbox(root, width=60, height=10)
+keywords_listbox.bind('<<ListboxSelect>>', keywords_select)
 
 mainmenue()
 root.protocol("WM_DELETE_WINDOW", ask_quit)
