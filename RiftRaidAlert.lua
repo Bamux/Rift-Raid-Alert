@@ -107,7 +107,7 @@ local function getAddBuffName(event, unit, buffs)
                 local target = Inspect.Unit.Detail(buff.caster)
                 if buff then
                     if details.player then
-                        if buff.type == "B6C56FAC0083954DC" then -- Lavafield
+                        if buff.type == "B14A2E6D609F79153" then -- Lavafield
                             if (Inspect.Time.Frame() - Lavafield) > 10 then
                                 print("Rift Raid Alert > Lavafield")
                                 Lavafield = Inspect.Time.Frame()
