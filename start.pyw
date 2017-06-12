@@ -2,7 +2,7 @@
 
 # Rift Raid Alert
 # Spoken raid warnings for the MMORPG Rift
-# Version 1.7
+# Version 1.7.3
 # Author: Bamu@Brutwacht
 
 import os
@@ -300,7 +300,7 @@ def trigger_analysis(log, log_big):
                     if specialtrigger_found:
                         guioutput(log)
                         siri = False
-                        Thread(target=saytext, args=(special[i][specialtrigger],)).start()
+                        Thread(target=playsoundfile, args=(special[i][specialtrigger],)).start()
                         # Thread(target=saytext, args=(text,)).start()
                         specialtrigger += 1
                         if specialtrigger == len(special[i]):
@@ -1942,7 +1942,7 @@ scrollbar = Scrollbar(root)
 T = Text(root, height=20, width=50, padx=10, pady=10)
 sb.config(command=T.yview)
 T.config(yscrollcommand=sb.set)
-T.insert(END, "Rift Raid Alert Version 1.7 - Author: Bamu@Brutwacht\nMake sure you use /log in Rift after each game restart !")
+T.insert(END, "Rift Raid Alert Version 1.7.3 - Author: Bamu@Brutwacht\nMake sure you use /log in Rift after each game restart !")
 
 soundfiles = soundfiles_list('siri')
 combattrigger = 1
