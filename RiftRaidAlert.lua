@@ -183,7 +183,7 @@ local function rra_raidbuffcheck()
                                 end
                             end
                         else
-                            if detail.rune == "r762BD1423747FA3F" or detail.rune == "r0C2445386997ECE6" then -- Coral Oilstone = r762BD1423747FA3F, Coral Whetstone = r0C2445386997ECE6
+                            if detail.rune == "rFA65F5184E42C822" or detail.rune == "r70B0A3843EC153B8" then -- Atramentium Whetstone = rFA65F5184E42C822, Atramentium Oilstone = r70B0A3843EC153B8
                                 if detail.duration > 300 then
                                     weaponstone = true
                                 end
@@ -192,23 +192,23 @@ local function rra_raidbuffcheck()
                     end
                     if detail.type then
                         if player.calling == "mage" or player.calling == "cleric" then
-                            if detail.type == "B76F46FAB030D4A53" or detail.type == "B2A1357781A34EE07" then --  Visionary Brightsurge Vial = B76F46FAB030D4A53, Phenomenal Brightsurge Vial = B2A1357781A34EE07
+                            if detail.type == "B76F46FAB030D4A53" or detail.type == "B599B39134D958B4F" then --  Visionary Brightsurge Vial = B76F46FAB030D4A53, Prophetic Brightsurge Vial = B599B39134D958B4F
                                 if detail.duration > 300 then
                                     flask = true
                                 end
                             end
-                            if detail.type == "B3CA755DE889572AE" then --  Feast of the Rhenke (SP) = B3CA755DE889572AE
+                            if detail.type == "B40C3D8E2646C6DD1" then --  Gedlo Curry Pot (SP) = B40C3D8E2646C6DD1
                                 if detail.duration > 300 then
                                     food = true
                                 end
                             end
                         else
-                            if detail.type == "B45441A66942B2875" or detail.type == "B4E57169B18162520" then --  Illustrious Powersurge Vial = B45441A66942B2875, Phenomenal Powersurge Vial = B4E57169B18162520
+                            if detail.type == "B6A8C5F8110D4EFBB" or detail.type == "B03ABEAB575CC9A8E" then --  Visionary Powersurge Vial = B6A8C5F8110D4EFBB, Prophetic Powersurge Vial = B03ABEAB575CC9A8E
                                 if detail.duration > 300 then
                                     flask = true
                                 end
                             end
-                            if detail.type == "B3CA755E06191712E" then --  Feast of the Rhenke (AP) = B3CA755E06191712E
+                            if detail.type == "B40C3D8E43D686C51" then --  Gedlo Curry Pot (AP) = B40C3D8E43D686C51
                                 if detail.duration > 300 then
                                     food = true
                                 end
@@ -472,6 +472,7 @@ local function rra_stop()
     Command.Event.Detach(Event.Buff.Remove, getRemoveBuffName, "buffremoveevent")
     Command.Event.Detach(Event.Unit.Castbar, getAbilityName, "AbilityName")
     Command.Event.Detach(Event.Unit.Detail.Health, CheckHP, "CheckHP")
+    --Command.Event.Detach(Event.Chat.Notif, ScreenNotification, "ScreenNotification")
     --Command.Event.Detach(Event.Unit.Detail.Zone, ChangeZone, "ChangeZone")
 end
 
@@ -485,6 +486,7 @@ local function rra_start()
     Command.Event.Attach(Event.Buff.Remove, getRemoveBuffName, "buffremoveevent")
     Command.Event.Attach(Event.Unit.Castbar, getAbilityName, "AbilityName")
     Command.Event.Attach(Event.Unit.Detail.Health, CheckHP, "CheckHP")
+    --Command.Event.Attach(Event.Chat.Notif, ScreenNotification, "ScreenNotification")
     --Command.Event.Attach(Event.Unit.Detail.Zone, ChangeZone, "ChangeZone")
 end
 
