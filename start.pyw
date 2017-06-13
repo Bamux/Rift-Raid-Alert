@@ -2,7 +2,7 @@
 
 # Rift Raid Alert
 # Spoken raid warnings for the MMORPG Rift
-# Version 1.7.3
+# Version 1.7.4
 # Author: Bamu@Brutwacht
 
 import os
@@ -390,10 +390,9 @@ def logfile_analysis(logtext):
                 lasttime = -1
                 combat = False
                 save_abilities(bossname)
-            if var_buffcheck == 1:
+            if var_buffcheck.get() == 1:
                 if "Buffcheck:" in line:
                     text = line.split("Buffcheck: ")[1]
-
             if log:
                 if playback:
                     if combat:
@@ -1942,7 +1941,7 @@ scrollbar = Scrollbar(root)
 T = Text(root, height=20, width=50, padx=10, pady=10)
 sb.config(command=T.yview)
 T.config(yscrollcommand=sb.set)
-T.insert(END, "Rift Raid Alert Version 1.7.3 - Author: Bamu@Brutwacht\nMake sure you use /log in Rift after each game restart !")
+T.insert(END, "Rift Raid Alert Version 1.7.4 - Author: Bamu@Brutwacht\nMake sure you use /log in Rift after each game restart !")
 
 soundfiles = soundfiles_list('siri')
 combattrigger = 1

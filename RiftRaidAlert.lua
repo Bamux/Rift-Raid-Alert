@@ -219,21 +219,21 @@ local function rra_raidbuffcheck()
             end
             if weaponstone == false and flask == false  and food == false then
                 if player_detail.name == player.name then
-                    print("Buffcheck: Check your Waeponstone, Flask and Food")
+                    print("Buffcheck: Check your Waepon stone, Flask and Food")
                 else
                     table.insert(weaponstones_flasks_food, player.name)
                     count = count + 1
                 end
             elseif weaponstone == false and flask == false then
                 if player_detail.name == player.name then
-                    print("Buffcheck: Check your Waeponstone and Flask")
+                    print("Buffcheck: Check your Waepon stone and Flask")
                 else
                     table.insert(weaponstones_flasks, player.name)
                     count = count + 1
                 end
             elseif weaponstone == false and food == false then
                 if player_detail.name == player.name then
-                    print("Buffcheck: Check your Waeponstone and Food")
+                    print("Buffcheck: Check your Waepon stone and Food")
                 else
                     table.insert(weaponstones_food, player.name)
                     count = count + 1
@@ -247,7 +247,7 @@ local function rra_raidbuffcheck()
                 end
             elseif weaponstone == false then
                 if player_detail.name == player.name then
-                    print("Buffcheck: Check your Waeponstone")
+                    print("Buffcheck: Check your Waepon stone")
                 else
                     table.insert(weaponstones, player.name)
                     count = count + 1
@@ -276,7 +276,7 @@ local function rra_raidbuffcheck()
             for i=1, buff_count do
                 print("Raidbuff missing -> " .. weaponstones_flasks_food[i])
             end
-            print("Raidbuff missing <-- Weaponstone, Flask and Food")
+            print("Raidbuff missing <--- Weaponstone, Flask and Food")
         end
         buff_count = #weaponstones_flasks
         if buff_count > 0 then
@@ -290,14 +290,14 @@ local function rra_raidbuffcheck()
             for i=1, buff_count do
                 print("Raidbuff missing -> " .. weaponstones_food[i])
             end
-            print("Raidbuff missing <- Weaponstone and Food")
+            print("Raidbuff missing <-- Food and Weponstone")
         end
         buff_count = #flasks_food
         if buff_count > 0 then
             for i=1, buff_count do
                 print("Raidbuff missing -> " .. flasks_food[i])
             end
-            print("Raidbuff missing <- Flask and Food")
+            print("Raidbuff missing <-- Flask and Food")
         end
         buff_count = #weaponstones
         if buff_count > 0 then
