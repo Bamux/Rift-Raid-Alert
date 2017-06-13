@@ -4,3 +4,4 @@ player << Leaping Flame (You are ablaze from leaping flame!)
 player << Meteor (Chained in place!)
 Beruhast > Flaming Vortex
 Beruhast < Healing Flames (Heals Summoned Flames when they are nearby.)
+Summoned Flame < Conductive Heat (The elemental superheats melee weapons used against it, damaging the attacker.)

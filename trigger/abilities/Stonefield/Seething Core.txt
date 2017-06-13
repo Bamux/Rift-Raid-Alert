@@ -1,0 +1,4 @@
+player << Face-Breaker (Reduces Armor by 100,000, Fire Resist by 1000, and Guard by 500 per stack.)
+Born of Fire < attack
+Phoenix-Born Riftblade < Icy Burst (Deals additional 0 Water damage on the next attack ability.)
+player << Flamespear (Deals -9 Fire damage over 15s.)

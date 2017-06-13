@@ -1,0 +1,3 @@
+player << Armor Rip (Reduces armor by 150000 and Guard by 1000 per stack.)
+High Priest Arakhurn > Fire Nova
+player << Lava Burst (Silenced.)
