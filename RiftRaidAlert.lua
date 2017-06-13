@@ -219,21 +219,21 @@ local function rra_raidbuffcheck()
             end
             if weaponstone == false and flask == false  and food == false then
                 if player_detail.name == player.name then
-                    print("Buffcheck: Check your Waepon stone, Flask and Food")
+                    print("Buffcheck: Check your Weaponstone, Flask and Food")
                 else
                     table.insert(weaponstones_flasks_food, player.name)
                     count = count + 1
                 end
             elseif weaponstone == false and flask == false then
                 if player_detail.name == player.name then
-                    print("Buffcheck: Check your Waepon stone and Flask")
+                    print("Buffcheck: Check your Weaponstone and Flask")
                 else
                     table.insert(weaponstones_flasks, player.name)
                     count = count + 1
                 end
             elseif weaponstone == false and food == false then
                 if player_detail.name == player.name then
-                    print("Buffcheck: Check your Waepon stone and Food")
+                    print("Buffcheck: Check your Weaponstone and Food")
                 else
                     table.insert(weaponstones_food, player.name)
                     count = count + 1
@@ -247,7 +247,7 @@ local function rra_raidbuffcheck()
                 end
             elseif weaponstone == false then
                 if player_detail.name == player.name then
-                    print("Buffcheck: Check your Waepon stone")
+                    print("Buffcheck: Check your Weaponstone")
                 else
                     table.insert(weaponstones, player.name)
                     count = count + 1
