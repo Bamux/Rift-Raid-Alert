@@ -7,6 +7,8 @@
 trigger = all; all; all; ability; Raidbuff missing -> player; player ; 0; 0; 0; 0; 0; 1
 trigger = all; all; all; buff; Raidbuff missing <--- Weaponstone, Flask and Food; Weaponstone, Flask and Food; 0; 0; 0; 0; 0; 1
 trigger = all; all; all; buff; Raidbuff missing <-- Weaponstone and Flask; Weaponstone and Flask; 0; 0; 0; 0; 0; 1
+trigger = all; all; all; buff; Raidbuff missing <-- Food and Weponstone; Weponstone and Food; 0; 0; 0; 0; 0; 1
+trigger = all; all; all; buff; Raidbuff missing <-- Flask and Food; Flask and Food; 0; 0; 0; 0; 0; 1
 trigger = all; all; all; buff; Raidbuff missing <- Weaponstone; Weaponstone; 0; 0; 0; 0; 0; 1
 trigger = all; all; all; buff; Raidbuff missing <- Flask; Flask; 0; 0; 0; 0; 0; 1
 trigger = all; all; all; buff; Raidbuff missing <- Food; Food; 0; 0; 0; 0; 0; 1
