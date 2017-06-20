@@ -1,0 +1,3 @@
+player << Rüstung aufreißen (Reduziert Rüstung um 150 000 und Schutz um 1 000 pro Kumulierung.)
+Hohepriester Arakhurn > Feuernova
+player << Lavaausbruch (Zum Verstummen gebracht.)

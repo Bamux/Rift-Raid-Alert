@@ -1,0 +1,11 @@
+Ereandorn > Zorn von Flammenmaul
+player << Blutfeuer (Ein magischer Brand infiziert das Blut.)
+player << Flammender Huf
+player << Flammender Huf (Brennt 10 Sekunden lang.)
+player << Anregbare Verbrennung (Verursacht 6 Sekunden lang alle 2 Sekunden Feuerschaden. Der Einsatz einer Fähigkeit lässt die Flammen ausschlagen, wobei jeder in Nahkampfreichweite Schaden erleidet und mit demselben Fluch infiziert wird.)
+player << Geschmolzener Wuchs (Von geschmolzenem Wuchs gefangen! Wird er nicht bald zerstört, könnte er explodieren!)
+Ereandorn > Geschmolzener Wuchs
+Geschmolzene Eruption < Geschmolzener Wuchs
+Ereandorn > Vulkanausbruch
+Vulkanausbruch < Vulkanausbruch (Der Druck im Vulkan steigt an! Am Ende wird die Explosion jeden innerhalb seines Explosionsradius vernichten!)
+Vulkanausbruch < Vulkanausbruch

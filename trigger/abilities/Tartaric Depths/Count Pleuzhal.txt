@@ -1,2 +1,3 @@
 Count Pleuzhal > Chain Lightning
 Crystalized Life > Invoker's Boon
+Boldoch's Soul < Protected Fate (Grants immunity to interrupt. Absorbs 4575000 damage before breaking.)

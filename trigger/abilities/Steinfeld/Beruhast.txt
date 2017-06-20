@@ -1,0 +1,4 @@
+Beruhast > Infernopeitsche
+Beruhast > Springende Flamme
+player << Springende Flamme (Ihr lodert in Springender Flamme!)
+Beruhast > Flammenwirbel

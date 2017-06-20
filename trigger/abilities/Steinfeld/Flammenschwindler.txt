@@ -1,0 +1,11 @@
+Flammenschwindler > Schwelen
+player << Bruch des Schwindlers (Eine Druckwelle kinetischer Energie, die zusätzlich Schaden über einen bestimmten Zeitraum verursacht.)
+Flammenschwindler < Bruch des Schwindlers (Eine Druckwelle kinetischer Energie, die zusätzlich Schaden über einen bestimmten Zeitraum verursacht.)
+player << Flammenatem (Mit der Zeit versengt das Feuer Euer Fleisch.)
+Gefräßige Flamme < Flammenatem (Mit der Zeit versengt das Feuer Euer Fleisch.)
+Gefräßige Flamme < Feuerbombe
+player << Schweifschnitt
+Feuerflügel < Schweifschnitt
+player << Zerfetzen (Eine schlimme Wunde, die über einen bestimmten Zeitraum blutet.)
+Feuerflügel > Feueratem
+Feuerflügel < Luft-Beweglichkeit (Feuerflügel ist immun gegen Spott und erleidet reduzierten Wirkungsbereich-Schaden.)
