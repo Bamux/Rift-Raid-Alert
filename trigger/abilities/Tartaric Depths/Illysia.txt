@@ -1,0 +1,3 @@
+player << Ignite (Burning alive.)
+Illysia > Fan of Flames
+Illysia > Summon Minions

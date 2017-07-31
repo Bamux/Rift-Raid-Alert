@@ -1,2 +1,7 @@
 Crystalized Life > Invoker's Boon
 Marchioness Boldoch < Protected Fate (Grants immunity to interrupt. Absorbs 4575000 damage before breaking.)
+Arcane Ooze > Void Bolt
+Marchioness Boldoch > No Permission to Ressurect
+Marchioness Boldoch < Protected Fate (Absorbs 4575000 damage before breaking.)
+player << Atrophy (Deals -15 Death damage over 16s.)
+player << Dark Touch (Deals -109 Death damage over 16s.)

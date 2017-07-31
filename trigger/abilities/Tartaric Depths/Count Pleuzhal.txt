@@ -1,3 +1,17 @@
 Count Pleuzhal > Chain Lightning
 Crystalized Life > Invoker's Boon
 Boldoch's Soul < Protected Fate (Grants immunity to interrupt. Absorbs 4575000 damage before breaking.)
+Arcane Construct < Serpent Strike (Serpent Strike has no cooldown.)
+Count Pleuzhal < Ethereal Protection (All incoming damage except ethereal is reduced by 50 percent.)
+Arcane Ooze > Void Bolt
+player << Atrophy (Deals -15 Death damage over 16s.)
+player << Dark Touch (Deals -109 Death damage over 16s.)
+Guardian Construct > Earthen Pull
+player << Earthen Pull
+player << Released Power (Upon death this creature will explode, knocking back those near it and leaving the targets burning.)
+player << Released Power (Dealing Fire damage over 10s.)
+Binding Elemental < Dancing Flames (The elemental is putting out intense heat, dealing damage to all near it. )
+Cinder Guardian > Flaming Curse
+player << Flaming Curse (A burning curse has been placed upon you dealing damage every 2 seconds.)
+player << Burning Brand (Dealing Fire damage over 10s.)
+player << Burning Brand (Upon death this creature will explode, knocking back those near it and leaving the targets burning.)

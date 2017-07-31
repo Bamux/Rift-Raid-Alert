@@ -1,5 +1,4 @@
 Malannon < Blazing Aura (Radiates unbearable heat, pulsing constant area damage to enemies.)
-Malannon < Blazing Aura (Radiates unbearable heat, pulsing constant area damage to enemies.)
 Malannon > Flaming Swipe
 Malannon > Flames of Annihilation
 Malannon > Siphon Energy
@@ -19,3 +18,6 @@ player << Mark of Acrimony (This purple aura will explode on expiration, heavily
 Malannon > Flames of Malannon
 Malannon > Armageddon
 Dragon of Suffering < Mark of Suffering (On death, will imbue the Phoenix of Rage with innate healing.)
+Malannon > Blazing Rupture
+player << Inferno Aura (Debuffs anyone entering the aura, lowering their outgoing damage and increases their incoming damage.)
+Malannon < Enraged! (Increased outgoing damage.)

@@ -8,3 +8,8 @@ VOID < Void (Area of effect Damage.)
 Countessa Danazhal < Flame Prep (Flame Prep)
 Countessa Danazhal > Flamescape
 Count Pleuzhal > Chain Lightning
+Arcane Ooze > Void Bolt
+Boldoch's Soul > No Permission to Ressurect
+Boldoch's Soul < Protected Fate (Absorbs 4575000 damage before breaking.)
+player << Atrophy (Deals -15 Death damage over 16s.)
+Arcane Construct < Serpent Strike (Serpent Strike has no cooldown.)

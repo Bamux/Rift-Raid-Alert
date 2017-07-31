@@ -6,3 +6,5 @@ Boldoch's Soul < Protected Fate (Grants immunity to interrupt. Absorbs 4575000 d
 Pleuzhal's Soul > Chain Lightning
 Marchioness Boldoch < Protected Fate (Grants immunity to interrupt. Absorbs 4575000 damage before breaking.)
 Count Pleuzhal > Chain Lightning
+Countessa Danazhal > Mega Death Ball
+player << Mega Death Ball (Survived fate. Unable to be targeted by Danazhal's Death Ball.)
