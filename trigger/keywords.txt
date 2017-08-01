@@ -2,4 +2,6 @@ keywords = RoTP + lfm; Rise of the Phoenix looking for more
 keywords = Golem + lfm; Golem looking for more
 keywords = TD + lfm; Tartaric Depths looking for more
 keywords = QF + lfm; Queens Foci looking for more
+keywords = lfm + rr; attention
+keywords = Lure ; attention
 keywords = ] + whispers:; whisper
