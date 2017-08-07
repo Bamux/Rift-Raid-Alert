@@ -1,0 +1,3 @@
+Cinder Guardian > Flaming Curse
+player << Flaming Curse (A burning curse has been placed upon you dealing damage every 2 seconds.)
+player << Burning Brand (Upon death this creature will explode, knocking back those near it and leaving the targets burning.)

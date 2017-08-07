@@ -1,4 +1,5 @@
 Ereandorn > Fury of Maelforge
+Ereandorn > Fury of Maelforge
 player << Blood Fire (A magical blaze infects the blood.)
 player << Flaming Hoof
 player << Flaming Hoof (Burning for 10 seconds.)

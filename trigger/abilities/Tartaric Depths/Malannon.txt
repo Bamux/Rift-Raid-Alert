@@ -1,4 +1,5 @@
 Malannon < Blazing Aura (Radiates unbearable heat, pulsing constant area damage to enemies.)
+Malannon < Blazing Aura (Radiates unbearable heat, pulsing constant area damage to enemies.)
 Malannon > Flaming Swipe
 Malannon > Flames of Annihilation
 Malannon > Siphon Energy

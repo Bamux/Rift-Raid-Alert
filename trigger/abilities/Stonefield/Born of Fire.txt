@@ -13,3 +13,4 @@ Wanton Saboteur > Deadeye Shot
 4 Points: 30442 damage
 5 Points: 39150 damage)
 Ravenous Bloodstrutter < Burning Intensity (Restores 20 Energy every second.)
+Phoenix-Born Riftblade < Icy Burst (Deals additional 0 Water damage on the next attack ability.)

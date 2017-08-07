@@ -1,2 +1,3 @@
 Guardian Construct > Earthen Pull
+Guardian Construct > Earthen Pull
 player << Earthen Pull

@@ -1,0 +1,10 @@
+player << Face-Breaker (Reduces Armor by 100,000, Fire Resist by 1000, and Guard by 500 per stack.)
+Born of Fire < attack
+Phoenix-Born Riftblade < Icy Burst (Deals additional 0 Water damage on the next attack ability.)
+player << Scorching Strike (A burning wound that does damage over time.)
+Wanton Disruptor > Mortality
+Wanton Raid-Leader > Terrifying Roar
+player << Atrophy (Deals -15 Death damage over 16s.)
+player << Dark Touch (Deals -109 Death damage over 16s.)
+Wanton Raid-Leader < Killing Field (Deals weapon damage plus 0 damage over 6s to up to 5 nearby enemies.)
+Wanton Disruptor > Void Bolt

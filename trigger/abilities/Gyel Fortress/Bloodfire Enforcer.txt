@@ -4,3 +4,17 @@ Bloodfire Hound < Burning Intensity (Restores 20 Energy every second.)
 Bloodfire Field Medic > Flame Lance
 Bloodfire Seadog < Serpent Strike (Serpent Strike has no cooldown.)
 Bloodfire Field Medic > Char
+player << Char (Deals -14 to -14 Fire damage over 15s.)
+Bloodfire Deckhand < Icy Burst (Deals additional 0 Water damage on the next attack ability.)
+player << Flamespear (Deals -9 Fire damage over 15s.)
+Admiral Nezavar < Twin Blades (Nezavar gains the ability to use Double Strike.)
+Admiral Nezavar > Draw In
+Admiral Nezavar > Burning Rain
+Admiral Nezavar < 100 Tons (The heavy weight of his hammer slows Nezavar down.)
+Admiral Nezavar < Burning Mace (Nezavars melee attacks cause fire damage to all nearby players. The hammer is heavy and also gives Nezavar the 100 Tons effect.)
+Admiral Nezavar > Focused Attention
+Lady Glasya > Oculon Blast
+Lady Glasya > Scorching Radiation
+Lady Glasya > Void
+Lady Glasya > Atomic Whirlwind
+Lady Glasya > Mistress of Manipulation

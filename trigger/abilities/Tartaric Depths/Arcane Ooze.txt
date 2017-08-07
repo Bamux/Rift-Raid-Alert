@@ -1,1 +1,9 @@
+Pleuzhal's Soul > Chain Lightning
+Pleuzhal's Soul < Ethereal Protection (All incoming damage except ethereal is reduced by 50 percent.)
+player << Atrophy (Deals -15 Death damage over 16s.)
 Arcane Ooze > Void Bolt
+player << Dark Touch (Deals -109 Death damage over 16s.)
+Crystalized Life > Invoker's Boon
+Arcane Construct < Serpent Strike (Serpent Strike has no cooldown.)
+Count Pleuzhal < Ethereal Protection (All incoming damage except ethereal is reduced by 50 percent.)
+Count Pleuzhal > Chain Lightning
