@@ -5,3 +5,4 @@ General Silgen > Hitzetrichter
 player << Hitzetrichter (Reduziert den Feuerwiderstand.)
 General Silgen > Verbrennen
 player << Verbrennen (Schaden über 12 Sekunden.)
+player << In Flammen verankert

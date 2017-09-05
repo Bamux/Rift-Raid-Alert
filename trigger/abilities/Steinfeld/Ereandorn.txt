@@ -1,4 +1,5 @@
 Ereandorn > Zorn von Flammenmaul
+Ereandorn > Zorn von Flammenmaul
 player << Blutfeuer (Ein magischer Brand infiziert das Blut.)
 player << Flammender Huf
 player << Flammender Huf (Brennt 10 Sekunden lang.)

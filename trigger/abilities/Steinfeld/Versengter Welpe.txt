@@ -1,0 +1,1 @@
+player << Sengender Schlag (Eine brennende Wunde, die Schaden über einen bestimmten Zeitraum verursacht.)

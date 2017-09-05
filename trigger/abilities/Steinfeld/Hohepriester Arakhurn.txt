@@ -1,3 +1,4 @@
 player << Rüstung aufreißen (Reduziert Rüstung um 150 000 und Schutz um 1 000 pro Kumulierung.)
 Hohepriester Arakhurn > Feuernova
 player << Lavaausbruch (Zum Verstummen gebracht.)
+player << Feurige Metamorphose (Ihr brennt in den läuternden Flammen des Phönix! Entfernt ungewollte Schwächungen bei Euren Verbündeten.)
