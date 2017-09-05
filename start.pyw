@@ -2,7 +2,7 @@
 
 # Rift Raid Alert
 # Spoken raid warnings for the MMORPG Rift
-# Version 2.0
+# Version 2.1
 # Author: Bamu@Brutwacht
 
 import os
@@ -417,8 +417,11 @@ def logfile_analysis(logtext):
                             # guioutput(str(logtime) + ", " + str(lasttime) + ", " + str(wait))
                             time.sleep(wait)
                         lasttime = logtime
-
-                if 'tank pull >' in log or 'fail pull >' in log:
+                if 'tank pull >>' in log or 'fail pull >>' in log:
+                    if 'fail pull >>' in log:
+                        text = log.split('fail pull >> ')[1]
+                    else:
+                        text = "go"
                     i = 0
                     while i < len(timerreset):
                         if timerreset[i] == "siri start countdown":
@@ -1976,7 +1979,7 @@ scrollbar = Scrollbar(root)
 T = Text(root, height=20, width=50, padx=10, pady=10)
 sb.config(command=T.yview)
 T.config(yscrollcommand=sb.set)
-T.insert(END, "Rift Raid Alert Version 2.0 - Author: Bamu@Brutwacht\nMake sure you use /log in Rift after each game restart !")
+T.insert(END, "Rift Raid Alert Version 2.1 - Author: Bamu@Brutwacht\nMake sure you use /log in Rift after each game restart !")
 
 soundfiles = soundfiles_list('siri')
 combattrigger = 1
