@@ -1,8 +1,4 @@
 TarJulia < Smolder (Tarjulia radiates heat. This damage is increased by hot hands.)
-TarJulia < Smolder (Tarjulia radiates heat. This damage is increased by hot hands.)
-TarJulia < Smolder (Tarjulia radiates heat. This damage is increased by hot hands.)
-TarJulia < Smolder (Tarjulia radiates heat. This damage is increased by hot hands.)
-TarJulia < Smolder (Tarjulia radiates heat. This damage is increased by hot hands.)
 player << Hot Hands (Increases the damage of smolder)
 TarJulia > Spider's Weave
 TarJulia > Molten Blast
