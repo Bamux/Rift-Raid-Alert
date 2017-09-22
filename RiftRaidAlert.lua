@@ -83,7 +83,7 @@ local function CheckHP(event, units)
                         if hitpoints ~= lasthitpoints then
                             print(detail.name .. " = " .. hitpoints .. " %")
                             lasthitpoints = hitpoints
-                            if hitpoints == 0 then -- or hitpoints == 100 
+                            if hitpoints == 0 then -- or hitpoints == 100
                                 CombatEnd()
                             end
                         end
@@ -118,23 +118,24 @@ local function getAddBuffName(event, unit, buffs)
                                 Orchester = Inspect.Time.Frame()
                             end
                         end
+                        if buff.name == "Anchored in Flames" or buff.name == "In Flammen verankert" or buff.name == "Ancrage de flammes" then -- Anchored in Flames "B44E44A80755620C3"
+                            print(details.name .. " << " .. buff.name)
+                        end
                         if details.id ~= buff.caster then
                             if target then
-                                if target.player == nil then
-                                    if buff.curse or buff.debuff or buff.disase or buff.poison then
-                                        if buff.description then
-                                            print(details.name .. " << " ..buff.name .. " (" .. buff.description .. ")")
-                                        else
-                                            print(details.name .. " << " ..buff.name)
-                                        end
-                                        local bufflist = { id = buffid, name = buff.name }
-                                        table.insert(rra_bufflist, bufflist)
+                                if target.player == nil and target.relation == "hostile" then
+                                    if buff.description then
+                                        print(details.name .. " << " ..buff.name .. " (" .. buff.description .. ")")
+                                    else
+                                        print(details.name .. " << " ..buff.name)
                                     end
+                                    local bufflist = { id = buffid, name = buff.name }
+                                    table.insert(rra_bufflist, bufflist)
                                 end
                             end
                         end
                     else
-                        if details.id == buff.caster and details.relation == "hostile" then
+                      if details.id == buff.caster and details.relation == "hostile" then
                             if buff.description then
                                 print(details.name .. " < " .. buff.name .. " (" .. buff.description .. ")")
                             else
@@ -152,17 +153,9 @@ end
 
 
 local function rra_raidbuffcheck()
-    print("Buff Check")
-    local weaponstones_flasks_food = {}
-    local weaponstones_flasks = {}
-    local weaponstones_food = {}
-    local flasks_food = {}
-    local weaponstones = {}
-    local flasks = {}
-    local foods = {}
-    local count = 0
     local groupmember = ""
-    local player_detail = Inspect.Unit.Detail("player")
+    local names = ""
+    local names_count = 0
 
     for i=1, 20 do
         local flask = false
@@ -170,6 +163,10 @@ local function rra_raidbuffcheck()
         local food = false
         local groupmember = string.format("group%02d", i)
         local player = Inspect.Unit.Detail(groupmember)
+--        if not player and i == 1 then
+--            groupmember = "player"
+--            player = Inspect.Unit.Detail(groupmember)
+--        end
         local buffs = Inspect.Buff.List(groupmember)
         if buffs and player.role ~= "tank" then
             for buffid, typeid in pairs(buffs) do
@@ -178,13 +175,13 @@ local function rra_raidbuffcheck()
                     if detail.rune then
                         if player.calling == "mage" or player.calling == "cleric" then
                             if detail.rune == "r143A1D7A79A201D6" then -- Faetouched Powerstone = r143A1D7A79A201D6
-                                if detail.duration > 300 then
+                                if detail.remaining > 300 then
                                     weaponstone = true
                                 end
                             end
                         else
                             if detail.rune == "rFA65F5184E42C822" or detail.rune == "r70B0A3843EC153B8" then -- Atramentium Whetstone = rFA65F5184E42C822, Atramentium Oilstone = r70B0A3843EC153B8
-                                if detail.duration > 300 then
+                                if detail.remaining > 300 then
                                     weaponstone = true
                                 end
                             end
@@ -192,24 +189,24 @@ local function rra_raidbuffcheck()
                     end
                     if detail.type then
                         if player.calling == "mage" or player.calling == "cleric" then
-                            if detail.type == "B76F46FAB030D4A53" or detail.type == "B599B39134D958B4F" then --  Visionary Brightsurge Vial = B76F46FAB030D4A53, Prophetic Brightsurge Vial = B599B39134D958B4F
-                                if detail.duration > 300 then
+                            if detail.type == "B76F46FAA030D4A53" or detail.type == "B599B39124D958B4F" then --  Visionary Brightsurge Vial = B76F46FAA030D4A53, Prophetic Brightsurge Vial = B599B39124D958B4F
+                                if detail.remaining > 300 then
                                     flask = true
                                 end
                             end
-                            if detail.type == "B40C3D8E2646C6DD1" then --  Gedlo Curry Pot (SP) = B40C3D8E2646C6DD1
-                                if detail.duration > 300 then
+                            if detail.type == "B40C3D8E1646C6DD1" then --  Gedlo Curry Pot (SP) = B40C3D8E2646C6DD1
+                                if detail.remaining > 300 then
                                     food = true
                                 end
                             end
                         else
-                            if detail.type == "B6A8C5F8110D4EFBB" or detail.type == "B03ABEAB575CC9A8E" then --  Visionary Powersurge Vial = B6A8C5F8110D4EFBB, Prophetic Powersurge Vial = B03ABEAB575CC9A8E
-                                if detail.duration > 300 then
+                            if detail.type == "B6A8C5F8010D4EFBB" or detail.type == "B03ABEAB575CC9A8E" then --  Visionary Powersurge Vial = B6A8C5F8110D4EFBB, Prophetic Powersurge Vial = B03ABEAB575CC9A8E
+                                if detail.remaining > 300 then
                                     flask = true
                                 end
                             end
-                            if detail.type == "B40C3D8E43D686C51" then --  Gedlo Curry Pot (AP) = B40C3D8E43D686C51
-                                if detail.duration > 300 then
+                            if detail.type == "B40C3D8E33D686C51" then --  Gedlo Curry Pot (AP) = B40C3D8E43D686C51
+                                if detail.remaining > 300 then
                                     food = true
                                 end
                             end
@@ -217,112 +214,25 @@ local function rra_raidbuffcheck()
                     end
                 end
             end
-            if weaponstone == false and flask == false  and food == false then
-                if player_detail.name == player.name then
-                    print("Buffcheck: Check your Weaponstone, Flask and Food")
-                else
-                    table.insert(weaponstones_flasks_food, player.name)
-                    count = count + 1
+
+            local playersplit = ""
+            if weaponstone == false or flask == false  or food == false then
+                names_count = names_count + 1
+                for x in string.gmatch(player.name, '([^@]+)') do
+                    playersplit = x
+                    break
                 end
-            elseif weaponstone == false and flask == false then
-                if player_detail.name == player.name then
-                    print("Buffcheck: Check your Weaponstone and Flask")
-                else
-                    table.insert(weaponstones_flasks, player.name)
-                    count = count + 1
+                if names_count > 1 then
+                    playersplit = ", " .. playersplit
                 end
-            elseif weaponstone == false and food == false then
-                if player_detail.name == player.name then
-                    print("Buffcheck: Check your Weaponstone and Food")
-                else
-                    table.insert(weaponstones_food, player.name)
-                    count = count + 1
-                end
-            elseif flask == false and food == false then
-                if player_detail.name == player.name then
-                    print("Buffcheck: Check your Flask and Food")
-                else
-                    table.insert(flasks_food, player.name)
-                    count = count + 1
-                end
-            elseif weaponstone == false then
-                if player_detail.name == player.name then
-                    print("Buffcheck: Check your Weaponstone")
-                else
-                    table.insert(weaponstones, player.name)
-                    count = count + 1
-                end
-            elseif flask == false then
-                if player_detail.name == player.name then
-                    print("Buffcheck: Check your Flask")
-                else
-                    table.insert(flasks, player.name)
-                    count = count + 1
-                end
-            elseif food == false then
-                if player_detail.name == player.name then
-                    print("Buffcheck: Check your Food")
-                else
-                    table.insert(foods, player.name)
-                    count = count + 1
-                end
+                names = names .. playersplit
+
             end
         end
     end
-
-    if count > 0 and count <= 4 then
-        local buff_count = #weaponstones_flasks_food
-        if buff_count > 0 then
-            for i=1, buff_count do
-                print("Raidbuff missing -> " .. weaponstones_flasks_food[i])
-            end
-            print("Raidbuff missing <--- Weaponstone, Flask and Food")
-        end
-        buff_count = #weaponstones_flasks
-        if buff_count > 0 then
-            for i=1, buff_count do
-                print("Raidbuff missing -> " .. weaponstones_flasks[i])
-            end
-            print("Raidbuff missing <- Weaponstone and Flask")
-        end
-        buff_count = #weaponstones_food
-        if buff_count > 0 then
-            for i=1, buff_count do
-                print("Raidbuff missing -> " .. weaponstones_food[i])
-            end
-            print("Raidbuff missing <-- Food and Weponstone")
-        end
-        buff_count = #flasks_food
-        if buff_count > 0 then
-            for i=1, buff_count do
-                print("Raidbuff missing -> " .. flasks_food[i])
-            end
-            print("Raidbuff missing <-- Flask and Food")
-        end
-        buff_count = #weaponstones
-        if buff_count > 0 then
-            for i=1, buff_count do
-                print("Raidbuff missing -> " .. weaponstones[i])
-            end
-            print("Raidbuff missing <- Weaponstone")
-        end
-        local buff_count = #flasks
-        if buff_count > 0 then
-            for i=1, buff_count do
-                print("Raidbuff missing -> " .. flasks[i])
-            end
-            print("Raidbuff missing <- Flask")
-        end
-        local buff_count = #foods
-        if buff_count > 0 then
-            for i=1, buff_count do
-                print("Raidbuff missing -> " .. foods[i])
-            end
-            print("Raidbuff missing <- Food")
-        end
-    elseif count > 4 then
-        print("Raidbuff missing -> " .. count)
-        print("Raidbuff missing number <- Weaponstone, Flask or Food")
+    if names ~= "" then
+        print ("Raidbuffs missing: " .. names_count .. " players > " .. names)
+        print()
     end
 end
 
@@ -548,6 +458,8 @@ local function slashHandler(h, args)
         return
     end
     if r[0] == "check" then
+        local player = Inspect.Unit.Detail("player")
+        print("player >> " .. player.name)
         rra_raidbuffcheck()
         return
     end
@@ -569,3 +481,4 @@ end
 
 Command.Event.Attach(Event.Addon.Startup.End, start_check, "StartCheck")
 Command.Event.Attach(Command.Slash.Register("rra"), slashHandler, "Command.Slash.Register")
+
