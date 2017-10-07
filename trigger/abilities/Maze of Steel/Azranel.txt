@@ -11,7 +11,6 @@ player << Static Insulator (This object is protected from electric discharges. K
 Plasma Tower < Static Insulator (This object is protected from electric discharges. Killing it will grant this benefit for a short period of time.)
 Plasma Tower < Lightning Arc (Deals 1 to 1 Air damage to the target and up to 8 enemies along the path of the beam.)
 Azranel < Magnetized (You are becoming magnetized and developing an electric charge that will explode. Dealing more damage to those players closest to you. )
-player << Magnetized (You are becoming magnetized and developing an electric charge that will explode. Dealing more damage to those players closest to you. )
 Azranel > Defensive Spin
 Azranel < Defensive Spin (Deals damage and redirects attacks back to attackers)
 player << Magnetized (You have been completely paralyzed.)
