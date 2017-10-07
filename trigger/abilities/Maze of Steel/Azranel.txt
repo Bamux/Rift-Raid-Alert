@@ -1,0 +1,17 @@
+﻿Azranel < Electric Charge (Azranel is generating an electric field. Damaging all players.)
+Azranel < Charging (Azranel is charging its electric field, powering up for a cannon blast at a stack of 10.)
+player << Laser Cutter (Your armor has been weakened. If you reach 5 stacks Azranel can kill you instantly. )
+Azranel > Missile Storm
+Azranel > Comet Shot
+player << Comet Shot (Stand together to mitigate damage. Immune to Life Insurance.)
+player << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+Plasma Tower > Plasma Chain
+Plasma Tower > Lightning Arc
+player << Static Insulator (This object is protected from electric discharges. Killing it will grant this benefit for a short period of time.)
+Plasma Tower < Static Insulator (This object is protected from electric discharges. Killing it will grant this benefit for a short period of time.)
+Plasma Tower < Lightning Arc (Deals 1 to 1 Air damage to the target and up to 8 enemies along the path of the beam.)
+Azranel < Magnetized (You are becoming magnetized and developing an electric charge that will explode. Dealing more damage to those players closest to you. )
+player << Magnetized (You are becoming magnetized and developing an electric charge that will explode. Dealing more damage to those players closest to you. )
+Azranel > Defensive Spin
+Azranel < Defensive Spin (Deals damage and redirects attacks back to attackers)
+player << Magnetized (You have been completely paralyzed.)
