@@ -1,5 +1,0 @@
-Houndmaster Kytus > Grenade Toss
-Infernus Rex > Howl of Terror
-Infernus Rex > Rend
-player << Foaming at the Mouth (Contagion released by Kytus. You will die if you do not find the cure!)
-player << Howl of Terror (Feared.)
