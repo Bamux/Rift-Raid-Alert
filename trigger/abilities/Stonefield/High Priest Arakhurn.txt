@@ -14,9 +14,3 @@ Binding Elemental < Released Power (Upon death this creature will explode, knock
 Binding Elemental < Dancing Flames (The elemental is putting out intense heat, dealing damage to all near it. )
 player << Released Power (Dealing Fire damage over 10s.)
 player << Ignite (Burning alive.)
-Illysia > Fan of Flames
-Illysia > Summon Minions
-Warden Xilmarth > Tartaric Barrage
-Drahknar < Whirling Strike
-Drahknar > Weakening Impact
-Drahknar > Fiery Pool
