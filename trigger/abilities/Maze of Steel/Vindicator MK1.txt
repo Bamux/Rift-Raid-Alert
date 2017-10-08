@@ -9,6 +9,7 @@ player << Venomous Assault (Deals 0 Life damage over 10 seconds.)
 Vindicator MK1 < Auto Repair (Repairing core systems. Immune to all damage.)
 Commander Isiel > Lightning Whirl
 Commander Isiel > Heart Strike
+player << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
 player << Enfeeblement (Your Guard has been greatly reduced.)
 Commander Isiel > Voltaic Thrust
 Vindicator MK1 > Explosive Round
