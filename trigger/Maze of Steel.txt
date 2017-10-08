@@ -1,5 +1,5 @@
 trigger = all; all; Vindicator MK1; ability; Timed Charge >> player; player run out; 0; 0; 0; 0; 0; 0
-trigger = all; all; Vindicator MK1; ability; player << Explosive Round; cleanse player; 0; 0; 10; 0; 0; 0
+trigger = all; all; Vindicator MK1; ability; player << Explosive Round; cleanse player; 0; 0; 0; 0; 0; 0
 trigger = all; all; Azranel; ability; Azranel > Comet Shot >> player; stack player; 0; 0; 0; 0; 0; 0
 trigger = all; all; Azranel; ability; Azranel > Defensive Spin; stop; 0; 0; 0; 0; 0; 0
 trigger = all; all; Azranel; ability; Azranel < remove Defensive Spin; go; 0; 0; 0; 0; 0; 0
