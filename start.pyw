@@ -2,7 +2,7 @@
 
 # Rift Raid Alert
 # Spoken raid warnings for the MMORPG Rift
-# Version 2.1
+# Version 2.2
 # Author: Bamu@Brutwacht
 
 import os
@@ -366,12 +366,17 @@ def logfile_analysis(logtext):
             line = ""
             log = logtext.readline()
             log = log.rstrip()
+            orginal = log
             if "[Rift Raid Alert] " in log:
                 cut_string = log.split("[Rift Raid Alert] ")
                 log = cut_string[0] + cut_string[1]
                 line = cut_string[1]
                 if " = " in line:
                     guioutput(log)
+            elif "]: " in log:
+                cut_string = log.split("]: ")
+                log = cut_string[1]
+                line = log
             # log = umlaute(log)
             log_big = log
             log = str.lower(log)
@@ -469,7 +474,7 @@ def logfile_analysis(logtext):
                 trigger_analysis(log, log_big)
 
                 if combat and line:
-                    Thread(target=abilitycheck, args=(line, bossname)).start()
+                    Thread(target=abilitycheck, args=(line, orginal, bossname)).start()
 
                 # Siri
                 if siri:
@@ -531,22 +536,23 @@ def load_abilies(bossname):
             pass
 
 
-def abilitycheck(line, bossname):
+def abilitycheck(line, orginal, bossname):
     global abilities_new
     ability_existing = False
-    if "pull >> " not in line and "Combat Begin" not in line and "Rift Raid Alert" not in line and "%" not in line \
-            and "remove" not in line:
-        if " >> " in line:
-            line = line.split(" >> ")
-            line = line[0]  # + " >> player"
-        elif " << " in line:
-            line = line.split(" << ")
-            line = "player << " + line[1]
-        for item in abilities_new:
-            if line == item:
-                ability_existing = True
-        if not ability_existing:
-            abilities_new += [line]
+    if "[Rift Raid Alert]" in orginal:
+        if "pull >> " not in line and "Combat Begin" not in line and "%" not in line \
+                and "remove" not in line:
+            if " >> " in line:
+                line = line.split(" >> ")
+                line = line[0]  # + " >> player"
+            elif " << " in line:
+                line = line.split(" << ")
+                line = "player << " + line[1]
+            for item in abilities_new:
+                if line == item:
+                    ability_existing = True
+            if not ability_existing:
+                abilities_new += [line]
 
 
 def logfilecheck():
@@ -1979,7 +1985,7 @@ scrollbar = Scrollbar(root)
 T = Text(root, height=20, width=50, padx=10, pady=10)
 sb.config(command=T.yview)
 T.config(yscrollcommand=sb.set)
-T.insert(END, "Rift Raid Alert Version 2.1 - Author: Bamu@Brutwacht\nMake sure you use /log in Rift after each game restart !")
+T.insert(END, "Rift Raid Alert Version 2.2 - Author: Bamu@Brutwacht\nMake sure you use /log in Rift after each game restart !")
 
 soundfiles = soundfiles_list('siri')
 combattrigger = 1
