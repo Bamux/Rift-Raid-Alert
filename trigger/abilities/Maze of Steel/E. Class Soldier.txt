@@ -1,3 +1,2 @@
 player << Range Module (Your attacks have been imbued with the power of the legion. Able to attack from extreme distance.)
 E. Class Soldier < Legion's Roar (Increased outgoing damage. Increased the powerlevel of Titan X)
-player << Rocket Volley
