@@ -39,7 +39,7 @@ I use the Microsoft Speech API (SAPI 5) . The Python program that I wrote scans 
 
 Under http://www.mwsreader.com/en/voices/ you can download other voices (different languages). 
 
-## Optional - How to use Rift Raid Alerts on TeamSpeak, but you dont need this to run Rift Raid Alert:
+## Optional - How to use Rift Raid Alerts on TeamSpeak or Discord (you dont need this to run Rift Raid Alert):
 
 1. INSTALL VB-CABLE Virtual Audio Device - http://vb-audio.pagesperso-orange.fr/Cable/index.htm
 2. Right click on the windows speaker icon > choose Recording Devices > double clicking CABLE Output > Listen > Playback through this device: coose Default Playback Device and checking the box
