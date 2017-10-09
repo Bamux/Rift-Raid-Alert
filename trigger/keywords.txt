@@ -4,5 +4,4 @@
 #keywords = QF + lfm; Queens Foci looking for more
 keywords = ] + whispers:; whisper
 keywords = lfm + rr; attention
-keywords = Lure ; attention
 #keywords = has started in + Vostigar Peaks; go
