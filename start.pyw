@@ -315,7 +315,21 @@ def trigger_analysis(log, log_big):
                         language = special[i][0]
                         location = special[i][1]
                         boss = special[i][2]
+                        if keywords_on_off == 1 and "lfm" in strigger:
+                            add_to_clipboard(log_big)
                         break
+
+
+def add_to_clipboard(log_big):  # add to windows clipboard
+    try:
+        if "]: " in log_big:
+            name = log_big.split("]: ")[0]
+            name = name.split("][")[1]
+            text = "/tell " + name + " + "
+            command = 'echo | set /p dummyVar="' + text + '" | clip'
+            os.system(command)
+    except:
+            pass
 
 
 def umlaute(log):
@@ -373,10 +387,10 @@ def logfile_analysis(logtext):
                 line = cut_string[1]
                 if " = " in line:
                     guioutput(log)
-            elif "]: " in log:
-                cut_string = log.split("]: ")
-                log = cut_string[1]
-                line = log
+            # elif "]: " in log:
+            #     cut_string = log.split("]: ")
+            #     log = cut_string[1]
+            #     line = log
             # log = umlaute(log)
             log_big = log
             log = str.lower(log)
@@ -436,6 +450,7 @@ def logfile_analysis(logtext):
                     guioutput(str(timerreset))
                 elif 'rift raid alert trigger < keywords off' in log:
                     zone = ""
+                    keywords_on_off = 0
                 elif 'rift raid alert trigger > keywords on' in log:
                     keywords_on_off = 1
                     trigger.clear()
@@ -838,19 +853,23 @@ def guioutput(text):
 
 
 def ask_quit():
-    file_out = codecs.open("RiftRaidAlert.ini", "w", 'utf-8')
-    file_out.write("logfile = " + e_logpath.get() + '\r\n')
-    file_out.write("volume = " + str(volume_bar.get()) + '\r\n')
-    file_out.write("buffcheck = " + str(var_buffcheck.get()) + '\r\n')
-    file_out.write("output = " + output + '\r\n')
-    file_out.write("only_me = " + var_only_me.get() + '\r\n')
-    file_out.write("lava = " + var_lava.get() + '\r\n')
-    file_out.write("orchester = " + var_orchester.get() + '\r\n')
-    file_out.write("tankswap = " + var_tankswap.get() + '\r\n')
-    file_out.write("cleanse = " + var_cleanse.get() + '\r\n')
-    file_out.close()
-    root.destroy()
-    os._exit(1)
+    try:
+        file_out = codecs.open("RiftRaidAlert.ini", "w", 'utf-8')
+        file_out.write("logfile = " + e_logpath.get() + '\r\n')
+        file_out.write("volume = " + str(volume_bar.get()) + '\r\n')
+        file_out.write("buffcheck = " + str(var_buffcheck.get()) + '\r\n')
+        file_out.write("output = " + output + '\r\n')
+        file_out.write("only_me = " + var_only_me.get() + '\r\n')
+        file_out.write("lava = " + var_lava.get() + '\r\n')
+        file_out.write("orchester = " + var_orchester.get() + '\r\n')
+        file_out.write("tankswap = " + var_tankswap.get() + '\r\n')
+        file_out.write("cleanse = " + var_cleanse.get() + '\r\n')
+        file_out.close()
+        root.destroy()
+        os._exit(1)
+    except:
+        root.destroy()
+        os._exit(1)
 
 
 def wav():
