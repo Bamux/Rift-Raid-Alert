@@ -2,3 +2,6 @@ player << Range Module (Your attacks have been imbued with the power of the legi
 R.D.U. > Rocket Volley
 player << Rocket Volley
 R.D.U. < Legion's Roar (Increased outgoing damage. Increased the powerlevel of Titan X)
+Pulser > Concentrated Blast
+Pulser > Projected Blast
+Pulser < Legion's Roar (Increased outgoing damage. Increased the powerlevel of Titan X)
