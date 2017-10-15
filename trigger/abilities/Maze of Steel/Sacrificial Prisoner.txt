@@ -1,4 +1,3 @@
 Pulser > Projected Blast
-player << Rocket Volley
 Pulser > Concentrated Blast
 Pulser < Legion's Roar (Increased outgoing damage. Increased the powerlevel of Titan X)
