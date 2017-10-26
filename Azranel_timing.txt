@@ -1,0 +1,386 @@
+﻿Rift Raid Alert Version 2.2.2 - Author: Bamu@Brutwacht
+Make sure you use /log in Rift after each game restart !
+RiftRaidAlert.ini found
+default trigger loaded
+Log.txt found
+
+Maze of Steel trigger loaded
+
+Siri: Bamboozled, Nypd check your buffs
+
+Combat Begin
+Siri: go
+19:30:53: Azranel < Electric Charge (Azranel is generating an electric field. Damaging all players.)
+19:31:00: Paxie << Laser Cutter (Your armor has been weakened. If you reach 5 stacks Azranel can kill you instantly. )
+[['paxie', 1]]
+19:31:06: Azranel = 95 %
+19:31:10: Paxie << Laser Cutter (Your armor has been weakened. If you reach 5 stacks Azranel can kill you instantly. )
+[['paxie', 2]]
+19:31:12: Bamu << Missile Storm
+Siri: run out
+19:31:12: Catigern << Missile Storm
+Siri: catigern run out
+19:31:20: Paxie << Laser Cutter (Your armor has been weakened. If you reach 5 stacks Azranel can kill you instantly. )
+[['paxie', 3]]
+19:31:33: Gaarren << Laser Cutter (Your armor has been weakened. If you reach 5 stacks Azranel can kill you instantly. )
+[['paxie', 3], ['gaarren', 1]]
+19:31:40: Azranel = 90 %
+19:31:43: Gaarren << Laser Cutter (Your armor has been weakened. If you reach 5 stacks Azranel can kill you instantly. )
+[['paxie', 3], ['gaarren', 2]]
+19:31:45: Bamu << Missile Storm
+Siri: run out
+19:31:45: Primaschreiber << Missile Storm
+Siri: primaschreiber run out
+19:31:50: Paxie << remove Laser Cutter
+[['gaarren', 2]]
+19:31:54: Azranel > Comet Shot >> Paxie
+Siri: stack paxie
+19:31:55: Gaarren << Laser Cutter (Your armor has been weakened. If you reach 5 stacks Azranel can kill you instantly. )
+[['gaarren', 3]]
+19:31:57: Azranel = 85 %
+19:32:07: Azranel < Electric Charge (Azranel is generating an electric field. Damaging all players.)
+19:32:11: Primaschreiber << Missile Storm
+Siri: primaschreiber run out
+19:32:11: Lilamas << Missile Storm
+Siri: lilamas run out
+19:32:14: Paxie << Laser Cutter (Your armor has been weakened. If you reach 5 stacks Azranel can kill you instantly. )
+[['gaarren', 3], ['paxie', 1]]
+19:32:17: Azranel = 80 %
+19:32:24: Gaarren << remove Laser Cutter
+[['paxie', 1]]
+19:32:25: Paxie << Laser Cutter (Your armor has been weakened. If you reach 5 stacks Azranel can kill you instantly. )
+[['paxie', 2]]
+19:32:36: Voorog << Missile Storm
+Siri: voorog run out
+19:32:36: Primaschreiber << Missile Storm
+Siri: primaschreiber run out
+19:32:36: Paxie << Laser Cutter (Your armor has been weakened. If you reach 5 stacks Azranel can kill you instantly. )
+[['paxie', 3]]
+19:32:38: Azranel = 75 %
+19:32:38: Primaschreiber << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:32:38: Nypd << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:32:38: Bamu << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:32:38: Lilamas << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:32:38: Voorog << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:32:38: Catigern << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:32:38: Gaarren << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:32:38: Viexie << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:32:39: Bamboozled << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:32:39: Paxie << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:32:46: Plasma Tower > Plasma Chain >> Paxie
+19:32:46: Gaarren << Laser Cutter (Your armor has been weakened. If you reach 5 stacks Azranel can kill you instantly. )
+[['paxie', 3], ['gaarren', 1]]
+19:32:54: Gaarren << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:32:54: Voorog << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:32:54: Nypd << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:32:54: Primaschreiber << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:32:54: Lilamas << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:32:54: Bamu << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:32:54: Viexie << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:32:54: Bamboozled << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:32:54: Paxie << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:32:54: Catigern << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:32:57: Gaarren << Laser Cutter (Your armor has been weakened. If you reach 5 stacks Azranel can kill you instantly. )
+[['paxie', 3], ['gaarren', 2]]
+19:32:59: Azranel = 70 %
+19:33:01: Nypd << Missile Storm
+Siri: nypd run out
+19:33:06: Paxie << remove Laser Cutter
+[['gaarren', 2]]
+19:33:07: Gaarren << Laser Cutter (Your armor has been weakened. If you reach 5 stacks Azranel can kill you instantly. )
+[['gaarren', 3]]
+19:33:09: Lilamas << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:33:09: Nypd << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:33:09: Bamu << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:33:09: Voorog << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:33:09: Paxie << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:33:09: Bamboozled << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:33:09: Catigern << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:33:09: Primaschreiber << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:33:09: Gaarren << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:33:10: Viexie << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:33:11: Plasma Tower > Lightning Arc
+19:33:14: Plasma Tower > Plasma Chain >> Paxie
+19:33:14: Azranel > Comet Shot >> Bamu
+Siri: stack
+19:33:17: Paxie << Laser Cutter (Your armor has been weakened. If you reach 5 stacks Azranel can kill you instantly. )
+[['gaarren', 3], ['paxie', 1]]
+19:33:18: Azranel = 65 %
+19:33:25: Paxie << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:33:25: Bamboozled << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:33:25: Voorog << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:33:25: Gaarren << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:33:25: Catigern << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:33:25: Primaschreiber << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:33:25: Bamu << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:33:25: Lilamas << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:33:25: Nypd << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:33:25: Viexie << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:33:27: Bamboozled << Missile Storm
+Siri: bamboozled run out
+19:33:27: Bamu << Missile Storm
+Siri: run out
+19:33:27: Azranel < Electric Charge (Azranel is generating an electric field. Damaging all players.)
+19:33:28: Plasma Tower > Lightning Arc
+19:33:28: Paxie << Laser Cutter (Your armor has been weakened. If you reach 5 stacks Azranel can kill you instantly. )
+[['gaarren', 3], ['paxie', 2]]
+19:33:37: Gaarren << remove Laser Cutter
+[['paxie', 2]]
+19:33:38: Azranel = 60 %
+19:33:39: Paxie << Laser Cutter (Your armor has been weakened. If you reach 5 stacks Azranel can kill you instantly. )
+[['paxie', 3]]
+19:33:42: Bamu << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:33:42: Voorog << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:33:42: Primaschreiber << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:33:42: Paxie << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:33:42: Bamboozled << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:33:42: Nypd << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:33:42: Viexie << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:33:42: Lilamas << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:33:42: Catigern << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:33:42: Gaarren << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:33:49: Gaarren << Laser Cutter (Your armor has been weakened. If you reach 5 stacks Azranel can kill you instantly. )
+[['paxie', 3], ['gaarren', 1]]
+19:33:53: Viexie << Missile Storm
+Siri: viexie run out
+19:33:53: Lilamas << Missile Storm
+Siri: lilamas run out
+19:33:56: Azranel = 55 %
+19:33:57: Nypd << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:33:57: Catigern << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:33:57: Lilamas << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:33:57: Voorog << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:33:57: Viexie << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:33:57: Gaarren << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:33:57: Bamu << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:33:57: Primaschreiber << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:33:58: Bamboozled << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:33:58: Paxie << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:33:58: Plasma Tower > Plasma Chain >> Paxie
+19:33:58: Plasma Tower > Plasma Chain >> Paxie
+19:34:00: Gaarren << Laser Cutter (Your armor has been weakened. If you reach 5 stacks Azranel can kill you instantly. )
+[['paxie', 3], ['gaarren', 2]]
+19:34:01: Azranel = 60 %
+19:34:09: Paxie << remove Laser Cutter
+[['gaarren', 2]]
+19:34:11: Gaarren << Laser Cutter (Your armor has been weakened. If you reach 5 stacks Azranel can kill you instantly. )
+[['gaarren', 3]]
+19:34:13: Catigern << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:34:13: Viexie << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:34:13: Primaschreiber << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:34:13: Paxie << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:34:13: Bamboozled << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:34:13: Gaarren << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:34:13: Voorog << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:34:13: Bamu << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:34:13: Lilamas << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:34:13: Nypd << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:34:14: Azranel = 55 %
+19:34:22: Paxie << Laser Cutter (Your armor has been weakened. If you reach 5 stacks Azranel can kill you instantly. )
+[['gaarren', 3], ['paxie', 1]]
+19:34:24: Primaschreiber << Missile Storm
+Siri: primaschreiber run out
+19:34:28: Lilamas << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:34:28: Viexie << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:34:28: Nypd << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:34:28: Bamu << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:34:28: Primaschreiber << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:34:28: Voorog << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:34:28: Catigern << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:34:28: Paxie << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:34:28: Bamboozled << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:34:28: Gaarren << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:34:33: Paxie << Laser Cutter (Your armor has been weakened. If you reach 5 stacks Azranel can kill you instantly. )
+[['gaarren', 3], ['paxie', 2]]
+19:34:33: Azranel = 50 %
+19:34:33: Azranel > Comet Shot >> Lilamas
+Siri: stack lilamas
+19:34:35: Azranel = 55 %
+19:34:41: Gaarren << remove Laser Cutter
+[['paxie', 2]]
+19:34:43: Paxie << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:34:43: Bamboozled << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:34:43: Voorog << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:34:43: Lilamas << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:34:43: Nypd << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:34:43: Gaarren << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:34:43: Catigern << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:34:43: Bamu << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:34:43: Viexie << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:34:45: Paxie << Laser Cutter (Your armor has been weakened. If you reach 5 stacks Azranel can kill you instantly. )
+[['paxie', 3]]
+19:34:47: Plasma Tower > Plasma Chain >> Paxie
+19:34:49: Plasma Tower > Lightning Arc
+19:34:55: Azranel > Comet Shot >> Catigern
+Siri: stack catigern
+19:34:58: Azranel = 50 %
+19:34:59: Voorog << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:34:59: Bamu << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:34:59: Catigern << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:34:59: Gaarren << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:34:59: Paxie << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:34:59: Bamboozled << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:34:59: Nypd << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:34:59: Lilamas << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:34:59: Primaschreiber << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:34:59: Viexie << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:35:00: Catigern << Magnetized (You are becoming magnetized and developing an electric charge that will explode. Dealing more damage to those players closest to you. )
+19:35:00: Bamboozled << Magnetized (You are becoming magnetized and developing an electric charge that will explode. Dealing more damage to those players closest to you. )
+19:35:00: Plasma Tower > Lightning Arc
+19:35:01: Azranel > Defensive Spin >> Azranel
+Siri: defensive spin
+19:35:04: Azranel = 55 %
+19:35:08: Azranel < Electric Charge (Azranel is generating an electric field. Damaging all players.)
+19:35:10: Bamboozled << Magnetized (You have been completely paralyzed.)
+19:35:13: Gaarren << Laser Cutter (Your armor has been weakened. If you reach 5 stacks Azranel can kill you instantly. )
+[['paxie', 3], ['gaarren', 1]]
+19:35:15: Paxie << remove Laser Cutter
+[['gaarren', 1]]
+19:35:16: Viexie << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:35:16: Azranel = 50 %
+19:35:16: Lilamas << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:35:16: Paxie << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:35:16: Voorog << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:35:16: Nypd << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:35:16: Gaarren << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:35:16: Primaschreiber << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:35:16: Bamu << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:35:16: Bamboozled << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:35:24: Gaarren << Laser Cutter (Your armor has been weakened. If you reach 5 stacks Azranel can kill you instantly. )
+[['gaarren', 2]]
+19:35:26: Primaschreiber << Missile Storm
+Siri: primaschreiber run out
+19:35:32: Voorog << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:35:32: Lilamas << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:35:32: Gaarren << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:35:32: Nypd << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:35:32: Bamboozled << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:35:32: Paxie << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:35:32: Viexie << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:35:32: Primaschreiber << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:35:32: Bamu << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:35:34: Gaarren << Laser Cutter (Your armor has been weakened. If you reach 5 stacks Azranel can kill you instantly. )
+[['gaarren', 3]]
+19:35:41: Primaschreiber << Magnetized (You are becoming magnetized and developing an electric charge that will explode. Dealing more damage to those players closest to you. )
+19:35:43: Azranel = 45 %
+19:35:43: Azranel = 50 %
+19:35:47: Nypd << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:35:47: Lilamas << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:35:47: Viexie << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:35:47: Bamu << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:35:47: Primaschreiber << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:35:47: Voorog << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:35:47: Paxie << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:35:47: Gaarren << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:35:48: Azranel > Defensive Spin >> Azranel
+Siri: defensive spin
+19:35:51: Primaschreiber << Magnetized (You have been completely paralyzed.)
+19:35:51: Azranel = 55 %
+19:35:53: Azranel = 60 %
+19:35:59: Azranel = 55 %
+19:36:02: Paxie << Laser Cutter (Your armor has been weakened. If you reach 5 stacks Azranel can kill you instantly. )
+[['gaarren', 3], ['paxie', 1]]
+19:36:04: Gaarren << remove Laser Cutter
+[['paxie', 1]]
+19:36:04: Voorog << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:36:04: Paxie << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:36:04: Bamu << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:36:04: Viexie << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:36:04: Lilamas << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:36:04: Nypd << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:36:12: Paxie << Laser Cutter (Your armor has been weakened. If you reach 5 stacks Azranel can kill you instantly. )
+[['paxie', 2]]
+19:36:15: Azranel > Comet Shot >> Voorog
+Siri: stack voorog
+19:36:19: Paxie << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:36:19: Voorog << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:36:19: Lilamas << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:36:19: Nypd << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:36:19: Viexie << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:36:19: Bamu << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:36:28: Lilamas << Missile Storm
+Siri: lilamas run out
+19:36:28: Azranel < Electric Charge (Azranel is generating an electric field. Damaging all players.)
+19:36:28: Nypd << Missile Storm
+Siri: nypd run out
+19:36:32: Paxie << Laser Cutter (Your armor has been weakened. If you reach 5 stacks Azranel can kill you instantly. )
+[['paxie', 3]]
+19:36:35: Plasma Tower > Plasma Chain >> Paxie
+19:36:35: Lilamas << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:36:35: Nypd << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:36:35: Viexie << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:36:35: Voorog << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:36:35: Paxie << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:36:35: Bamu << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:36:37: Plasma Tower > Lightning Arc
+19:36:38: Azranel = 60 %
+19:36:43: Azranel = 55 %
+19:36:47: Gaarren << Laser Cutter (Your armor has been weakened. If you reach 5 stacks Azranel can kill you instantly. )
+[['paxie', 3], ['gaarren', 1]]
+19:36:50: Voorog << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:36:50: Bamu << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:36:50: Paxie << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:36:50: Gaarren << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:36:50: Lilamas << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:36:50: Viexie << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:36:57: Gaarren << Laser Cutter (Your armor has been weakened. If you reach 5 stacks Azranel can kill you instantly. )
+[['paxie', 3], ['gaarren', 2]]
+19:37:00: Viexie << Missile Storm
+Siri: viexie run out
+19:37:00: Lilamas << Missile Storm
+Siri: lilamas run out
+19:37:02: Paxie << remove Laser Cutter
+[['gaarren', 2]]
+19:37:06: Viexie << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:37:06: Paxie << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:37:06: Voorog << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:37:06: Lilamas << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:37:06: Gaarren << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:37:06: Bamu << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:37:09: Gaarren << Laser Cutter (Your armor has been weakened. If you reach 5 stacks Azranel can kill you instantly. )
+[['gaarren', 3]]
+19:37:19: Gaarren << Laser Cutter (Your armor has been weakened. If you reach 5 stacks Azranel can kill you instantly. )
+[['gaarren', 4]]
+Siri: tank swap
+19:37:21: Voorog << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:37:21: Bamu << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:37:21: Paxie << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:37:21: Gaarren << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:37:21: Viexie << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:37:21: Lilamas << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:37:25: Viexie << Missile Storm
+Siri: viexie run out
+19:37:25: Lilamas << Missile Storm
+Siri: lilamas run out
+19:37:29: Paxie << Laser Cutter (Your armor has been weakened. If you reach 5 stacks Azranel can kill you instantly. )
+[['gaarren', 4], ['paxie', 1]]
+19:37:37: Voorog << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:37:37: Lilamas << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:37:37: Bamu << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:37:37: Gaarren << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:37:37: Paxie << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:37:37: Viexie << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:37:39: Paxie << Laser Cutter (Your armor has been weakened. If you reach 5 stacks Azranel can kill you instantly. )
+[['gaarren', 4], ['paxie', 2]]
+19:37:40: Azranel > Comet Shot >> Viexie
+Siri: stack viexie
+19:37:48: Azranel = 50 %
+19:37:49: Gaarren << remove Laser Cutter
+[['paxie', 2]]
+19:37:49: Bamu << Magnetized (You are becoming magnetized and developing an electric charge that will explode. Dealing more damage to those players closest to you. )
+19:37:51: Azranel > Defensive Spin >> Azranel
+Siri: defensive spin
+19:37:53: Azranel < Electric Charge (Azranel is generating an electric field. Damaging all players.)
+19:38:02: Voorog << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:38:02: Lilamas << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:38:02: Paxie << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:38:02: Viexie << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:38:02: Bamu << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:38:02: Gaarren << Sticky Bomb (An explosive device has been attached to you and will detonate if you get 3 attached.)
+19:38:03: Azranel = 55 %
+19:38:04: Azranel = 60 %
+19:38:06: Plasma Tower > Plasma Chain >> Lilamas
+19:38:07: Azranel = 65 %
+19:38:09: Azranel = 70 %
+19:38:11: Paxie << remove Laser Cutter
+Combat End
