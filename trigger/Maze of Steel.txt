@@ -7,5 +7,4 @@ trigger = all; all; Vindicator MK1; ability; player << Enfeeblement; tank swap; 
 trigger = all; all; Vindicator MK1; ability; Timed Charge >> player; player run out; 0; 0; 0; 0; 0; 0
 trigger = all; all; Vindicator MK1; ability; player << Explosive Round; cleanse player; 0; 0; 0; 0; 0; 0
 trigger = all; all; Vindicator MK1; ability; Vindicator MK1 < Irradiated Field; aoe; 0; 0; 0; 0; 0; 0
-#trigger = all; all; Azranel; ability; playername << Sticky Bomb; cleanse; 0; 0; 10; 0; 0; 0
 trigger = all; all; Azranel; ability; playername << Missile Storm; run out; 0; 0; 10; 0; 0; 0
