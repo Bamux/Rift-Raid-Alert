@@ -1,0 +1,424 @@
+
+---------------------------------------------------------------------
+16:59:18: [Rift Raid Alert] Combat Begin > Azranel
+16:59:35: [Rift Raid Alert] Azranel = 95 %
+16:59:52: [Rift Raid Alert] Azranel = 90 %
+17:00:09: [Rift Raid Alert] Azranel = 85 %
+17:00:11: [Rift Raid Alert] Azranel = 90 %
+17:00:35: [Rift Raid Alert] Azranel = 85 %
+17:00:58: [Rift Raid Alert] Azranel = 80 %
+17:01:14: [Rift Raid Alert] Azranel = 75 %
+17:01:34: [Rift Raid Alert] Azranel = 80 %
+17:01:48: [Rift Raid Alert] Azranel = 75 %
+17:02:13: [Rift Raid Alert] Azranel = 70 %
+17:02:37: [Rift Raid Alert] Azranel = 65 %
+17:02:40: [Rift Raid Alert] Azranel = 70 %
+17:02:40: [Rift Raid Alert] Azranel = 75 %
+17:02:42: [Rift Raid Alert] Azranel = 80 %
+17:02:51: [Rift Raid Alert] Azranel = 75 %
+17:03:16: [Rift Raid Alert] Azranel = 80 %
+17:03:22: [Rift Raid Alert] Azranel = 85 %
+17:03:32: [Rift Raid Alert] Azranel = 90 %
+17:03:34: [Rift Raid Alert] Azranel = 95 %
+
+---------------------------------------------------------------------
+17:06:40: [Rift Raid Alert] Combat Begin > Azranel
+17:06:57: [Rift Raid Alert] Azranel = 95 %
+17:07:13: [Rift Raid Alert] Azranel = 90 %
+17:07:31: [Rift Raid Alert] Azranel = 85 %
+17:07:41: [Rift Raid Alert] Azranel = 80 %
+17:07:58: [Rift Raid Alert] Azranel = 75 %
+17:08:09: [Rift Raid Alert] Azranel = 80 %
+17:08:11: [Rift Raid Alert] Azranel = 75 %
+17:08:32: [Rift Raid Alert] Azranel = 70 %
+17:08:50: [Rift Raid Alert] Azranel = 65 %
+17:09:08: [Rift Raid Alert] Azranel = 60 %
+17:09:28: [Rift Raid Alert] Azranel = 55 %
+17:09:46: [Rift Raid Alert] Azranel = 50 %
+17:09:47: [Rift Raid Alert] Azranel < Magnetized (You are becoming magnetized and developing an electric charge that will explode. Dealing more damage to those players closest to you. )
+17:09:50: [Rift Raid Alert] Azranel > Defensive Spin >> Azranel
+17:09:53: [Rift Raid Alert] Azranel = 55 %
+17:10:03: [Rift Raid Alert] Azranel = 60 %
+17:10:06: [Rift Raid Alert] Azranel = 55 %
+17:10:09: [Rift Raid Alert] Azranel = 60 %
+17:10:13: [Rift Raid Alert] Azranel = 65 %
+17:10:23: [Rift Raid Alert] Azranel = 70 %
+17:10:24: [Rift Raid Alert] Azranel = 75 %
+17:10:25: [Rift Raid Alert] Azranel = 80 %
+17:10:29: [Rift Raid Alert] Azranel = 85 %
+17:10:35: [Rift Raid Alert] Azranel = 90 %
+
+---------------------------------------------------------------------
+17:14:13: [Rift Raid Alert] Combat Begin > Azranel
+17:14:30: [Rift Raid Alert] Azranel = 95 %
+17:14:46: [Rift Raid Alert] Azranel = 90 %
+17:15:02: [Rift Raid Alert] Azranel = 85 %
+17:15:06: [Rift Raid Alert] Azranel = 90 %
+17:15:12: [Rift Raid Alert] Azranel = 85 %
+17:15:30: [Rift Raid Alert] Azranel = 80 %
+17:15:49: [Rift Raid Alert] Azranel = 75 %
+17:16:09: [Rift Raid Alert] Azranel = 70 %
+17:16:26: [Rift Raid Alert] Azranel = 65 %
+17:16:31: [Rift Raid Alert] Azranel = 70 %
+17:16:40: [Rift Raid Alert] Azranel = 65 %
+17:16:59: [Rift Raid Alert] Azranel = 60 %
+17:17:18: [Rift Raid Alert] Azranel = 55 %
+17:17:38: [Rift Raid Alert] Azranel = 50 %
+17:17:39: [Rift Raid Alert] Azranel < Magnetized (You are becoming magnetized and developing an electric charge that will explode. Dealing more damage to those players closest to you. )
+17:17:40: [Rift Raid Alert] Azranel > Defensive Spin >> Azranel
+17:17:43: [Rift Raid Alert] Azranel = 55 %
+17:17:47: [Rift Raid Alert] Azranel = 60 %
+17:17:56: [Rift Raid Alert] Azranel = 55 %
+17:17:57: [Rift Raid Alert] Azranel = 60 %
+17:18:00: [Rift Raid Alert] Azranel = 65 %
+17:18:00: [Rift Raid Alert] Azranel = 70 %
+17:18:02: [Rift Raid Alert] Azranel = 75 %
+17:18:03: [Rift Raid Alert] Azranel = 80 %
+17:18:05: [Rift Raid Alert] Azranel = 85 %
+17:18:05: [Rift Raid Alert] Azranel = 90 %
+
+---------------------------------------------------------------------
+17:19:40: [Rift Raid Alert] Combat Begin > Azranel
+17:19:58: [Rift Raid Alert] Azranel = 95 %
+17:20:15: [Rift Raid Alert] Azranel = 90 %
+17:20:33: [Rift Raid Alert] Azranel = 95 %
+17:20:45: [Rift Raid Alert] Azranel = 90 %
+17:20:57: [Rift Raid Alert] Azranel = 95 %
+17:21:01: [Rift Raid Alert] Azranel = 90 %
+17:21:18: [Rift Raid Alert] Azranel = 85 %
+17:21:34: [Rift Raid Alert] Azranel = 80 %
+17:21:52: [Rift Raid Alert] Azranel = 75 %
+17:22:11: [Rift Raid Alert] Azranel = 70 %
+17:22:29: [Rift Raid Alert] Azranel = 65 %
+17:22:49: [Rift Raid Alert] Azranel = 60 %
+17:23:05: [Rift Raid Alert] Azranel = 55 %
+17:23:16: [Rift Raid Alert] Azranel = 50 %
+17:23:17: [Rift Raid Alert] Azranel < Magnetized (You are becoming magnetized and developing an electric charge that will explode. Dealing more damage to those players closest to you. )
+17:23:18: [Rift Raid Alert] Azranel > Defensive Spin >> Azranel
+17:23:24: [Rift Raid Alert] Azranel = 55 %
+17:23:30: [Rift Raid Alert] Azranel = 60 %
+17:23:37: [Rift Raid Alert] Azranel = 55 %
+17:23:38: [Rift Raid Alert] Azranel = 60 %
+17:23:46: [Rift Raid Alert] Azranel = 65 %
+17:24:06: [Rift Raid Alert] Azranel = 70 %
+17:24:08: [Rift Raid Alert] Azranel = 75 %
+17:24:14: [Rift Raid Alert] Azranel = 80 %
+17:24:17: [Rift Raid Alert] Azranel = 85 %
+
+---------------------------------------------------------------------
+17:27:09: [Rift Raid Alert] Combat Begin > Azranel
+17:27:26: [Rift Raid Alert] Azranel = 95 %
+17:27:41: [Rift Raid Alert] Azranel = 90 %
+17:27:58: [Rift Raid Alert] Azranel = 85 %
+17:28:12: [Rift Raid Alert] Azranel = 80 %
+17:28:46: [Rift Raid Alert] Azranel = 75 %
+17:29:02: [Rift Raid Alert] Azranel = 70 %
+17:29:23: [Rift Raid Alert] Azranel = 65 %
+17:29:39: [Rift Raid Alert] Azranel = 60 %
+17:29:42: [Rift Raid Alert] Azranel = 65 %
+17:29:55: [Rift Raid Alert] Azranel = 60 %
+17:30:18: [Rift Raid Alert] Azranel = 55 %
+17:30:41: [Rift Raid Alert] Azranel = 50 %
+17:30:42: [Rift Raid Alert] Azranel < Magnetized (You are becoming magnetized and developing an electric charge that will explode. Dealing more damage to those players closest to you. )
+17:30:43: [Rift Raid Alert] Azranel > Defensive Spin >> Azranel
+17:30:44: [Rift Raid Alert] Azranel = 55 %
+17:30:57: [Rift Raid Alert] Azranel = 50 %
+17:31:23: [Rift Raid Alert] Azranel < Magnetized (You are becoming magnetized and developing an electric charge that will explode. Dealing more damage to those players closest to you. )
+17:31:23: [Rift Raid Alert] Azranel = 45 %
+17:31:28: [Rift Raid Alert] Azranel = 50 %
+17:31:29: [Rift Raid Alert] Azranel > Defensive Spin >> Azranel
+17:31:33: [Rift Raid Alert] Azranel = 55 %
+17:31:39: [Rift Raid Alert] Azranel = 50 %
+17:31:46: [Rift Raid Alert] Azranel = 55 %
+17:31:47: [Rift Raid Alert] Azranel = 60 %
+17:32:01: [Rift Raid Alert] Azranel = 65 %
+17:32:01: [Rift Raid Alert] Azranel = 70 %
+17:32:07: [Rift Raid Alert] Azranel = 75 %
+17:32:19: [Rift Raid Alert] Azranel = 80 %
+
+---------------------------------------------------------------------
+17:35:21: [Rift Raid Alert] Combat Begin > Azranel
+17:35:39: [Rift Raid Alert] Azranel = 95 %
+17:35:51: [Rift Raid Alert] Azranel = 90 %
+17:36:10: [Rift Raid Alert] Azranel = 85 %
+17:36:14: [Rift Raid Alert] Azranel = 90 %
+17:36:22: [Rift Raid Alert] Azranel = 85 %
+17:36:40: [Rift Raid Alert] Azranel = 80 %
+17:36:59: [Rift Raid Alert] Azranel = 75 %
+17:37:21: [Rift Raid Alert] Azranel = 70 %
+17:37:39: [Rift Raid Alert] Azranel = 65 %
+17:37:57: [Rift Raid Alert] Azranel = 60 %
+17:38:16: [Rift Raid Alert] Azranel = 55 %
+17:38:33: [Rift Raid Alert] Azranel = 50 %
+17:38:33: [Rift Raid Alert] Azranel < Magnetized (You are becoming magnetized and developing an electric charge that will explode. Dealing more damage to those players closest to you. )
+17:38:36: [Rift Raid Alert] Azranel > Defensive Spin >> Azranel
+17:38:39: [Rift Raid Alert] Azranel = 55 %
+17:38:51: [Rift Raid Alert] Azranel = 50 %
+17:39:14: [Rift Raid Alert] Azranel < Magnetized (You are becoming magnetized and developing an electric charge that will explode. Dealing more damage to those players closest to you. )
+17:39:14: [Rift Raid Alert] Azranel = 45 %
+17:39:22: [Rift Raid Alert] Azranel > Defensive Spin >> Azranel
+17:39:25: [Rift Raid Alert] Azranel = 50 %
+17:39:26: [Rift Raid Alert] Azranel = 55 %
+17:39:27: [Rift Raid Alert] Azranel = 50 %
+17:39:48: [Rift Raid Alert] Azranel = 45 %
+17:39:54: [Rift Raid Alert] Azranel < Magnetized (You are becoming magnetized and developing an electric charge that will explode. Dealing more damage to those players closest to you. )
+17:39:57: [Rift Raid Alert] Azranel = 50 %
+17:40:08: [Rift Raid Alert] Azranel > Defensive Spin >> Azranel
+17:40:37: [Rift Raid Alert] Azranel < Magnetized (You are becoming magnetized and developing an electric charge that will explode. Dealing more damage to those players closest to you. )
+17:40:43: [Rift Raid Alert] Azranel = 45 %
+17:40:43: [Rift Raid Alert] Azranel = 50 %
+17:40:53: [Rift Raid Alert] Azranel > Defensive Spin >> Azranel
+17:41:06: [Rift Raid Alert] Azranel = 55 %
+17:41:25: [Rift Raid Alert] Azranel = 50 %
+17:41:26: [Rift Raid Alert] Azranel < Magnetized (You are becoming magnetized and developing an electric charge that will explode. Dealing more damage to those players closest to you. )
+17:41:30: [Rift Raid Alert] Azranel = 55 %
+17:41:30: [Rift Raid Alert] Azranel = 60 %
+17:41:31: [Rift Raid Alert] Azranel = 65 %
+17:41:36: [Rift Raid Alert] Azranel = 70 %
+
+---------------------------------------------------------------------
+17:45:38: [Rift Raid Alert] Combat Begin > Azranel
+17:45:55: [Rift Raid Alert] Azranel = 95 %
+17:46:04: [Rift Raid Alert] Azranel = 100 %
+17:46:06: [Rift Raid Alert] Azranel = 95 %
+17:46:26: [Rift Raid Alert] Azranel = 90 %
+17:46:42: [Rift Raid Alert] Azranel = 85 %
+17:47:04: [Rift Raid Alert] Azranel = 80 %
+17:47:27: [Rift Raid Alert] Azranel = 75 %
+17:47:45: [Rift Raid Alert] Azranel = 70 %
+17:48:07: [Rift Raid Alert] Azranel = 65 %
+17:48:28: [Rift Raid Alert] Azranel = 60 %
+17:48:51: [Rift Raid Alert] Azranel = 55 %
+17:49:11: [Rift Raid Alert] Azranel = 50 %
+17:49:12: [Rift Raid Alert] Azranel < Magnetized (You are becoming magnetized and developing an electric charge that will explode. Dealing more damage to those players closest to you. )
+17:49:13: [Rift Raid Alert] Azranel > Defensive Spin >> Azranel
+17:49:23: [Rift Raid Alert] Azranel = 55 %
+17:49:42: [Rift Raid Alert] Azranel = 60 %
+17:49:53: [Rift Raid Alert] Azranel = 55 %
+17:50:02: [Rift Raid Alert] Azranel = 60 %
+17:50:02: [Rift Raid Alert] Azranel = 65 %
+17:50:21: [Rift Raid Alert] Azranel = 70 %
+17:50:27: [Rift Raid Alert] Azranel = 75 %
+
+---------------------------------------------------------------------
+17:51:21: [Rift Raid Alert] Combat Begin > Azranel
+
+---------------------------------------------------------------------
+17:52:55: [Rift Raid Alert] Combat Begin > Azranel
+17:53:11: [Rift Raid Alert] Azranel = 95 %
+17:53:28: [Rift Raid Alert] Azranel = 90 %
+17:53:49: [Rift Raid Alert] Azranel = 85 %
+17:54:07: [Rift Raid Alert] Azranel = 80 %
+17:54:31: [Rift Raid Alert] Azranel = 75 %
+17:54:48: [Rift Raid Alert] Azranel = 70 %
+17:55:09: [Rift Raid Alert] Azranel = 65 %
+17:55:30: [Rift Raid Alert] Azranel = 60 %
+17:55:52: [Rift Raid Alert] Azranel = 55 %
+17:56:30: [Rift Raid Alert] Azranel = 50 %
+17:56:31: [Rift Raid Alert] Azranel < Magnetized (You are becoming magnetized and developing an electric charge that will explode. Dealing more damage to those players closest to you. )
+17:56:32: [Rift Raid Alert] Azranel > Defensive Spin >> Azranel
+17:56:36: [Rift Raid Alert] Azranel = 55 %
+17:56:41: [Rift Raid Alert] Azranel = 60 %
+17:56:51: [Rift Raid Alert] Azranel = 55 %
+17:56:57: [Rift Raid Alert] Azranel = 60 %
+17:57:18: [Rift Raid Alert] Azranel = 55 %
+17:57:38: [Rift Raid Alert] Azranel = 50 %
+17:57:39: [Rift Raid Alert] Azranel < Magnetized (You are becoming magnetized and developing an electric charge that will explode. Dealing more damage to those players closest to you. )
+17:57:43: [Rift Raid Alert] Azranel > Defensive Spin >> Azranel
+17:57:55: [Rift Raid Alert] Azranel = 55 %
+17:58:02: [Rift Raid Alert] Azranel = 50 %
+17:58:19: [Rift Raid Alert] Azranel < Magnetized (You are becoming magnetized and developing an electric charge that will explode. Dealing more damage to those players closest to you. )
+17:58:24: [Rift Raid Alert] Azranel = 55 %
+17:58:26: [Rift Raid Alert] Azranel = 60 %
+17:58:26: [Rift Raid Alert] Azranel = 65 %
+17:58:28: [Rift Raid Alert] Azranel = 70 %
+17:58:30: [Rift Raid Alert] Azranel = 75 %
+17:58:31: [Rift Raid Alert] Azranel = 80 %
+
+---------------------------------------------------------------------
+18:08:13: [Rift Raid Alert] Combat Begin > Azranel
+18:08:30: [Rift Raid Alert] Azranel = 95 %
+18:08:51: [Rift Raid Alert] Azranel = 90 %
+18:09:11: [Rift Raid Alert] Azranel = 85 %
+18:09:32: [Rift Raid Alert] Azranel = 80 %
+18:09:52: [Rift Raid Alert] Azranel = 75 %
+18:10:12: [Rift Raid Alert] Azranel = 70 %
+18:10:35: [Rift Raid Alert] Azranel = 65 %
+18:10:56: [Rift Raid Alert] Azranel = 60 %
+18:11:17: [Rift Raid Alert] Azranel = 55 %
+18:11:42: [Rift Raid Alert] Azranel = 50 %
+18:11:43: [Rift Raid Alert] Azranel < Magnetized (You are becoming magnetized and developing an electric charge that will explode. Dealing more damage to those players closest to you. )
+18:11:45: [Rift Raid Alert] Azranel > Defensive Spin >> Azranel
+18:12:15: [Rift Raid Alert] Azranel = 45 %
+18:12:24: [Rift Raid Alert] Azranel < Magnetized (You are becoming magnetized and developing an electric charge that will explode. Dealing more damage to those players closest to you. )
+18:12:32: [Rift Raid Alert] Azranel > Defensive Spin >> Azranel
+18:12:47: [Rift Raid Alert] Azranel = 40 %
+18:13:05: [Rift Raid Alert] Azranel < Magnetized (You are becoming magnetized and developing an electric charge that will explode. Dealing more damage to those players closest to you. )
+18:13:12: [Rift Raid Alert] Azranel = 35 %
+18:13:17: [Rift Raid Alert] Azranel > Defensive Spin >> Azranel
+18:13:46: [Rift Raid Alert] Azranel < Magnetized (You are becoming magnetized and developing an electric charge that will explode. Dealing more damage to those players closest to you. )
+18:13:47: [Rift Raid Alert] Azranel = 30 %
+18:14:03: [Rift Raid Alert] Azranel > Defensive Spin >> Azranel
+18:14:21: [Rift Raid Alert] Azranel = 25 %
+18:14:27: [Rift Raid Alert] Azranel < Magnetized (You are becoming magnetized and developing an electric charge that will explode. Dealing more damage to those players closest to you. )
+18:14:28: [Rift Raid Alert] Azranel = 30 %
+18:14:34: [Rift Raid Alert] Azranel = 35 %
+18:14:47: [Rift Raid Alert] Azranel = 30 %
+18:14:48: [Rift Raid Alert] Azranel = 35 %
+18:14:48: [Rift Raid Alert] Azranel > Defensive Spin >> Azranel
+18:14:50: [Rift Raid Alert] Azranel = 40 %
+18:15:07: [Rift Raid Alert] Azranel < Magnetized (You are becoming magnetized and developing an electric charge that will explode. Dealing more damage to those players closest to you. )
+18:15:34: [Rift Raid Alert] Azranel > Defensive Spin >> Azranel
+18:15:37: [Rift Raid Alert] Azranel = 45 %
+18:15:43: [Rift Raid Alert] Azranel = 50 %
+18:15:47: [Rift Raid Alert] Azranel < Magnetized (You are becoming magnetized and developing an electric charge that will explode. Dealing more damage to those players closest to you. )
+18:15:49: [Rift Raid Alert] Azranel = 55 %
+18:15:50: [Rift Raid Alert] Azranel = 60 %
+
+---------------------------------------------------------------------
+18:17:20: [Rift Raid Alert] Combat Begin > Azranel
+
+---------------------------------------------------------------------
+18:19:56: [Rift Raid Alert] Combat Begin > Azranel
+18:20:14: [Rift Raid Alert] Azranel = 95 %
+18:20:35: [Rift Raid Alert] Azranel = 90 %
+18:20:54: [Rift Raid Alert] Azranel = 85 %
+18:21:14: [Rift Raid Alert] Azranel = 80 %
+18:21:30: [Rift Raid Alert] Azranel = 75 %
+18:21:51: [Rift Raid Alert] Azranel = 70 %
+18:22:08: [Rift Raid Alert] Azranel = 65 %
+18:22:29: [Rift Raid Alert] Azranel = 60 %
+18:22:50: [Rift Raid Alert] Azranel = 55 %
+18:23:13: [Rift Raid Alert] Azranel = 50 %
+18:23:14: [Rift Raid Alert] Azranel < Magnetized (You are becoming magnetized and developing an electric charge that will explode. Dealing more damage to those players closest to you. )
+18:23:15: [Rift Raid Alert] Azranel > Defensive Spin >> Azranel
+18:23:24: [Rift Raid Alert] Azranel = 55 %
+18:23:36: [Rift Raid Alert] Azranel = 50 %
+18:23:55: [Rift Raid Alert] Azranel < Magnetized (You are becoming magnetized and developing an electric charge that will explode. Dealing more damage to those players closest to you. )
+18:24:00: [Rift Raid Alert] Azranel > Defensive Spin >> Azranel
+18:24:30: [Rift Raid Alert] Azranel = 45 %
+18:24:35: [Rift Raid Alert] Azranel < Magnetized (You are becoming magnetized and developing an electric charge that will explode. Dealing more damage to those players closest to you. )
+18:24:45: [Rift Raid Alert] Azranel > Defensive Spin >> Azranel
+18:24:46: [Rift Raid Alert] Azranel = 50 %
+18:24:52: [Rift Raid Alert] Azranel = 45 %
+18:25:00: [Rift Raid Alert] Azranel = 50 %
+18:25:01: [Rift Raid Alert] Azranel = 55 %
+18:25:11: [Rift Raid Alert] Azranel = 50 %
+18:25:11: [Rift Raid Alert] Azranel = 55 %
+18:25:17: [Rift Raid Alert] Azranel = 60 %
+18:25:25: [Rift Raid Alert] Azranel = 65 %
+18:25:29: [Rift Raid Alert] Azranel = 70 %
+18:25:31: [Rift Raid Alert] Azranel = 75 %
+
+---------------------------------------------------------------------
+18:29:59: [Rift Raid Alert] Combat Begin > Azranel
+18:30:16: [Rift Raid Alert] Azranel = 95 %
+18:30:35: [Rift Raid Alert] Azranel = 90 %
+18:30:52: [Rift Raid Alert] Azranel = 85 %
+18:31:09: [Rift Raid Alert] Azranel = 80 %
+18:31:30: [Rift Raid Alert] Azranel = 75 %
+18:31:50: [Rift Raid Alert] Azranel = 70 %
+18:32:15: [Rift Raid Alert] Azranel = 65 %
+18:32:36: [Rift Raid Alert] Azranel = 60 %
+18:32:59: [Rift Raid Alert] Azranel = 55 %
+18:33:20: [Rift Raid Alert] Azranel = 50 %
+18:33:21: [Rift Raid Alert] Azranel < Magnetized (You are becoming magnetized and developing an electric charge that will explode. Dealing more damage to those players closest to you. )
+18:33:23: [Rift Raid Alert] Azranel > Defensive Spin >> Azranel
+18:33:32: [Rift Raid Alert] Azranel = 55 %
+18:33:49: [Rift Raid Alert] Azranel = 50 %
+18:34:01: [Rift Raid Alert] Azranel < Magnetized (You are becoming magnetized and developing an electric charge that will explode. Dealing more damage to those players closest to you. )
+18:34:08: [Rift Raid Alert] Azranel > Defensive Spin >> Azranel
+18:34:16: [Rift Raid Alert] Azranel = 55 %
+18:34:36: [Rift Raid Alert] Azranel = 50 %
+18:34:41: [Rift Raid Alert] Azranel < Magnetized (You are becoming magnetized and developing an electric charge that will explode. Dealing more damage to those players closest to you. )
+18:34:44: [Rift Raid Alert] Azranel = 55 %
+18:34:46: [Rift Raid Alert] Azranel = 60 %
+18:34:46: [Rift Raid Alert] Azranel = 65 %
+18:34:48: [Rift Raid Alert] Azranel = 70 %
+18:34:49: [Rift Raid Alert] Azranel = 75 %
+18:34:49: [Rift Raid Alert] Azranel = 80 %
+18:34:56: [Rift Raid Alert] Azranel = 85 %
+
+---------------------------------------------------------------------
+18:38:46: [Rift Raid Alert] Combat Begin > Azranel
+18:39:04: [Rift Raid Alert] Azranel = 95 %
+18:39:17: [Rift Raid Alert] Azranel = 100 %
+18:39:18: [Rift Raid Alert] Azranel = 95 %
+18:39:41: [Rift Raid Alert] Azranel = 90 %
+18:40:02: [Rift Raid Alert] Azranel = 85 %
+18:40:26: [Rift Raid Alert] Azranel = 80 %
+18:40:48: [Rift Raid Alert] Azranel = 75 %
+18:40:59: [Rift Raid Alert] Azranel = 80 %
+18:41:05: [Rift Raid Alert] Azranel = 75 %
+18:41:33: [Rift Raid Alert] Azranel = 70 %
+18:41:53: [Rift Raid Alert] Azranel = 65 %
+18:42:19: [Rift Raid Alert] Azranel = 60 %
+18:42:28: [Rift Raid Alert] Azranel = 65 %
+18:42:31: [Rift Raid Alert] Azranel = 70 %
+18:42:31: [Rift Raid Alert] Azranel = 65 %
+18:43:07: [Rift Raid Alert] Azranel = 60 %
+18:43:32: [Rift Raid Alert] Azranel = 55 %
+18:43:34: [Rift Raid Alert] Azranel = 60 %
+18:43:53: [Rift Raid Alert] Azranel = 55 %
+18:44:02: [Rift Raid Alert] Azranel = 60 %
+18:44:10: [Rift Raid Alert] Azranel = 55 %
+18:44:22: [Rift Raid Alert] Azranel = 60 %
+18:44:26: [Rift Raid Alert] Azranel = 65 %
+18:44:34: [Rift Raid Alert] Azranel = 70 %
+18:44:34: [Rift Raid Alert] Azranel = 75 %
+18:44:42: [Rift Raid Alert] Azranel = 80 %
+
+---------------------------------------------------------------------
+18:46:44: [Rift Raid Alert] Combat Begin > Azranel
+18:47:01: [Rift Raid Alert] Azranel = 95 %
+18:47:21: [Rift Raid Alert] Azranel = 90 %
+18:47:37: [Rift Raid Alert] Azranel = 85 %
+18:47:55: [Rift Raid Alert] Azranel = 80 %
+18:48:16: [Rift Raid Alert] Azranel = 75 %
+18:48:34: [Rift Raid Alert] Azranel = 70 %
+18:48:54: [Rift Raid Alert] Azranel = 65 %
+18:49:16: [Rift Raid Alert] Azranel = 60 %
+18:49:30: [Rift Raid Alert] Azranel = 65 %
+18:49:33: [Rift Raid Alert] Azranel = 60 %
+18:49:56: [Rift Raid Alert] Azranel = 55 %
+18:50:20: [Rift Raid Alert] Azranel = 50 %
+18:50:21: [Rift Raid Alert] Azranel < Magnetized (You are becoming magnetized and developing an electric charge that will explode. Dealing more damage to those players closest to you. )
+18:50:25: [Rift Raid Alert] Azranel > Defensive Spin >> Azranel
+18:50:27: [Rift Raid Alert] Azranel = 55 %
+18:50:27: [Rift Raid Alert] Azranel = 60 %
+18:51:10: [Rift Raid Alert] Azranel = 55 %
+18:51:24: [Rift Raid Alert] Azranel = 60 %
+18:51:28: [Rift Raid Alert] Azranel = 55 %
+18:51:48: [Rift Raid Alert] Azranel = 50 %
+18:51:50: [Rift Raid Alert] Azranel < Magnetized (You are becoming magnetized and developing an electric charge that will explode. Dealing more damage to those players closest to you. )
+18:51:51: [Rift Raid Alert] Azranel > Defensive Spin >> Azranel
+18:51:52: [Rift Raid Alert] Azranel = 55 %
+18:51:59: [Rift Raid Alert] Azranel = 60 %
+18:52:03: [Rift Raid Alert] Azranel = 65 %
+18:52:05: [Rift Raid Alert] Azranel = 70 %
+18:52:07: [Rift Raid Alert] Azranel = 75 %
+18:52:08: [Rift Raid Alert] Azranel = 80 %
+
+---------------------------------------------------------------------
+18:54:50: [Rift Raid Alert] Combat Begin > Azranel
+18:55:07: [Rift Raid Alert] Azranel = 95 %
+18:55:27: [Rift Raid Alert] Azranel = 90 %
+18:55:45: [Rift Raid Alert] Azranel = 85 %
+18:56:00: [Rift Raid Alert] Azranel = 80 %
+18:56:25: [Rift Raid Alert] Azranel = 75 %
+18:56:48: [Rift Raid Alert] Azranel = 70 %
+18:57:04: [Rift Raid Alert] Azranel = 65 %
+18:57:28: [Rift Raid Alert] Azranel = 60 %
+18:57:49: [Rift Raid Alert] Azranel = 55 %
+18:58:12: [Rift Raid Alert] Azranel = 50 %
+18:58:13: [Rift Raid Alert] Azranel < Magnetized (You are becoming magnetized and developing an electric charge that will explode. Dealing more damage to those players closest to you. )
+18:58:14: [Rift Raid Alert] Azranel > Defensive Spin >> Azranel
+18:58:24: [Rift Raid Alert] Azranel = 55 %
+18:58:26: [Rift Raid Alert] Azranel = 60 %
+18:58:30: [Rift Raid Alert] Azranel = 65 %
+18:59:13: [Rift Raid Alert] Azranel = 70 %
+18:59:38: [Rift Raid Alert] Azranel = 65 %
+19:00:16: [Rift Raid Alert] Azranel = 70 %
+19:00:46: [Rift Raid Alert] Azranel = 75 %
+19:00:54: [Rift Raid Alert] Azranel = 80 %
+19:01:18: [Rift Raid Alert] Azranel = 85 %
