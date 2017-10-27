@@ -5,11 +5,9 @@ trigger = all; all; Azranel; ability; player << remove Laser Cutter; tank swap; 
 trigger = all; all; Azranel; ability; playername << Missile Storm; run out; 0; 0; 0; 0; 0; 0
 trigger = all; all; Azranel; ability; playername << Magnetized; Magnetized; 0; 0; 0; 0; 0; 0
 #trigger = all; all; Azranel; ability; Azranel < remove Defensive Spin; go; 0; 0; 0; 0; 0; 0
-trigger = all; all; Azranel; ability; playername << Static Insulator; safe for 20 seconds; 0; 0; 0; 0; 0; 0
-#trigger = all; all; Azranel; ability; playername << remove Static Insulator; not safe; 0; 0; 0; 0; 0; 0
+trigger = all; all; Azranel; ability; playername << Static Insulator; safe; 0; 0; 0; 0; 0; 0
+trigger = all; all; Azranel; ability; Azranel = 50 %; 50 %; 0; 0; 0; 0; 0; 0
 trigger = all; all; Vindicator MK1; ability; player << Enfeeblement; tank swap; 0; 0; 0; 0; 0; 0
 trigger = all; all; Vindicator MK1; ability; Timed Charge >> player; player run out; 0; 0; 0; 0; 0; 0
 trigger = all; all; Vindicator MK1; ability; player << Explosive Round; cleanse player; 0; 0; 0; 0; 0; 0
 trigger = all; all; Vindicator MK1; ability; Vindicator MK1 < Irradiated Field; aoe; 0; 0; 0; 0; 0; 0
-trigger = all; all; Azranel; ability; Azranel = 50 %; 50 %; 0; 0; 0; 0; 0; 0
-trigger = all; all; Azranel; ability; Azranel = 25 %; 25 %; 0; 0; 0; 0; 0; 0
