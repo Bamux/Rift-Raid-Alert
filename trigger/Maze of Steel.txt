@@ -4,10 +4,10 @@ trigger = all; all; Azranel; ability; Azranel = 50 %; 50 %; 0; 0; 0; 0; 0; 1
 trigger = all; all; Azranel; ability; Azranel > Defensive Spin; spin; 0; 0; 0; 0; 0; 0
 trigger = all; all; Azranel; ability; Azranel > Defensive Spin; spin in; 42; 46; 0; 0; 0; 0
 trigger = all; all; Azranel; ability; Azranel < Magnetized; Magnetized in; 37; 41; 0; 0; 0; 0
-trigger = all; all; Azranel; ability; playername << Magnetized; you; 0; 0; 0; 0; 0; 0
+trigger = all; all; Azranel; ability; Azranel < Magnetized; 10; 31; 0; 0; 0; 0; 0
 #trigger = all; all; Azranel; ability; Azranel < remove Defensive Spin; go; 0; 0; 0; 0; 0; 0
-#trigger = all; all; Azranel; ability; player << Laser Cutter; tank swap; 0; 0; 0; 4; 0; 0
-#trigger = all; all; Azranel; ability; player << remove Laser Cutter; tank swap; 0; 0; 0; -4; 0; 0
+trigger = all; all; Azranel; ability; player << Laser Cutter; tank swap; 0; 0; 0; 4; 0; 0
+trigger = all; all; Azranel; ability; player << remove Laser Cutter; tank swap; 0; 0; 0; -4; 0; 0
 trigger = all; all; Azranel; ability; playername << Static Insulator; safe; 0; 0; 0; 0; 0; 0
 trigger = all; all; Vindicator MK1; ability; player << Enfeeblement; tank swap; 0; 0; 0; 0; 0; 0
 trigger = all; all; Vindicator MK1; ability; Timed Charge >> player; player run out; 0; 0; 0; 0; 0; 0
