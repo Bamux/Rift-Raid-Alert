@@ -1,4 +1,4 @@
-﻿trigger = all; all; Azranel; ability; player << Projektilsturm; player; 0; 0; 0; 0; 0; 0
+﻿trigger = all; all; Azranel; ability; playername << Projektilsturm; run out; 0; 0; 0; 0; 0; 0
 trigger = all; all; Azranel; ability; Azranel > Kometenschuss >> player; stack player; 0; 0; 0; 0; 0; 0
 trigger = all; all; Azranel; ability; Azranel = 60 %; ; 0; 0; 0; 0; 0; 1
 trigger = all; all; Azranel; ability; Azranel = 55 %; ; 0; 0; 0; 0; 0; 1
