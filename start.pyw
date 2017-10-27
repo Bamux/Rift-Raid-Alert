@@ -2,7 +2,6 @@
 
 # Rift Raid Alert
 # Spoken raid warnings for the MMORPG Rift
-# Version 2.2
 # Author: Bamu@Brutwacht
 
 import os
@@ -17,8 +16,13 @@ from threading import Thread
 from tkinter import filedialog
 from tkinter import *
 
+version = "2.2.3"
 
-def trigger_analysis(log, log_big):
+error_analysis = False  # only for test a complete logfile from line 1 (True or False)
+playback = False  # only for Playback a logfile from line 1 with orginal time (True or False)
+
+
+def trigger_analysis(log, log_big, orginal):
     global timerreset, language, location, boss, specialtrigger, timeout_trigger, siri, stacks, stacks_trigger,\
         depending, counter1, counter2, output
     trigger_found = False
@@ -161,7 +165,7 @@ def trigger_analysis(log, log_big):
                                                 siri = True
                                                 specialtrigger = 5
                                                 timerreset.clear()
-                                                stacks_trigger.clear()
+                                                # stacks_trigger.clear()
                                             if int(trigger[i][6]) > 0:
                                                 t = Thread(target=timer, args=(int(trigger[i][6]), trigger[i][4], trigger[i][5]))
                                                 t.start()
@@ -180,7 +184,7 @@ def trigger_analysis(log, log_big):
                                                     timeout_trigger.clear()
                                                     timerreset.clear()
                                                     stacks.clear()
-                                                    stacks_trigger.clear()
+                                                    # stacks_trigger.clear()
                                                     counter1 = 0
                                                     counter2 = 0
                                                     # guioutput("Combat End")
@@ -249,7 +253,7 @@ def trigger_analysis(log, log_big):
                                             siri = True
                                             specialtrigger = 5
                                             timerreset.clear()
-                                            stacks_trigger.clear()
+                                            # stacks_trigger.clear()
                                         if int(trigger[i][6]) > 0:
                                             t = Thread(target=timer, args=(int(trigger[i][6]), trigger[i][4], trigger[i][5]))
                                             t.start()
@@ -305,7 +309,7 @@ def trigger_analysis(log, log_big):
                                 specialtrigger_found = False
                                 break
                     if specialtrigger_found:
-                        guioutput(log)
+                        guioutput(orginal)
                         siri = False
                         Thread(target=playsoundfile, args=(special[i][specialtrigger],)).start()
                         # Thread(target=saytext, args=(text,)).start()
@@ -316,14 +320,14 @@ def trigger_analysis(log, log_big):
                         location = special[i][1]
                         boss = special[i][2]
                         if keywords_on_off == 1 and "lfm" in strigger:
-                            add_to_clipboard(log_big)
+                            add_to_clipboard(orginal)
                         break
 
 
-def add_to_clipboard(log_big):  # add to windows clipboard
+def add_to_clipboard(orginal):  # add to windows clipboard
     try:
-        if "]: " in log_big:
-            name = log_big.split("]: ")[0]
+        if "]: " in orginal:
+            name = orginal.split("]: ")[0]
             name = name.split("][")[1]
             text = "/tell " + name + " + "
             command = 'echo | set /p dummyVar="' + text + '" | clip'
@@ -387,10 +391,10 @@ def logfile_analysis(logtext):
                 line = cut_string[1]
                 if " = " in line:
                     guioutput(log)
-            # elif "]: " in log:
-            #     cut_string = log.split("]: ")
-            #     log = cut_string[1]
-            #     line = log
+            elif "]: " in log:
+                cut_string = log.split("]: ")
+                log = cut_string[1]
+                line = log
             # log = umlaute(log)
             log_big = log
             log = str.lower(log)
@@ -460,6 +464,7 @@ def logfile_analysis(logtext):
                     special += defaultspecial
                     zone = ""
                 elif 'player >> ' in log:
+                    stacks_trigger.clear()
                     cut_string = log.split('player >> ')
                     playername = cut_string[1]
                     # guioutput("Player: " + playername)
@@ -486,7 +491,7 @@ def logfile_analysis(logtext):
                             else:
                                 text = line.split("> ")[1] + " check your buffs"
 
-                trigger_analysis(log, log_big)
+                trigger_analysis(log, log_big, orginal)
 
                 if combat and line:
                     Thread(target=abilitycheck, args=(line, orginal, bossname)).start()
@@ -720,18 +725,19 @@ def texttospeech(text):
 def playsoundfile(text):
     global soundfiles, output
     soundfile_found = False
-    if output == "wav" or output == "mix":
-        for i in range(0, len(soundfiles)):
-            if text == soundfiles[i]:
-                if text == "kick" or text == "now":
-                    winsound.PlaySound('siri/' + text + ".wav", winsound.SND_NOWAIT)
-                else:
-                    winsound.PlaySound('siri/' + text + ".wav", winsound.SND_FILENAME)
-                soundfile_found = True
-                break
-    if output == "mix":
-        if not soundfile_found:
-            texttospeech(text)
+    if not error_analysis:
+        if output == "wav" or output == "mix":
+            for i in range(0, len(soundfiles)):
+                if text == soundfiles[i]:
+                    if text == "kick" or text == "now":
+                        winsound.PlaySound('siri/' + text + ".wav", winsound.SND_NOWAIT)
+                    else:
+                        winsound.PlaySound('siri/' + text + ".wav", winsound.SND_FILENAME)
+                    soundfile_found = True
+                    break
+        if output == "mix":
+            if not soundfile_found:
+                texttospeech(text)
 
 
 def triggerload(file):  # get parametrs from Rift_Raid_Warnings.ini
@@ -1431,7 +1437,7 @@ def special_trigger(value):
 def check_trigger():
     global trigger, special, zone, language, location, boss
     if zone != e0.get():
-        trigger_analysis("combat end", "Combat End")
+        trigger_analysis("combat end", "Combat End", "")
     zone = e0.get()
     boss = e1.get()
     trigger.clear()
@@ -1448,9 +1454,9 @@ def check_trigger():
     else:
         if len(final_trigger) > 3 and " || " in final_trigger[4]:
             split = final_trigger[4].split(" || ")[0]
-            trigger_analysis(str.lower(split), str(split))
+            trigger_analysis(str.lower(split), str(split), str(split))
         else:
-            trigger_analysis(str.lower(final_trigger[4]), str(final_trigger[4]))
+            trigger_analysis(str.lower(final_trigger[4]), str(final_trigger[4]), str(final_trigger[4]))
 
 
 def new_trigger(value):
@@ -2004,7 +2010,7 @@ scrollbar = Scrollbar(root)
 T = Text(root, height=20, width=50, padx=10, pady=10)
 sb.config(command=T.yview)
 T.config(yscrollcommand=sb.set)
-T.insert(END, "Rift Raid Alert Version 2.2 - Author: Bamu@Brutwacht\nMake sure you use /log in Rift after each game restart !")
+T.insert(END, "Rift Raid Alert Version " + version + " - Author: Bamu@Brutwacht\nMake sure you use /log in Rift after each game restart !")
 
 soundfiles = soundfiles_list('siri')
 combattrigger = 1
@@ -2074,8 +2080,6 @@ stacks_trigger = []
 depending = 0
 counter1 = 0
 counter2 = 0
-playback = False  # only for Playback a logfile from line 1
-error_analysis = False
 log_exists = False
 keywords_on_off = 0
 logfilecheck()
@@ -2209,6 +2213,7 @@ zone_abilities_listbox.bind('<<ListboxSelect>>', zone_ability_select)
 keywords_listbox = Listbox(root, width=60, height=10)
 keywords_listbox.bind('<<ListboxSelect>>', keywords_select)
 
+reset()
 mainmenue()
 root.protocol("WM_DELETE_WINDOW", ask_quit)
 root.mainloop()
