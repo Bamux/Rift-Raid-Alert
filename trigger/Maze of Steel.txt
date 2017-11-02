@@ -1,8 +1,5 @@
 trigger = all; all; Azranel; ability; playername << Missile Storm; run out; 0; 0; 0; 0; 0; 0
 trigger = all; all; Azranel; ability; Azranel > Comet Shot >> player; stack player; 0; 0; 0; 0; 0; 0
-trigger = all; all; Azranel; ability; Azranel = 60 %; ; 0; 0; 0; 0; 0; 1
-trigger = all; all; Azranel; ability; Azranel = 55 %; ; 0; 0; 0; 0; 0; 1
-trigger = all; all; Azranel; ability; Azranel = 50 %; 50 %; 0; 0; 0; 0; 0; 1
 trigger = all; all; Azranel; ability; Azranel > Defensive Spin; spin; 0; 0; 0; 0; 0; 0
 trigger = all; all; Azranel; ability; Azranel > Defensive Spin; spin in; 42; 46; 0; 0; 0; 0
 trigger = all; all; Azranel; ability; Azranel < Magnetized; Magnetized in; 37; 41; 0; 0; 0; 0
