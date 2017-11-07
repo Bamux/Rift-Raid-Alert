@@ -16,7 +16,7 @@ from threading import Thread
 from tkinter import filedialog
 from tkinter import *
 
-version = "2.2.3"
+version = "2.2.4"
 
 error_analysis = False  # only for test a complete logfile from line 1 (True or False)
 playback = False  # only for Playback a logfile from line 1 with orginal time (True or False)
@@ -425,10 +425,10 @@ def logfile_analysis(logtext):
                 combat = False
                 save_abilities(bossname)
 
-            if log:
+            if orginal:
                 if playback:
                     if combat:
-                        cut_string = log.split(":")
+                        cut_string = orginal.split(":")
                         logtime = int(cut_string[2])
                         if lasttime < 0:
                             lasttime = logtime
@@ -723,21 +723,29 @@ def texttospeech(text):
 
 
 def playsoundfile(text):
-    global soundfiles, output
+    global soundfiles, output, oldtext, oldtime
     soundfile_found = False
+    current_time = time.clock()
+    print(current_time - oldtime)
+    repeat = True
+    if keywords_on_off == 1 and current_time - oldtime > 1:
+        oldtext = text
+        oldtime = time.clock()
+        repeat = False
     if not error_analysis:
-        if output == "wav" or output == "mix":
-            for i in range(0, len(soundfiles)):
-                if text == soundfiles[i]:
-                    if text == "kick" or text == "now":
-                        winsound.PlaySound('siri/' + text + ".wav", winsound.SND_NOWAIT)
-                    else:
-                        winsound.PlaySound('siri/' + text + ".wav", winsound.SND_FILENAME)
-                    soundfile_found = True
-                    break
-        if output == "mix":
-            if not soundfile_found:
-                texttospeech(text)
+        if not repeat or keywords_on_off == 0:
+            if output == "wav" or output == "mix":
+                for i in range(0, len(soundfiles)):
+                    if text == soundfiles[i]:
+                        if text == "kick" or text == "now":
+                            winsound.PlaySound('siri/' + text + ".wav", winsound.SND_NOWAIT)
+                        else:
+                            winsound.PlaySound('siri/' + text + ".wav", winsound.SND_FILENAME)
+                        soundfile_found = True
+                        break
+            if output == "mix":
+                if not soundfile_found:
+                    texttospeech(text)
 
 
 def triggerload(file):  # get parametrs from Rift_Raid_Warnings.ini
@@ -2082,6 +2090,8 @@ counter1 = 0
 counter2 = 0
 log_exists = False
 keywords_on_off = 0
+oldtext = ""
+oldtime = time.clock()
 logfilecheck()
 
 trigger_details_list = []
