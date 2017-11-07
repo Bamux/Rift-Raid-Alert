@@ -1,9 +1,9 @@
 keywords = lfm + rr; Raid Rift looking for more
-keywords = zone even + [Vostigar-Gipfel] + Brisesol; Event Brisesol
-keywords = zone even + [Vostigar-Gipfel] + Brutwacht; Event Bruitwacht
-keywords = zone even + [Vostigar-Gipfel] + Gelidra; Event Gelidra
-keywords = zone even + [Vostigar-Gipfel] + Typhiria; Event Typhiria
-keywords = zone even + [Vostigar-Gipfel] + Zaviel; Event Zaviel
+keywords = zone even + [Vostigar Peaks] + Brisesol; Event Brisesol
+keywords = zone even + [Vostigar Peaks] + Brutwacht; Event Bruitwacht
+keywords = zone even + [Vostigar Peaks] + Gelidra; Event Gelidra
+keywords = zone even + [Vostigar Peaks] + Typhiria; Event Typhiria
+keywords = zone even + [Vostigar Peaks] + Zaviel; Event Zaviel
 keywords = Zonenereignis + [Vostigar-Gipfel] + Brisesol; Event Brisesol
 keywords = Zonenereignis + [Vostigar-Gipfel] + Brutwacht; Event Bruitwacht
 keywords = Zonenereignis + [Vostigar-Gipfel] + Gelidra; Event Gelidra
