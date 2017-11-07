@@ -1,10 +1,15 @@
 keywords = lfm + rr; Raid Rift looking for more
-keywords = zone event + Vostigar Peaks; go
+keywords = zone even + [Vostigar-Gipfel] + Brisesol; Event Brisesol
+keywords = zone even + [Vostigar-Gipfel] + Brutwacht; Event Bruitwacht
+keywords = zone even + [Vostigar-Gipfel] + Gelidra; Event Gelidra
+keywords = zone even + [Vostigar-Gipfel] + Typhiria; Event Typhiria
+keywords = zone even + [Vostigar-Gipfel] + Zaviel; Event Zaviel
 keywords = Zonenereignis + [Vostigar-Gipfel] + Brisesol; Event Brisesol
 keywords = Zonenereignis + [Vostigar-Gipfel] + Brutwacht; Event Bruitwacht
 keywords = Zonenereignis + [Vostigar-Gipfel] + Gelidra; Event Gelidra
 keywords = Zonenereignis + [Vostigar-Gipfel] + Typhiria; Event Typhiria
 keywords = Zonenereignis + [Vostigar-Gipfel] + Zaviel; Event Zaviel
+keywords = zone event + Vostigar Peaks; go
 #keywords = RoTP + lfm; Rise of the Phoenix looking for more
 #keywords = Golem + lfm; Golem looking for more
 #keywords = LFM + Mini + boss; Miniboss
