@@ -1,7 +1,12 @@
+keywords = lfm + rr; Raid Rift looking for more
+keywords = has started in + Vostigar Peaks; go
+keywords = Zonenereignis + [Vostigar-Gipfel] + Brisesol; Event Brisesol
+keywords = Zonenereignis + [Vostigar-Gipfel] + Brutwacht; Event Bruitwacht
+keywords = Zonenereignis + [Vostigar-Gipfel] + Gelidra; Event Gelidra
+keywords = Zonenereignis + [Vostigar-Gipfel] + Typhiria; Event Typhiria
+keywords = Zonenereignis + [Vostigar-Gipfel] + Zaviel; Event Zaviel
 #keywords = RoTP + lfm; Rise of the Phoenix looking for more
 #keywords = Golem + lfm; Golem looking for more
 #keywords = TD + lfm; Tartaric Depths looking for more
 #keywords = QF + lfm; Queens Foci looking for more
-keywords = ] + whispers:; whisper
-keywords = lfm + rr; Raid Rift looking for more
-#keywords = has started in + Vostigar Peaks; go
+#keywords = ] + whispers:; whisper
