@@ -7,6 +7,7 @@ keywords = Zonenereignis + [Vostigar-Gipfel] + Typhiria; Event Typhiria
 keywords = Zonenereignis + [Vostigar-Gipfel] + Zaviel; Event Zaviel
 #keywords = RoTP + lfm; Rise of the Phoenix looking for more
 #keywords = Golem + lfm; Golem looking for more
+#keywords = LFM + Mini + boss; Miniboss
 #keywords = TD + lfm; Tartaric Depths looking for more
 #keywords = QF + lfm; Queens Foci looking for more
 #keywords = ] + whispers:; whisper
