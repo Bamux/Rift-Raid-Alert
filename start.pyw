@@ -725,13 +725,12 @@ def texttospeech(text):
 def playsoundfile(text):
     global soundfiles, output, oldtext, oldtime
     soundfile_found = False
+    repeat = False
     current_time = time.clock()
-    print(current_time - oldtime)
-    repeat = True
-    if keywords_on_off == 1 and current_time - oldtime > 1:
-        oldtext = text
-        oldtime = time.clock()
-        repeat = False
+    if keywords_on_off == 1 and oldtext == text and current_time - oldtime < 1:
+        repeat = True
+    oldtime = time.clock()
+    oldtext = text
     if not error_analysis:
         if not repeat or keywords_on_off == 0:
             if output == "wav" or output == "mix":
