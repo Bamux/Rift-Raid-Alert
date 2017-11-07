@@ -8,6 +8,7 @@ import os
 # import sys
 import time
 import win32com.client
+import win32clipboard
 import pythoncom
 import winsound
 import codecs
@@ -16,7 +17,7 @@ from threading import Thread
 from tkinter import filedialog
 from tkinter import *
 
-version = "2.2.4"
+version = "2.2.5"
 
 error_analysis = False  # only for test a complete logfile from line 1 (True or False)
 playback = False  # only for Playback a logfile from line 1 with orginal time (True or False)
@@ -330,10 +331,18 @@ def add_to_clipboard(orginal):  # add to windows clipboard
             name = orginal.split("]: ")[0]
             name = name.split("][")[1]
             text = "/tell " + name + " + "
-            command = 'echo | set /p dummyVar="' + text + '" | clip'
-            os.system(command)
+            set_clipboard(text)
+            # command = 'echo | set /p dummyVar="' + text + '" | clip'
+            # os.system(command)
     except:
             pass
+
+
+def set_clipboard(text):  # add to windows clipboard
+    win32clipboard.OpenClipboard()
+    win32clipboard.EmptyClipboard()
+    win32clipboard.SetClipboardText(text)
+    win32clipboard.CloseClipboard()
 
 
 def umlaute(log):
