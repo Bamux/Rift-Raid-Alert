@@ -1,8 +1,0 @@
-Gristlespitt < Hangover (Has a throbbing headache which makes Gristlespitt more angry, and deal more damage)
-Gristlespitt > Rabid Spittle
-player << Aggressive Charge
-Gristlespitt > Furious Flailing
-Gristlespitt < Furious Flailing
-Gristlespitt > Munch Munch
-Gristlespitt > Death Rage
-Gristlespitt < Death Rage
