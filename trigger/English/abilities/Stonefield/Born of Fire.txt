@@ -1,0 +1,1 @@
+player << Scorching Strike (A burning wound that does damage over time.)

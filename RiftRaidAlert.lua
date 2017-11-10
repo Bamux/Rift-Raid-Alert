@@ -4,6 +4,11 @@ local Lavafield = Inspect.Time.Frame()
 local Orchester = Inspect.Time.Frame()
 local maxhitpoints = 0
 local lasthitpoints = 100
+local language = Inspect.System.Language()
+print("language = " .. language)
+
+
+
 
 
 local function CombatEnd()
@@ -79,7 +84,7 @@ local function CheckHP(event, units)
             if detail.id == rra_boss_id then
                 local hitpoints_percent = detail.health*100/detail.healthMax
                 while hitpoints >= 0 do
-                    if  hitpoints_percent <= hitpoints and hitpoints_percent > hitpoints-5 then
+                    if  hitpoints_percent <= hitpoints and hitpoints_percent > hitpoints-1 then
                         if hitpoints ~= lasthitpoints then
                             print(detail.name .. " = " .. hitpoints .. " %")
                             lasthitpoints = hitpoints
@@ -89,7 +94,7 @@ local function CheckHP(event, units)
                         end
                         break
                     end
-                    hitpoints = hitpoints - 5
+                    hitpoints = hitpoints - 1
                 end
             end
         end
@@ -362,6 +367,7 @@ local function ReadyCheck(event, units)
     if unit_details and player then
         for id, detail in pairs(unit_details) do
             if detail.id == player.id then
+                print("language = " .. language)
                 if detail.ready then
                     CombatEnd()
                     Zone()
@@ -439,6 +445,7 @@ local function slashHandler(h, args)
         return
     end
     if r[0] == "start" then
+        print("language = " .. language)
         if RiftRaidAlert_enabled == "keywords" then
             print("Rift Raid Alert Trigger < keywords off")
         end
@@ -449,6 +456,7 @@ local function slashHandler(h, args)
         return
     end
     if r[0] == "keywords" then
+        print("language = " .. language)
         if RiftRaidAlert_enabled == "start" then
             print("Rift Raid Alert stoped")
         end
@@ -458,6 +466,7 @@ local function slashHandler(h, args)
         return
     end
     if r[0] == "check" then
+        print("language = " .. language)
         local player = Inspect.Unit.Detail("player")
         print("player >> " .. player.name)
         rra_raidbuffcheck()

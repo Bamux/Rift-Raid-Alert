@@ -1,0 +1,12 @@
+player << Scorching Strike (A burning wound that does damage over time.)
+player << Atrophy (Deals -15 Death damage over 16s.)
+player << Dark Touch (Deals -109 Death damage over 16s.)
+Wanton Saboteur > Deadeye Shot
+1 Point: 13940 damage
+2 Points: 18473 damage
+3 Points: 24516 damage
+4 Points: 32070 damage
+5 Points: 41136 damage)
+Wanton Disruptor > Void Bolt
+Wanton Saboteur > Empowered Shot
+Wanton Raid-Leader > Terrifying Roar

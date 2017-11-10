@@ -4,7 +4,8 @@
 
 
 # Cooldowns
-trigger = all; all; all; buff; Rift Raid Alert > Lavafield; Lava; 0; 0; 0; 0; 0; 0
+trigger = all; all; all; buff; Rift Raid Alert > Lavafield; ; 0; 0; 0; 0; 0; 0
+trigger = all; all; all; buff; Rift Raid Alert > Lavafield; now.wav; 300; 0; 0; 0; 0; 0
 trigger = all; all; all; buff; Rift Raid Alert > Orchester; Orchester; 0; 0; 0; 0; 0; 0
 
 # Combat End all languages:

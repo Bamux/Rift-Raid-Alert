@@ -1,0 +1,21 @@
+Malannon < Blazing Aura (Radiates unbearable heat, pulsing constant area damage to enemies.)
+Malannon > Flaming Swipe
+Malannon > Flames of Annihilation
+Malannon > Runes of Power
+player << Mark of Acrimony (This purple aura will explode on expiration, heavily damaging you unless cleansed in the correct safe zone.)
+player << Mark of Supremacy (This yellow aura will explode on expiration, heavily damaging you unless cleansed in the correct safe zone.)
+Malannon > Flames of Malannon
+Malannon > Armageddon
+Malannon > Blazing Rupture
+player << Inferno Aura (Debuffs anyone entering the aura, lowering their outgoing damage and increases their incoming damage.)
+Malannon > Meteor
+player << Meteor (Stand together to mitigate damage. Immune to Life Insurance.)
+Malannon > Obliteration
+player << Blastback (About to explode! Will knock back anyone caught in the blast.)
+Malannon > Siphon Energy
+Phoenix of Rage > Flurry
+Phoenix of Rage > Fiery Eruption
+Dragon of Suffering > Revitalize
+Dragon of Suffering > Burning Ruin
+player << Burning Ruin (Periodically spawns pools of fire at your feet.)
+player << Burning Ruin (Taking periodic damage.)

@@ -1,0 +1,4 @@
+Marchioness Boldoch < Protected Fate (Grants immunity to interrupt. Absorbs 4575000 damage before breaking.)
+Crystalized Life > Invoker's Boon
+Marchioness Boldoch > No Permission to Ressurect
+Marchioness Boldoch < Protected Fate (Absorbs 4575000 damage before breaking.)

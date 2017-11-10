@@ -1,0 +1,6 @@
+Countessa Danazhal < Flame Prep (Flame Prep)
+Countessa Danazhal > Flamescape
+player << Dark Touch (Deals -109 Death damage over 16s.)
+Arcane Ooze > Void Bolt
+Countessa Danazhal > Mega Death Ball
+player << Mega Death Ball (Survived fate. Unable to be targeted by Danazhal's Death Ball.)

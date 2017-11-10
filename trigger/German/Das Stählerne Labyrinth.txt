@@ -1,0 +1,9 @@
+trigger = all; all; Azranel; ability; playername << Projektilsturm; run out; 0; 0; 0; 0; 0; 0
+#trigger = all; all; Azranel; ability; Azranel > Kometenschuss >> player; stack player; 0; 0; 0; 0; 0; 0
+trigger = all; all; Azranel; ability; Azranel > Defensivdrall; spin; 0; 0; 0; 0; 0; 0
+trigger = all; all; Azranel; ability; Azranel > Defensivdrall; spin in; 42; 46; 0; 0; 0; 0
+trigger = all; all; Azranel; ability; Azranel < Magnetisierung; Magnetized in; 37; 41; 0; 0; 0; 0
+trigger = all; all; Azranel; ability; Azranel < Magnetisierung; 10 seconds; 31; 0; 0; 0; 0; 0
+trigger = all; all; Azranel; ability; player << Laserschneider; tank swap; 0; 0; 0; 4; 0; 0
+trigger = all; all; Azranel; ability; player << remove Laserschneider; tank swap; 0; 0; 0; -4; 0; 0
+trigger = all; all; Azranel; ability; playername << Statischer Isolator; protected; 0; 0; 0; 0; 0; 0

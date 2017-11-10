@@ -1,0 +1,11 @@
+Flaming Trickster > Smoulder
+player << Trickter's Rupture (A kinetic blast that also does damage over time.)
+Flaming Trickster < Trickter's Rupture (A kinetic blast that also does damage over time.)
+player << Flame Breath (The fire continues to sear your flesh over time.)
+Ravenous Flame < Flame Breath (The fire continues to sear your flesh over time.)
+Ravenous Flame < Fire Bomb
+Fire Wing < Aerial Agility (Fire Wing is immune to taunt and takes reduced area-of-effect damage.)
+Fire Wing > Fire Breath
+player << Torn (A vicious wound that bleeds over time.)
+Fire Wing < Tail Slash
+player << Tail Slash

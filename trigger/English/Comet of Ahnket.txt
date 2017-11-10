@@ -1,0 +1,55 @@
+trigger = all; all; Duke Eblius; ability; Duke Eblius > Blazing Ruin; kick; 0; 0; 0; 0; 0; 0
+trigger = eng; CoA; Duke Eblius; ability; Aliavax Standard Bearer > Soul Seer; kick; 0; 0; 0; 0; 0; 0
+trigger = eng; CoA; Duke Eblius; ability; Aliavax Battle Shaman > Triage; Shaman kick 1; 0; 0; 0; 0; 0; 0
+trigger = eng; CoA; Duke Eblius; ability; player << Infernal Sunder; tank swap; 0; 0; 0; 2; 0; 0
+trigger = eng; CoA; Duke Eblius; ability; player << remove Infernal Sunder; tank swap; 0; 0; 0; -2; 0; 0
+trigger = eng; CoA; Duke Eblius; ability; Duke Eblius > Sulphurous Blight; cleanse; 0; 0; 0; 0; 0; 0
+trigger = all; all; Duke Eblius; ability; Duke Eblius > Chains of Woe >> player; free player; 0; 0; 0; 0; 0; 0
+trigger = eng; CoA; Duke Eblius; ability; Duke Eblius > Call to Arms; add; 0; 0; 0; 0; 0; 0
+trigger = all; all; Duke Eblius; ability; Duke Eblius > Call to Sacrifice; phase 3; 0; 60; 0; 0; 0; 0
+trigger = eng; CoA; Duke Eblius; ability; Duke Eblius > Call to Sacrifice; 10 seconds; 50; 0; 0; 0; 0; 0
+trigger = eng; CoA; Duke Eblius; ability; Duke Eblius > Call to Sacrifice; 5 seconds; 55; 0; 0; 0; 0; 0
+trigger = eng; CoA; Duke Eblius; ability; Alaviax Standard Bearer > Blazing Implosion; spread out; 0; 0; 0; 0; 0; 0
+trigger = eng; CoA; Duke Eblius; buff; Duke Eblius < Hellion's Rage; portal; 0; 0; 0; 0; 0; 0
+
+trigger = all; all; Azaphrentus; ability; Dark Star; bubble; 0; 0; 0; 0; 0; 0
+trigger = eng; CoA; Azaphrentus; ability; Manifest Scorn >> player; add player; 0; 0; 0; 0; 0; 0
+trigger = eng; CoA; Azaphrentus; ability; Azaphrentus > Rage of Azaphrentus; firewall; 0; 0; 0; 0; 0; 0
+
+trigger = all; all; Fyragnos; ability; Bane of Fyragnos >> player; intercept player; 0; 0; 0; 0; 0; 0
+trigger = eng; CoA; Fyragnos; ability; player is about to be consumed in fire!; player shield; 0; 0; 0; 0; 0; 0
+trigger = all; all; Fyragnos; ability; player << Flame of Despair; cleanse; 0; 0; 5; 0; 0; 0
+trigger = eng; CoA; Fyragnos; ability; Fyragnos > Magma Burst; move; 0; 0; 0; 0; 0; 0
+trigger = eng; CoA; Fyragnos; ability; Fyragnos > Summon Flamestrom; move; 0; 0; 0; 0; 0; 0
+trigger = all; all; Fyragnos; ability; player << Shackles of Ash; player run out; 0; 0; 10; 0; 0; 0
+trigger = all; all; Fyragnos; ability; Fyragnos > Inferno Blast; group damage; 0; 0; 5; 0; 0; 0
+trigger = all; all; Fyragnos; ability; Fyragnos > Call of the Drake; prepare for adds; 0; 0; 0; 0; 0; 0
+#trigger = eng; CoA; Fyragnos; ability; player << Flame Shackle; cleanse; 0; 0; 0; 0; 0; 0
+
+trigger = eng; CoA; Hericius; ability; Hericius > Caustic Spores; green; 0; 0; 0; 0; 0; 0
+trigger = eng; CoA; Hericius; ability; Hericius > Acidic Spores; blue; 0; 0; 0; 0; 0; 0
+trigger = eng; CoA; Hericius; ability; Hericius > Incendiary Spores; red; 0; 0; 0; 0; 0; 0
+trigger = eng; CoA; Hericius; ability; Hericius > Chlorolance; kick; 0; 0; 0; 0; 0; 0
+trigger = eng; CoA; Hericius; ability; Hericius > Cleansing Siphon; kick; 0; 0; 0; 0; 0; 0
+trigger = eng; CoA; Hericius; emote; Hericius calls for help; add in; 7; 11; 0; 0; 0; 0
+trigger = all; all; Hericius; ability; Hericius > The Unseen Schism; jump in; 0; 4; 0; 0; 0; 0
+special = eng; CoA; Hericius; ability; Hericius > Caustic Spores || Hericius > Acidic Spores || Hericius > Incendiary Spores;  ;  ; last; safespot;  ;  ;  ; last
+
+trigger = eng; CoA; Lord Fionn; ability; Warlord Svenbioard > Warcry; kick; 0; 0; 0; 0; 0; 0
+trigger = all; all; Lord Fionn; ability; Dread Witch Lokerinn > Untouchable; interrupt witch; 2; 0; 5; 0; 0; 0
+trigger = eng; CoA; Lord Fionn; ability; player << Imbalancing Blows; tank swap; 0; 0; 0; 13; 0; 0
+trigger = eng; CoA; Lord Fionn; ability; player << remove Imbalancing Blows; tank swap; 0; 0; 0; -13; 0; 0
+trigger = eng; CoA; Lord Fionn; ability; player << Marked for Death; player run out; 0; 0; 5; 0; 0; 0
+trigger = all; all; Lord Fionn; ability; player << No Escape; player can't move; 0; 0; 0; 0; 0; 0
+trigger = all; all; Lord Fionn; ability; Lord Fionn > One Thousand Thrusts; 1000; 0; 0; 5; 0; 0; 0
+trigger = eng; CoA; Lord Fionn; ability; Lord Fionn > Omniscient Flash; bullets; 3; 0; 5; 0; 0; 0
+trigger = all; all; Lord Fionn; ability; Warlord Svenbioard > Reaper's Blade >> player; player Blade; 0; 0; 0; 0; 0; 0
+trigger = all; all; Lord Fionn; ability; Lord Fionn = 75; phase change; 0; 0; 60; 0; 0; 0
+trigger = all; all; Lord Fionn; ability; Lord Fionn = 50; phase change; 0; 0; 60; 0; 0; 0
+trigger = all; all; Lord Fionn; ability; Lord Fionn = 25; phase change; 0; 0; 60; 0; 0; 0
+trigger = all; all; Lord Fionn; ability; Lord Fionn = 20; go; 0; 0; 60; 0; 0; 0
+trigger = all; all; Lord Fionn; ability; Dread Witch Lokerinn prepares to place Lord Fionn into the Torpor of Rebirth; burn him down; 0; 0; 20; 0; 0; 0
+
+
+
+

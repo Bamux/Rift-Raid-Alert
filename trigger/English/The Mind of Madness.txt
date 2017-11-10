@@ -1,0 +1,86 @@
+﻿trigger = eng; MoM; Pagura; ability; Pagura > Curse; curse; 0; 0; 5; 0; 0; 0
+trigger = eng; MoM; Pagura; ability; Pagura > Curse of Four; 5 seconds left; 46; 51; 240; 0; 0; 0
+trigger = eng; MoM; Pagura; ability; Pagura > Curse of Five; 5 seconds left; 42; 47; 240; 0; 0; 0
+trigger = eng; MoM; Pagura; ability; Pagura > Nerve Pinch; tank swap; 0; 0; 0; 0; 0; 0
+trigger = eng; MoM; Pagura; ability; Pagura > Leaping Contagion; spread out; 0; 0; 0; 0; 0; 0
+trigger = eng; MoM; Pagura; ability; Pagura > Shattering Roar; 5 seconds left; 65; 70; 0; 0; 0; 0
+trigger = eng; MoM; Pagura; ability; Pagura > Shattering Roa; add; 0; 17; 0; 0; 0; 0
+trigger = eng; MoM; Pagura; ability; Pain Bringer >> player; player run out; 0; 0; 0; 0; 0; 0
+trigger = eng; MoM; Pagura; debuff; player << Okadaic Poisoning; player run out; 0; 0; 10; 0; 0; 0
+trigger = eng; MoM; Pagura; emote; Raaaarrrrhhh; Phase 2; 0; 0; 0; 0; 0; 1
+
+trigger = eng; MoM; Lord Arak; debuff; < Terminal Sedation; cleanse; 0; 0; 5; 0; 0; 0
+trigger = eng; MoM; Lord Arak; debuff; player << Fragmented; tank swap; 0; 0; 0; 3; 0; 0
+trigger = eng; MoM; Lord Arak; ability; player << remove Fragmented; tank swap; 0; 0; 0; -3; 0; 0
+trigger = eng; MoM; Lord Arak; buff; Lord Arak < Negate Petrified; kick; 0; 0; 0; 0; -1; 0
+trigger = eng; MoM; Lord Arak; buff; Lord Arak < Negate Pain; kick; 0; 0; 0; 0; -2; 0
+trigger = eng; MoM; Lord Arak; buff; Lord Arak < Negate Weakness; kick; 0; 0; 0; 0; -3; 0
+trigger = eng; MoM; Lord Arak; ability; Lord Arak > Petrified; ; 0; 0; 0; 0; 1; 0
+trigger = eng; MoM; Lord Arak; ability; Lord Arak > Pain; ; 0; 0; 0; 0; 2; 0
+trigger = eng; MoM; Lord Arak; ability; Lord Arak > Weakness; ; 0; 0; 0; 0; 3; 0
+
+trigger = all; all; Formless Chaos; ability; Formless Chaos > Cloak of Chaos; stop; 4; 0; 0; 0; 0; 0
+trigger = all; all; Formless Chaos; ability; Formless Chaos > Vision of the Unknown; go; 0; 0; 10; 0; 0; 0
+trigger = all; all; Sentinel of Reason; ability; Sentinel of Reason > Incarcerating Blast; reflect; 0; 0; 0; 0; 0; 0
+
+trigger = eng; MoM; Fauxmire; ability; Combat Begin > Fauxmire; 5 secons left; 25; 0; 0; 0; 0; 0
+trigger = eng; MoM; Fauxmire; ability; Combat Begin > Fauxmire; step into the circle; 30; 0; 0; 0; 0; 0
+trigger = eng; MoM; Fauxmire; ability; Combat Begin > Fauxmire; 5 secons left; 55; 0; 0; 0; 0; 0
+trigger = eng; MoM; Fauxmire; ability; Combat Begin > Fauxmire; step into the circle; 60; 0; 0; 0; 0; 0
+trigger = eng; MoM; Fauxmire; ability; Combat Begin > Fauxmire; 5 secons left; 85; 0; 0; 0; 0; 0
+trigger = eng; MoM; Fauxmire; ability; Combat Begin > Fauxmire; step into the circle; 90; 0; 0; 0; 0; 0
+trigger = eng; MoM; Fauxmire; buff; Fauxmire > Bright Bioluminesence; range spread out; 0; 0; 0; 0; 0; 0
+trigger = eng; MoM; Fauxmire; buff; Fauxmire > Vibrant Bioluminesence; melee spread out; 0; 0; 0; 0; 0; 0
+trigger = eng; MoM; Fauxmire; ability; Fauxmire > Sun Beams; kick; 0; 0; 0; 0; 0; 0
+trigger = eng; MoM; Fauxmire; ability; Fauxmire > Synapse Lance; Tank CD; 0; 0; 0; 0; 0; 0
+trigger = eng; MoM; Fauxmire; ability; Fauxmire > Beckon the Night; Tank swap; 0; 0; 0; 0; 0; 1
+trigger = eng; MoM; Fauxmire; ability; Fauxmire > Dawn's Return; Tank swap; 0; 0; 0; 0; 0; 0
+trigger = eng; MoM; Fauxmire; ability; Fauxmire > Dawn's Return; 5 secons left; 25; 0; 0; 0; 0; 0
+trigger = eng; MoM; Fauxmire; ability; Fauxmire > Dawn's Return; step into the circle; 30; 0; 0; 0; 0; 0
+trigger = eng; MoM; Fauxmire; ability; Fauxmire > Dawn's Return; 5 secons left; 55; 0; 0; 0; 0; 0
+trigger = eng; MoM; Fauxmire; ability; Fauxmire > Dawn's Return; step into the circle; 60; 0; 0; 0; 0; 0
+trigger = eng; MoM; Fauxmire; ability; Fauxmire > Dawn's Return; 5 secons left; 85; 0; 0; 0; 0; 0
+trigger = eng; MoM; Fauxmire; ability; Fauxmire > Dawn's Return; step into the circle; 90; 0; 0; 0; 0; 0
+
+trigger = eng; MoM; Lady Envy; ability; Lady Envy > Embrace of Envy; kick; 0; 0; 0; 0; 0; 0
+trigger = eng; MoM; Lady Envy; ability; Envy's Focus >> player; intercept player; 0; 0; 5; 0; 0; 0
+trigger = eng; MoM; Lady Envy; ability; Lady Envy > Rapid Strike; Tank damage; 0; 0; 5; 0; 0; 0
+trigger = eng; MoM; Lady Envy; debuff; player << Malice; tank swap; 0; 0; 0; 3; 0; 0
+trigger = eng; MoM; Lady Envy; debuff; player << remove Malice; tank swap; 0; 0; 0; -3; 0; 0
+trigger = all; all; Lady Envy; ability; > Detonation of Strif; groupdamage in; 0; 4; 10; 0; 0; 0
+trigger = all; all; Lady Envy; ability; > Detonation of Strife; now; 4; 0; 10; 0; 0; 0
+trigger = eng; MoM; Lady Envy; ability; Lady Envy > Enticement;  incoming group damage; 0; 0; 10; 0; 0; 0
+trigger = eng; MoM; Lady Envy; emote; My memories are awakening. Prepare for oblivion; Portal Time; 0; 0; 0; 0; 0; 0
+trigger = eng; MoM; Lady Envy; ability; Lady Envy > Singularity; kill the Guardian of Envy, 35 seconds left; 0; 0; 10; 0; 0; 0
+
+trigger = eng; MoM; Dark Genesis; debuff; Combat Begin > Dark Genesis; split; 30; 0; 0; 0; 0; 0
+trigger = eng; MoM; Dark Genesis; debuff; Dark Genesis > Hope Breaker; healing core; 0; 0; 0; 0; 0; 0
+trigger = eng; MoM; Dark Genesis; debuff; player << Pin Down; player Pin Down; 0; 0; 5; 0; 0; 0
+trigger = eng; MoM; Dark Genesis; ability; Dark Genesis > Purging Flames; jump; 3; 0; 0; 0; 0; 0
+trigger = eng; MoM; Dark Genesis; ability; Dark Genesis > Purging Flames; ; 0; 3; 0; 0; 0; 0
+trigger = eng; MoM; Dark Genesis; ability; Dark Genesis > The End; The End; 0; 0; 0; 0; 0; 0
+trigger = eng; MoM; Dark Genesis; ability; Dark Genesis > The End; 20 seconds; 77; 0; 0; 0; 0; 0
+trigger = eng; MoM; Dark Genesis; ability; Dark Genesis > The End; 10 seconds; 87; 0; 0; 0; 0; 0
+trigger = eng; MoM; Dark Genesis; ability; Dark Genesis > The End; 5 seconds; 92; 0; 0; 0; 0; 0
+trigger = eng; MoM; Dark Genesis; ability; Dark Genesis > The End; Game Over; 97; 0; 0; 0; 0; 0
+special = eng; MoM; Dark Genesis; ability; Dark Genesis > Calamity || Dark Genesis > Destruction || Dark Genesis > Ruination || Dark Genesis > Hope Slayer; 1; 2; 3; 4
+
+trigger = all; all; The Enigma; ability; The Enigma > Breaking End; kick; 0; 0; 0; 0; 0; 0
+trigger = eng; MoM; The Enigma; ability; The Enigma > Emission of Turmoil; groupdamage in; 0; 3; 5; 0; 0; 0
+trigger = eng; MoM; The Enigma; ability; < Turmoil; cleanse; 0; 0; 5; 0; 0; 0
+trigger = eng; MoM; The Enigma; ability; < remove Turmoil; done; 0; 0; 5; 0; 0; 0
+trigger = eng; MoM; The Enigma; ability; The Enigma > Overwhelming Force; tank damage; 0; 0; 10; 0; 0; 0
+trigger = eng; MoM; The Enigma; ability; The Enigma > Meteor >> player; Meteor on player; 0; 0; 0; 0; 0; 0
+trigger = eng; MoM; The Enigma; ability; Pandemonium Obstruction > Repair Matrix; kick; 0; 0; 0; 0; 0; 0
+trigger = eng; MoM; The Enigma; ability; Pandemonium Obstruction > Reflective Barrier; kick; 0; 0; 0; 0; 0; 0
+trigger = eng; MoM; The Enigma; ability; The Enigma > Summon Chaos; Phase 2; 0; 0; 0; 0; 0; 0
+trigger = eng; MoM; The Enigma; ability; The Enigma > Hasten Sparks; speed increase; 0; 0; 0; 0; 0; 0
+trigger = eng; MoM; The Enigma; ability; The Enigma > Call to Chaos; Phase 3; 0; 0; 0; 0; 0; 0
+#trigger = eng; MoM; The Enigma; ability; The Enigma > Chaos Flame; flame; 0; 0; 0; 0; 0; 0
+trigger = all; all; The Enigma; ability; The Enigma > Pandemonium; add; 0; 0; 0; 0; 0; 0
+
+trigger = all; all; Lady Justice; ability; player << Hasty Prosecution; player; 0; 0; 0; 0; 0; 0
+trigger = all; all; Lady Justice; ability; Lady Justice > Hasty Prosecution; reactive; 1; 0; 0; 0; 0; 0
+trigger = all; all; Lady Justice; ability; Beholder of Judgment < Summons of Prosecution; add; 0; 0; 20; 0; 0; 0
+trigger = all; all; Lady Justice; ability; Lady Justice > Order in the Court!; left; 0; 0; 0; 0; 0; 0
+trigger = all; all; Lady Justice; ability; Lady Justice > Virtue of Wrath; add; 0; 0; 0; 0; 0; 0
