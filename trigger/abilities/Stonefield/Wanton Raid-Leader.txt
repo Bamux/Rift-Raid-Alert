@@ -1,7 +1,0 @@
-player << Scorching Strike (A burning wound that does damage over time.)
-Wanton Raid-Leader < Killing Field (Deals weapon damage plus 0 damage over 6s to up to 5 nearby enemies.)
-Wanton Raid-Leader > Terrifying Roar
-player << Atrophy (Deals -15 Death damage over 16s.)
-player << Dark Touch (Deals -109 Death damage over 16s.)
-Wanton Disruptor > Void Bolt
-Wanton Disruptor > Mortality
