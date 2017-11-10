@@ -1,9 +1,0 @@
-﻿Boldochs Seele < Beschütztes Schicksal (Verleiht Immunität gegen Unterbrechen. Absorbiert 4575000 Schaden, bevor es bricht.)
-Danazhals Seele < Flame Prep (Flame Prep)
-Danazhals Seele > Flammenformen
-Pleuzhals Seele > Kettenblitz
-Kristallisiertes Leben > Invoker's Boon
-Graf Pleuzhal > Kettenblitz
-Gräfin Danazhal < Flame Prep (Flame Prep)
-Gräfin Danazhal > Flammenformen
-Markgräfin Boldoch < Beschütztes Schicksal (Verleiht Immunität gegen Unterbrechen. Absorbiert 4575000 Schaden, bevor es bricht.)
