@@ -1,3 +1,0 @@
-player << Raging Aura (Deals damage to anyone near Maelfernus.)
-Maelfernus < Raging Aura (Deals damage to anyone near Maelfernus.)
-player << Combusting
