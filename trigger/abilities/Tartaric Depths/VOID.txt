@@ -1,4 +1,0 @@
-Pleuzhal's Soul < Ethereal Protection (All incoming damage except ethereal is reduced by 50 percent.)
-Pleuzhal's Soul > Chain Lightning
-Arcane Ooze > Void Bolt
-Count Pleuzhal > Chain Lightning
