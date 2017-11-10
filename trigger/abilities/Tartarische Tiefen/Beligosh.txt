@@ -1,7 +1,0 @@
-﻿player << Saat der Opferung (Ionisiert und zieht Elektrizität an. Entlädt bei Ablauf der Zeit einen Blitz.)
-player << Instabiles Konstrukt
-player << Aufflammen
-Beligosh > Magmaatem
-Bindungselementar < Tanzende Flammen (Das Elementar gibt enorme Hitze von sich und verursacht Schaden bei allen in seiner Nähe.)
-player << Magmaatem (Schleudert dem Gegner einen feurige Energie entgegen, die 0 bis 1 Feuerschaden verursacht.)
-player << Freigesetzte Macht (Diese Kreatur explodiert bei ihrem Tod, wobei alle in der Nähe befindlichen Ziele zurückgestoßen und in Brand gesetzt werden.)
