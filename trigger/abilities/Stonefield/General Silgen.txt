@@ -1,9 +1,0 @@
-player << Time Bomb (Silgen's deadly Time Bomb will cause massive damage to anyone nearby if it is allowed to explode.)
-player << Concussion Bomb (Silgen's Concussion will stun the player and anyone nearby if it is allowed to explode.)
-player << Puncture Wound (Bleeding for physical damage over 12 seconds.)
-General Silgen > Heat Funnel
-player << Heat Funnel (Reduces Fire Resistance.)
-General Silgen > Incinerate
-player << Incinerate (Damage for 12 seconds.)
-player << Anchored in Flames
-player << Scorching Strike (A burning wound that does damage over time.)
