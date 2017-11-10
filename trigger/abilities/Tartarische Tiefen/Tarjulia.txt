@@ -1,8 +1,0 @@
-Tarjulia < Feuerfürst (Tarjulia strahlt Hitze aus. Der Schaden erhöht sich durch Heiße Hände.)
-player << Heiße Hände (Erhöht den Schaden von Feuerfürst.)
-Tarjulia > Netz der Spinne
-player << Netz der Spinne (Betäubt)
-Tarjulia > Geschmolzene Explosion
-Tarjulia > Raserei
-Tarjulia > Hilferuf
-Tarjulia < Voll aufgedreht (Tarjulia hat Überschussheilung erhalten und entfesselt ihre wahre Macht.)
