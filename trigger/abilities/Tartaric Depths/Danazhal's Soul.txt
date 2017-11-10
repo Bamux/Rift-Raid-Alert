@@ -1,9 +1,0 @@
-Boldoch's Soul < Protected Fate (Grants immunity to interrupt. Absorbs 4575000 damage before breaking.)
-Danazhal's Soul < Flame Prep (Flame Prep)
-Crystalized Life > Invoker's Boon
-Danazhal's Soul > Flamescape
-Pleuzhal's Soul > Chain Lightning
-Marchioness Boldoch < Protected Fate (Grants immunity to interrupt. Absorbs 4575000 damage before breaking.)
-Countessa Danazhal < Flame Prep (Flame Prep)
-Countessa Danazhal > Flamescape
-Count Pleuzhal > Chain Lightning
