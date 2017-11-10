@@ -1,8 +1,0 @@
-player << Erschütterungsbombe (Silgens Erschütterung betäubt den Spieler sowie alle Umstehenden, wenn es ihr erlaubt wird, zu explodieren.)
-player << Zeitbombe (Silgens tödliche Zeitbombe verursacht massiven Schaden bei allen Umstehenden, wenn es ihr erlaubt wird, zu explodieren.)
-player << Stichwunde (Blutung durch körperlichen Schaden für 12 Sekunden.)
-General Silgen > Hitzetrichter
-player << Hitzetrichter (Reduziert den Feuerwiderstand.)
-General Silgen > Verbrennen
-player << Verbrennen (Schaden über 12 Sekunden.)
-player << In Flammen verankert
