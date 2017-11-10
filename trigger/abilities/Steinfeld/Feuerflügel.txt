@@ -1,3 +1,0 @@
-player << Zerfetzen (Eine schlimme Wunde, die über einen bestimmten Zeitraum blutet.)
-Feuerflügel > Feueratem
-Feuerflügel < Luft-Beweglichkeit (Feuerflügel ist immun gegen Spott und erleidet reduzierten Wirkungsbereich-Schaden.)
