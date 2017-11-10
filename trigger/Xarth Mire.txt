@@ -1,3 +1,0 @@
-trigger = all; all; Hexathel; ability; Hexathel > Webtoss; kick; 0; 0; 0; 0; 0; 0
-trigger = all; all; Hexathel; ability; You cannot hope to survive Ascended; 5 seconds left; 17; 22; 0; 0; 0; 0
-trigger = all; all; Hexathel; ability; You cannot hope to survive Ascended; move; 40; 44; 0; 0; 0; 0
