@@ -1,8 +1,0 @@
-trigger = all; all; Beligosh; ability; Ein Alavaxianischer Golem ist erschienen; add; 0; 0; 0; 0; 0; 0
-trigger = all; all; Beligosh; ability; Spürt den Zorn von Beligosh; run out; 0; 0; 0; 0; 0; 0
-trigger = all; all; Tarjulia; ability; Tarjulia zielt mit geschmolzener Lava auf player; player run out; 0; 0; 0; 0; 0; 0
-trigger = all; all; Tarjulia; ability; TarJulia = 90 %; 90 %; 0; 0; 0; 0; 0; 0
-trigger = all; all; Council; ability; Das Flammenformen beginnt; step into the circle; 0; 0; 0; 0; 0; 0
-trigger = all; all; Malannon; ability; Brennender Ruin ist auf player gerichtet; player run out; 0; 0; 0; 0; 0; 0
-trigger = all; all; Malannon; ability; seid bereit, in den Flammen zu sterben; step into the circle; 0; 0; 0; 0; 0; 0
-trigger = all; all; Council; ability; VOID < Void; void; 0; 0; 0; 0; 0; 0
