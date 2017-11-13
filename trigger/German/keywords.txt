@@ -1,11 +1,11 @@
-﻿keywords = Zonenereignis + [Vostigar-Gipfel] + Brisesol; Event Brisesol
+keywords = Zonenereignis + [Vostigar-Gipfel] + Brisesol; Event Brisesol
 keywords = Zonenereignis + [Vostigar-Gipfel] + Brutwacht; Event Bruitwacht
 keywords = Zonenereignis + [Vostigar-Gipfel] + Gelidra; Event Gelidra
 keywords = Zonenereignis + [Vostigar-Gipfel] + Typhiria; Event Typhiria
 keywords = Zonenereignis + [Vostigar-Gipfel] + Zaviel; Event Zaviel
 keywords = TDnm + lfm; tartaric depths looking for more
 keywords = TD + nm + lfm; tartaric depths looking for more
-keywords = lfm + rr; attention raid rift
+keywords = lfm + rr; raid rift looking for more
 keywords = LFM + Mini + TD ; Miniboss
 keywords = LFM + Mini + boss; Miniboss
 #keywords = LFM + [Himmlischer Handwerksrissköder; Crifts
