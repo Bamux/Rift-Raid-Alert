@@ -18,3 +18,7 @@ Commander Isiel > Aegis of Storms
 Vindicator MK1 > Demolishing Blast
 Vindicator MK1 < Enraged! (Increased outgoing damage.)
 Commander Isiel < Enraged! (Increased outgoing damage.)
+Vindicator MK1 > Seeker Mines
+player << Driller Round (Take 20% extra damage and lowers Armor and Guard. Stacks up to ten times.)
+player << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+Vindicator MK1 < Reinforced Plating (Armor has been reinforced to mitigate 95% of all damage.)
