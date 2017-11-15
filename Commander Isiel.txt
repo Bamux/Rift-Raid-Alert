@@ -1,0 +1,467 @@
+
+---------------------------------------------------------------------
+18:09:59: [Rift Raid Alert] Combat Begin > Vindicator MK1
+18:12:28: [Rift Raid Alert] Paxie << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+18:12:44: [Rift Raid Alert] Paxie << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+18:12:56: [Rift Raid Alert] Gaarren << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+18:13:10: [Rift Raid Alert] Paxie << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+18:13:10: [Rift Raid Alert] Paxie << Enfeeblement (Your Guard has been greatly reduced.)
+18:13:11: [Rift Raid Alert] Commander Isiel > Voltaic Thrust >> Paxie
+18:13:13: [Rift Raid Alert] Paxie << remove Crippling Shock
+18:13:13: [Rift Raid Alert] Paxie << remove Enfeeblement
+18:13:23: [Rift Raid Alert] Paxie << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+18:13:38: [Rift Raid Alert] Paxie << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+18:13:51: [Rift Raid Alert] Paxie << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+18:13:51: [Rift Raid Alert] Paxie << Enfeeblement (Your Guard has been greatly reduced.)
+18:13:53: [Rift Raid Alert] Commander Isiel > Voltaic Thrust >> Paxie
+18:13:55: [Rift Raid Alert] Paxie << remove Crippling Shock
+18:13:55: [Rift Raid Alert] Paxie << remove Enfeeblement
+18:14:03: [Rift Raid Alert] Paxie << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+18:14:16: [Rift Raid Alert] Paxie << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+18:14:31: [Rift Raid Alert] Paxie << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+18:14:31: [Rift Raid Alert] Paxie << Enfeeblement (Your Guard has been greatly reduced.)
+18:14:31: [Rift Raid Alert] Commander Isiel > Voltaic Thrust >> Paxie
+18:14:33: [Rift Raid Alert] Paxie << remove Crippling Shock
+18:14:33: [Rift Raid Alert] Paxie << remove Enfeeblement
+18:14:56: [Rift Raid Alert] Paxie << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+18:15:10: [Rift Raid Alert] Paxie << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+18:15:19: [Rift Raid Alert] Paxie << remove Crippling Shock
+18:15:23: [Rift Raid Alert] Gaarren << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+18:15:28: [Rift Raid Alert] Gaarren << remove Crippling Shock
+
+---------------------------------------------------------------------
+18:20:26: [Rift Raid Alert] Combat Begin > Vindicator MK1
+
+---------------------------------------------------------------------
+18:25:35: [Rift Raid Alert] Combat Begin > Vindicator MK1
+18:28:17: [Rift Raid Alert] Paxie << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+18:28:29: [Rift Raid Alert] Paxie << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+18:28:42: [Rift Raid Alert] Paxie << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+18:28:42: [Rift Raid Alert] Paxie << Enfeeblement (Your Guard has been greatly reduced.)
+18:28:42: [Rift Raid Alert] Commander Isiel > Voltaic Thrust >> Paxie
+18:28:44: [Rift Raid Alert] Paxie << remove Crippling Shock
+18:28:44: [Rift Raid Alert] Paxie << remove Enfeeblement
+18:28:55: [Rift Raid Alert] Paxie << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+18:29:08: [Rift Raid Alert] Paxie << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+18:29:21: [Rift Raid Alert] Paxie << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+18:29:21: [Rift Raid Alert] Paxie << Enfeeblement (Your Guard has been greatly reduced.)
+18:29:21: [Rift Raid Alert] Commander Isiel > Voltaic Thrust >> Paxie
+18:29:23: [Rift Raid Alert] Paxie << remove Crippling Shock
+18:29:23: [Rift Raid Alert] Paxie << remove Enfeeblement
+18:29:34: [Rift Raid Alert] Paxie << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+18:29:47: [Rift Raid Alert] Paxie << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+18:29:59: [Rift Raid Alert] Paxie << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+18:29:59: [Rift Raid Alert] Paxie << Enfeeblement (Your Guard has been greatly reduced.)
+18:30:00: [Rift Raid Alert] Commander Isiel > Voltaic Thrust >> Paxie
+18:30:02: [Rift Raid Alert] Paxie << remove Crippling Shock
+18:30:02: [Rift Raid Alert] Paxie << remove Enfeeblement
+18:30:12: [Rift Raid Alert] Paxie << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+18:30:27: [Rift Raid Alert] Paxie << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+18:30:39: [Rift Raid Alert] Paxie << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+18:30:39: [Rift Raid Alert] Paxie << Enfeeblement (Your Guard has been greatly reduced.)
+18:30:39: [Rift Raid Alert] Commander Isiel > Voltaic Thrust >> Paxie
+18:30:41: [Rift Raid Alert] Paxie << remove Crippling Shock
+18:30:41: [Rift Raid Alert] Paxie << remove Enfeeblement
+
+---------------------------------------------------------------------
+18:33:07: [Rift Raid Alert] Combat Begin > Vindicator MK1
+18:35:44: [Rift Raid Alert] Paxie << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+18:35:56: [Rift Raid Alert] Gaarren << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+18:36:09: [Rift Raid Alert] Gaarren << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+18:36:21: [Rift Raid Alert] Gaarren << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+18:36:21: [Rift Raid Alert] Gaarren << Enfeeblement (Your Guard has been greatly reduced.)
+18:36:22: [Rift Raid Alert] Commander Isiel > Voltaic Thrust >> Gaarren
+18:36:24: [Rift Raid Alert] Gaarren << remove Crippling Shock
+18:36:24: [Rift Raid Alert] Gaarren << remove Enfeeblement
+18:36:35: [Rift Raid Alert] Gaarren << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+18:36:48: [Rift Raid Alert] Gaarren << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+18:37:03: [Rift Raid Alert] Gaarren << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+18:37:03: [Rift Raid Alert] Gaarren << Enfeeblement (Your Guard has been greatly reduced.)
+18:37:03: [Rift Raid Alert] Commander Isiel > Voltaic Thrust >> Gaarren
+18:37:05: [Rift Raid Alert] Gaarren << remove Crippling Shock
+18:37:05: [Rift Raid Alert] Gaarren << remove Enfeeblement
+18:37:08: [Rift Raid Alert] Paxie << remove Crippling Shock
+
+---------------------------------------------------------------------
+18:42:13: [Rift Raid Alert] Combat Begin > Vindicator MK1
+18:44:56: [Rift Raid Alert] Paxie << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+18:45:08: [Rift Raid Alert] Paxie << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+18:45:21: [Rift Raid Alert] Paxie << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+18:45:21: [Rift Raid Alert] Paxie << Enfeeblement (Your Guard has been greatly reduced.)
+18:45:22: [Rift Raid Alert] Commander Isiel > Voltaic Thrust >> Paxie
+18:45:24: [Rift Raid Alert] Paxie << remove Crippling Shock
+18:45:24: [Rift Raid Alert] Paxie << remove Enfeeblement
+18:45:48: [Rift Raid Alert] Paxie << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+18:46:02: [Rift Raid Alert] Paxie << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+18:46:14: [Rift Raid Alert] Paxie << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+18:46:14: [Rift Raid Alert] Paxie << Enfeeblement (Your Guard has been greatly reduced.)
+18:46:14: [Rift Raid Alert] Commander Isiel > Voltaic Thrust >> Paxie
+18:46:16: [Rift Raid Alert] Paxie << remove Crippling Shock
+18:46:16: [Rift Raid Alert] Paxie << remove Enfeeblement
+18:46:28: [Rift Raid Alert] Paxie << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+18:46:41: [Rift Raid Alert] Paxie << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+18:46:54: [Rift Raid Alert] Paxie << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+18:46:54: [Rift Raid Alert] Paxie << Enfeeblement (Your Guard has been greatly reduced.)
+18:46:56: [Rift Raid Alert] Commander Isiel > Voltaic Thrust >> Paxie
+18:46:58: [Rift Raid Alert] Paxie << remove Crippling Shock
+18:46:58: [Rift Raid Alert] Paxie << remove Enfeeblement
+18:47:06: [Rift Raid Alert] Paxie << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+18:47:19: [Rift Raid Alert] Paxie << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+18:47:34: [Rift Raid Alert] Paxie << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+18:47:34: [Rift Raid Alert] Paxie << Enfeeblement (Your Guard has been greatly reduced.)
+18:47:35: [Rift Raid Alert] Commander Isiel > Voltaic Thrust >> Paxie
+18:47:37: [Rift Raid Alert] Paxie << remove Crippling Shock
+18:47:37: [Rift Raid Alert] Paxie << remove Enfeeblement
+18:47:47: [Rift Raid Alert] Paxie << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+18:48:00: [Rift Raid Alert] Paxie << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+18:48:17: [Rift Raid Alert] Paxie << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+18:48:17: [Rift Raid Alert] Paxie << Enfeeblement (Your Guard has been greatly reduced.)
+18:48:17: [Rift Raid Alert] Commander Isiel > Voltaic Thrust >> Paxie
+18:48:19: [Rift Raid Alert] Paxie << remove Crippling Shock
+18:48:19: [Rift Raid Alert] Paxie << remove Enfeeblement
+18:48:32: [Rift Raid Alert] Gaarren << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+18:48:42: [Rift Raid Alert] Gaarren << remove Crippling Shock
+
+---------------------------------------------------------------------
+18:53:26: [Rift Raid Alert] Combat Begin > Vindicator MK1
+18:56:14: [Rift Raid Alert] Paxie << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+18:56:30: [Rift Raid Alert] Paxie << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+18:56:43: [Rift Raid Alert] Paxie << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+18:56:43: [Rift Raid Alert] Paxie << Enfeeblement (Your Guard has been greatly reduced.)
+18:56:45: [Rift Raid Alert] Commander Isiel > Voltaic Thrust >> Paxie
+18:56:47: [Rift Raid Alert] Paxie << remove Crippling Shock
+18:56:47: [Rift Raid Alert] Paxie << remove Enfeeblement
+18:56:56: [Rift Raid Alert] Paxie << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+18:57:08: [Rift Raid Alert] Paxie << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+18:57:21: [Rift Raid Alert] Paxie << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+18:57:21: [Rift Raid Alert] Paxie << Enfeeblement (Your Guard has been greatly reduced.)
+18:57:22: [Rift Raid Alert] Commander Isiel > Voltaic Thrust >> Paxie
+18:57:24: [Rift Raid Alert] Paxie << remove Crippling Shock
+18:57:24: [Rift Raid Alert] Paxie << remove Enfeeblement
+18:57:33: [Rift Raid Alert] Paxie << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+18:57:48: [Rift Raid Alert] Paxie << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+18:58:01: [Rift Raid Alert] Paxie << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+18:58:01: [Rift Raid Alert] Paxie << Enfeeblement (Your Guard has been greatly reduced.)
+18:58:03: [Rift Raid Alert] Commander Isiel > Voltaic Thrust >> Paxie
+18:58:05: [Rift Raid Alert] Paxie << remove Crippling Shock
+18:58:05: [Rift Raid Alert] Paxie << remove Enfeeblement
+18:58:14: [Rift Raid Alert] Paxie << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+18:58:26: [Rift Raid Alert] Paxie << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+18:58:39: [Rift Raid Alert] Paxie << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+18:58:39: [Rift Raid Alert] Paxie << Enfeeblement (Your Guard has been greatly reduced.)
+18:58:40: [Rift Raid Alert] Commander Isiel > Voltaic Thrust >> Paxie
+18:58:42: [Rift Raid Alert] Paxie << remove Crippling Shock
+18:58:42: [Rift Raid Alert] Paxie << remove Enfeeblement
+18:58:54: [Rift Raid Alert] Paxie << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+18:59:07: [Rift Raid Alert] Paxie << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+18:59:20: [Rift Raid Alert] Paxie << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+18:59:20: [Rift Raid Alert] Paxie << Enfeeblement (Your Guard has been greatly reduced.)
+18:59:22: [Rift Raid Alert] Commander Isiel > Voltaic Thrust >> Paxie
+18:59:25: [Rift Raid Alert] Paxie << remove Crippling Shock
+18:59:25: [Rift Raid Alert] Paxie << remove Enfeeblement
+18:59:37: [Rift Raid Alert] Paxie << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+18:59:50: [Rift Raid Alert] Paxie << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+18:59:50: [Rift Raid Alert] Paxie << remove Crippling Shock
+
+---------------------------------------------------------------------
+19:12:31: [Rift Raid Alert] Combat Begin > Vindicator MK1
+19:15:15: [Rift Raid Alert] Paxie << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+19:15:27: [Rift Raid Alert] Paxie << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+19:15:39: [Rift Raid Alert] Paxie << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+19:15:39: [Rift Raid Alert] Paxie << Enfeeblement (Your Guard has been greatly reduced.)
+19:15:40: [Rift Raid Alert] Commander Isiel > Voltaic Thrust >> Paxie
+19:15:42: [Rift Raid Alert] Paxie << remove Crippling Shock
+19:15:42: [Rift Raid Alert] Paxie << remove Enfeeblement
+19:15:52: [Rift Raid Alert] Paxie << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+19:16:07: [Rift Raid Alert] Paxie << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+19:16:20: [Rift Raid Alert] Paxie << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+19:16:20: [Rift Raid Alert] Paxie << Enfeeblement (Your Guard has been greatly reduced.)
+19:16:22: [Rift Raid Alert] Commander Isiel > Voltaic Thrust >> Paxie
+19:16:24: [Rift Raid Alert] Paxie << remove Crippling Shock
+19:16:24: [Rift Raid Alert] Paxie << remove Enfeeblement
+19:16:32: [Rift Raid Alert] Paxie << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+19:16:45: [Rift Raid Alert] Paxie << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+19:16:58: [Rift Raid Alert] Paxie << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+19:16:58: [Rift Raid Alert] Paxie << Enfeeblement (Your Guard has been greatly reduced.)
+19:16:59: [Rift Raid Alert] Commander Isiel > Voltaic Thrust >> Paxie
+19:17:01: [Rift Raid Alert] Paxie << remove Crippling Shock
+19:17:01: [Rift Raid Alert] Paxie << remove Enfeeblement
+19:17:10: [Rift Raid Alert] Paxie << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+19:17:26: [Rift Raid Alert] Paxie << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+19:17:39: [Rift Raid Alert] Paxie << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+19:17:39: [Rift Raid Alert] Paxie << Enfeeblement (Your Guard has been greatly reduced.)
+19:17:42: [Rift Raid Alert] Commander Isiel > Voltaic Thrust >> Paxie
+19:17:44: [Rift Raid Alert] Paxie << remove Crippling Shock
+19:17:44: [Rift Raid Alert] Paxie << remove Enfeeblement
+19:17:53: [Rift Raid Alert] Paxie << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+19:18:09: [Rift Raid Alert] Paxie << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+19:18:22: [Rift Raid Alert] Paxie << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+19:18:22: [Rift Raid Alert] Paxie << Enfeeblement (Your Guard has been greatly reduced.)
+19:18:26: [Rift Raid Alert] Commander Isiel > Voltaic Thrust >> Paxie
+19:18:29: [Rift Raid Alert] Paxie << remove Crippling Shock
+19:18:29: [Rift Raid Alert] Paxie << remove Enfeeblement
+19:18:37: [Rift Raid Alert] Paxie << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+19:18:39: [Rift Raid Alert] Paxie << remove Crippling Shock
+
+---------------------------------------------------------------------
+19:23:39: [Rift Raid Alert] Combat Begin > Vindicator MK1
+19:26:22: [Rift Raid Alert] Paxie << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+19:26:34: [Rift Raid Alert] Paxie << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+19:26:47: [Rift Raid Alert] Paxie << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+19:26:47: [Rift Raid Alert] Paxie << Enfeeblement (Your Guard has been greatly reduced.)
+19:26:47: [Rift Raid Alert] Commander Isiel > Voltaic Thrust >> Paxie
+19:26:49: [Rift Raid Alert] Paxie << remove Crippling Shock
+19:26:49: [Rift Raid Alert] Paxie << remove Enfeeblement
+19:26:59: [Rift Raid Alert] Paxie << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+19:27:12: [Rift Raid Alert] Paxie << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+19:27:26: [Rift Raid Alert] Paxie << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+19:27:26: [Rift Raid Alert] Paxie << Enfeeblement (Your Guard has been greatly reduced.)
+19:27:28: [Rift Raid Alert] Commander Isiel > Voltaic Thrust >> Paxie
+19:27:30: [Rift Raid Alert] Paxie << remove Crippling Shock
+19:27:30: [Rift Raid Alert] Paxie << remove Enfeeblement
+19:27:39: [Rift Raid Alert] Paxie << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+19:27:52: [Rift Raid Alert] Paxie << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+19:28:04: [Rift Raid Alert] Paxie << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+19:28:04: [Rift Raid Alert] Paxie << Enfeeblement (Your Guard has been greatly reduced.)
+19:28:05: [Rift Raid Alert] Commander Isiel > Voltaic Thrust >> Paxie
+19:28:07: [Rift Raid Alert] Paxie << remove Crippling Shock
+19:28:07: [Rift Raid Alert] Paxie << remove Enfeeblement
+19:28:19: [Rift Raid Alert] Paxie << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+19:28:33: [Rift Raid Alert] Paxie << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+19:28:45: [Rift Raid Alert] Paxie << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+19:28:45: [Rift Raid Alert] Paxie << Enfeeblement (Your Guard has been greatly reduced.)
+19:28:46: [Rift Raid Alert] Paxie << remove Crippling Shock
+19:28:46: [Rift Raid Alert] Paxie << remove Enfeeblement
+19:28:58: [Rift Raid Alert] Gaarren << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+19:29:11: [Rift Raid Alert] Gaarren << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+19:29:25: [Rift Raid Alert] Gaarren << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+19:29:25: [Rift Raid Alert] Gaarren << Enfeeblement (Your Guard has been greatly reduced.)
+19:29:25: [Rift Raid Alert] Commander Isiel > Voltaic Thrust >> Gaarren
+19:29:27: [Rift Raid Alert] Gaarren << remove Crippling Shock
+19:29:27: [Rift Raid Alert] Gaarren << remove Enfeeblement
+19:29:39: [Rift Raid Alert] Gaarren << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+19:29:53: [Rift Raid Alert] Gaarren << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+19:30:05: [Rift Raid Alert] Gaarren << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+19:30:05: [Rift Raid Alert] Gaarren << Enfeeblement (Your Guard has been greatly reduced.)
+19:30:06: [Rift Raid Alert] Commander Isiel > Voltaic Thrust >> Gaarren
+19:30:08: [Rift Raid Alert] Gaarren << remove Crippling Shock
+19:30:08: [Rift Raid Alert] Gaarren << remove Enfeeblement
+
+---------------------------------------------------------------------
+19:35:15: [Rift Raid Alert] Combat Begin > Vindicator MK1
+19:38:03: [Rift Raid Alert] Paxie << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+19:38:16: [Rift Raid Alert] Paxie << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+19:38:29: [Rift Raid Alert] Paxie << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+19:38:29: [Rift Raid Alert] Paxie << Enfeeblement (Your Guard has been greatly reduced.)
+19:38:29: [Rift Raid Alert] Commander Isiel > Voltaic Thrust >> Paxie
+19:38:31: [Rift Raid Alert] Paxie << remove Crippling Shock
+19:38:31: [Rift Raid Alert] Paxie << remove Enfeeblement
+19:38:42: [Rift Raid Alert] Paxie << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+19:38:55: [Rift Raid Alert] Paxie << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+19:39:07: [Rift Raid Alert] Paxie << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+19:39:07: [Rift Raid Alert] Paxie << Enfeeblement (Your Guard has been greatly reduced.)
+19:39:08: [Rift Raid Alert] Commander Isiel > Voltaic Thrust >> Paxie
+19:39:10: [Rift Raid Alert] Paxie << remove Crippling Shock
+19:39:10: [Rift Raid Alert] Paxie << remove Enfeeblement
+19:39:22: [Rift Raid Alert] Gaarren << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+19:39:35: [Rift Raid Alert] Gaarren << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+19:39:47: [Rift Raid Alert] Gaarren << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+19:39:47: [Rift Raid Alert] Gaarren << Enfeeblement (Your Guard has been greatly reduced.)
+19:39:47: [Rift Raid Alert] Commander Isiel > Voltaic Thrust >> Gaarren
+19:39:49: [Rift Raid Alert] Gaarren << remove Crippling Shock
+19:39:49: [Rift Raid Alert] Gaarren << remove Enfeeblement
+19:39:59: [Rift Raid Alert] Gaarren << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+19:40:14: [Rift Raid Alert] Gaarren << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+19:40:27: [Rift Raid Alert] Gaarren << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+19:40:27: [Rift Raid Alert] Gaarren << Enfeeblement (Your Guard has been greatly reduced.)
+19:40:29: [Rift Raid Alert] Commander Isiel > Voltaic Thrust >> Gaarren
+19:40:31: [Rift Raid Alert] Gaarren << remove Crippling Shock
+19:40:31: [Rift Raid Alert] Gaarren << remove Enfeeblement
+19:40:40: [Rift Raid Alert] Paxie << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+19:40:54: [Rift Raid Alert] Gaarren << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+19:41:06: [Rift Raid Alert] Gaarren << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+19:41:19: [Rift Raid Alert] Gaarren << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+19:41:19: [Rift Raid Alert] Gaarren << Enfeeblement (Your Guard has been greatly reduced.)
+19:41:20: [Rift Raid Alert] Commander Isiel > Voltaic Thrust >> Gaarren
+19:41:22: [Rift Raid Alert] Gaarren << remove Crippling Shock
+19:41:22: [Rift Raid Alert] Gaarren << remove Enfeeblement
+19:41:34: [Rift Raid Alert] Gaarren << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+19:41:36: [Rift Raid Alert] Gaarren << remove Crippling Shock
+19:41:46: [Rift Raid Alert] Paxie << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+19:41:59: [Rift Raid Alert] Paxie << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+19:41:59: [Rift Raid Alert] Paxie << Enfeeblement (Your Guard has been greatly reduced.)
+19:42:00: [Rift Raid Alert] Commander Isiel > Voltaic Thrust >> Paxie
+19:42:01: [Rift Raid Alert] Paxie << remove Crippling Shock
+19:42:01: [Rift Raid Alert] Paxie << remove Enfeeblement
+19:42:11: [Rift Raid Alert] Paxie << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+19:42:26: [Rift Raid Alert] Paxie << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+19:42:39: [Rift Raid Alert] Paxie << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+19:42:39: [Rift Raid Alert] Paxie << Enfeeblement (Your Guard has been greatly reduced.)
+19:42:40: [Rift Raid Alert] Commander Isiel > Voltaic Thrust >> Paxie
+19:42:42: [Rift Raid Alert] Paxie << remove Crippling Shock
+19:42:42: [Rift Raid Alert] Paxie << remove Enfeeblement
+19:42:54: [Rift Raid Alert] Paxie << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+19:42:55: [Rift Raid Alert] Paxie << remove Crippling Shock
+
+---------------------------------------------------------------------
+20:04:51: [Rift Raid Alert] Combat Begin > Vindicator MK1
+20:07:35: [Rift Raid Alert] Paxie << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+20:07:50: [Rift Raid Alert] Paxie << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+20:08:02: [Rift Raid Alert] Paxie << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+20:08:02: [Rift Raid Alert] Paxie << Enfeeblement (Your Guard has been greatly reduced.)
+20:08:02: [Rift Raid Alert] Commander Isiel > Voltaic Thrust >> Paxie
+20:08:05: [Rift Raid Alert] Paxie << remove Crippling Shock
+20:08:05: [Rift Raid Alert] Paxie << remove Enfeeblement
+20:08:17: [Rift Raid Alert] Gaarren << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+20:08:29: [Rift Raid Alert] Gaarren << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+20:08:42: [Rift Raid Alert] Gaarren << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+20:08:42: [Rift Raid Alert] Gaarren << Enfeeblement (Your Guard has been greatly reduced.)
+20:08:43: [Rift Raid Alert] Commander Isiel > Voltaic Thrust >> Gaarren
+20:08:45: [Rift Raid Alert] Gaarren << remove Crippling Shock
+20:08:45: [Rift Raid Alert] Gaarren << remove Enfeeblement
+
+---------------------------------------------------------------------
+20:11:26: [Rift Raid Alert] Combat Begin > Vindicator MK1
+20:15:07: [Rift Raid Alert] Paxie << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+20:15:20: [Rift Raid Alert] Paxie << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+20:15:33: [Rift Raid Alert] Paxie << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+20:15:33: [Rift Raid Alert] Paxie << Enfeeblement (Your Guard has been greatly reduced.)
+20:15:35: [Rift Raid Alert] Commander Isiel > Voltaic Thrust >> Paxie
+20:15:37: [Rift Raid Alert] Paxie << remove Crippling Shock
+20:15:37: [Rift Raid Alert] Paxie << remove Enfeeblement
+20:15:46: [Rift Raid Alert] Paxie << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+20:15:59: [Rift Raid Alert] Paxie << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+20:16:12: [Rift Raid Alert] Paxie << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+20:16:12: [Rift Raid Alert] Paxie << Enfeeblement (Your Guard has been greatly reduced.)
+20:16:13: [Rift Raid Alert] Commander Isiel > Voltaic Thrust >> Paxie
+20:16:15: [Rift Raid Alert] Paxie << remove Crippling Shock
+20:16:15: [Rift Raid Alert] Paxie << remove Enfeeblement
+20:16:24: [Rift Raid Alert] Paxie << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+20:16:39: [Rift Raid Alert] Paxie << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+20:16:51: [Rift Raid Alert] Paxie << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+20:16:51: [Rift Raid Alert] Paxie << Enfeeblement (Your Guard has been greatly reduced.)
+20:16:51: [Rift Raid Alert] Commander Isiel > Voltaic Thrust >> Paxie
+20:16:53: [Rift Raid Alert] Paxie << remove Crippling Shock
+20:16:53: [Rift Raid Alert] Paxie << remove Enfeeblement
+20:17:05: [Rift Raid Alert] Gaarren << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+20:17:18: [Rift Raid Alert] Gaarren << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+20:17:21: [Rift Raid Alert] Gaarren << remove Crippling Shock
+20:17:32: [Rift Raid Alert] Paxie << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+20:17:45: [Rift Raid Alert] Gaarren << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+20:17:59: [Rift Raid Alert] Gaarren << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+20:18:11: [Rift Raid Alert] Paxie << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+20:18:24: [Rift Raid Alert] Paxie << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+20:18:24: [Rift Raid Alert] Paxie << Enfeeblement (Your Guard has been greatly reduced.)
+20:18:25: [Rift Raid Alert] Commander Isiel > Voltaic Thrust >> Paxie
+20:18:27: [Rift Raid Alert] Paxie << remove Crippling Shock
+20:18:27: [Rift Raid Alert] Paxie << remove Enfeeblement
+20:18:39: [Rift Raid Alert] Paxie << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+20:18:50: [Rift Raid Alert] Gaarren << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+20:18:50: [Rift Raid Alert] Gaarren << Enfeeblement (Your Guard has been greatly reduced.)
+20:18:53: [Rift Raid Alert] Commander Isiel > Voltaic Thrust >> Gaarren
+20:18:55: [Rift Raid Alert] Gaarren << remove Crippling Shock
+20:18:55: [Rift Raid Alert] Gaarren << remove Enfeeblement
+20:19:03: [Rift Raid Alert] Paxie << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+20:19:17: [Rift Raid Alert] Gaarren << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+20:19:27: [Rift Raid Alert] Gaarren << remove Crippling Shock
+20:19:29: [Rift Raid Alert] Paxie << remove Crippling Shock
+
+---------------------------------------------------------------------
+20:36:25: [Rift Raid Alert] Combat Begin > Vindicator MK1
+20:39:02: [Rift Raid Alert] Paxie << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+20:39:15: [Rift Raid Alert] Paxie << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+20:39:27: [Rift Raid Alert] Paxie << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+20:39:27: [Rift Raid Alert] Paxie << Enfeeblement (Your Guard has been greatly reduced.)
+20:39:28: [Rift Raid Alert] Commander Isiel > Voltaic Thrust >> Paxie
+20:39:30: [Rift Raid Alert] Paxie << remove Crippling Shock
+20:39:30: [Rift Raid Alert] Paxie << remove Enfeeblement
+20:39:39: [Rift Raid Alert] Paxie << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+20:39:53: [Rift Raid Alert] Paxie << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+20:40:05: [Rift Raid Alert] Paxie << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+20:40:05: [Rift Raid Alert] Paxie << Enfeeblement (Your Guard has been greatly reduced.)
+20:40:06: [Rift Raid Alert] Commander Isiel > Voltaic Thrust >> Paxie
+20:40:08: [Rift Raid Alert] Paxie << remove Crippling Shock
+20:40:08: [Rift Raid Alert] Paxie << remove Enfeeblement
+20:40:19: [Rift Raid Alert] Paxie << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+20:40:32: [Rift Raid Alert] Paxie << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+20:40:47: [Rift Raid Alert] Paxie << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+20:40:47: [Rift Raid Alert] Paxie << Enfeeblement (Your Guard has been greatly reduced.)
+20:40:47: [Rift Raid Alert] Commander Isiel > Voltaic Thrust >> Paxie
+20:40:50: [Rift Raid Alert] Paxie << remove Crippling Shock
+20:40:50: [Rift Raid Alert] Paxie << remove Enfeeblement
+20:40:59: [Rift Raid Alert] Paxie << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+20:41:14: [Rift Raid Alert] Paxie << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+20:41:27: [Rift Raid Alert] Paxie << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+20:41:27: [Rift Raid Alert] Paxie << Enfeeblement (Your Guard has been greatly reduced.)
+20:41:27: [Rift Raid Alert] Commander Isiel > Voltaic Thrust >> Paxie
+20:41:29: [Rift Raid Alert] Paxie << remove Crippling Shock
+20:41:29: [Rift Raid Alert] Paxie << remove Enfeeblement
+20:41:44: [Rift Raid Alert] Paxie << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+20:41:59: [Rift Raid Alert] Gaarren << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+20:42:11: [Rift Raid Alert] Gaarren << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+20:42:27: [Rift Raid Alert] Gaarren << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+20:42:27: [Rift Raid Alert] Gaarren << Enfeeblement (Your Guard has been greatly reduced.)
+20:42:28: [Rift Raid Alert] Commander Isiel > Voltaic Thrust >> Gaarren
+20:42:30: [Rift Raid Alert] Gaarren << remove Crippling Shock
+20:42:30: [Rift Raid Alert] Gaarren << remove Enfeeblement
+20:42:42: [Rift Raid Alert] Gaarren << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+20:42:42: [Rift Raid Alert] Gaarren << remove Crippling Shock
+20:42:44: [Rift Raid Alert] Paxie << remove Crippling Shock
+
+---------------------------------------------------------------------
+20:48:18: [Rift Raid Alert] Combat Begin > Vindicator MK1
+20:50:56: [Rift Raid Alert] Paxie << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+20:51:09: [Rift Raid Alert] Paxie << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+20:51:22: [Rift Raid Alert] Paxie << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+20:51:22: [Rift Raid Alert] Paxie << Enfeeblement (Your Guard has been greatly reduced.)
+20:51:22: [Rift Raid Alert] Commander Isiel > Voltaic Thrust >> Paxie
+20:51:24: [Rift Raid Alert] Paxie << remove Crippling Shock
+20:51:24: [Rift Raid Alert] Paxie << remove Enfeeblement
+20:51:36: [Rift Raid Alert] Paxie << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+20:51:49: [Rift Raid Alert] Paxie << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+20:52:02: [Rift Raid Alert] Paxie << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+20:52:02: [Rift Raid Alert] Paxie << Enfeeblement (Your Guard has been greatly reduced.)
+20:52:03: [Rift Raid Alert] Commander Isiel > Voltaic Thrust >> Paxie
+20:52:05: [Rift Raid Alert] Paxie << remove Crippling Shock
+20:52:05: [Rift Raid Alert] Paxie << remove Enfeeblement
+20:52:15: [Rift Raid Alert] Paxie << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+20:52:28: [Rift Raid Alert] Paxie << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+20:52:41: [Rift Raid Alert] Paxie << remove Crippling Shock
+20:52:41: [Rift Raid Alert] Paxie << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+20:52:41: [Rift Raid Alert] Paxie << remove Crippling Shock
+20:52:53: [Rift Raid Alert] Gaarren << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+20:53:07: [Rift Raid Alert] Gaarren << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+20:53:19: [Rift Raid Alert] Gaarren << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+20:53:19: [Rift Raid Alert] Gaarren << Enfeeblement (Your Guard has been greatly reduced.)
+20:53:20: [Rift Raid Alert] Commander Isiel > Voltaic Thrust >> Gaarren
+20:53:22: [Rift Raid Alert] Gaarren << remove Crippling Shock
+20:53:22: [Rift Raid Alert] Gaarren << remove Enfeeblement
+20:53:32: [Rift Raid Alert] Gaarren << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+20:53:47: [Rift Raid Alert] Gaarren << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+20:53:47: [Rift Raid Alert] Gaarren << remove Crippling Shock
+
+---------------------------------------------------------------------
+20:57:41: [Rift Raid Alert] Combat Begin > Vindicator MK1
+21:00:41: [Rift Raid Alert] Paxie << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+21:00:56: [Rift Raid Alert] Paxie << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+21:01:09: [Rift Raid Alert] Paxie << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+21:01:09: [Rift Raid Alert] Paxie << Enfeeblement (Your Guard has been greatly reduced.)
+21:01:09: [Rift Raid Alert] Commander Isiel > Voltaic Thrust >> Paxie
+21:01:11: [Rift Raid Alert] Paxie << remove Crippling Shock
+21:01:11: [Rift Raid Alert] Paxie << remove Enfeeblement
+21:01:23: [Rift Raid Alert] Paxie << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+21:01:36: [Rift Raid Alert] Paxie << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+21:01:49: [Rift Raid Alert] Paxie << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+21:01:49: [Rift Raid Alert] Paxie << Enfeeblement (Your Guard has been greatly reduced.)
+21:01:50: [Rift Raid Alert] Commander Isiel > Voltaic Thrust >> Paxie
+21:01:52: [Rift Raid Alert] Paxie << remove Crippling Shock
+21:01:52: [Rift Raid Alert] Paxie << remove Enfeeblement
+21:02:05: [Rift Raid Alert] Paxie << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+21:02:18: [Rift Raid Alert] Paxie << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+21:02:30: [Rift Raid Alert] Paxie << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+21:02:30: [Rift Raid Alert] Paxie << Enfeeblement (Your Guard has been greatly reduced.)
+21:02:31: [Rift Raid Alert] Commander Isiel > Voltaic Thrust >> Paxie
+21:02:33: [Rift Raid Alert] Paxie << remove Crippling Shock
+21:02:33: [Rift Raid Alert] Paxie << remove Enfeeblement
+21:02:43: [Rift Raid Alert] Gaarren << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+21:02:44: [Rift Raid Alert] Gaarren << remove Crippling Shock
