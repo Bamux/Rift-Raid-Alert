@@ -41,7 +41,7 @@ Under http://www.mwsreader.com/en/voices/ you can download other voices (differe
 
 ## Optional - How to use Rift Raid Alerts on TeamSpeak or Discord (you dont need this to run Rift Raid Alert):
 
-1. INSTALL VB-CABLE Virtual Audio Device - http://vb-audio.pagesperso-orange.fr/Cable/index.htm
+1. INSTALL VB-CABLE Virtual Audio Device - https://www.vb-audio.com/Cable/index.htm#DownloadCable
 2. Right click on the windows speaker icon > choose Recording Devices > double clicking CABLE Output > Listen > Playback through this device: coose Default Playback Device and checking the box
 ![Recording Devices](https://raw.githubusercontent.com/Bamux/Rift-Raid-Alert/images/Recording%20Devices.png)
 
