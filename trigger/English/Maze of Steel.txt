@@ -1,3 +1,4 @@
+trigger = all; all; Azranel; ability; playername << Missile Storm; run out.wav; 0; 0; 0; 0; 0; 0
 trigger = all; all; Azranel; ability; Azranel = 46 %; ready for spin; 0; 0; 300; 0; 0; 0
 trigger = all; all; Azranel; ability; Initiating defensive tactics, reflective shield powering on.; spin; 0; 0; 0; 0; 0; 0
 trigger = all; all; Azranel; ability; Azranel > Defensive Spin; spin in; 39; 43; 300; 0; 0; 0
