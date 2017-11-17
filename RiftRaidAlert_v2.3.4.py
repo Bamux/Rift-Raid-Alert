@@ -1038,6 +1038,8 @@ def boss_select(evt):
         b_special_trigger.grid(row=2, column=1, pady=20)
         b12.grid(row=3, column=1, pady=20)
         value = str((boss_listbox.get(boss_listbox.curselection())))
+        if " - " in value:
+            value = value.split(" - ")[0]
         e1.delete(0, END)
         e1.insert(0, value)
         trigger_ui(value)
@@ -1759,6 +1761,7 @@ def trigger_ui(value):
 def boss_ui(value):
     try:
         reset()
+        boss = []
         tupel = ()
         # boss_listbox.grid(row=0, column=1, padx=10, pady=10, sticky=N+S+E+W)
         b8.grid_forget()
@@ -1766,6 +1769,14 @@ def boss_ui(value):
         # b_special_trigger.grid(row=2, pady=30, column=1)
         boss_listbox.delete(0, END)
         trigger_listbox.delete(0, END)
+        mypath = "time/" + value + ".txt"
+        if os.path.isfile(mypath):
+            bossnames = codecs.open("time/" + value + ".txt", 'r', "utf-8")
+            for item in bossnames:
+                item = item.strip()
+                split = item.split(": ")
+                boss += [[split[0]] + [split[1]]]
+            bossnames.close()
         zone_txt = codecs.open("trigger/" + client_language + "/" + value + ".txt", 'r', "utf-8")
         for para_line in zone_txt:
             paraline = str.rstrip(para_line)
@@ -1778,7 +1789,14 @@ def boss_ui(value):
                     line_data = line_data.split("; ")
                     if line_data[2] not in tupel:
                         tupel += (line_data[2],)
-                        boss_listbox.insert(END, line_data[2])
+                        output = line_data[2]
+                        if boss:
+                            i = 0
+                            for item in boss:
+                                if line_data[2] == item[0]:
+                                    output += " - " + item[1]
+                                    break
+                        boss_listbox.insert(END, output)
         zone_txt.close()
     except:
         guioutput("Trigger is missing")
