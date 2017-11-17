@@ -1,0 +1,7 @@
+Flaming Trickster > Smoulder
+player << Flame Breath (The fire continues to sear your flesh over time.)
+Ravenous Flame < Flame Breath (The fire continues to sear your flesh over time.)
+player << Trickter's Rupture (A kinetic blast that also does damage over time.)
+Flaming Trickster < Trickter's Rupture (A kinetic blast that also does damage over time.)
+Ravenous Flame < Fire Bomb
+Boss Death > Flaming Trickster

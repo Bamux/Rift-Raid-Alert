@@ -1,0 +1,4 @@
+Fire Wing < Aerial Agility (Fire Wing is immune to taunt and takes reduced area-of-effect damage.)
+player << Torn (A vicious wound that bleeds over time.)
+Fire Wing > Fire Breath
+Fire Wing < Tail Slash

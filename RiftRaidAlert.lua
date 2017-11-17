@@ -84,7 +84,7 @@ local function CombatDeath(event, unit)
     if unit.target then
         if unit.target == rra_boss_id then
             if unit.targetName then
-                print("Death > ".. unit.targetName)
+                print("Boss Death > ".. unit.targetName)
             end
             CombatEnd()
         else
