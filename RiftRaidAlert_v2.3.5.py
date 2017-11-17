@@ -17,7 +17,7 @@ from threading import Thread
 from tkinter import filedialog
 from tkinter import *
 
-version = "2.3.4"
+version = "2.3.5"
 
 error_analysis = False  # test a complete logfile from line 1 without orginal time(True or False)
 playback = False  # Playback a logfile from line 1 with orginal time (True or False)
@@ -371,6 +371,7 @@ def logfile_analysis(logtext):
     bossname = ""
     lasttime = -1
     combat = False
+    fight_duration = 0
     # raidbuff_missing_number = ""
     # number = 0
     # names = ""
@@ -425,7 +426,7 @@ def logfile_analysis(logtext):
         elif "Boss Death >" in line and bossname in line:
             fight_duration = time.clock() - fight_duration
             fight_duration = time.strftime("%M:%S", time.gmtime(fight_duration))
-            Thread(target=save_fight_duration, args=(bossname,fight_duration)).start()
+            Thread(target=save_fight_duration, args=(bossname, fight_duration)).start()
             guioutput(orginal)
         elif "Combat End" in line:
             Thread(target=save_abilities, args=(bossname,)).start()
@@ -533,6 +534,7 @@ def logfile_analysis(logtext):
             #     t = Thread(target=logfile_analysis, args=(logtext,))
             #     t.start()
 
+
 def save_fight_duration(bossname, fight_duration):
     file = ""
     new_besttime = ""
@@ -544,14 +546,14 @@ def save_fight_duration(bossname, fight_duration):
                 f = codecs.open(mypath, "r", "utf-8")
                 for item in f:
                     if bossname in item:
-                        time = item.split(": ")[1]
-                        time = time.strip()
+                        killtime = item.split(": ")[1]
+                        killtime = killtime.strip()
                         boss_existing = True
                         if fight_duration < time:
                             file += bossname + ": " + fight_duration + '\r\n'
                             new_besttime = True
                             Thread(target=saytext, args=("this is a new record",)).start()
-                            guioutput("Previous record: " + time)
+                            guioutput("Previous record: " + killtime)
                             guioutput("New record: " + fight_duration)
                     else:
                         file += item
@@ -560,7 +562,7 @@ def save_fight_duration(bossname, fight_duration):
                     f = codecs.open(mypath, "w", "utf-8")
                     f.write(file)
                     f.close()
-                if boss_existing == False:
+                if not boss_existing:
                     file += bossname + ": " + fight_duration + '\r\n'
                     f = codecs.open(mypath, "w", "utf-8")
                     f.write(file)
@@ -943,6 +945,7 @@ def guioutput(text):
         T.yview(END)
 
 
+# noinspection PyProtectedMember
 def ask_quit():
     try:
         file_out = codecs.open("RiftRaidAlert.ini", "w", 'utf-8')
@@ -1019,6 +1022,7 @@ def buff_check():
             special += defaultspecial
 
 
+# noinspection PyUnusedLocal
 def trigger_select(evt):
     try:
         value = str((trigger_listbox.get(trigger_listbox.curselection())))
@@ -1027,6 +1031,7 @@ def trigger_select(evt):
         pass
 
 
+# noinspection PyUnusedLocal
 def boss_select(evt):
     try:
         final_trigger.clear()
@@ -1047,6 +1052,7 @@ def boss_select(evt):
         pass
 
 
+# noinspection PyUnusedLocal
 def zone_select(evt):
     try:
         global client_language
@@ -1288,6 +1294,7 @@ def edit_trigger(value):
             l18.grid(row=11, column=1, padx=190, sticky=W)
 
 
+# noinspection PyUnusedLocal
 def sound_file_select(evt):
     value = str((sound_listbox.get(sound_listbox.curselection())))
     if value != ".. exit":
@@ -1332,6 +1339,7 @@ def sound_file():
     scrollbar.config(command=sound_listbox.yview)
 
 
+# noinspection PyUnusedLocal
 def ability_select(evt):
     value = str((abilities_listbox.get(abilities_listbox.curselection())))
     if value != "  .. exit":
@@ -1364,6 +1372,7 @@ def abilities():
         pass
 
 
+# noinspection PyUnusedLocal
 def boss_ability_select(evt):
     value = str((boss_abilities_listbox.get(boss_abilities_listbox.curselection())))
     if value != ".. exit":
@@ -1408,6 +1417,7 @@ def boss_abilities():
         pass
 
 
+# noinspection PyUnusedLocal
 def zone_ability_select(evt):
     value = str((zone_abilities_listbox.get(zone_abilities_listbox.curselection())))
     if value != ".. exit":
@@ -1630,6 +1640,7 @@ def keywords_choice(value):
     final_trigger = [trigger_details[0]] + [trigger_details[1].rstrip()]
 
 
+# noinspection PyUnusedLocal
 def keywords_select(evt):
     global client_language
     try:
@@ -1761,7 +1772,7 @@ def trigger_ui(value):
 def boss_ui(value):
     try:
         reset()
-        boss = []
+        boss_name = []
         tupel = ()
         # boss_listbox.grid(row=0, column=1, padx=10, pady=10, sticky=N+S+E+W)
         b8.grid_forget()
@@ -1775,7 +1786,7 @@ def boss_ui(value):
             for item in bossnames:
                 item = item.strip()
                 split = item.split(": ")
-                boss += [[split[0]] + [split[1]]]
+                boss_name += [[split[0]] + [split[1]]]
             bossnames.close()
         zone_txt = codecs.open("trigger/" + client_language + "/" + value + ".txt", 'r', "utf-8")
         for para_line in zone_txt:
@@ -1789,14 +1800,13 @@ def boss_ui(value):
                     line_data = line_data.split("; ")
                     if line_data[2] not in tupel:
                         tupel += (line_data[2],)
-                        output = line_data[2]
-                        if boss:
-                            i = 0
-                            for item in boss:
+                        boss_output = line_data[2]
+                        if boss_name:
+                            for item in boss_name:
                                 if line_data[2] == item[0]:
-                                    output += " - " + item[1]
+                                    boss_output += " - " + item[1]
                                     break
-                        boss_listbox.insert(END, output)
+                        boss_listbox.insert(END, boss_output)
         zone_txt.close()
     except:
         guioutput("Trigger is missing")
