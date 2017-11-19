@@ -10,7 +10,7 @@ trigger = all; all; Azranel; ability; Azranel = 0 %; congratulations; 0; 0; 0; 0
 #trigger = all; all; Azranel; ability; Azranel > Comet Shot >> player; stack player; 0; 0; 0; 0; 0; 0
 #trigger = all; all; Azranel; ability; Azranel < Magnetized; Magnetized in; 37; 41; 0; 0; 0; 0
 #trigger = all; all; Azranel; ability; Azranel < Magnetized; 10 seconds; 31; 0; 0; 0; 0; 0
-#trigger = all; all; Vindicator MK1; ability; player << Enfeeblement; tank swap.wav; 0; 0; 0; 0; 0; 0
+trigger = all; all; Vindicator MK1; ability; player << Enfeeblement; tank damage; 0; 0; 0; 0; 0; 0
 trigger = all; all; Vindicator MK1; ability; Timed Charge >> player; player run out; 0; 0; 0; 0; 0; 0
 trigger = all; all; Vindicator MK1; ability; player << Explosive Round; cleanse; 0; 0; 0; 0; 0; 0
 trigger = all; all; Vindicator MK1; ability; Vindicator MK1 < Irradiated Field; aoe; 0; 0; 0; 0; 0; 0

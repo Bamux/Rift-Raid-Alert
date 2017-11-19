@@ -858,7 +858,7 @@ def triggerload(file):  # get parametrs from Rift_Raid_Warnings.ini
                             if 'volume' in line_type:
                                 volume = int(line_data)
                                 if volume < 0 or volume > 100:
-                                    volume = 100
+                                    volume = 50
                             if 'buffcheck' in line_type:
                                 buffcheck = int(line_data)
                                 if buffcheck < 0 or buffcheck > 1:
@@ -926,7 +926,8 @@ def triggerload(file):  # get parametrs from Rift_Raid_Warnings.ini
         except:
             guioutput('Error in reading parameters from ' + file)
     except:
-        guioutput('No Triggers found for ' + file)
+        if file != "RiftRaidAlert.ini":
+            guioutput('No Triggers found for ' + file)
 
 
 def soundfiles_list(folder):
@@ -2158,8 +2159,8 @@ output = "mix"
 only_me = 1
 lava = 0
 orchester = 0
-tankswap = 0
-cleanse = 0
+tankswap = 1
+cleanse = 1
 trigger = []
 special = []
 keywords = []
@@ -2170,8 +2171,8 @@ abilities_new = []
 # defaulttrigger = []
 zone = ""
 zonelist = trigger_dir("trigger")
-logfile = ""
-volume = 100
+logfile = "../../../Log.txt"
+volume = 50
 triggerload("RiftRaidAlert.ini")
 
 var_buffcheck = IntVar()
