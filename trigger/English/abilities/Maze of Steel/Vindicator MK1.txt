@@ -22,3 +22,20 @@ Vindicator MK1 > Seeker Mines
 player << Driller Round (Take 20% extra damage and lowers Armor and Guard. Stacks up to ten times.)
 player << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
 Vindicator MK1 < Reinforced Plating (Armor has been reinforced to mitigate 95% of all damage.)
+Death > Evocatus Stormbringer
+Death > Voorog
+Death > Gaarren
+Death > Paxie
+Death > Primaschreiber
+Death > Nypd
+Death > Lilamas
+Death > Catigern
+Death > Bamu
+Death > Neriath
+Death > Viexie
+Evocatus Stormbringer < Static Flux (Increases Air and Water damage done by 10%.)
+Death > Primus Bladesman
+player << Dauntless Strike (Increased Critical Hit chance taken from damaging attacks by 5%.)
+Death > Auxilia Sky Raptor
+Death > X41 Destroyer
+Death > Jabober

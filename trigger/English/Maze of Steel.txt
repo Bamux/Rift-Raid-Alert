@@ -15,3 +15,5 @@ trigger = all; all; Vindicator MK1; ability; Timed Charge >> player; player run 
 trigger = all; all; Vindicator MK1; ability; player << Explosive Round; cleanse; 0; 0; 0; 0; 0; 0
 trigger = all; all; Vindicator MK1; ability; Vindicator MK1 < Irradiated Field; aoe; 0; 0; 0; 0; 0; 0
 
+trigger = all; all; Vindicator MK1; ability; Vindicator MK1 = 60 %; phase change; 0; 0; 0; 0; 0; 0
+trigger = all; all; Vindicator MK1; ability; Commander Isiel > Lightning Whirl; aoe.wav; 0; 0; 0; 0; 0; 0

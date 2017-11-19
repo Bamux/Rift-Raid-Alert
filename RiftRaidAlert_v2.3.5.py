@@ -609,7 +609,7 @@ def abilitycheck(line, orginal):
     global abilities_new
     ability_existing = False
     if "[Rift Raid Alert]" in orginal:
-        if "pull >> " not in line and "Combat Begin" not in line and " %" not in line \
+        if "pull >> " not in line and "Combat Begin" not in line and " %" not in line and "Death >" not in line\
                 and "remove" not in line:
             if " >> " in line:
                 line = line.split(" >> ")
@@ -653,6 +653,9 @@ def logfilecheck(log_file):
                             if "Combat Begin" in line:
                                 line = "\r\n" + "---------------------------------------------------------------------" + "\r\n" + line
                                 file_out.write(line)
+                            elif "Combat End" in line:
+                                line = line + "---------------------------------------------------------------------" + "\r\n\r\n"
+                                file_out.write(line)
                             elif "Item not ready" not in line \
                                     and "Stufe" not in line \
                                     and "Level" not in line \
@@ -667,6 +670,9 @@ def logfilecheck(log_file):
                                     and "Ability cancelledy" not in line \
                                     and "No target" not in line \
                                     and "You cannot use" not in line \
+                                    and "Ability cancelled" not in line \
+                                    and "Target is already dead" not in line \
+                                    and "Not enough charge" not in line \
                                     and "Sammelt bitte zunächst einmal die Gegenstände ein" not in line \
                                     and "Ein interner Fehler ist aufgetreten" not in line \
                                     and "Ihr erhaltet" not in line \
