@@ -1,0 +1,5 @@
+language = English
+X22 Ravager < Setting Moon (Increases damage of Follow Up attacks by 25%.)
+Tribuni Sharpshooter < Swift Shot (Movement speed increased by 15%.)
+Tribuni Sharpshooter < Hasted Shot (Increases movement speed by 20%.)
+Boss Death > Vox Repair Drone

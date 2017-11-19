@@ -108,9 +108,9 @@ local function CheckHP(event, units)
                         if hitpoints ~= lasthitpoints then
                             print(detail.name .. " = " .. hitpoints .. " %")
                             lasthitpoints = hitpoints
-                            if hitpoints == 0 then -- or hitpoints == 100
-                                CombatEnd()
-                            end
+--                            if hitpoints == 0 then -- or hitpoints == 100
+--                                CombatEnd()
+--                            end
                         end
                         break
                     end
