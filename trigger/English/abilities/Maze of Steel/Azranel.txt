@@ -20,13 +20,3 @@ player << Static Insulator (This object is protected from electric discharges. K
 player << Polarizing Field
 player << Polarizing Field (Slowed by the mushroom's spores.)
 player << Tractor Beam
-Death > Bamu
-Death > Primaschreiber
-Death > Neriath
-Death > Catigern
-Death > Lilamas
-Death > Gaarren
-Death > Viexie
-Death > Nypd
-Death > Paxie
-Death > Voorog
