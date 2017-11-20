@@ -17,7 +17,7 @@ from threading import Thread
 from tkinter import filedialog
 from tkinter import *
 
-version = "2.3.5"
+version = "2.3.6"
 
 error_analysis = False  # test a complete logfile from line 1 without orginal time(True or False)
 playback = False  # Playback a logfile from line 1 with orginal time (True or False)

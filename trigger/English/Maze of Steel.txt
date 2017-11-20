@@ -17,3 +17,4 @@ trigger = all; all; Vindicator MK1; ability; Vindicator MK1 < Irradiated Field; 
 
 trigger = all; all; Vindicator MK1; ability; Vindicator MK1 = 60 %; phase change; 0; 0; 0; 0; 0; 0
 trigger = all; all; Vindicator MK1; ability; Commander Isiel > Lightning Whirl; aoe.wav; 0; 0; 0; 0; 0; 0
+trigger = all; all; Vindicator MK1; ability; Vindicator MK1 > Lightning Burst; aoe.wav; 0; 0; 0; 0; 0; 0
