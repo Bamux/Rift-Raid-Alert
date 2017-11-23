@@ -3,3 +3,4 @@ High Priest Arakhurn > Fire Nova
 player << Fiery Metamorphosis (You burn with the purifying flame of the phoenix! Removes unwanted debuffs from your allies.)
 player << Lava Burst (Silenced.)
 Seething Core < Mana Trap (Purging a Seething Charge causes a deadly backlash against the caster)
+language = English

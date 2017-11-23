@@ -10,3 +10,5 @@ Binding Elemental < Released Power (Upon death this creature will explode, knock
 player << Magma Breath (Hurls a ball of flaming energy at the enemy, causing 0 to 1 Fire damage.)
 player << No Escape (Beligosh is preventing teleportation)
 player << Backdraft
+player << Disrupting Aura (Beligosh's aura disrupts the flow of magic. Casting times are increased by 60% within 15m)
+player << Vengeance of Beligosh (Whenever healing is cast on the target the healer recieves damage equal to 16% of the healing done.)

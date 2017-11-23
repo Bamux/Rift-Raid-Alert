@@ -1,3 +1,4 @@
+Arcane Ooze > Void Bolt
 Countessa Danazhal < Flame Prep (Flame Prep)
 Countessa Danazhal > Flamescape
 player << Dark Touch (Deals -109 Death damage over 16s.)

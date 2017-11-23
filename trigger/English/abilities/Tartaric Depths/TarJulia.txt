@@ -6,3 +6,12 @@ TarJulia > Molten Blast
 TarJulia > Rage
 player << Rage
 TarJulia > Call for Help
+TarJulia < Fury (Tarjulia is dealing 50% more damage)
+TarJulia < Cocooned Power (Tarjulia is unable to fall below 70% hp with 7 infernal soul left alive.)
+TarJulia < Cocooned Power (Tarjulia is unable to fall below 80% hp with 8 infernal soul left alive.)
+TarJulia < Cocooned Power (Tarjulia is unable to fall below 60% hp with 6 infernal soul left alive.)
+TarJulia < Cocooned Power (Tarjulia is unable to fall below 50% hp with 5 infernal soul left alive.)
+TarJulia < Cocooned Power (Tarjulia is unable to fall below 40% hp with 4 infernal soul left alive.)
+TarJulia < Cocooned Power (Tarjulia is unable to fall below 30% hp with 3 infernal soul left alive.)
+TarJulia < Cocooned Power (Tarjulia is unable to fall below 20% hp with 2 infernal soul left alive.)
+TarJulia < Cocooned Power (Tarjulia is unable to fall below 10% hp with 1 infernal soul left alive.)

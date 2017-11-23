@@ -17,7 +17,7 @@ from threading import Thread
 from tkinter import filedialog
 from tkinter import *
 
-version = "2.3.6"
+version = "2.3.7"
 
 error_analysis = False  # test a complete logfile from line 1 without orginal time(True or False)
 playback = False  # Playback a logfile from line 1 with orginal time (True or False)
@@ -401,6 +401,7 @@ def logfile_analysis(logtext):
                 if client_language != "German" and client_language != "French":
                     client_language = "English"
         if 'Rift Raid Alert Trigger >' in line:
+            fight_duration = 0
             keywords_on_off = 0
             if combattrigger == 1:
                 cut_string = line.split('Rift Raid Alert Trigger > ')
@@ -418,15 +419,14 @@ def logfile_analysis(logtext):
                     special += defaultspecial
         elif "Combat Begin > " in line:
             combat = True
-            fight_duration = time.clock()
+            if fight_duration == 0:
+                fight_duration = time.clock()
             bossname = line.split(" > ")
             bossname = bossname[1]
             Thread(target=load_abilies, args=(bossname,)).start()
             guioutput(orginal)
-        elif "Boss Death >" in line and bossname in line:
-            fight_duration = time.clock() - fight_duration
-            fight_duration = time.strftime("%M:%S", time.gmtime(fight_duration))
-            Thread(target=save_fight_duration, args=(bossname, fight_duration)).start()
+        elif "Death > " in line:
+            Thread(target=save_fight_duration, args=(line.split("Death > ")[1], fight_duration)).start()
             guioutput(orginal)
         elif "Combat End" in line:
             Thread(target=save_abilities, args=(bossname,)).start()
@@ -539,6 +539,8 @@ def save_fight_duration(bossname, fight_duration):
     file = ""
     new_besttime = ""
     boss_existing = False
+    fight_duration = time.clock() - fight_duration
+    fight_duration = time.strftime("%M:%S", time.gmtime(fight_duration))
     for i in range(0, len(trigger)):
         if str.lower(bossname) == trigger[i][2]:
             mypath = "time/" + zone + ".txt"
@@ -610,7 +612,7 @@ def abilitycheck(line, orginal):
     ability_existing = False
     if "[Rift Raid Alert]" in orginal:
         if "pull >> " not in line and "Combat Begin" not in line and " %" not in line and "Death >" not in line\
-                and "remove" not in line:
+                and "remove" not in line and "language =" not in line:
             if " >> " in line:
                 line = line.split(" >> ")
                 line = line[0]  # + " >> player"

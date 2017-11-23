@@ -1,4 +1,5 @@
 Malannon < Blazing Aura (Radiates unbearable heat, pulsing constant area damage to enemies.)
+Malannon < Blazing Aura (Radiates unbearable heat, pulsing constant area damage to enemies.)
 Malannon > Flaming Swipe
 Malannon > Flames of Annihilation
 Malannon > Runes of Power
@@ -19,3 +20,6 @@ Dragon of Suffering > Revitalize
 Dragon of Suffering > Burning Ruin
 player << Burning Ruin (Periodically spawns pools of fire at your feet.)
 player << Burning Ruin (Taking periodic damage.)
+player << Smoldering Ruin (Increases incoming damage and reduces outgoing damage by 20%. Stacks up to 5 times.)
+player << Adrenaline Rush (The rush of adrenaline increases movement speed by 50%.)
+player << Inferno Aura (Incoming damage increased by 50%. Outgoing damage reduced by 50%.)

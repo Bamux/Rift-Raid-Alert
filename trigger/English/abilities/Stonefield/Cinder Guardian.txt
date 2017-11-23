@@ -1,0 +1,2 @@
+Cinder Guardian > Flaming Curse
+player << Flaming Curse (A burning curse has been placed upon you dealing damage every 2 seconds.)

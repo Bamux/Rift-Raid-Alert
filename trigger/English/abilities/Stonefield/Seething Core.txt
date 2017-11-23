@@ -1,1 +1,4 @@
 Seething Core < Mana Trap (Purging a Seething Charge causes a deadly backlash against the caster)
+player << Dazed (Speed is reduced by 40% for 8 seconds.)
+language = English
+player << Tectonic Punch (Your body is shattered. Incoming healing is reduced by 80% and you take ongoing damage every second.)

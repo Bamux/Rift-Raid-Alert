@@ -1,17 +1,19 @@
 trigger = all; all; Beligosh; ability; An Alavaxian Golem has appeared; add; 0; 0; 0; 0; 0; 0
 trigger = all; all; Beligosh; ability; Feel the wrath of Beligosh!; run out; 0; 0; 0; 0; 0; 0
+trigger = all; all; Beligosh; ability; Beligosh = 15 %; 15 %; 0; 0; 0; 0; 0; 0
 trigger = all; all; TarJulia; ability; Tarjulia targets player; player run out; 0; 0; 0; 0; 0; 0
 trigger = all; all; TarJulia; ability; player << Hot Hands; player stop; 0; 0; 0; 20; 0; 0
 trigger = all; all; TarJulia; ability; player << remove Hot Hands; ; 0; 0; 0; -20; 0; 0
 trigger = all; all; TarJulia; ability; TarJulia = 90 %; 90 %; 0; 0; 0; 0; 0; 0
-trigger = all; all; Council; ability; VOID < Void; void; 0; 0; 10; 0; 0; 0
-trigger = all; all; Council; ability; The Flamescape begins; step into the circle; 0; 0; 0; 0; 0; 0
+#trigger = all; all; TarJulia; ability; TarJulia > Rage; rage; 0; 0; 0; 0; 0; 0
+trigger = all; all; Count Pleuzhal; ability; VOID < Void; void; 0; 0; 10; 0; 0; 0
+trigger = all; all; Count Pleuzhal; ability; The Flamescape begins; step into the circle; 0; 0; 0; 0; 0; 0
+trigger = all; all; Count Pleuzhal; ability; Mega Death Ball >> player; intercept player; 0; 0; 0; 0; 0; 0
 trigger = all; all; Malannon; ability; player is targeted for Burning Ruin; player run out; 0; 0; 10; 0; 0; 0
 trigger = all; all; Malannon; ability; stand alone and die in flames; step into the circle; 0; 0; 0; 0; 0; 0
 trigger = all; all; Drahknar; ability; Drahknar > Fiery Pool >> player; player; 0; 0; 5; 0; 0; 0
-trigger = all; all; Beligosh; ability; Beligosh = 15 %; 15 %; 0; 0; 0; 0; 0; 0
-trigger = all; all; Council; ability; Mega Death Ball >> player; intercept player; 0; 0; 0; 0; 0; 0
 trigger = all; all; Malannon; ability; playername << Mark of Supremacy; yellow; 0; 0; 0; 0; 0; 0
 trigger = all; all; Malannon; ability; playername << Mark of Acrimony; purple; 0; 0; 0; 0; 0; 0
-#trigger = all; all; TarJulia; ability; TarJulia > Rage; rage; 0; 0; 0; 0; 0; 0
 trigger = all; all; Malannon; ability; Malannon > Obliteration; tank damage; 0; 0; 0; 0; 0; 0
+trigger = all; all; Illysia; ability; Illysia > Summon Minions; add; 0; 0; 0; 0; 0; 0
+trigger = all; all; Warden Xilmarth; ability; Warden Xilmarth > Tartaric Barrage; ; 0; 0; 0; 0; 0; 0

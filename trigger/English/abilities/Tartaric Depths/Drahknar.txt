@@ -1,3 +1,4 @@
 Drahknar < Whirling Strike
 Drahknar > Weakening Impact
 Drahknar > Fiery Pool
+player << Weakening Impact (Max health reduced by 5% per stack.)

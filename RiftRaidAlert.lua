@@ -36,7 +36,7 @@ local function CombatCheck(event, units) -- Check Combat Status (Combat Begin, C
                         end
                     end
                     if detail.healthMax > hitpoints and detail.healthMax > maxhitpoints and detail.health > detail.healthMax*0.98 then
-                        if detail.id ~= "u800000024E02FC39" and detail.id ~= "u800000024E02FC3D" then
+--                        if detail.id ~= "u800000024E02FC39" and detail.id ~= "u800000024E02FC3D" then
                             maxhitpoints = detail.healthMax
                             print("Combat Begin > ".. detail.name)
                             rra_boss_id = detail.id
@@ -48,7 +48,7 @@ local function CombatCheck(event, units) -- Check Combat Status (Combat Begin, C
                                     print("Fail pull >> " .. player.name)
                                 end
                             end
-                        end
+--                        end
                     end
                 end
             end
@@ -57,7 +57,7 @@ local function CombatCheck(event, units) -- Check Combat Status (Combat Begin, C
 end
 
 
-local function Combat(event, units)
+local function CombatChange(event, units)
     CombatCheck(event, units)
     local unit_details = Inspect.Unit.Detail(units)
     if unit_details and rra_boss_id ~= "0" and user_combat == false then
@@ -70,12 +70,12 @@ local function Combat(event, units)
 end
 
 
-local function Enter(Input)
+local function CombatEnter(Input)
 	user_combat = true
 end
 
 
-local function Exit(Input)
+local function CombatExit(Input)
 	user_combat = false
 end
 
@@ -89,7 +89,12 @@ local function CombatDeath(event, unit)
             CombatEnd()
         else
             if unit.targetName then
-                print("Death > ".. unit.targetName)
+                local unit_detail = Inspect.Unit.Detail(unit.target)
+                if unit_detail.player then
+                    print("Death >> ".. unit.targetName)
+                else
+                    print("Death > ".. unit.targetName)
+                end
             end
         end
     end
@@ -387,8 +392,8 @@ local function ReadyCheck(event, units)
     if unit_details and player then
         for id, detail in pairs(unit_details) do
             if detail.id == player.id then
-                print("language = " .. language)
                 if detail.ready then
+                    print("language = " .. language)
                     CombatEnd()
                     Zone()
                     print("player >> " .. player.name)
@@ -401,7 +406,7 @@ end
 
 
 local function rra_stop()
---    Command.Event.Detach(Event.Unit.Detail.Combat, Combat, "CombatCheck")
+    Command.Event.Detach(Event.Unit.Detail.Combat, CombatChange, "CombatCheck")
     Command.Event.Detach(Event.Combat.Death, CombatDeath, "CombatDeathCheck")
     Command.Event.Detach(Event.Unit.Detail.Ready, ReadyCheck, "ReadyCheck")
     Command.Event.Detach(Event.Buff.Add, getAddBuffName, "buffaddevent")
@@ -409,8 +414,8 @@ local function rra_stop()
     Command.Event.Detach(Event.Unit.Castbar, getAbilityName, "AbilityName")
     Command.Event.Detach(Event.Unit.Detail.Health, CheckHP, "CheckHP")
 	Command.Event.Detach(Event.Combat.Damage, Damage, "Damage")
-	Command.Event.Detach(Event.System.Secure.Enter, Enter, "Enter")
-	Command.Event.Detach(Event.System.Secure.Leave, Exit, "Exit")
+	Command.Event.Detach(Event.System.Secure.Enter, CombatEnter, "Enter")
+	Command.Event.Detach(Event.System.Secure.Leave, CombatExit, "Exit")
     --Command.Event.Detach(Event.Chat.Notif, ScreenNotification, "ScreenNotification")
     --Command.Event.Detach(Event.Unit.Detail.Zone, ChangeZone, "ChangeZone")
 end
@@ -419,15 +424,15 @@ end
 local function rra_start()
     rra_stop()
 --	Command.Event.Attach(Event.Combat.Damage, Damage, "Damage")
-    Command.Event.Attach(Event.Unit.Detail.Combat, Combat, "CombatCheck")
+    Command.Event.Attach(Event.Unit.Detail.Combat, CombatChange, "CombatCheck")
     Command.Event.Attach(Event.Combat.Death, CombatDeath, "CombatDeathCheck")
     Command.Event.Attach(Event.Unit.Detail.Ready, ReadyCheck, "ReadyCheck")
     Command.Event.Attach(Event.Buff.Add, getAddBuffName, "buffaddevent")
     Command.Event.Attach(Event.Buff.Remove, getRemoveBuffName, "buffremoveevent")
     Command.Event.Attach(Event.Unit.Castbar, getAbilityName, "AbilityName")
     Command.Event.Attach(Event.Unit.Detail.Health, CheckHP, "CheckHP")
-	Command.Event.Attach(Event.System.Secure.Enter, Enter, "Enter")
-	Command.Event.Attach(Event.System.Secure.Leave, Exit, "Exit")
+	Command.Event.Attach(Event.System.Secure.Enter, CombatEnter, "CombatEnter")
+	Command.Event.Attach(Event.System.Secure.Leave, CombatExit, "CombatExit")
     --Command.Event.Attach(Event.Chat.Notif, ScreenNotification, "ScreenNotification")
     --Command.Event.Attach(Event.Unit.Detail.Zone, ChangeZone, "ChangeZone")
 end
