@@ -423,6 +423,8 @@ def logfile_analysis(logtext):
                 fight_duration = time.clock()
             bossname = line.split(" > ")
             bossname = bossname[1]
+            if " ID " in bossname:
+                bossname = line.split(" ID ")[0]
             Thread(target=load_abilies, args=(bossname,)).start()
             guioutput(orginal)
         elif "Death > " in line:
@@ -502,30 +504,28 @@ def logfile_analysis(logtext):
 
             trigger_analysis(log, log_big, orginal)
 
-            if combat and line:
-                Thread(target=abilitycheck, args=(line, orginal)).start()
-
-                # Siri
-                # if siri:
-                if 'siri' in log and 'joke' in log or 'siri' in log and 'witz' in log:
-                    text = joke[randint(0, len(joke) - 1)]
-                elif 'siri say' in log:
-                    cut_string = log.split('say ')
-                    new_string = cut_string[1]
-                    text = new_string
-                elif 'siri sage' in log:
-                    cut_string = log.split('sage ')
-                    new_string = cut_string[1]
-                    text = new_string
-                elif 'siri' in log and 'introduce' in log or 'siri' in log and 'stell' in log:
-                    if output == "tts":
-                        text = '''Hi, I am Siri. I support you with Raid announcements.'''
-                    else:
-                        text = "siri.wav"
-
+            if 'siri' in log and 'joke' in log or 'siri' in log and 'witz' in log:
+                text = joke[randint(0, len(joke) - 1)]
+            elif 'siri say' in log:
+                cut_string = log.split('say ')
+                new_string = cut_string[1]
+                text = new_string
+            elif 'siri sage' in log:
+                cut_string = log.split('sage ')
+                new_string = cut_string[1]
+                text = new_string
+            elif 'siri' in log and 'introduce' in log or 'siri' in log and 'stell' in log:
+                if output == "tts":
+                    text = '''Hi, I am Siri. I support you with Raid announcements.'''
+                else:
+                    text = "siri.wav"
             if text:
                 Thread(target=saytext, args=(text,)).start()
                 text = ""
+
+            if combat and line:
+                Thread(target=abilitycheck, args=(line, orginal)).start()
+
         else:
             time.sleep(0.50)  # waiting for a new line
             # except:
@@ -551,7 +551,7 @@ def save_fight_duration(bossname, fight_duration):
                         killtime = item.split(": ")[1]
                         killtime = killtime.strip()
                         boss_existing = True
-                        if fight_duration < time:
+                        if fight_duration < killtime:
                             file += bossname + ": " + fight_duration + '\r\n'
                             new_besttime = True
                             Thread(target=saytext, args=("this is a new record",)).start()
