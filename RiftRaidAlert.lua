@@ -2,20 +2,17 @@
 local rra_bufflist = {}
 local Lavafield = Inspect.Time.Frame()
 local Orchester = Inspect.Time.Frame()
-local maxhitpoints = 0
 local lasthitpoints = 100
 local language = Inspect.System.Language()
 local user_combat = false
 print("language = " .. language)
--- local User = Inspect.Unit.Lookup("player")
-
+--local UserID = Inspect.Unit.Lookup("player")
 
 local function CombatEnd()
     if rra_boss_id ~= 0 then
         print("Combat End")
         local count = #rra_bufflist
         for i=0, count do rra_bufflist[i]=nil end
-        maxhitpoints = 0
         lasthitpoints = 100
         rra_boss_id = 0
     end
@@ -24,31 +21,20 @@ end
 
 local function CombatCheck(event, units) -- Check Combat Status (Combat Begin, Combat End)
     if rra_boss_id == 0  then
-        local hitpoints = 20000000
         local unit_details = Inspect.Unit.Detail(units)
         if unit_details then
             for id, detail in pairs(unit_details) do
-                -- if not detail.relation then
-                if detail.relation == "hostile" then
-                    if tonumber(detail.level) then
-                        if tonumber(detail.level) > 68 then
-                            local hitpoints = 100000000
+                if detail .tier and detail.tier == "raid" then
+                    local zone_id = Inspect.Unit.Detail("player").zone
+                    print("Combat Begin > ".. detail.name .. " | ID: " .. detail.id .. " | ZoneID: " .. zone_id .. " | HP: " .. detail.healthMax)
+                    rra_boss_id = detail.id
+                    local player = Inspect.Unit.Detail(detail.id .. ".target")
+                    if player then
+                        if player.role == "tank" then
+                            print("Tank pull >> " .. player.name)
+                        else
+                            print("Fail pull >> " .. player.name)
                         end
-                    end
-                    if detail.healthMax > hitpoints and detail.healthMax > maxhitpoints and detail.health > detail.healthMax*0.98 then
---                        if detail.id ~= "u800000024E02FC39" and detail.id ~= "u800000024E02FC3D" then
-                            maxhitpoints = detail.healthMax
-                            print("Combat Begin > ".. detail.name)
-                            rra_boss_id = detail.id
-                            local player = Inspect.Unit.Detail(detail.id .. ".target")
-                            if player then
-                                if player.role == "tank" then
-                                    print("Tank pull >> " .. player.name)
-                                else
-                                    print("Fail pull >> " .. player.name)
-                                end
-                            end
---                        end
                     end
                 end
             end
@@ -81,19 +67,21 @@ end
 
 
 local function CombatDeath(event, unit)
-    if unit.target then
-        if unit.target == rra_boss_id then
-            if unit.targetName then
-                print("Boss Death > ".. unit.targetName)
-            end
-            CombatEnd()
-        else
-            if unit.targetName then
-                local unit_detail = Inspect.Unit.Detail(unit.target)
-                if unit_detail.player then
-                    print("Death >> ".. unit.targetName)
-                else
-                    print("Death > ".. unit.targetName)
+    if rra_boss_id ~= 0  then
+        if unit.target then
+            if unit.target == rra_boss_id then
+                if unit.targetName then
+                    print("Boss Death > ".. unit.targetName)
+                end
+                CombatEnd()
+            else
+                if unit.targetName then
+                    local unit_detail = Inspect.Unit.Detail(unit.target)
+                    if unit_detail.player then
+                        print("Death >> ".. unit.targetName)
+                    else
+                        print("Death > ".. unit.targetName)
+                    end
                 end
             end
         end
@@ -102,24 +90,26 @@ end
 
 
 local function CheckHP(event, units)
-    local unit_details = Inspect.Unit.Detail(units)
-    local hitpoints = 100
-    if  unit_details then
-        for id, detail in pairs(unit_details) do
-            if detail.id == rra_boss_id then
-                local hitpoints_percent = detail.health*100/detail.healthMax
-                while hitpoints >= 0 do
-                    if  hitpoints_percent <= hitpoints and hitpoints_percent > hitpoints-1 then
-                        if hitpoints ~= lasthitpoints then
-                            print(detail.name .. " = " .. hitpoints .. " %")
-                            lasthitpoints = hitpoints
---                            if hitpoints == 0 then -- or hitpoints == 100
---                                CombatEnd()
---                            end
+    if rra_boss_id ~= 0  then
+        local unit_details = Inspect.Unit.Detail(units)
+        local hitpoints = 100
+        if  unit_details then
+            for id, detail in pairs(unit_details) do
+                if detail.id == rra_boss_id then
+                    local hitpoints_percent = detail.health*100/detail.healthMax
+                    while hitpoints >= 0 do
+                        if  hitpoints_percent <= hitpoints and hitpoints_percent > hitpoints-1 then
+                            if hitpoints ~= lasthitpoints then
+                                print(detail.name .. " = " .. hitpoints .. " %")
+                                lasthitpoints = hitpoints
+    --                            if hitpoints == 0 then -- or hitpoints == 100
+    --                                CombatEnd()
+    --                            end
+                            end
+                            break
                         end
-                        break
+                        hitpoints = hitpoints - 1
                     end
-                    hitpoints = hitpoints - 1
                 end
             end
         end
@@ -129,50 +119,52 @@ end
 
 -- print Debuffs on all Player's (Player <  NPC) and Buffs on all NPC's (NPC < Buff)
 local function getAddBuffName(event, unit, buffs)
-    if unit then
-        local details = Inspect.Unit.Detail(unit)
-        if details then
-            for buffid, typeid in pairs(buffs) do
-                local buff = Inspect.Buff.Detail(unit, buffid)
-                local target = Inspect.Unit.Detail(buff.caster)
-                if buff then
-                    if details.player then
-                        if buff.type == "B14A2E6D609F79153" then -- Lavafield
-                            if (Inspect.Time.Frame() - Lavafield) > 10 then
-                                print("Rift Raid Alert > Lavafield")
-                                Lavafield = Inspect.Time.Frame()
-                            end
-                        elseif buff.type == "BFD9F4FF8303ACEE6" or buff.type == "B39FB71DBD14135BE" then -- Orchester
-                            if (Inspect.Time.Frame() - Orchester) > 15 then
-                                print("Rift Raid Alert > Orchester")
-                                Orchester = Inspect.Time.Frame()
-                            end
-                        end
-                        if buff.name == "Anchored in Flames" or buff.name == "In Flammen verankert" or buff.name == "Ancrage de flammes" then -- Anchored in Flames "B44E44A80755620C3"
-                            print(details.name .. " << " .. buff.name)
-                        end
-                        if details.id ~= buff.caster then
-                            if target then
-                                if target.player == nil and target.relation == "hostile" then
-                                    if buff.description then
-                                        print(details.name .. " << " ..buff.name .. " (" .. buff.description .. ")")
-                                    else
-                                        print(details.name .. " << " ..buff.name)
-                                    end
-                                    local bufflist = { id = buffid, name = buff.name }
-                                    table.insert(rra_bufflist, bufflist)
+    if rra_boss_id ~= 0  then
+        if unit then
+            local details = Inspect.Unit.Detail(unit)
+            if details then
+                for buffid, typeid in pairs(buffs) do
+                    local buff = Inspect.Buff.Detail(unit, buffid)
+                    local target = Inspect.Unit.Detail(buff.caster)
+                    if buff then
+                        if details.player then
+                            if buff.type == "B14A2E6D609F79153" then -- Lavafield
+                                if (Inspect.Time.Frame() - Lavafield) > 10 then
+                                    print("Rift Raid Alert > Lavafield")
+                                    Lavafield = Inspect.Time.Frame()
+                                end
+                            elseif buff.type == "BFD9F4FF8303ACEE6" or buff.type == "B39FB71DBD14135BE" then -- Orchester
+                                if (Inspect.Time.Frame() - Orchester) > 15 then
+                                    print("Rift Raid Alert > Orchester")
+                                    Orchester = Inspect.Time.Frame()
                                 end
                             end
-                        end
-                    else
-                      if details.id == buff.caster and details.relation == "hostile" then
-                            if buff.description then
-                                print(details.name .. " < " .. buff.name .. " (" .. buff.description .. ")")
-                            else
-                                print(details.name .. " < " .. buff.name)
+                            if buff.name == "Anchored in Flames" or buff.name == "In Flammen verankert" or buff.name == "Ancrage de flammes" then -- Anchored in Flames "B44E44A80755620C3"
+                                print(details.name .. " << " .. buff.name)
                             end
-                            local bufflist = { id = buffid, name = buff.name }
-                            table.insert(rra_bufflist, bufflist)
+                            if details.id ~= buff.caster then
+                                if target then
+                                    if target.player == nil and target.relation == "hostile" then
+                                        if buff.description then
+                                            print(details.name .. " << " ..buff.name .. " (" .. buff.description .. ")")
+                                        else
+                                            print(details.name .. " << " ..buff.name)
+                                        end
+                                        local bufflist = { id = buffid, name = buff.name }
+                                        table.insert(rra_bufflist, bufflist)
+                                    end
+                                end
+                            end
+                        else
+                          if details.id == buff.caster and details.relation == "hostile" then
+                                if buff.description then
+                                    print(details.name .. " < " .. buff.name .. " (" .. buff.description .. ")")
+                                else
+                                    print(details.name .. " < " .. buff.name)
+                                end
+                                local bufflist = { id = buffid, name = buff.name }
+                                table.insert(rra_bufflist, bufflist)
+                            end
                         end
                     end
                 end
@@ -375,15 +367,29 @@ end
 local function Zone()
     local detail = Inspect.Unit.Detail("player")
     if detail then
-        local zone_id = detail.zone
-        local zone = Inspect.Zone.Detail(zone_id)
+        local zoneid = detail.zone
+        local zone = Inspect.Zone.Detail(zoneid)
         if zone then
             if zone.name then
-                print("Rift Raid Alert Trigger > ".. zone.name)
+                if zone.id == "z36F63F7EF4EADD07" then -- TD LFR
+                    print("Rift Raid Alert Trigger > ".. zone.name .. " LFR")
+                else
+                    print("Rift Raid Alert Trigger > ".. zone.name)
+                end
             end
         end
     end
 end
+
+
+--local function ZoneID(t)
+--	local playerID = Inspect.Unit.Detail("player").id
+--	for k,v in pairs(t) do
+--		if k == playerID then
+--			print(string.format("Player has entered %s", Inspect.Zone.Detail(v)))
+--		end
+--	end
+--end
 
 
 local function ReadyCheck(event, units)
@@ -451,6 +457,7 @@ end
 local function id()
     local target = Inspect.Unit.Detail("player.target")
         if target then
+            dump(target)
             print(target.name .. " > UnitID: " .. target.id)
         end
 end
@@ -495,6 +502,7 @@ local function slashHandler(h, args)
         return
     end
     if r[0] == "check" then
+        Zone()
         print("language = " .. language)
         local player = Inspect.Unit.Detail("player")
         print("player >> " .. player.name)
