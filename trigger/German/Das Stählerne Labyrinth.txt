@@ -1,8 +1,8 @@
 trigger = all; all; Azranel; ability; playername << Projektilsturm; run out; 0; 0; 0; 0; 0; 0
 trigger = all; all; Azranel; ability; Azranel = 46 %; ready for spin; 0; 0; 300; 0; 0; 0
 trigger = all; all; Azranel; ability; Initialisiert Verteidigungstaktik, aktiviert reflektierenden Schild.; spin; 0; 0; 0; 0; 0; 0
-trigger = all; all; Azranel; ability; Azranel > Defensivdrall; spin in; 39; 43; 300; 0; 0; 0
-trigger = all; all; Azranel; ability; Initiating defensive tactics, reflective shield powering on.; spin in; 41; 45; 0; 1; 0; 0
+trigger = all; all; Azranel; ability; Azranel > Defensivdrall; ready for spin; 40; 0; 300; 0; 0; 0
+trigger = all; all; Azranel; ability; Initiating defensive tactics, reflective shield powering on.; ready for spin; 41; 0; 0; 1; 0; 0
 trigger = all; all; Azranel; ability; player << Laserschneider; tank swap; 0; 0; 0; 4; 0; 0
 trigger = all; all; Azranel; ability; player << remove Laserschneiderr; tank swap; 0; 0; 0; -4; 0; 0
 trigger = all; all; Azranel; ability; playername << Statischer Isolator; safe; 0; 0; 0; 0; 0; 0

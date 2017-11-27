@@ -1,8 +1,8 @@
 trigger = all; all; Azranel; ability; playername << Missile Storm; run out.wav; 0; 0; 0; 0; 0; 0
 trigger = all; all; Azranel; ability; Azranel = 46 %; ready for spin; 0; 0; 300; 0; 0; 0
 trigger = all; all; Azranel; ability; Initiating defensive tactics, reflective shield powering on.; spin; 0; 0; 0; 0; 0; 0
-trigger = all; all; Azranel; ability; Azranel > Defensive Spin; ready for spin; 39; 0; 300; 0; 0; 0
-trigger = all; all; Azranel; ability; Initiating defensive tactics, reflective shield powering on.; spin in; 41; 45; 0; 1; 0; 0
+trigger = all; all; Azranel; ability; Azranel > Defensive Spin; ready for spin; 40; 0; 300; 0; 0; 0
+trigger = all; all; Azranel; ability; Initiating defensive tactics, reflective shield powering on.; ready for spin; 41; 0; 0; 1; 0; 0
 trigger = all; all; Azranel; ability; player << Laser Cutter; tank swap; 0; 0; 0; 4; 0; 0
 trigger = all; all; Azranel; ability; player << remove Laser Cutter; tank swap; 0; 0; 0; -4; 0; 0
 trigger = all; all; Azranel; ability; playername << Static Insulator; safe; 0; 0; 0; 0; 0; 0
