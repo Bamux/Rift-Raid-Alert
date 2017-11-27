@@ -18,3 +18,4 @@ trigger = all; all; High Priest Arakhurn; ability; player << Fiery Metamorphosis
 trigger = all; all; General Silgen; ability; player << Anchored in Flames; player run; 0; 0; 0; 0; 0; 0
 trigger = all; all; High Priest Arakhurn; ability; playername << Lava Burst; silence; 0; 0; 0; 0; 0; 0
 trigger = all; all; Ereandorn; ability; remove Excitable Combustion; go; 0; 0; 0; 0; 0; 0
+trigger = all; all; Seething Core; ability; player << Tectonic Punch; ; 0; 0; 0; 0; 0; 0

@@ -1,4 +1,4 @@
-keywords = lfm + rr; raid rift looking for more
+#keywords = lfm + rr; raid rift looking for more
 keywords = zone event + [Vostigar Peaks] + Brisesol; Event on Brisesol
 keywords = zone event + [Vostigar Peaks] + Brutwacht; Event on Bruitwacht
 keywords = zone event + [Vostigar Peaks] + Gelidra; Event on Gelidra
@@ -10,4 +10,4 @@ keywords = zone event + [Vostigar Peaks]; go
 #keywords = LFM + Mini + boss; Miniboss
 #keywords = TD + lfm; Tartaric Depths looking for more
 #keywords = QF + lfm; Queens Foci looking for more
-#keywords = ] + whispers:; whisper
+keywords = ] + whispers:; whisper

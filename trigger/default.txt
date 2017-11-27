@@ -8,9 +8,6 @@ trigger = all; all; all; buff; Rift Raid Alert > Lavafield; ; 0; 0; 0; 0; 0; 0
 trigger = all; all; all; buff; Rift Raid Alert > Lavafield; now.wav; 300; 0; 0; 0; 0; 0
 trigger = all; all; all; buff; Rift Raid Alert > Orchester; Orchester; 0; 0; 0; 0; 0; 0
 
-# Combat End all languages:
-trigger = all; all; combat_end; ability; Combat End; ; 0; 0; 0; 0; 0; 1
-
 # Rift Raid Alert start/stop/keywords
 trigger = all; all; all; chat; Rift Raid Alert started; rift raid alert started; 0; 0; 0; 0; 0; 1
 trigger = all; all; all; chat; Rift Raid Alert stoped; stop rift raid alert; 0; 0; 0; 0; 0; 1

@@ -1,0 +1,9 @@
+Combat Begin > Commander Isiel | ID: u800000019A0053BD | ZoneID: z56567A3CAF3F3794 | HP: 1515120009
+Commander Isiel > Lightning Whirl
+Commander Isiel > Heart Strike
+player << Enfeeblement (Your Guard has been greatly reduced.)
+Commander Isiel > Voltaic Thrust
+player << Explosive Round (You are about to explode! Can be cleansed.)
+player << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+Commander Isiel > Aegis of Storms
+Commander Isiel < Enraged! (Increased outgoing damage.)

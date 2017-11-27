@@ -1,3 +1,4 @@
+Combat Begin > Vindicator MK1 | ID: u800000019A0053AA | ZoneID: z56567A3CAF3F3794 | HP: 2140000000
 Vindicator MK1 > Lightning Burst
 Vindicator MK1 > Timed Charge
 player << Timed Charge (You're about to explode!)
