@@ -1,3 +1,4 @@
+Combat Begin > Azranel | ID: u800000017F0026E0 | ZoneID: z56567A3CAF3F3794 | HP: 2140000000
 Azranel < Electric Charge (Azranel is generating an electric field. Damaging all players.)
 Azranel < Electric Charge (Azranel is generating an electric field. Damaging all players.)
 Azranel < Charging (Azranel is charging its electric field, powering up for a cannon blast at a stack of 10.)
