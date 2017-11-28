@@ -16,6 +16,7 @@ Vindicator MK1 < Irradiated Field (Radiates constant damage. Lethal to non-tanks
 Vindicator MK1 > Explosive Round
 player << Explosive Round (You are about to explode! Can be cleansed.)
 Commander Isiel > Aegis of Storms
+Commander Isiel < Aegis of Storms (Shielded. Can only be removed by Demolishing Blast.)
 Vindicator MK1 > Demolishing Blast
 Vindicator MK1 < Enraged! (Increased outgoing damage.)
 Commander Isiel < Enraged! (Increased outgoing damage.)
@@ -25,4 +26,3 @@ player << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
 Vindicator MK1 < Reinforced Plating (Armor has been reinforced to mitigate 95% of all damage.)
 Evocatus Stormbringer < Static Flux (Increases Air and Water damage done by 10%.)
 player << Dauntless Strike (Increased Critical Hit chance taken from damaging attacks by 5%.)
-

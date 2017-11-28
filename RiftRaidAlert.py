@@ -20,7 +20,7 @@ from tkinter import *
 version = "2.3.8"
 
 error_analysis = False  # test a complete logfile from line 1 without orginal time(True or False)
-playback = False  # Playback a logfile from line 1 with orginal time (True or False)
+playback = True  # Playback a logfile from line 1 with orginal time (True or False)
 
 
 def trigger_analysis(log, log_big, orginal):
@@ -174,7 +174,6 @@ def trigger_analysis(log, log_big, orginal):
                                 location = trigger[i][1]
                             if trigger[i][2] != "all":
                                 if trigger[i][2] == "combat_end":
-                                    print("test")
                                     timeout_trigger.clear()
                                     timerreset.clear()
                                     stacks.clear()
@@ -617,7 +616,7 @@ def abilitycheck(line, orginal):
     ability_existing = False
     if "[Rift Raid Alert]" in orginal:
         if "pull >> " not in line and "language" not in line and " %" not in line and "Death >" not in line\
-                and "remove" not in line:
+                and "< remove" not in line:
             if " >> " in line:
                 line = line.split(" >> ")
                 line = line[0]  # + " >> player"
