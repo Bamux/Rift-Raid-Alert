@@ -1,0 +1,303 @@
+
+---------------------------------------------------------------------
+19:05:47: [Rift Raid Alert] Combat Begin > Vindicator MK1 | ID: u800000019A0053AA | ZoneID: z56567A3CAF3F3794 | HP: 2140000000
+19:09:14: [Rift Raid Alert] Commander Isiel > Aegis of Storms >> Commander Isiel
+19:09:15: [Rift Raid Alert] Commander Isiel < Aegis of Storms (Shielded. Can only be removed by Demolishing Blast.)
+19:09:22: [Rift Raid Alert] Vindicator MK1 > Demolishing Blast >> Paxie
+19:09:45: [Rift Raid Alert] Commander Isiel < remove Aegis of Storms
+19:09:46: [Rift Raid Alert] Commander Isiel > Aegis of Storms >> Commander Isiel
+19:09:47: [Rift Raid Alert] Commander Isiel < Aegis of Storms (Shielded. Can only be removed by Demolishing Blast.)
+19:09:48: [Rift Raid Alert] Vindicator MK1 > Demolishing Blast >> Paxie
+19:10:17: [Rift Raid Alert] Commander Isiel < remove Aegis of Storms
+19:10:18: [Rift Raid Alert] Commander Isiel > Aegis of Storms >> Commander Isiel
+19:10:20: [Rift Raid Alert] Commander Isiel < Aegis of Storms (Shielded. Can only be removed by Demolishing Blast.)
+19:10:21: [Rift Raid Alert] Vindicator MK1 > Demolishing Blast >> Paxie
+19:10:50: [Rift Raid Alert] Commander Isiel < remove Aegis of Storms
+19:10:53: [Rift Raid Alert] Commander Isiel > Aegis of Storms >> Commander Isiel
+19:10:54: [Rift Raid Alert] Commander Isiel < Aegis of Storms (Shielded. Can only be removed by Demolishing Blast.)
+19:10:55: [Rift Raid Alert] Vindicator MK1 > Demolishing Blast >> Gaarren
+19:11:00: [Rift Raid Alert] Commander Isiel < remove Aegis of Storms
+
+---------------------------------------------------------------------
+19:11:12: [Rift Raid Alert] Combat Begin > Commander Isiel | ID: u800000019A0053BD | ZoneID: z56567A3CAF3F3794 | HP: 1515120009
+
+---------------------------------------------------------------------
+19:15:12: [Rift Raid Alert] Combat Begin > Vindicator MK1 | ID: u800000019A0053BF | ZoneID: z56567A3CAF3F3794 | HP: 2140000000
+19:18:25: [Rift Raid Alert] Commander Isiel > Aegis of Storms >> Commander Isiel
+19:18:27: [Rift Raid Alert] Commander Isiel < Aegis of Storms (Shielded. Can only be removed by Demolishing Blast.)
+19:18:28: [Rift Raid Alert] Vindicator MK1 > Demolishing Blast >> Paxie
+19:18:32: [Rift Raid Alert] Commander Isiel < remove Aegis of Storms
+19:18:48: [Rift Raid Alert] Commander Isiel > Aegis of Storms >> Commander Isiel
+19:18:49: [Rift Raid Alert] Commander Isiel < Aegis of Storms (Shielded. Can only be removed by Demolishing Blast.)
+19:18:50: [Rift Raid Alert] Vindicator MK1 > Demolishing Blast >> Paxie
+19:18:55: [Rift Raid Alert] Commander Isiel < remove Aegis of Storms
+19:19:09: [Rift Raid Alert] Commander Isiel > Aegis of Storms >> Commander Isiel
+19:19:11: [Rift Raid Alert] Commander Isiel < Aegis of Storms (Shielded. Can only be removed by Demolishing Blast.)
+19:19:13: [Rift Raid Alert] Vindicator MK1 > Demolishing Blast >> Paxie
+19:19:18: [Rift Raid Alert] Commander Isiel < remove Aegis of Storms
+19:19:32: [Rift Raid Alert] Commander Isiel > Aegis of Storms >> Commander Isiel
+19:19:34: [Rift Raid Alert] Commander Isiel < Aegis of Storms (Shielded. Can only be removed by Demolishing Blast.)
+19:19:35: [Rift Raid Alert] Vindicator MK1 > Demolishing Blast >> Paxie
+19:19:40: [Rift Raid Alert] Commander Isiel < remove Aegis of Storms
+19:19:55: [Rift Raid Alert] Commander Isiel > Aegis of Storms >> Commander Isiel
+19:19:56: [Rift Raid Alert] Commander Isiel < Aegis of Storms (Shielded. Can only be removed by Demolishing Blast.)
+19:19:57: [Rift Raid Alert] Vindicator MK1 > Demolishing Blast >> Paxie
+
+---------------------------------------------------------------------
+19:25:03: [Rift Raid Alert] Combat Begin > Vindicator MK1 | ID: u800000019A0053E5 | ZoneID: z56567A3CAF3F3794 | HP: 2140000000
+19:28:38: [Rift Raid Alert] Commander Isiel > Aegis of Storms >> Commander Isiel
+19:28:40: [Rift Raid Alert] Commander Isiel < Aegis of Storms (Shielded. Can only be removed by Demolishing Blast.)
+19:29:10: [Rift Raid Alert] Commander Isiel < remove Aegis of Storms
+19:29:11: [Rift Raid Alert] Commander Isiel > Aegis of Storms >> Commander Isiel
+19:29:13: [Rift Raid Alert] Commander Isiel < Aegis of Storms (Shielded. Can only be removed by Demolishing Blast.)
+19:29:43: [Rift Raid Alert] Commander Isiel < remove Aegis of Storms
+19:29:44: [Rift Raid Alert] Commander Isiel > Aegis of Storms >> Commander Isiel
+19:29:46: [Rift Raid Alert] Commander Isiel < Aegis of Storms (Shielded. Can only be removed by Demolishing Blast.)
+19:30:16: [Rift Raid Alert] Commander Isiel < remove Aegis of Storms
+19:30:18: [Rift Raid Alert] Commander Isiel > Aegis of Storms >> Commander Isiel
+19:30:19: [Rift Raid Alert] Commander Isiel < Aegis of Storms (Shielded. Can only be removed by Demolishing Blast.)
+19:30:21: [Rift Raid Alert] Vindicator MK1 > Demolishing Blast >> Gaarren
+19:30:49: [Rift Raid Alert] Commander Isiel < remove Aegis of Storms
+19:30:50: [Rift Raid Alert] Commander Isiel > Aegis of Storms >> Commander Isiel
+19:30:52: [Rift Raid Alert] Commander Isiel < Aegis of Storms (Shielded. Can only be removed by Demolishing Blast.)
+19:30:53: [Rift Raid Alert] Vindicator MK1 > Demolishing Blast >> Gaarren
+19:31:22: [Rift Raid Alert] Commander Isiel < remove Aegis of Storms
+19:31:22: [Rift Raid Alert] Commander Isiel > Aegis of Storms >> Commander Isiel
+19:31:24: [Rift Raid Alert] Commander Isiel < Aegis of Storms (Shielded. Can only be removed by Demolishing Blast.)
+19:31:25: [Rift Raid Alert] Vindicator MK1 > Demolishing Blast >> Gaarren
+19:31:54: [Rift Raid Alert] Commander Isiel < remove Aegis of Storms
+19:31:55: [Rift Raid Alert] Commander Isiel > Aegis of Storms >> Commander Isiel
+19:31:57: [Rift Raid Alert] Commander Isiel < Aegis of Storms (Shielded. Can only be removed by Demolishing Blast.)
+19:31:58: [Rift Raid Alert] Vindicator MK1 > Demolishing Blast >> Gaarren
+19:32:03: [Rift Raid Alert] Commander Isiel < remove Aegis of Storms
+19:32:18: [Rift Raid Alert] Commander Isiel > Aegis of Storms >> Commander Isiel
+19:32:20: [Rift Raid Alert] Commander Isiel < Aegis of Storms (Shielded. Can only be removed by Demolishing Blast.)
+19:32:20: [Rift Raid Alert] Vindicator MK1 > Demolishing Blast >> Gaarren
+19:32:25: [Rift Raid Alert] Commander Isiel < remove Aegis of Storms
+19:32:41: [Rift Raid Alert] Commander Isiel > Aegis of Storms >> Commander Isiel
+19:32:42: [Rift Raid Alert] Commander Isiel < Aegis of Storms (Shielded. Can only be removed by Demolishing Blast.)
+19:32:42: [Rift Raid Alert] Vindicator MK1 > Demolishing Blast >> Gaarren
+19:32:47: [Rift Raid Alert] Commander Isiel < remove Aegis of Storms
+19:33:05: [Rift Raid Alert] Commander Isiel > Aegis of Storms >> Commander Isiel
+19:33:07: [Rift Raid Alert] Commander Isiel < Aegis of Storms (Shielded. Can only be removed by Demolishing Blast.)
+
+---------------------------------------------------------------------
+19:35:44: [Rift Raid Alert] Combat Begin > Vindicator MK1 | ID: u800000019A00540B | ZoneID: z56567A3CAF3F3794 | HP: 2140000000
+19:39:03: [Rift Raid Alert] Commander Isiel > Aegis of Storms >> Commander Isiel
+19:39:04: [Rift Raid Alert] Commander Isiel < Aegis of Storms (Shielded. Can only be removed by Demolishing Blast.)
+19:39:10: [Rift Raid Alert] Commander Isiel < remove Aegis of Storms
+19:39:25: [Rift Raid Alert] Commander Isiel > Aegis of Storms >> Commander Isiel
+19:39:26: [Rift Raid Alert] Commander Isiel < Aegis of Storms (Shielded. Can only be removed by Demolishing Blast.)
+19:39:28: [Rift Raid Alert] Vindicator MK1 > Demolishing Blast >> Gaarren
+19:39:33: [Rift Raid Alert] Commander Isiel < remove Aegis of Storms
+19:39:47: [Rift Raid Alert] Commander Isiel > Aegis of Storms >> Commander Isiel
+19:39:49: [Rift Raid Alert] Commander Isiel < Aegis of Storms (Shielded. Can only be removed by Demolishing Blast.)
+19:39:50: [Rift Raid Alert] Vindicator MK1 > Demolishing Blast >> Gaarren
+19:39:55: [Rift Raid Alert] Commander Isiel < remove Aegis of Storms
+19:40:09: [Rift Raid Alert] Commander Isiel > Aegis of Storms >> Commander Isiel
+19:40:11: [Rift Raid Alert] Commander Isiel < Aegis of Storms (Shielded. Can only be removed by Demolishing Blast.)
+19:40:12: [Rift Raid Alert] Vindicator MK1 > Demolishing Blast >> Gaarren
+19:40:17: [Rift Raid Alert] Commander Isiel < remove Aegis of Storms
+19:40:32: [Rift Raid Alert] Commander Isiel > Aegis of Storms >> Commander Isiel
+19:40:34: [Rift Raid Alert] Commander Isiel < Aegis of Storms (Shielded. Can only be removed by Demolishing Blast.)
+
+---------------------------------------------------------------------
+19:51:02: [Rift Raid Alert] Combat Begin > Vindicator MK1 | ID: u800000019A005431 | ZoneID: z56567A3CAF3F3794 | HP: 2140000000
+19:54:28: [Rift Raid Alert] Commander Isiel > Aegis of Storms >> Commander Isiel
+19:54:30: [Rift Raid Alert] Commander Isiel < Aegis of Storms (Shielded. Can only be removed by Demolishing Blast.)
+19:54:31: [Rift Raid Alert] Vindicator MK1 > Demolishing Blast >> Gaarren
+19:54:36: [Rift Raid Alert] Commander Isiel < remove Aegis of Storms
+19:54:50: [Rift Raid Alert] Commander Isiel > Aegis of Storms >> Commander Isiel
+19:54:52: [Rift Raid Alert] Commander Isiel < Aegis of Storms (Shielded. Can only be removed by Demolishing Blast.)
+19:54:58: [Rift Raid Alert] Commander Isiel < remove Aegis of Storms
+19:55:13: [Rift Raid Alert] Commander Isiel > Aegis of Storms >> Commander Isiel
+19:55:15: [Rift Raid Alert] Commander Isiel < Aegis of Storms (Shielded. Can only be removed by Demolishing Blast.)
+19:55:20: [Rift Raid Alert] Vindicator MK1 > Demolishing Blast >> Gaarren
+19:55:25: [Rift Raid Alert] Commander Isiel < remove Aegis of Storms
+19:55:34: [Rift Raid Alert] Commander Isiel > Aegis of Storms >> Commander Isiel
+19:55:36: [Rift Raid Alert] Commander Isiel < Aegis of Storms (Shielded. Can only be removed by Demolishing Blast.)
+19:55:42: [Rift Raid Alert] Commander Isiel < remove Aegis of Storms
+19:55:57: [Rift Raid Alert] Commander Isiel > Aegis of Storms >> Commander Isiel
+19:55:59: [Rift Raid Alert] Commander Isiel < Aegis of Storms (Shielded. Can only be removed by Demolishing Blast.)
+19:55:59: [Rift Raid Alert] Vindicator MK1 > Demolishing Blast >> Gaarren
+19:56:04: [Rift Raid Alert] Commander Isiel < remove Aegis of Storms
+19:56:21: [Rift Raid Alert] Commander Isiel > Aegis of Storms >> Commander Isiel
+19:56:23: [Rift Raid Alert] Commander Isiel < Aegis of Storms (Shielded. Can only be removed by Demolishing Blast.)
+19:56:25: [Rift Raid Alert] Vindicator MK1 > Demolishing Blast >> Paxie
+19:56:30: [Rift Raid Alert] Commander Isiel < remove Aegis of Storms
+19:56:42: [Rift Raid Alert] Commander Isiel > Aegis of Storms >> Commander Isiel
+19:56:44: [Rift Raid Alert] Commander Isiel < Aegis of Storms (Shielded. Can only be removed by Demolishing Blast.)
+19:56:46: [Rift Raid Alert] Vindicator MK1 > Demolishing Blast >> Gaarren
+19:56:51: [Rift Raid Alert] Vindicator MK1 > Demolishing Blast >> Paxie
+19:56:56: [Rift Raid Alert] Commander Isiel < remove Aegis of Storms
+
+---------------------------------------------------------------------
+20:07:32: [Rift Raid Alert] Combat Begin > Vindicator MK1 | ID: u800000019A005457 | ZoneID: z56567A3CAF3F3794 | HP: 2140000000
+
+---------------------------------------------------------------------
+20:12:52: [Rift Raid Alert] Combat Begin > Vindicator MK1 | ID: u800000019A00546C | ZoneID: z56567A3CAF3F3794 | HP: 2140000000
+20:16:09: [Rift Raid Alert] Commander Isiel > Aegis of Storms >> Commander Isiel
+20:16:10: [Rift Raid Alert] Commander Isiel < Aegis of Storms (Shielded. Can only be removed by Demolishing Blast.)
+20:16:11: [Rift Raid Alert] Vindicator MK1 > Demolishing Blast >> Gaarren
+20:16:16: [Rift Raid Alert] Commander Isiel < remove Aegis of Storms
+20:16:30: [Rift Raid Alert] Commander Isiel > Aegis of Storms >> Commander Isiel
+20:16:32: [Rift Raid Alert] Commander Isiel < Aegis of Storms (Shielded. Can only be removed by Demolishing Blast.)
+20:16:40: [Rift Raid Alert] Vindicator MK1 > Demolishing Blast >> Gaarren
+20:16:45: [Rift Raid Alert] Commander Isiel < remove Aegis of Storms
+20:16:51: [Rift Raid Alert] Commander Isiel > Aegis of Storms >> Commander Isiel
+20:16:53: [Rift Raid Alert] Commander Isiel < Aegis of Storms (Shielded. Can only be removed by Demolishing Blast.)
+20:16:54: [Rift Raid Alert] Vindicator MK1 > Demolishing Blast >> Gaarren
+20:17:23: [Rift Raid Alert] Commander Isiel < remove Aegis of Storms
+20:17:23: [Rift Raid Alert] Commander Isiel > Aegis of Storms >> Commander Isiel
+20:17:25: [Rift Raid Alert] Commander Isiel < Aegis of Storms (Shielded. Can only be removed by Demolishing Blast.)
+20:17:30: [Rift Raid Alert] Commander Isiel < remove Aegis of Storms
+20:17:46: [Rift Raid Alert] Commander Isiel > Aegis of Storms >> Commander Isiel
+20:17:47: [Rift Raid Alert] Commander Isiel < Aegis of Storms (Shielded. Can only be removed by Demolishing Blast.)
+20:17:49: [Rift Raid Alert] Vindicator MK1 > Demolishing Blast >> Gaarren
+20:17:54: [Rift Raid Alert] Commander Isiel < remove Aegis of Storms
+20:18:08: [Rift Raid Alert] Commander Isiel > Aegis of Storms >> Commander Isiel
+20:18:10: [Rift Raid Alert] Commander Isiel < Aegis of Storms (Shielded. Can only be removed by Demolishing Blast.)
+20:18:11: [Rift Raid Alert] Vindicator MK1 > Demolishing Blast >> Gaarren
+
+---------------------------------------------------------------------
+20:18:34: [Rift Raid Alert] Combat Begin > Commander Isiel | ID: u800000019A00547F | ZoneID: z56567A3CAF3F3794 | HP: 1515120009
+
+---------------------------------------------------------------------
+20:21:40: [Rift Raid Alert] Combat Begin > Vindicator MK1 | ID: u800000019A005481 | ZoneID: z56567A3CAF3F3794 | HP: 2140000000
+20:25:12: [Rift Raid Alert] Commander Isiel > Aegis of Storms >> Commander Isiel
+20:25:14: [Rift Raid Alert] Commander Isiel < Aegis of Storms (Shielded. Can only be removed by Demolishing Blast.)
+20:25:14: [Rift Raid Alert] Vindicator MK1 > Demolishing Blast >> Gaarren
+20:25:19: [Rift Raid Alert] Commander Isiel < remove Aegis of Storms
+20:25:34: [Rift Raid Alert] Commander Isiel > Aegis of Storms >> Commander Isiel
+20:25:36: [Rift Raid Alert] Commander Isiel < Aegis of Storms (Shielded. Can only be removed by Demolishing Blast.)
+20:25:37: [Rift Raid Alert] Vindicator MK1 > Demolishing Blast >> Gaarren
+20:25:42: [Rift Raid Alert] Commander Isiel < remove Aegis of Storms
+20:25:58: [Rift Raid Alert] Commander Isiel > Aegis of Storms >> Commander Isiel
+20:26:00: [Rift Raid Alert] Commander Isiel < Aegis of Storms (Shielded. Can only be removed by Demolishing Blast.)
+20:26:00: [Rift Raid Alert] Vindicator MK1 > Demolishing Blast >> Gaarren
+20:26:05: [Rift Raid Alert] Commander Isiel < remove Aegis of Storms
+20:26:19: [Rift Raid Alert] Commander Isiel > Aegis of Storms >> Commander Isiel
+20:26:21: [Rift Raid Alert] Commander Isiel < Aegis of Storms (Shielded. Can only be removed by Demolishing Blast.)
+20:26:21: [Rift Raid Alert] Vindicator MK1 > Demolishing Blast >> Gaarren
+20:26:26: [Rift Raid Alert] Commander Isiel < remove Aegis of Storms
+20:26:41: [Rift Raid Alert] Commander Isiel > Aegis of Storms >> Commander Isiel
+20:26:43: [Rift Raid Alert] Commander Isiel < Aegis of Storms (Shielded. Can only be removed by Demolishing Blast.)
+20:26:44: [Rift Raid Alert] Vindicator MK1 > Demolishing Blast >> Gaarren
+20:27:12: [Rift Raid Alert] Commander Isiel < remove Aegis of Storms
+20:27:13: [Rift Raid Alert] Commander Isiel > Aegis of Storms >> Commander Isiel
+20:27:15: [Rift Raid Alert] Commander Isiel < Aegis of Storms (Shielded. Can only be removed by Demolishing Blast.)
+20:27:16: [Rift Raid Alert] Vindicator MK1 > Demolishing Blast >> Gaarren
+
+---------------------------------------------------------------------
+20:31:51: [Rift Raid Alert] Combat Begin > Vindicator MK1 | ID: u800000019A0054A7 | ZoneID: z56567A3CAF3F3794 | HP: 2140000000
+20:35:17: [Rift Raid Alert] Commander Isiel > Aegis of Storms >> Commander Isiel
+20:35:19: [Rift Raid Alert] Commander Isiel < Aegis of Storms (Shielded. Can only be removed by Demolishing Blast.)
+20:35:20: [Rift Raid Alert] Vindicator MK1 > Demolishing Blast >> Gaarren
+
+---------------------------------------------------------------------
+20:37:42: [Rift Raid Alert] Combat Begin > Vindicator MK1 | ID: u800000019A0054BC | ZoneID: z56567A3CAF3F3794 | HP: 2140000000
+20:41:01: [Rift Raid Alert] Commander Isiel > Aegis of Storms >> Commander Isiel
+20:41:03: [Rift Raid Alert] Commander Isiel < Aegis of Storms (Shielded. Can only be removed by Demolishing Blast.)
+20:41:04: [Rift Raid Alert] Vindicator MK1 > Demolishing Blast >> Gaarren
+20:41:09: [Rift Raid Alert] Commander Isiel < remove Aegis of Storms
+20:41:24: [Rift Raid Alert] Commander Isiel > Aegis of Storms >> Commander Isiel
+20:41:25: [Rift Raid Alert] Commander Isiel < Aegis of Storms (Shielded. Can only be removed by Demolishing Blast.)
+20:41:26: [Rift Raid Alert] Vindicator MK1 > Demolishing Blast >> Gaarren
+20:41:31: [Rift Raid Alert] Commander Isiel < remove Aegis of Storms
+20:41:45: [Rift Raid Alert] Commander Isiel > Aegis of Storms >> Commander Isiel
+20:41:47: [Rift Raid Alert] Commander Isiel < Aegis of Storms (Shielded. Can only be removed by Demolishing Blast.)
+20:41:48: [Rift Raid Alert] Vindicator MK1 > Demolishing Blast >> Gaarren
+20:41:52: [Rift Raid Alert] Commander Isiel < remove Aegis of Storms
+20:42:07: [Rift Raid Alert] Commander Isiel > Aegis of Storms >> Commander Isiel
+20:42:08: [Rift Raid Alert] Commander Isiel < Aegis of Storms (Shielded. Can only be removed by Demolishing Blast.)
+20:42:09: [Rift Raid Alert] Vindicator MK1 > Demolishing Blast >> Gaarren
+20:42:13: [Rift Raid Alert] Commander Isiel < remove Aegis of Storms
+20:42:28: [Rift Raid Alert] Commander Isiel > Aegis of Storms >> Commander Isiel
+20:42:30: [Rift Raid Alert] Commander Isiel < Aegis of Storms (Shielded. Can only be removed by Demolishing Blast.)
+20:42:31: [Rift Raid Alert] Vindicator MK1 > Demolishing Blast >> Gaarren
+20:43:00: [Rift Raid Alert] Commander Isiel < remove Aegis of Storms
+20:43:00: [Rift Raid Alert] Commander Isiel > Aegis of Storms >> Commander Isiel
+20:43:02: [Rift Raid Alert] Commander Isiel < Aegis of Storms (Shielded. Can only be removed by Demolishing Blast.)
+20:43:03: [Rift Raid Alert] Vindicator MK1 > Demolishing Blast >> Paxie
+20:43:08: [Rift Raid Alert] Commander Isiel < remove Aegis of Storms
+20:43:21: [Rift Raid Alert] Commander Isiel > Aegis of Storms >> Commander Isiel
+20:43:23: [Rift Raid Alert] Commander Isiel < Aegis of Storms (Shielded. Can only be removed by Demolishing Blast.)
+20:43:23: [Rift Raid Alert] Vindicator MK1 > Demolishing Blast >> Paxie
+20:43:28: [Rift Raid Alert] Commander Isiel < remove Aegis of Storms
+
+---------------------------------------------------------------------
+20:46:01: [Rift Raid Alert] Combat Begin > Vindicator MK1 | ID: u800000019A0054E2 | ZoneID: z56567A3CAF3F3794 | HP: 2140000000
+20:49:21: [Rift Raid Alert] Commander Isiel > Aegis of Storms >> Commander Isiel
+20:49:22: [Rift Raid Alert] Commander Isiel < Aegis of Storms (Shielded. Can only be removed by Demolishing Blast.)
+20:49:23: [Rift Raid Alert] Vindicator MK1 > Demolishing Blast >> Gaarren
+20:49:28: [Rift Raid Alert] Commander Isiel < remove Aegis of Storms
+20:49:42: [Rift Raid Alert] Commander Isiel > Aegis of Storms >> Commander Isiel
+20:49:43: [Rift Raid Alert] Commander Isiel < Aegis of Storms (Shielded. Can only be removed by Demolishing Blast.)
+20:49:44: [Rift Raid Alert] Vindicator MK1 > Demolishing Blast >> Gaarren
+20:49:49: [Rift Raid Alert] Commander Isiel < remove Aegis of Storms
+20:50:04: [Rift Raid Alert] Commander Isiel > Aegis of Storms >> Commander Isiel
+20:50:06: [Rift Raid Alert] Commander Isiel < Aegis of Storms (Shielded. Can only be removed by Demolishing Blast.)
+20:50:11: [Rift Raid Alert] Commander Isiel < remove Aegis of Storms
+20:50:25: [Rift Raid Alert] Commander Isiel > Aegis of Storms >> Commander Isiel
+20:50:27: [Rift Raid Alert] Commander Isiel < Aegis of Storms (Shielded. Can only be removed by Demolishing Blast.)
+20:50:33: [Rift Raid Alert] Commander Isiel < remove Aegis of Storms
+20:50:47: [Rift Raid Alert] Commander Isiel > Aegis of Storms >> Commander Isiel
+20:50:49: [Rift Raid Alert] Commander Isiel < Aegis of Storms (Shielded. Can only be removed by Demolishing Blast.)
+20:50:55: [Rift Raid Alert] Commander Isiel < remove Aegis of Storms
+20:51:11: [Rift Raid Alert] Commander Isiel > Aegis of Storms >> Commander Isiel
+20:51:12: [Rift Raid Alert] Commander Isiel < Aegis of Storms (Shielded. Can only be removed by Demolishing Blast.)
+20:51:13: [Rift Raid Alert] Vindicator MK1 > Demolishing Blast >> Gaarren
+20:51:18: [Rift Raid Alert] Commander Isiel < remove Aegis of Storms
+20:51:32: [Rift Raid Alert] Commander Isiel > Aegis of Storms >> Commander Isiel
+20:51:34: [Rift Raid Alert] Commander Isiel < Aegis of Storms (Shielded. Can only be removed by Demolishing Blast.)
+20:51:40: [Rift Raid Alert] Commander Isiel < remove Aegis of Storms
+20:51:54: [Rift Raid Alert] Commander Isiel > Aegis of Storms >> Commander Isiel
+20:51:56: [Rift Raid Alert] Commander Isiel < Aegis of Storms (Shielded. Can only be removed by Demolishing Blast.)
+20:52:01: [Rift Raid Alert] Commander Isiel < remove Aegis of Storms
+20:52:16: [Rift Raid Alert] Commander Isiel > Aegis of Storms >> Commander Isiel
+20:52:18: [Rift Raid Alert] Commander Isiel < Aegis of Storms (Shielded. Can only be removed by Demolishing Blast.)
+20:52:23: [Rift Raid Alert] Commander Isiel < remove Aegis of Storms
+20:52:39: [Rift Raid Alert] Commander Isiel > Aegis of Storms >> Commander Isiel
+20:52:41: [Rift Raid Alert] Commander Isiel < Aegis of Storms (Shielded. Can only be removed by Demolishing Blast.)
+20:52:48: [Rift Raid Alert] Commander Isiel < remove Aegis of Storms
+20:53:01: [Rift Raid Alert] Commander Isiel > Aegis of Storms >> Commander Isiel
+20:53:02: [Rift Raid Alert] Commander Isiel < Aegis of Storms (Shielded. Can only be removed by Demolishing Blast.)
+
+---------------------------------------------------------------------
+20:57:36: [Rift Raid Alert] Combat Begin > Vindicator MK1 | ID: u800000019A005508 | ZoneID: z56567A3CAF3F3794 | HP: 2140000000
+21:01:09: [Rift Raid Alert] Commander Isiel > Aegis of Storms >> Commander Isiel
+21:01:11: [Rift Raid Alert] Commander Isiel < Aegis of Storms (Shielded. Can only be removed by Demolishing Blast.)
+21:01:17: [Rift Raid Alert] Commander Isiel < remove Aegis of Storms
+21:01:31: [Rift Raid Alert] Commander Isiel > Aegis of Storms >> Commander Isiel
+21:01:32: [Rift Raid Alert] Commander Isiel < Aegis of Storms (Shielded. Can only be removed by Demolishing Blast.)
+21:01:37: [Rift Raid Alert] Commander Isiel < remove Aegis of Storms
+21:01:53: [Rift Raid Alert] Commander Isiel > Aegis of Storms >> Commander Isiel
+21:01:55: [Rift Raid Alert] Commander Isiel < Aegis of Storms (Shielded. Can only be removed by Demolishing Blast.)
+21:01:55: [Rift Raid Alert] Vindicator MK1 > Demolishing Blast >> Gaarren
+21:02:00: [Rift Raid Alert] Commander Isiel < remove Aegis of Storms
+21:02:17: [Rift Raid Alert] Commander Isiel > Aegis of Storms >> Commander Isiel
+21:02:19: [Rift Raid Alert] Commander Isiel < Aegis of Storms (Shielded. Can only be removed by Demolishing Blast.)
+21:02:20: [Rift Raid Alert] Vindicator MK1 > Demolishing Blast >> Gaarren
+21:02:25: [Rift Raid Alert] Commander Isiel < remove Aegis of Storms
+21:02:39: [Rift Raid Alert] Commander Isiel > Aegis of Storms >> Commander Isiel
+21:02:40: [Rift Raid Alert] Commander Isiel < Aegis of Storms (Shielded. Can only be removed by Demolishing Blast.)
+21:03:10: [Rift Raid Alert] Commander Isiel < remove Aegis of Storms
+21:03:11: [Rift Raid Alert] Commander Isiel > Aegis of Storms >> Commander Isiel
+21:03:12: [Rift Raid Alert] Commander Isiel < Aegis of Storms (Shielded. Can only be removed by Demolishing Blast.)
+21:03:14: [Rift Raid Alert] Vindicator MK1 > Demolishing Blast >> Paxie
+21:03:19: [Rift Raid Alert] Commander Isiel < remove Aegis of Storms
+21:03:33: [Rift Raid Alert] Commander Isiel > Aegis of Storms >> Commander Isiel
+21:03:35: [Rift Raid Alert] Commander Isiel < Aegis of Storms (Shielded. Can only be removed by Demolishing Blast.)
+21:03:41: [Rift Raid Alert] Commander Isiel < remove Aegis of Storms
+21:03:55: [Rift Raid Alert] Commander Isiel > Aegis of Storms >> Commander Isiel
+21:03:56: [Rift Raid Alert] Commander Isiel < Aegis of Storms (Shielded. Can only be removed by Demolishing Blast.)
+21:04:01: [Rift Raid Alert] Commander Isiel < remove Aegis of Storms
+21:04:16: [Rift Raid Alert] Commander Isiel > Aegis of Storms >> Commander Isiel
+21:04:18: [Rift Raid Alert] Commander Isiel < Aegis of Storms (Shielded. Can only be removed by Demolishing Blast.)
+21:04:23: [Rift Raid Alert] Commander Isiel < remove Aegis of Storms
+
+---------------------------------------------------------------------
+21:04:31: [Rift Raid Alert] Combat Begin > Commander Isiel | ID: u800000019A00551B | ZoneID: z56567A3CAF3F3794 | HP: 1515120009
+
+---------------------------------------------------------------------
+21:12:05: [Rift Raid Alert] Combat Begin > Vindicator MK1 | ID: u800000019A00552E | ZoneID: z56567A3CAF3F3794 | HP: 2140000000
