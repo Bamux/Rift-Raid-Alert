@@ -20,7 +20,7 @@ from tkinter import *
 version = "2.3.8"
 
 error_analysis = False  # test a complete logfile from line 1 without orginal time(True or False)
-playback = True  # Playback a logfile from line 1 with orginal time (True or False)
+playback = False  # Playback a logfile from line 1 with orginal time (True or False)
 
 
 def trigger_analysis(log, log_big, orginal):
