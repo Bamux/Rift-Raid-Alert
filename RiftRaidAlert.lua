@@ -371,11 +371,7 @@ local function Zone()
         local zone = Inspect.Zone.Detail(zoneid)
         if zone then
             if zone.name then
-                if zone.id == "z36F63F7EF4EADD07" then -- TD LFR
-                    print("Rift Raid Alert Trigger > ".. zone.name .. " LFR")
-                else
-                    print("Rift Raid Alert Trigger > ".. zone.name)
-                end
+                print("Rift Raid Alert Trigger > ".. zone.name)
             end
         end
     end
