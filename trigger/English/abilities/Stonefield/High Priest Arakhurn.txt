@@ -1,3 +1,4 @@
+Combat Begin > High Priest Arakhurn | ID: u80000001B300A8B6 | ZoneID: z585230E5F68EA919 | HP: 567000000
 player << Armor Rip (Reduces armor by 150000 and Guard by 1000 per stack.)
 High Priest Arakhurn > Fire Nova
 player << Fiery Metamorphosis (You burn with the purifying flame of the phoenix! Removes unwanted debuffs from your allies.)

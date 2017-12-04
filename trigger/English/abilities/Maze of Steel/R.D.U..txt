@@ -1,3 +1,5 @@
+Combat Begin > R.D.U. | ID: U362FC59268BDF7AC | ZoneID: z56567A3CAF3F3794 | HP: 54599997
+player << Range Module (Your attacks have been imbued with the power of the legion. Able to attack from extreme distance.)
 player << Range Module (Your attacks have been imbued with the power of the legion. Able to attack from extreme distance.)
 R.D.U. > Rocket Volley
 player << Rocket Volley
@@ -5,3 +7,10 @@ R.D.U. < Legion's Roar (Increased outgoing damage. Increased the powerlevel of T
 Pulser > Concentrated Blast
 Pulser > Projected Blast
 Pulser < Legion's Roar (Increased outgoing damage. Increased the powerlevel of Titan X)
+player << Stacking Weight (Recieve 30% more damage from the cleave.)
+E. Class Soldier < Legion's Roar (Increased outgoing damage. Increased the powerlevel of Titan X)
+Fire Spigot > Fire!
+player << Infection (Drops an AoE at your feet every 2 seconds.)
+Infector < Legion's Roar (Increased outgoing damage. Increased the powerlevel of Titan X)
+E.C.B. > Battle Aid
+E.C.B. < Legion's Roar (Increased outgoing damage. Increased the powerlevel of Titan X)

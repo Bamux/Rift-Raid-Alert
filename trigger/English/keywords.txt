@@ -10,4 +10,5 @@ keywords = zone event + [Vostigar Peaks]; go
 #keywords = LFM + Mini + boss; Miniboss
 #keywords = TD + lfm; Tartaric Depths looking for more
 #keywords = QF + lfm; Queens Foci looking for more
-keywords = ] + whispers:; whisper
+#keywords = ] + whispers:; whisper
+keywords = bos + lfm; Bastion of Steel looking for more

@@ -1,4 +1,4 @@
-Combat Begin > Vindicator MK1 | ID: u800000019A0053AA | ZoneID: z56567A3CAF3F3794 | HP: 2140000000
+Combat Begin > Vindicator MK1 | ID: U077679702EF3B37A | ZoneID: z56567A3CAF3F3794 | HP: 2140000000
 Vindicator MK1 > Lightning Burst
 Vindicator MK1 > Timed Charge
 player << Timed Charge (You're about to explode!)
@@ -26,3 +26,4 @@ player << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
 Vindicator MK1 < Reinforced Plating (Armor has been reinforced to mitigate 95% of all damage.)
 Evocatus Stormbringer < Static Flux (Increases Air and Water damage done by 10%.)
 player << Dauntless Strike (Increased Critical Hit chance taken from damaging attacks by 5%.)
+Vindicator MK1 > Self Destruct

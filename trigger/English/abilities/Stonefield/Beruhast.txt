@@ -1,2 +1,4 @@
 Beruhast > Inferno Lash
 Beruhast > Flaming Vortex
+Combat Begin > Beruhast | ID: u80000001B300A84C | ZoneID: z585230E5F68EA919 | HP: 1020599972
+player << Face-Breaker (Reduces Armor by 100,000, Fire Resist by 1000, and Guard by 500 per stack.)

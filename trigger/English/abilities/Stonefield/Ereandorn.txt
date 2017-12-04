@@ -1,3 +1,4 @@
+Combat Begin > Ereandorn | ID: u80000001B300A88B | ZoneID: z585230E5F68EA919 | HP: 1134000000
 Ereandorn > Fury of Maelforge
 player << Blood Fire (A magical blaze infects the blood.)
 player << Flaming Hoof
