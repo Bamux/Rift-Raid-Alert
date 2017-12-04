@@ -26,7 +26,7 @@ local function CombatCheck(event, units) -- Check Combat Status (Combat Begin, C
             for id, detail in pairs(unit_details) do
                 if detail .tier and detail.tier == "raid" then
                     local zone_id = Inspect.Unit.Detail("player").zone
-                    print("Combat Begin > ".. detail.name .. " | ID: " .. detail.id .. " | ZoneID: " .. zone_id .. " | HP: " .. detail.healthMax)
+                    print("Combat Begin > ".. detail.name .. " | ID: " .. detail.type .. " | ZoneID: " .. zone_id .. " | HP: " .. detail.healthMax)
                     rra_boss_id = detail.id
                     local player = Inspect.Unit.Detail(detail.id .. ".target")
                     if player then
