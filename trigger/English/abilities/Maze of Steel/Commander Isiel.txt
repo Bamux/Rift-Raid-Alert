@@ -1,1 +1,29 @@
 Combat Begin > Commander Isiel | ID: u80000000D6009F99 | ZoneID: z56567A3CAF3F3794 | HP: 1515120009
+Vindicator MK1 > Lightning Burst
+Vindicator MK1 > Timed Charge
+player << Timed Charge (You're about to explode!)
+player << Raging Storm (Deals 244 Air damage over 4s. Generates a stack of Electrified and 5 Charge each second.)
+Evocatus Stormbringer > Raging Storm
+Evocatus Stormbringer < Electrified (Electrified.)
+Evocatus Stormbringer > Forked Lightning
+player << Venomous Assault (Deals 0 Life damage over 10 seconds.)
+Vindicator MK1 < Auto Repair (Repairing core systems. Immune to all damage.)
+Commander Isiel > Lightning Whirl
+Commander Isiel > Heart Strike
+player << Enfeeblement (Your Guard has been greatly reduced.)
+Commander Isiel > Voltaic Thrust
+Vindicator MK1 < Irradiated Field (Radiates constant damage. Lethal to non-tanks.)
+Vindicator MK1 > Explosive Round
+player << Explosive Round (You are about to explode! Can be cleansed.)
+Commander Isiel > Aegis of Storms
+Commander Isiel < Aegis of Storms (Shielded. Can only be removed by Demolishing Blast.)
+Vindicator MK1 > Demolishing Blast
+Vindicator MK1 < Enraged! (Increased outgoing damage.)
+Commander Isiel < Enraged! (Increased outgoing damage.)
+Vindicator MK1 > Seeker Mines
+player << Driller Round (Take 20% extra damage and lowers Armor and Guard. Stacks up to ten times.)
+player << Crippling Shock (Max health reduced by 10%. Stacks up to 3 times.)
+Vindicator MK1 < Reinforced Plating (Armor has been reinforced to mitigate 95% of all damage.)
+Evocatus Stormbringer < Static Flux (Increases Air and Water damage done by 10%.)
+player << Dauntless Strike (Increased Critical Hit chance taken from damaging attacks by 5%.)
+Vindicator MK1 > Self Destruct

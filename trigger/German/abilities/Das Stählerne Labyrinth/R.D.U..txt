@@ -1,0 +1,11 @@
+Combat Begin > R.D.U. | ID: u8000000156006007 | ZoneID: z56567A3CAF3F3794 | HP: 54599997
+Combat Begin > R.D.U. | ID: u800000015600600A | ZoneID: z56567A3CAF3F3794 | HP: 54599997
+player << Weitenmodul (Eure Angriffe sind von der Macht der Legion durchdrungen. Ihr könnt aus extremer Entfernung angreifen.)
+player << Stapelhöhe (Erleidet 30% mehr Schaden durch den Spalter.)
+R.D.U. > Raketensalve
+E.-Klasse Soldat < Gebrüll der Legion (Erhöhter verursachter Schaden. Machtstufe des Titanen X erhöht.)
+R.D.U. < Gebrüll der Legion (Erhöhter verursachter Schaden. Machtstufe des Titanen X erhöht.)
+Pulsar > Geplante Explosion
+Pulsar > Geballte Explosion
+player << Raketensalve
+Pulsar < Gebrüll der Legion (Erhöhter verursachter Schaden. Machtstufe des Titanen X erhöht.)

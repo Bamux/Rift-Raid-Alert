@@ -11,7 +11,19 @@ trigger = all; all; Azranel; ability; Azranel = 0 %; congratulations; 0; 0; 0; 0
 #trigger = all; all; Azranel; ability; Azranel < Magnetisierung; Magnetized in; 37; 41; 0; 0; 0; 0
 #trigger = all; all; Azranel; ability; Azranel < Magnetisierung; 10 seconds; 31; 0; 0; 0; 0; 0
 
-trigger = all; all; Vindicator MK1; ability; Timed Charge >> player; player run out; 0; 0; 0; 0; 0; 0
-trigger = all; all; Vindicator MK1; ability; player << Explosive Round; cleanse; 0; 0; 0; 0; 0; 0
-trigger = all; all; Vindicator MK1; ability; Vindicator MK1 < Irradiated Field; aoe; 0; 0; 0; 0; 0; 0
-trigger = all; all; Vindicator MK1; ability; player << Enfeeblement; tank damage; 0; 0; 0; 0; 0; 0
+trigger = all; all; Kommandant Isiel; ability; player << Entkräftung; tank damage; 0; 0; 0; 0; 0; 0
+trigger = all; all; Kommandant Isiel; ability; Zeitladung >> player; player run out; 0; 0; 0; 0; 0; 0
+trigger = all; all; Commander Isiel; ability; Vergelter Ausf. 1 > Sprenggranate; cleanse; 3; 0; 0; 0; 0; 0
+trigger = all; all; Kommandant Isiel; ability; Vergelter Ausf. 1 < Bestrahltes Feld; aoe; 0; 0; 0; 0; 0; 0
+trigger = all; all; Kommandant Isiel; ability; Vergelter Ausf. 1 = 60 %; phase 2; 0; 0; 0; 0; 0; 0
+trigger = all; all; Kommandant Isiel; ability; Vergelter Ausf. 1 > Blitzexplosion; aoe.wav; 0; 0; 0; 0; 0; 0
+trigger = all; all; Kommandant Isiel; ability; Kommandant Isiel brüllt: "Artilleriedrohnen initialisieren!; phase 3; 0; 0; 0; 0; 0; 0
+#trigger = all; all; Kommandant Isiel; ability; Kommandant Isiel > Blitzwirbel; aoe.wav; 0; 0; 0; 0; 0; 0
+#trigger = all; all; Kommandant Isiel; ability; Kommandant Isiel > Aigis der Stürme; now; 0; 0; 0; 0; 0; 0
+#trigger = all; all; Kommandant Isiel; ability; Kommandant Isiel > Aigis der Stürme; shield; 20; 0; 0; 0; 0; 0
+#trigger = all; all; Kommandant Isiel; ability; Kommandant Isiel < remove Aigis der Stürme; remove; 0; 0; 0; 0; 0; 0
+#trigger = all; all; Kommandant Isiel; ability; player << Bohrgeschoss; tank swap; 0; 0; 0; 3; 0; 0
+#trigger = all; all; Kommandant Isiel; ability; player << remove Bohrgeschoss; tank swap; 0; 0; 0; -3; 0; 0
+
+trigger = all; all; Titan X; ability; Titan X > Legionssog; kick; 0; 0; 0; 0; 0; 0
+trigger = all; all; Titan X; ability; Titan X < Enraged; enraged; 0; 0; 0; 0; 0; 0

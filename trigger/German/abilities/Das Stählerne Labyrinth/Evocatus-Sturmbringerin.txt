@@ -1,0 +1,5 @@
+Combat Begin > Evocatus-Sturmbringerin | ID: u8000000156006005 | ZoneID: z56567A3CAF3F3794 | HP: 42000000
+Evocatus-Sturmbringerin < Statikfluss (Erhöht den verursachten Luft- und Wasserschaden um 10%.)
+Evocatus-Sturmbringerin < Elektrisiert (Elektrisiert.)
+player << Tobender Sturm (Verursacht über 4 Sekunden 244 Luftschaden. Erzeugt jede Sekunde eine Kumulierung von Elektrisiert und 5 Ladung.)
+Evocatus-Sturmbringerin > Tobender Sturm

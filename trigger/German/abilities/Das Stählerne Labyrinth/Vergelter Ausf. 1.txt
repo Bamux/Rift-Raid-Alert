@@ -1,0 +1,26 @@
+Combat Begin > Vergelter Ausf. 1 | ID: u8000000156005FBB | ZoneID: z56567A3CAF3F3794 | HP: 2140000000
+player << Bohrgeschoss (Erleidet 20% zusätzlichen Schaden und schwächt Rüstung und Schutz. Kann bis zu 10 Mal kumuliert werden.)
+Vergelter Ausf. 1 > Blitzexplosion
+Vergelter Ausf. 1 > Zeitladung
+player << Zeitladung (Ihr seid im Begriff, zu explodieren!)
+Evocatus-Sturmbringerin < Elektrisiert (Elektrisiert.)
+Evocatus-Sturmbringerin > Gabelblitz
+Evocatus-Sturmbringerin > Tobender Sturm
+player << Tobender Sturm (Verursacht über 4 Sekunden 244 Luftschaden. Erzeugt jede Sekunde eine Kumulierung von Elektrisiert und 5 Ladung.)
+player << Giftangriff (Verursacht 10 Sekunden lang 0 Lebensschaden.)
+Vergelter Ausf. 1 < Autoreparatur (Kernsysteme werden repariert. Immun gegen sämtlichen Schaden.)
+Kommandant Isiel > Blitzwirbel
+Kommandant Isiel > Herztreffer
+player << Lähmender Schock (Maximale Gesundheit wird um 10% verringert.  Bis zu 3 Kumulierungen sind möglich.)
+Vergelter Ausf. 1 < Verstärkte Panzerung (Rüstung wurde verstärkt, um sämtlichen Schaden um 95% abzuschwächen.)
+Vergelter Ausf. 1 < Bestrahltes Feld (Strahlt konstanten Schaden aus. Tödlich für Nicht-Tanks.)
+player << Entkräftung (Euer "Schutz" wurde drastisch reduziert.)
+Kommandant Isiel > Voltaischer Schub
+Vergelter Ausf. 1 > Sprenggranate
+player << Sprenggranate (Ihr seid im Begriff zu explodieren. Läuterung ist möglich.)
+Kommandant Isiel > Aigis der Stürme
+Kommandant Isiel < Aigis der Stürme (Abgeschirmt. Entfernung ist nur durch "Vernichtende Explosion" möglich.)
+Vergelter Ausf. 1 > Vernichtende Explosion
+Vergelter Ausf. 1 > Sucherminen
+Evocatus-Sturmbringerin < Statikfluss (Erhöht den verursachten Luft- und Wasserschaden um 10%.)
+Vergelter Ausf. 1 > Selbstzerstörung

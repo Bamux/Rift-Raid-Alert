@@ -1,12 +1,12 @@
 ﻿Identifier = "RiftRaidAlert"
 
-Name = "Rift Raid Alert"
+Name = "RRA"
 
 Description = "use /log in the rift chatwindow and use /rra start"
 
 Author = "Program: Bamu@Brutwacht, Test: Dibl@Brutwacht"
 
-Version = "2.3"
+Version = "2.4"
 
 Email = "my@email"
 

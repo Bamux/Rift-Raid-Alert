@@ -17,7 +17,7 @@ from threading import Thread
 from tkinter import filedialog
 from tkinter import *
 
-version = "2.3.8"
+version = "2.4.0"
 
 error_analysis = False  # test a complete logfile from line 1 without orginal time(True or False)
 playback = False  # Playback a logfile from line 1 with orginal time (True or False)
@@ -382,8 +382,8 @@ def logfile_analysis(logtext):
         log = logtext.readline()
         log = log.rstrip()
         orginal = log
-        if "[Rift Raid Alert] " in log:
-            cut_string = log.split("[Rift Raid Alert] ")
+        if "[RRA] " in log:
+            cut_string = log.split("[RRA] ")
             log = cut_string[0] + cut_string[1]
             line = cut_string[1]
             if " = " in line and "%" in line:
@@ -455,6 +455,10 @@ def logfile_analysis(logtext):
                         # guioutput(str(logtime) + ", " + str(lasttime) + ", " + str(wait))
                         time.sleep(wait)
                     lasttime = logtime
+            if 'siri start countdown' in log:
+                Thread(target=saytext, args=("pull in",)).start()
+                t = Thread(target=countdown, args=(4, 'siri start countdown'))
+                t.start()
             if 'tank pull >>' in log or 'fail pull >>' in log:
                 if 'fail pull >>' in log:
                     text = log.split('fail pull >> ')[1]
@@ -614,7 +618,7 @@ def load_abilies(bossname):
 def abilitycheck(line, orginal):
     global abilities_new
     ability_existing = False
-    if "[Rift Raid Alert]" in orginal:
+    if "[RRA]" in orginal:
         if "pull >> " not in line and "language" not in line and " %" not in line and "Death >" not in line\
                 and "< remove" not in line:
             if " >> " in line:
