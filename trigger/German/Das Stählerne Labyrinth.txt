@@ -24,5 +24,6 @@ trigger = all; all; Kommandant Isiel; ability; Kommandant Isiel brüllt: "Artill
 #trigger = all; all; Kommandant Isiel; ability; Kommandant Isiel < remove Aigis der Stürme; remove; 0; 0; 0; 0; 0; 0
 #trigger = all; all; Kommandant Isiel; ability; player << Bohrgeschoss; tank swap; 0; 0; 0; 3; 0; 0
 #trigger = all; all; Kommandant Isiel; ability; player << remove Bohrgeschoss; tank swap; 0; 0; 0; -3; 0; 0
+
 trigger = all; all; Titan X; ability; Titan X > Legionssog; kick; 0; 0; 0; 0; 0; 0
 trigger = all; all; Titan X; ability; Titan X < Enraged; enraged; 0; 0; 0; 0; 0; 0
