@@ -1,1 +1,2 @@
+Combat Begin > Born of Fire | ID: U352013AC4C392523 | ZoneID: z585230E5F68EA919 | HP: 81000000
 player << Scorching Strike (A burning wound that does damage over time.)

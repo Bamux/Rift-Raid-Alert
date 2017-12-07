@@ -1,3 +1,4 @@
+Combat Begin > Illysia | ID: U1ED4987975B66CC3 | ZoneID: z36F63F7EF4EADD07 | HP: 567000000
 player << Ignite (Burning alive.)
 Illysia > Fan of Flames
 Illysia > Summon Minions

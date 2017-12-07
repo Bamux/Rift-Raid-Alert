@@ -2,3 +2,4 @@ Drahknar < Whirling Strike
 Drahknar > Weakening Impact
 Drahknar > Fiery Pool
 player << Weakening Impact (Max health reduced by 5% per stack.)
+Combat Begin > Drahknar | ID: U6E557E9E4F96140A | ZoneID: z36F63F7EF4EADD07 | HP: 567000000

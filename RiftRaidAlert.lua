@@ -130,12 +130,12 @@ local function getAddBuffName(event, unit, buffs)
                         if details.player then
                             if buff.type == "B14A2E6D609F79153" then -- Lavafield
                                 if (Inspect.Time.Frame() - Lavafield) > 10 then
-                                    print("Rift Raid Alert > Lavafield")
+                                    print("cooldowns > Lavafield")
                                     Lavafield = Inspect.Time.Frame()
                                 end
                             elseif buff.type == "BFD9F4FF8303ACEE6" or buff.type == "B39FB71DBD14135BE" then -- Orchester
                                 if (Inspect.Time.Frame() - Orchester) > 15 then
-                                    print("Rift Raid Alert > Orchester")
+                                    print("cooldowns > Orchester")
                                     Orchester = Inspect.Time.Frame()
                                 end
                             end
@@ -179,58 +179,104 @@ local function rra_raidbuffcheck()
     local names = ""
     local names_count = 0
 
+    local mage = false
+    local cleric = false
+    local rogue = false
+    local warrior = false
+    local primalist = false
+    local eternal_mage = false
+    local eternal_cleric = false
+    local eternal_rogue = false
+    local eternal_warrior = false
+    local eternal_primalist = false
+    local eternal_missing = ""
+
     for i=1, 20 do
         local flask = false
         local weaponstone = false
         local food = false
         local groupmember = string.format("group%02d", i)
         local player = Inspect.Unit.Detail(groupmember)
---        if not player and i == 1 then
---            groupmember = "player"
---            player = Inspect.Unit.Detail(groupmember)
---        end
+        if player then
+            if player.calling == "mage" then
+                mage = true
+            elseif player.calling == "cleric" then
+                cleric = true
+            elseif player.calling == "rogue" then
+                rogue = true
+            elseif player.calling == "warrior" then
+                warrior = true
+            elseif player.calling == "primalist" then
+                primalist = true
+            end
+        end
         local buffs = Inspect.Buff.List(groupmember)
-        if buffs and player.role ~= "tank" then
+        if buffs then
             for buffid, typeid in pairs(buffs) do
                 local detail = Inspect.Buff.Detail(groupmember, buffid)
                 if detail and player then
                     if detail.rune then
-                        if player.calling == "mage" or player.calling == "cleric" then
-                            if detail.rune == "r143A1D7A79A201D6" then -- Faetouched Powerstone = r143A1D7A79A201D6
-                                if detail.remaining > 300 then
-                                    weaponstone = true
+                        if player.role ~= "tank"  then
+                            if player.calling == "mage" or player.calling == "cleric" then
+                                if detail.rune == "r143A1D7A79A201D6" then -- Faetouched Powerstone = r143A1D7A79A201D6
+                                    if detail.remaining > 420 then
+                                        weaponstone = true
+                                    end
                                 end
-                            end
-                        else
-                            if detail.rune == "rFA65F5184E42C822" or detail.rune == "r70B0A3843EC153B8" then -- Atramentium Whetstone = rFA65F5184E42C822, Atramentium Oilstone = r70B0A3843EC153B8
-                                if detail.remaining > 300 then
-                                    weaponstone = true
+                            else
+                                if detail.rune == "rFA65F5184E42C822" or detail.rune == "r70B0A3843EC153B8" then -- Atramentium Whetstone = rFA65F5184E42C822, Atramentium Oilstone = r70B0A3843EC153B8
+                                    if detail.remaining > 420 then
+                                        weaponstone = true
+                                    end
                                 end
                             end
                         end
                     end
                     if detail.type then
-                        if player.calling == "mage" or player.calling == "cleric" then
-                            if detail.type == "B76F46FAA030D4A53" or detail.type == "B599B39124D958B4F" then --  Visionary Brightsurge Vial = B76F46FAA030D4A53, Prophetic Brightsurge Vial = B599B39124D958B4F
-                                if detail.remaining > 300 then
-                                    flask = true
+                        if player.role ~= "tank" then
+                            if player.calling == "mage" or player.calling == "cleric" then
+                                if detail.type == "B76F46FAA030D4A53" or detail.type == "B599B39124D958B4F" then --  Visionary Brightsurge Vial = B76F46FAA030D4A53, Prophetic Brightsurge Vial = B599B39124D958B4F
+                                    if detail.remaining > 420 then
+                                        flask = true
+                                    end
+                                end
+                                if detail.type == "B40C3D8E1646C6DD1" then --  Gedlo Curry Pot (SP) = B40C3D8E2646C6DD1
+                                    if detail.remaining > 420 then
+                                        food = true
+                                    end
+                                end
+                            else
+                                if detail.type == "B6A8C5F8010D4EFBB" or detail.type == "B03ABEAB575CC9A8E" then --  Visionary Powersurge Vial = B6A8C5F8110D4EFBB, Prophetic Powersurge Vial = B03ABEAB575CC9A8E
+                                    if detail.remaining > 420 then
+                                        flask = true
+                                    end
+                                end
+                                if detail.type == "B40C3D8E33D686C51" then --  Gedlo Curry Pot (AP) = B40C3D8E43D686C51
+                                    if detail.remaining > 420 then
+                                        food = true
+                                    end
                                 end
                             end
-                            if detail.type == "B40C3D8E1646C6DD1" then --  Gedlo Curry Pot (SP) = B40C3D8E2646C6DD1
-                                if detail.remaining > 300 then
-                                    food = true
-                                end
+                        end
+                        if detail.type == "B5161AA0023BAEFD1" then -- Spirit of the Arcane Mage
+                            if detail.remaining > 600 then
+                                eternal_mage = true
                             end
-                        else
-                            if detail.type == "B6A8C5F8010D4EFBB" or detail.type == "B03ABEAB575CC9A8E" then --  Visionary Powersurge Vial = B6A8C5F8110D4EFBB, Prophetic Powersurge Vial = B03ABEAB575CC9A8E
-                                if detail.remaining > 300 then
-                                    flask = true
-                                end
+                        elseif detail.type == "B1A7C914C6A849564" then -- Spirit of Divinity
+                            if detail.remaining > 600 then
+                                eternal_cleric = true
                             end
-                            if detail.type == "B40C3D8E33D686C51" then --  Gedlo Curry Pot (AP) = B40C3D8E43D686C51
-                                if detail.remaining > 300 then
-                                    food = true
-                                end
+                        elseif detail.type == "B5E5E107B687FEDAA" then -- Spirit of the Shadows
+                            if detail.remaining > 600 then
+                                eternal_rogue = true
+                            end
+                        elseif detail.type == "B0EF28442078DA6CD" then -- Spirit of Arms
+                            if detail.remaining > 600 then
+                                eternal_warrior = true
+                            end
+                        elseif detail.type == "B1CD787B134A73183" then -- Spirit of the Wilds
+                            if detail.remaining > 600 then
+                                eternal_primalist = true
                             end
                         end
                     end
@@ -238,23 +284,42 @@ local function rra_raidbuffcheck()
             end
 
             local playersplit = ""
-            if weaponstone == false or flask == false  or food == false then
-                names_count = names_count + 1
-                for x in string.gmatch(player.name, '([^@]+)') do
-                    playersplit = x
-                    break
+            if player.role ~= "tank" then
+                if weaponstone == false or flask == false  or food == false then
+                    names_count = names_count + 1
+                    for x in string.gmatch(player.name, '([^@]+)') do
+                        playersplit = x
+                        break
+                    end
+                    if names_count > 1 then
+                        playersplit = ", " .. playersplit
+                    end
+                    names = names .. playersplit
                 end
-                if names_count > 1 then
-                    playersplit = ", " .. playersplit
-                end
-                names = names .. playersplit
-
             end
         end
     end
     if names ~= "" then
         print ("Raidbuffs missing: " .. names_count .. " players > " .. names)
         print()
+    end
+    if mage == true and eternal_mage == false then
+        eternal_missing = eternal_missing .. "Mage "
+    end
+    if cleric == true and eternal_cleric == false then
+        eternal_missing = eternal_missing .. "Cleric "
+    end
+    if rogue == true and eternal_rogue == false then
+        eternal_missing = eternal_missing .. "Rogue "
+    end
+    if warrior == true and eternal_warrior == false then
+        eternal_missing = eternal_missing .. "Warrior "
+    end
+    if primalist == true and eternal_primalist == false then
+        eternal_missing = eternal_missing .. "Primalist "
+    end
+    if eternal_missing ~= "" then
+        print ("Siri say " .. eternal_missing .. "Eternal!")
     end
 end
 

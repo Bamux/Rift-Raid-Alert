@@ -1,4 +1,4 @@
-Combat Begin > Ereandorn | ID: u80000001B300A88B | ZoneID: z585230E5F68EA919 | HP: 1134000000
+Combat Begin > Ereandorn | ID: U1B3DA8B866FF9DAA | ZoneID: z585230E5F68EA919 | HP: 1134000000
 Ereandorn > Fury of Maelforge
 player << Blood Fire (A magical blaze infects the blood.)
 player << Flaming Hoof
@@ -10,3 +10,4 @@ Molten Eruption < Molten Growth
 Ereandorn > Volcanic Eruption
 Volcanic Eruption < Volcanic Eruption
 Volcanic Eruption < Volcanic Eruption (The volcano's power builds! When finished, the explosion will kill anyone within its blast radius!)
+Rift Raid Alert > Orchester

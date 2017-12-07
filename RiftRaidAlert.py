@@ -17,7 +17,7 @@ from threading import Thread
 from tkinter import filedialog
 from tkinter import *
 
-version = "2.4.0"
+version = "2.4.1"
 
 error_analysis = False  # test a complete logfile from line 1 without orginal time(True or False)
 playback = False  # Playback a logfile from line 1 with orginal time (True or False)
@@ -620,7 +620,7 @@ def abilitycheck(line, orginal):
     ability_existing = False
     if "[RRA]" in orginal:
         if "pull >> " not in line and "language" not in line and " %" not in line and "Death >" not in line\
-                and "< remove" not in line:
+                and "< remove" not in line and "cooldowns >" not in line:
             if " >> " in line:
                 line = line.split(" >> ")
                 line = line[0]  # + " >> player"
@@ -1276,6 +1276,10 @@ def edit_trigger(value):
 
     if found or value == "delete" or value == "special_delete" or value == "keywords" or value == "delete_keywords":
         file = codecs.open("trigger/" + client_language + "/" + e0.get() + ".txt", "r", 'utf-8')
+        if value == "delete_keywords":
+            if "[disabled]" in old_trigger:
+                old_trigger = old_trigger.split("[disabled] ")[1]
+                old_trigger = "keywords = " + old_trigger
         for item in file:
             if old_trigger in item:
                 if value == "edit" or value == "special_edit" or value == "keywords":
@@ -1647,10 +1651,11 @@ def keywords_choice(value):
     else:
         b21.grid(row=0, column=1)
     b16.grid(row=1, column=1)
-    b17.grid(row=2, column=1)
+
     if "[disabled]" in value:
         b20.grid(row=3, column=1)
     else:
+        b17.grid(row=2, column=1)
         b19.grid(row=3, column=1)
     b18.grid(row=4, column=1)
     trigger_details = value.split(" | ")

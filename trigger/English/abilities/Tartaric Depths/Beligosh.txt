@@ -1,3 +1,4 @@
+Combat Begin > Beligosh | ID: U34892E205315F334 | ZoneID: z36F63F7EF4EADD07 | HP: 1134000000
 player << Unstable Construct
 Binding Elemental < Dancing Flames (The elemental is putting out intense heat, dealing damage to all near it. )
 player << Released Power (Upon death this creature will explode, knocking back those near it and leaving the targets burning.)
@@ -12,3 +13,6 @@ player << No Escape (Beligosh is preventing teleportation)
 player << Backdraft
 player << Disrupting Aura (Beligosh's aura disrupts the flow of magic. Casting times are increased by 60% within 15m)
 player << Vengeance of Beligosh (Whenever healing is cast on the target the healer recieves damage equal to 16% of the healing done.)
+player << Paralyzing poison (Snared.)
+player << Paralyzing Venom (You are slowly becoming paralyzed as the Horror's venom does it's work. Damage, and speed reduced, cooldowns increased.)
+player << Paralyzing poison (You have been completely paralyzed.)

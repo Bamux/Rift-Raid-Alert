@@ -1,6 +1,9 @@
+Combat Begin > Guardian Construct | ID: UFD9FCB493A67A56B | ZoneID: z36F63F7EF4EADD07 | HP: 84239996
 Guardian Construct > Earthen Pull
 Guardian Construct > Earthen Pull
 player << Earthen Pull
 Cinder Guardian > Flaming Curse
 player << Flaming Curse (A burning curse has been placed upon you dealing damage every 2 seconds.)
 player << Burning Brand (Upon death this creature will explode, knocking back those near it and leaving the targets burning.)
+player << Released Power (Upon death this creature will explode, knocking back those near it and leaving the targets burning.)
+Binding Elemental < Dancing Flames (The elemental is putting out intense heat, dealing damage to all near it. )

@@ -1,3 +1,4 @@
+Combat Begin > Malannon | ID: U213D348638BD5A02 | ZoneID: z36F63F7EF4EADD07 | HP: 1849554047
 Malannon < Blazing Aura (Radiates unbearable heat, pulsing constant area damage to enemies.)
 Malannon < Blazing Aura (Radiates unbearable heat, pulsing constant area damage to enemies.)
 Malannon > Flaming Swipe

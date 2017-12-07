@@ -1,3 +1,4 @@
+Combat Begin > Seething Core | ID: U529C51083B44AA50 | ZoneID: z585230E5F68EA919 | HP: 648000000
 Combat Begin > Seething Core | ID: u80000001B300A80D | ZoneID: z585230E5F68EA919 | HP: 648000000
 Seething Core < Mana Trap (Purging a Seething Charge causes a deadly backlash against the caster)
 player << Dazed (Speed is reduced by 40% for 8 seconds.)
@@ -14,3 +15,4 @@ Binding Elemental < Released Power (Upon death this creature will explode, knock
 Binding Elemental < Dancing Flames (The elemental is putting out intense heat, dealing damage to all near it. )
 player << Released Power (Upon death this creature will explode, knocking back those near it and leaving the targets burning.)
 player << Released Power (Dealing Fire damage over 10s.)
+Rift Raid Alert > Orchester
