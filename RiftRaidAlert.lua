@@ -304,19 +304,19 @@ local function rra_raidbuffcheck()
         print()
     end
     if mage == true and eternal_mage == false then
-        eternal_missing = eternal_missing .. "Mage "
+        eternal_missing = eternal_missing .. "Mage, "
     end
     if cleric == true and eternal_cleric == false then
-        eternal_missing = eternal_missing .. "Cleric "
+        eternal_missing = eternal_missing .. "Cleric, "
     end
     if rogue == true and eternal_rogue == false then
-        eternal_missing = eternal_missing .. "Rogue "
+        eternal_missing = eternal_missing .. "Rogue, "
     end
     if warrior == true and eternal_warrior == false then
-        eternal_missing = eternal_missing .. "Warrior "
+        eternal_missing = eternal_missing .. "Warrior, "
     end
     if primalist == true and eternal_primalist == false then
-        eternal_missing = eternal_missing .. "Primalist "
+        eternal_missing = eternal_missing .. "Primalist, "
     end
     if eternal_missing ~= "" then
         print ("Siri say " .. eternal_missing .. "Eternal!")

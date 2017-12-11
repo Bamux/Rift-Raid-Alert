@@ -1,4 +1,5 @@
 Combat Begin > Evocatus Stormbringer | ID: U662D553B3EEA0453 | ZoneID: z56567A3CAF3F3794 | HP: 42000000
+Combat Begin > Evocatus Stormbringer | ID: U662D553B3EEA0453 | ZoneID: z56567A3CAF3F3794 | HP: 42000000
 Evocatus Stormbringer < Static Flux (Increases Air and Water damage done by 10%.)
 Evocatus Stormbringer < Electrified (Electrified.)
 player << Raging Storm (Deals 244 Air damage over 4s. Generates a stack of Electrified and 5 Charge each second.)

@@ -4,9 +4,9 @@
 
 
 # Cooldowns
-trigger = all; all; all; buff; Rift Raid Alert > Lavafield; ; 0; 0; 0; 0; 0; 0
-trigger = all; all; all; buff; Rift Raid Alert > Lavafield; now.wav; 300; 0; 0; 0; 0; 0
-trigger = all; all; all; buff; Rift Raid Alert > Orchester; Orchester; 0; 0; 0; 0; 0; 0
+#trigger = all; all; all; buff; cooldowns > Lavafield; ; 0; 0; 0; 0; 0; 0
+#trigger = all; all; all; buff; cooldowns  > Lavafield; now.wav; 300; 0; 0; 0; 0; 0
+#trigger = all; all; all; buff; cooldowns  > Orchester; Orchester; 0; 0; 0; 0; 0; 0
 
 # Rift Raid Alert start/stop/keywords
 trigger = all; all; all; chat; Rift Raid Alert started; rift raid alert started; 0; 0; 0; 0; 0; 1

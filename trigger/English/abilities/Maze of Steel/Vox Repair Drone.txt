@@ -1,5 +1,14 @@
+Combat Begin > Vox Repair Drone | ID: U79AE8F122E9971E9 | ZoneID: z56567A3CAF3F3794 | HP: 84000001
 language = English
 X22 Ravager < Setting Moon (Increases damage of Follow Up attacks by 25%.)
 Tribuni Sharpshooter < Swift Shot (Movement speed increased by 15%.)
 Tribuni Sharpshooter < Hasted Shot (Increases movement speed by 20%.)
 Boss Death > Vox Repair Drone
+Vox Repair Drone > Repair Beam
+Tribuni Sharpshooter > Empowered Shot
+Tribuni Sharpshooter > Deadeye Shot
+1 Point: 52336 damage
+2 Points: 59709 damage
+3 Points: 69541 damage
+4 Points: 81831 damage
+5 Points: 96579 damage)
