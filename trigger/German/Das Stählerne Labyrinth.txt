@@ -1,4 +1,4 @@
-trigger = all; all; Azranel; ability; playername << Projektilsturm; run out; 0; 0; 0; 0; 0; 0
+trigger = all; all; Azranel; ability; player << Projektilsturm; player; 0; 0; 0; 0; 0; 0
 trigger = all; all; Azranel; ability; Azranel = 46 %; ready for spin; 0; 0; 300; 0; 0; 0
 trigger = all; all; Azranel; ability; Initialisiert Verteidigungstaktik, aktiviert reflektierenden Schild.; spin; 0; 0; 0; 0; 0; 0
 trigger = all; all; Azranel; ability; Azranel > Defensivdrall; ready for spin; 40; 0; 300; 0; 0; 0
